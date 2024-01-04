@@ -214,6 +214,7 @@ public class Input {
 			// キーボード入力を受け付け、変数choiceに代入
 			// int r = scanner.nextInt();
 			choice = scanner.nextLine();
+			scanner.close();
 			System.out.println("[choice]選んだのは、" + choice + "です");
 			if (judg(choice).equals("全")) {
 				rob.keyPress(KeyEvent.VK_INPUT_METHOD_ON_OFF);
