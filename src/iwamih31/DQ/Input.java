@@ -65,6 +65,7 @@ public class Input {
 		System.out.println("");
 		System.out.print("y か n を半角小文字で入力してください⇒⇒⇒⇒⇒");
 		String inp = scanner.nextLine();
+		scanner.close();
 		clear();
 		if (inp.equals("y")) {
 			return true;
@@ -91,7 +92,8 @@ public class Input {
 			Scanner scanner = new Scanner(System.in);
 			// キーボード入力を受け付け、変数choiceに代入
 			choice = scanner.nextLine();
-			scanner = null;
+			scanner.close();
+//			scanner = null;
 			System.out.println("[choice]選んだのは、" + choice + "です");
 			if (judg(choice).equals("全")) {
 				rob.keyPress(KeyEvent.VK_INPUT_METHOD_ON_OFF);
@@ -122,6 +124,7 @@ public class Input {
 //			rob.delay(300);
 			Scanner scanner = new Scanner(System.in);
 			String choice = scanner.nextLine();
+			scanner.close();
 			System.out.println("[choice]選んだのは、" + choice + "です");
 			if (judg(choice).equals("全")) {
 				rob.keyPress(KeyEvent.VK_INPUT_METHOD_ON_OFF);
