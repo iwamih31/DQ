@@ -219,12 +219,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		System.out.println("");//////////////////////////////////////////
 
 		Battle.pTable();//パーティーのステータスを表示
-//
-//		while (bHp > 0) {
-//
-//			Command.command();
-//		                       //クラスInputのinputメソッドを呼び出し、戻り値をinpへ代入。
-//			int inp = Input.input();
 
 		party[0].setHp(party[0].getHp() - 1);
 		party[1].setHp(party[1].getHp() - 1);
