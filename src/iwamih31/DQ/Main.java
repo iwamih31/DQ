@@ -118,41 +118,12 @@ public class Main extends AbstractTableModel implements Serializable{
 		System.out.println("");
 	}
 
-// 		if (Input.input() == 2){
-//			load();
-//		} else {
-
 	public static void begin() {
-//		Screen.getQ().removeAll();
-//		sc = new Screen("スタート");
-//		Screen.setTex("主人公の名前は何にしますか？");
-//		Screen.upD();
-//		sc.start(a);
-//		Screen.getQ().revalidate();
 
-//		yName = null;
 		System.out.println("");
 		System.out.println("");
 		System.out.println("主人公の名前は何にしますか？");
 		System.out.println("");
-//		while (yName == null) {
-
-//			String s = Input.inputS();
-//			int p = 0;
-//			char[] chars = s.toCharArray();
-//			for (int i = 0; i < chars.length; i++) {
-//				p += (String.valueOf(chars[i]).getBytes().length);
-//			}
-//			if (p < 8) {// //////////文字バイト数
-//				yName = s;
-//			} else {
-//				Input.clear();
-//				System.out.println("");
-//				System.out.println("");
-//				System.out.println("もう少し短い名前でお願いします");
-//				System.out.println("");
-//				yName = null;
-//			}
 
 			name = "チーム勇者" + yName;
 
