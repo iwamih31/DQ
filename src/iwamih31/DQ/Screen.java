@@ -3758,13 +3758,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	}
 
-	private void clickButton(String s) {////////////////
-	// for (int i = 0; i < 5; i++) {
-	// if (s.equals(Money.menu[i]))
-	// button[1].doClick(100);
-	// }
-	}
-
 	public static String inpDS(String s) {
 		UIManager.put("OptionPane.okButtonText", "OK");
 		UIManager.put("OptionPane.cancelButtonText", "Cancel");
