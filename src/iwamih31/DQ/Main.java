@@ -265,8 +265,6 @@ public class Main extends AbstractTableModel implements Serializable{
 
 			array.add(("―――――" + getName() + "は探検を続けた―――――"));
 
-//				event();
-
 			setText(array);
 
 			break;
@@ -278,7 +276,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println("");
 			System.out.println( "⇒どちらを使いますか？ [ 1. 道具 ] [ 2. 能力 ]");
 			System.out.println("");
-//				int job = Input.input();
 
 			message("⇒どちらを使いますか？");
 
@@ -294,7 +291,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println("");
 			System.out.println("「いらっしゃいませ、御用は何でしょうか？ [ 1. 道具 ] [ 2. 武器 ]");
 			System.out.println("");
-//				int buy = Input.input();
 
 			message("「いらっしゃいませ、御用は何でしょうか？」");
 
