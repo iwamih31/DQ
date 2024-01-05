@@ -153,33 +153,8 @@ public class Main extends AbstractTableModel implements Serializable{
 
 			array = new ArrayList<String>();
 
-			// Slime sl = new Slime (0);
-			// MadDoctor md = new MadDoctor(0);
-			// Golem go = new Golem (0);
-			// Dragon dr = new Dragon (0);
-			// Boss bo = new Boss (0);
-
 			System.out.println("");
 			System.out.println("  ・・・ある日[ " + yName + " ]は、王様に呼び出された・・・");
-//			Story.sent[0][2] = ("  ・・・ある日[ " + yName + " ]は、王様に呼び出された・・・");
-
-//			Screen.texA("");
-
-
-
-//		}
-
-//		party = new Member[ 4 ];///////実体化したキャラを配列変数に代入
-//		party [ 0 ] = fi;
-//		party [ 1 ] = he;
-//		party [ 2 ] = pr;
-//		party [ 3 ] = mg;
-//
-//
-//
-//		pSt();
-//		Screen sc = new Screen(Command.getMenuList());/////////////////////////////
-
 	}
 
 	static void pGet() {
