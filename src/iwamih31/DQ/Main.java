@@ -298,15 +298,12 @@ public class Main extends AbstractTableModel implements Serializable{
 
 			button(choice);
 
-//				shop(0);
-
 			break;
 
 		case 4:
 			innG();// /////////////////////////////宿代を計算
 			Battle.pTable();
 			message("⇒宿代は [ " + innG + "G ] ですが、お泊りになりますか？");
-
 
 			System.out.println("");
 			System.out.println("⇒宿代は [ " + innG
@@ -318,8 +315,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			innText[0] = name + "は、宿で体を休めた・・・";
 			innText[1] = "♪♪♪旅の疲れが癒された ♪♪♪";
 			innText[2] = "「またのお越しをお待ちしております。（*^o^*）」";
-
-			// innMenu(0);
 
 			break;
 
@@ -336,9 +331,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 		Battle.pTable();
 		save();
-
-//		}
-//		Story.end();
 	}
 
 
