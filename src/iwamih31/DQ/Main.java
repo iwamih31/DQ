@@ -872,7 +872,6 @@ public class Main extends AbstractTableModel implements Serializable{
 
 		System.out.print( "      " );
 		System.out.println( "「!!? 宝箱を見つけた  ☆☆☆」" );
-//		Input.ent( );
 		System.out.println( "      " );
 		System.out.print( "「開けると" );
 		int what = new java.util.Random ( ).nextInt( 100 ) + 1;
@@ -894,13 +893,11 @@ public class Main extends AbstractTableModel implements Serializable{
 
 			doText[2] = ("「開けると[ " + get + " ]が入っていた");
 
-//			Input.ent( );
 			System.out.println( "" );
 			System.out.println("          ⇒"+get + " をリュックに詰め込んだ。" );
 
 			doText[3] = ("          ⇒"+get + " をリュックに詰め込んだ。" );
 
-//			Input.ent( );
 		}else{
 			Screen.setCount(0);
 			doText = (new String[5]);
@@ -922,7 +919,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			party[ who ].wep();
 			System.out.println( "が入っていた" );
 			System.out.println( "" );
-//			Input.ent();
 
 			doText[2] = ("「開けると[ " + party[who].wep() + " ]が入っていた");
 
@@ -935,10 +931,7 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println( sell + "はメルカリに出し"+ price +"Gで売れた");
 
 			doText[4] = ("[ " + sell + " ]はメルカリに出し[ "+ price +"G ]で売れた");
-
-//			Input.ent( );
 		}
-
 	}
 
 
@@ -964,7 +957,6 @@ public class Main extends AbstractTableModel implements Serializable{
 	public static void setParty(Member[] party) {
 		Main.party = party;
 	}
-
 
 	public static Member[] getParty() {
 		return party;
@@ -1124,7 +1116,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			rob.delay(200);
 			rob.keyPress(KeyEvent.VK_ENTER);
 			rob.keyRelease(KeyEvent.VK_ENTER);
-
 		} catch (AWTException e) {
 			e.getMessage();
 			e.printStackTrace();
@@ -1163,9 +1154,7 @@ public class Main extends AbstractTableModel implements Serializable{
 
 
 	public static void setText(ArrayList<String> arrayList) {
-
 		text = new String[arrayList.size()];
-
 		for (int i = 0; i < arrayList.size(); i++) {
 			text[i] = arrayList.get(i);
 		}
