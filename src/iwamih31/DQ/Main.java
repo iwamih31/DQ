@@ -347,27 +347,21 @@ public class Main extends AbstractTableModel implements Serializable{
 
 
 	private static void button(Object[] choices) {
-		// TODO 自動生成されたメソッド・スタブ
 		Screen.setMenu(choices);
 	}
 
 
 	static void shop(int select) {
-		// TODO 自動生成されたメソッド・スタブ
 		if (select == 1) {
 			Battle.pTable();
 			System.out.println("");
 			System.out.print("何を買いますか？");
-//			buy(int select);
-
 		} else {
 			Battle.pTable();
 			System.out.println("");
 			System.out.print("何を売りますか？");
 			Battle.pList();
 			System.out.println("");
-//			sell(int select);
-
 		}
 		Object[] choice = new Object[]{ "道具", "武器" };
 
@@ -375,50 +369,35 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	static void buy(int select) {
-		// TODO 自動生成されたメソッド・スタブ
 		if (select == 1) {
 			Battle.pTable();
 			System.out.println("");
 			System.out.print("どれを買いますか？");
-//			Shop.store();
 		} else {
 			Battle.pTable();
 			System.out.println("");
 			System.out.print("誰の武器を買いますか？");
 			Battle.pList();
 			System.out.println("");
-//			int who = Input.input();
-//			System.out.println("");
-
-//			wapon(0);
-
 		}
 	}
 
 	static void sell(int select) {
-		// TODO 自動生成されたメソッド・スタブ
 		if (select == 1) {
 			Battle.pTable();
 			System.out.println("");
 			System.out.print("どれを売りますか？");
-//			Shop.store();
 		} else {
 			Battle.pTable();
 			System.out.println("");
 			System.out.print("誰の武器を売りますか？");
 			Battle.pList();
 			System.out.println("");
-//			int who = Input.input();
-//			System.out.println("");
-
-//			wapon(0);
-
 		}
 	}
 
 
 	private static void wapon(int who) {
-		// TODO 自動生成されたメソッド・スタブ
 		switch (who) {
 			case 1:
 				Shop.wapon(party[0]);
@@ -436,13 +415,11 @@ public class Main extends AbstractTableModel implements Serializable{
 				Battle.pTable();
 				System.out.println("");
 				System.out.println(name + "は、何も買わずに店を出た・・・");
-//				Input.ent();
 		}
 	}
 
 
 	static void use(int job) {
-		// TODO 自動生成されたメソッド・スタブ
 		if (job == 1) {
 			Battle.pTable();
 			System.out.println("");
@@ -454,11 +431,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.print("誰が行いますか？");
 			Battle.pList();
 			System.out.println("");
-
-//			int who = Input.input();
-//			ex(0);
-
-
 		}
 	}
 
@@ -483,17 +455,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		System.out.println(  "―――――" + getName() + "は探検を続けた―――――" );
 		System.out.println( "           ／                   ＼"     );
 		System.out.println( "         ／                       ＼"   );
-
-//		Robot robo;
-//		try {
-//			robo = new Robot();
-//			robo.delay(400);//////////////表示ディレイ
-//		} catch (AWTException e1) {
-//			e1.printStackTrace();
-//		}
-
-//		scroll(10);
-
 		System.out.println( "" );
 
 		int r = new java.util.Random ().nextInt(100);
@@ -515,7 +476,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println("");
 			System.out.print("      ");
 			System.out.println("「 ・・・!!? 」");
-			//		Input.ent();
 			Battle.pTable();
 			System.out.println("");
 			System.out.print("      ");
@@ -559,26 +519,18 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println("");
 			System.out.print("      ");
 			System.out.println("「 ・・・!!? 」");
-//			Input.ent();
 			Battle.pTable();
 			System.out.println("");
 			System.out.print("      ");
 			System.out.println(comment);
-
-//			Input.ent();
 		} else if (r < 75) {
-
-//			Screen.setMode(13);
 			Screen.setMode(1);
 
 			setDoText(new String[0]);
-//			getDoText()[0] = ("「・・・・・何も起きない、少し疲れた  (+_+)」");
-
 			Battle.pTable();
 			System.out.println( "" );
 			System.out.print( "      " );
 			System.out.println( "「・・・・・何も起きない、少し疲れた  (+_+)」" );
-//			Input.ent();
 		} else if( r < 95) {
 
 			Screen.setMode(14);
