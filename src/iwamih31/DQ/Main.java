@@ -1119,7 +1119,6 @@ public class Main extends AbstractTableModel implements Serializable{
 
 
 	public static void ent() {
-		// TODO 自動生成されたメソッド・スタブ
 		try {
 			Robot rob = new Robot();
 			rob.delay(200);
@@ -1127,7 +1126,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			rob.keyRelease(KeyEvent.VK_ENTER);
 
 		} catch (AWTException e) {
-			// TODO 自動生成された catch ブロック
 			e.getMessage();
 			e.printStackTrace();
 		}
