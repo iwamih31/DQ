@@ -1039,7 +1039,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println( getName() + "エラー" );
 			e2.printStackTrace();
 		}
-
 	}
 
 
