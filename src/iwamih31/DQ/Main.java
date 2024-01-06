@@ -622,9 +622,6 @@ public class Main extends AbstractTableModel implements Serializable{
 				} catch (AWTException e) {
 				e.printStackTrace();
 			}
-
-//				battle();
-
 		} else {
 
 			Screen.setMode(15);
@@ -636,7 +633,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println( "" );
 			System.out.print( "      " );
 			System.out.println( "「 ・・・!!? 」" );
-//			Input.ent();
 			getItem();
 		}
 		save();
@@ -650,8 +646,6 @@ public class Main extends AbstractTableModel implements Serializable{
 
 
 	public static void healing() {
-
-//		Input.ent();
 		if (party[0].getHp() > 0) party[0].setHp(party[0].getHp() + 40);
 		if (party[1].getHp() > 0) party[1].setHp(party[1].getHp() + 30);
 		if (party[2].getHp() > 0) party[2].setHp(party[2].getHp() + 20);
@@ -660,13 +654,10 @@ public class Main extends AbstractTableModel implements Serializable{
 		System.out.println("");
 		System.out.print("      ");
 		System.out.println("「少し元気をもらった  ↑↑↑」");
-//		Input.ent();
 	}
 
 
 	static void innMenu(int i) {
-
-//		innMenu = [ 1.はい ][ 2.いいえ ][ 3.状態確認 ][ 4.復活の儀式 ]
 
 		arrayClear();
 
@@ -681,8 +672,6 @@ public class Main extends AbstractTableModel implements Serializable{
 					Battle.pTable();
 					System.out.println("");
 					System.out.println(name + "は、宿で体を休めた・・・");
-//					Input.ent( );
-
 					array.add(name + "は、宿で体を休めた・・・");
 
 					Battle.pTable();
@@ -695,15 +684,11 @@ public class Main extends AbstractTableModel implements Serializable{
 					Battle.pTable();
 					System.out.println("");
 					System.out.println("♪♪♪旅の疲れが癒された ♪♪♪");
-//					Input.ent( );
-
 					array.add("♪♪♪旅の疲れが癒された ♪♪♪");
 
 					Battle.pTable();
 					System.out.println("");
 					System.out.println("[所持金＝ " + getG() + "G ]");
-//					Input.ent( );
-
 					array.add("[所持金＝ " + getG() + "G ]");
 				}
 				break;
@@ -712,8 +697,6 @@ public class Main extends AbstractTableModel implements Serializable{
 				Battle.pTable();
 				System.out.println("");
 				System.out.println(name + "は、宿を出た・・・");
-//				Input.ent( );
-
 				array.add(name + "は、宿を出た・・・");
 
 				break;
@@ -723,13 +706,7 @@ public class Main extends AbstractTableModel implements Serializable{
 				System.out.print("誰を復活させますか？");
 				Battle.pList();
 				System.out.println("");
-
 				Screen.setMessage("誰を復活させますか？");
-
-//				int who = (Input.input() - 1);
-//
-//				revive(who);
-
 				break;
 
 			default :
@@ -740,8 +717,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		Battle.pTable();
 		System.out.println("");
 		System.out.println("「またのお越しをお待ちしております。（*^o^*）」");
-//		Input.ent();
-
 		array.add("「またのお越しをお待ちしております。（*^o^*）」");
 
 		setText(array);
@@ -759,35 +734,24 @@ public class Main extends AbstractTableModel implements Serializable{
 			Battle.pTable();
 			System.out.println( "" );
 			System.out.println( "勝手に殺したら可哀想だよ・・・ (~_~;)" );
-//			Input.ent();
-
 			Screen.setMessageEnt( "勝手に殺したら可哀想だよ・・・ (~_~;)" );
-
-//			Screen.setMode(444);
-
 		}else{
 			remG = (party[who].getLev() * 200);
 			System.out.println("  [所持金＝ " + getG() + "G ]");
 			System.out.println("");
 			System.out.println(remG + "Gかかるけど復活するかい？・・・ [ 1. はい ][ 2. いいえ ]");
 			System.out.println("");
-//			int co = Input.input();
-
 			Screen.setMode(4444);
 
 			Screen.setMessage(remG + "Gかかるけど復活するかい？・・・");
 
 			Screen.setMenu(new String[]{"はい","いいえ"});
-
-//			reviveYes(co);
-
 		}
 		setText(array);
 	}
 
 
 	static void reviveYes(int co) {
-		// TODO 自動生成されたメソッド・スタブ
 		arrayClear();
 		switch (co) {
 			case 1:
@@ -804,13 +768,11 @@ public class Main extends AbstractTableModel implements Serializable{
 					Battle.pTable();
 					System.out.println("");
 					System.out.println(select.getName() + "は生き返った!!!");
-//					Input.ent();
 					array.add(select.getName() + "は生き返った!!!");
 
 					Battle.pTable();
 					System.out.println("");
 					System.out.println("  [所持金＝ " + getG() + "G ]");
-//					Input.ent();
 					array.add("  [所持金＝ " + getG() + "G ]");
 				}
 
@@ -850,11 +812,9 @@ public class Main extends AbstractTableModel implements Serializable{
 			sData.close();
 
 		} catch (FileNotFoundException e) {
-			// TODO 自動生成された catch ブロック
 			e.getMessage();
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO 自動生成された catch ブロック
 			e.getMessage();
 			e.printStackTrace();
 		}
@@ -890,19 +850,15 @@ public class Main extends AbstractTableModel implements Serializable{
 
 
 		} catch (FileNotFoundException e) {
-			// TODO 自動生成された catch ブロック
 			e.getMessage();
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO 自動生成された catch ブロック
 			e.getMessage();
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO 自動生成された catch ブロック
 			e.getMessage();
 			e.printStackTrace();
 		}
-	//	Story.beBack();
 	}
 
 
