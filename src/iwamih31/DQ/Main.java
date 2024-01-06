@@ -23,15 +23,16 @@ public class Main extends AbstractTableModel implements Serializable{
 	private static String yName = "おぬし";
 
 	private static String name = "チーム勇者" + yName;
-//	static int hp = 100;//////////////////////削除
 
 	private static int g;
 
 	private static String mName = "魔物たち";
+
 	static int bHp = 3;
 
 	private static String bName = "竜王";
-													//配列要素名を簡略化
+
+	//配列要素名を簡略化
 	private static Member[] party ;
 	static Member fi;
 	static Member he;
@@ -39,7 +40,9 @@ public class Main extends AbstractTableModel implements Serializable{
 	static Member mg;
 
 	private static Member hu;
+
 	private static String get;
+
 	static Main mai;
 
 	private static Screen sc;
