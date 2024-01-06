@@ -998,46 +998,42 @@ public class Main extends AbstractTableModel implements Serializable{
 			rob.keyPress(KeyEvent.VK_ALT);//
 			rob.keyPress(KeyEvent.VK_SHIFT);
 			rob.keyPress(KeyEvent.VK_Q);
-//			rob.delay(1000);
+
 			rob.keyRelease(KeyEvent.VK_ALT);
 			rob.keyRelease(KeyEvent.VK_SHIFT);
 			rob.keyRelease(KeyEvent.VK_Q);
-//			rob.delay(1000);
+
 			rob.keyPress(KeyEvent.VK_C);
 			rob.keyRelease(KeyEvent.VK_C);//
-//			rob.delay(1000);
+
 			rob.keyPress(KeyEvent.VK_BACK_SPACE);
 			rob.keyRelease(KeyEvent.VK_BACK_SPACE);
-//			rob.delay(1000);
+
 			rob.keyPress(KeyEvent.VK_BACK_SPACE);
 			rob.keyRelease(KeyEvent.VK_BACK_SPACE);
-//			rob.delay(1000);
 
 			rob.keyPress(KeyEvent.VK_INPUT_METHOD_ON_OFF);
 			rob.keyRelease(KeyEvent.VK_INPUT_METHOD_ON_OFF);
-//			rob.delay(1000);
 
 			rob.keyPress(KeyEvent.VK_ALT);//
 			rob.keyPress(KeyEvent.VK_SHIFT);
 			rob.keyPress(KeyEvent.VK_Q);
-//			rob.delay(1000);
+
 			rob.keyRelease(KeyEvent.VK_ALT);
 			rob.keyRelease(KeyEvent.VK_SHIFT);
 			rob.keyRelease(KeyEvent.VK_Q);
-//			rob.delay(1000);
+
 			rob.keyPress(KeyEvent.VK_C);
 			rob.keyRelease(KeyEvent.VK_C);//
-//			rob.delay(1000);
+
 			rob.keyPress(KeyEvent.VK_BACK_SPACE);
 			rob.keyRelease(KeyEvent.VK_BACK_SPACE);
-//			rob.delay(1000);
+
 			rob.keyPress(KeyEvent.VK_BACK_SPACE);
 			rob.keyRelease(KeyEvent.VK_BACK_SPACE);
-//			rob.delay(1000);
 
 			rob.keyPress(KeyEvent.VK_INPUT_METHOD_ON_OFF);
 			rob.keyRelease(KeyEvent.VK_INPUT_METHOD_ON_OFF);
-//			rob.delay(1000);
 
 		} catch (AWTException e2) {
 			System.out.println( getName() + "エラー" );
