@@ -424,14 +424,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		format(inpT);
 
 		inpT.setBorder(border());
-//		inpT.setPreferredSize(new Dimension(w*2, h/5));
 
 		JPanel bPanel = new JPanel();
 		format(bPanel);
 		bPanel.setLayout(new GridLayout(1, 0, 0, 0));
-
-//		bPanel.setPreferredSize(new Dimension(w*2, h/5));
-//		bPanel.setPreferredSize(new Dimension(60, 20));
 
 		int bI = 1;/////////////////////////////////////ボタンの数
 
@@ -453,7 +449,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 
 		q = labelSet(tex);
-//		q.setPreferredSize(new Dimension(w*2, h/2));
 
 		JLabel blankAreaN = labelSet("");
 		blankAreaN.setPreferredSize(new Dimension(w*2, h*4));
@@ -462,11 +457,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		JPanel a = panelSetLR(inpT, bPanel);
 		JPanel answer = panelSetNCS(blankAreaN, a, blankAreaS);
 
-//		a.setPreferredSize(new Dimension(w*5, h/5));
-
-
 		centerSet(space, q, answer);
-
 	}
 
 	private void begin() {
