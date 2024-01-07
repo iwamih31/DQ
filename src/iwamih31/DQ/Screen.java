@@ -329,12 +329,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		JPanel panelQ = panelSetWCE(west, center, east);
 		JPanel panelQA = panelSetWCE(space, panelQ, space);
 
-
-//		int rows = 7;
-//		int columns = 10;
-//		JTextArea blankAreaN = textAreaSet(" ",rows,columns);
-//		JTextArea blankAreaS = textAreaSet(" ",rows,columns);
-
 		JLabel blankAreaN = labelSet("");
 		blankAreaN.setPreferredSize(new Dimension(w*2, h*20));
 
