@@ -344,7 +344,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private static void format(Component component, int width, int height) {
 		format(component);
 		component.setSize(width, height);
-//		component.setPreferredSize(new Dimension(width, height));
 	}
 
 
@@ -357,7 +356,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		if (mode > 0 && dead() > 0) {
 			component.setForeground(Color.RED);
 		}
-
 	}
 
 
