@@ -308,14 +308,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	private static JPanel panelSet() {
 
-//		JPanel panelSetC = new JPanel();
-//		format(panelSetC);
-//		panelSetC.setPreferredSize(new Dimension(w*70, h*100));
-//		panelSetC.setLayout(new BoxLayout(panelSetC, BoxLayout.Y_AXIS));
-//		panelSetC.add(panelN);
-//		panelSetC.add(panelC);
-//		panelSetC.add(panelS);
-
 		JPanel panelSetC = panelSetNCS(panelN, panelC, panelS);
 		panelSetC.setPreferredSize(new Dimension(w*70, h*80));
 
@@ -324,13 +316,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		panelSet.setLayout(new FlowLayout());
 		panelSet.add(panelW);
 		panelSet.add(b());
-//		panelSet.add(panelSetC);
 		panelSet.add(panelSetC);
 		panelSet.add(b());
 		panelSet.add(panelE);
 
 		return panelSet;
-
 	}
 
 	private static void centerSet(Object west, Object center, Object east) {
