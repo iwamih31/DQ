@@ -412,10 +412,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 			bPanel.add(button[i]);
 		}
-
 		centerSet(space,labelC, bPanel);
-
-		// more();
 	}
 
 	private void inputName(String s) {
