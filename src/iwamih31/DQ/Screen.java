@@ -298,20 +298,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		cardLayout.removeLayoutComponent(panelSet);
 		changePanelSet.add(panelSet, mode);
 		cardLayout.show(changePanelSet,mode);
-
-//		frame.setFocusable(false);
-//
-////			Robot の delay() で間を空ける
-//		Robot robot = null;
-//		try {
-//			robot = new Robot();
-//		} catch (AWTException e1) {
-//			e1.printStackTrace();
-//		}
-//		System.out.println("");//////////////////////////////////////////
-//		System.out.println("robot.delay(20)します");/////////////////////
-//		System.out.println("");//////////////////////////////////////////
-//		robot.delay(20);
 	}
 
 	private static void change() {
