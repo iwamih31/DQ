@@ -130,7 +130,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
         fontSize = w;
 		setMode(0);
 		border = new LineBorder(Color.WHITE, 2, true);
-//		yName = Main.getyName();
 		ynList = new Object[]{ "はい", "いいえ" };
 		entMark = (" ⇒ ");
 		ent = entMark;
