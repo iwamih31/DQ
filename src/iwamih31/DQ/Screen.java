@@ -109,30 +109,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private static String entMark;
 
 	public Screen(Object[] mList) {
+
 		super("メニュー");
-
-		/*
-		 * String exterior =
-		 * "javax.swing.plaf.windows.WindowsLookAndFeel";//メタルはplaf
-		 * .の後をmetal.MetalLookAndFeelへ変える try{
-		 * UIManager.setLookAndFeel(exterior);
-		 * SwingUtilities.updateComponentTreeUI(this.frame); } catch (Exception
-		 * e) { e.printStackTrace(); }
-		 */
-
-//		//キー入力の有効化
-//		addKeyListener(this);
-//		setFocusable(true);
 
 		menu(mList);
 	}
 
 	public Screen(String s) {
-		super(s);
 
-//		//キー入力の有効化
-//		addKeyListener(this);
-//		setFocusable(true);
+		super(s);
 
 		start(s);
 	}
