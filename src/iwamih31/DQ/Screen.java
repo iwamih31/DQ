@@ -477,7 +477,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		JPanel panel = new JPanel();
 		format(panel);
 		panel.setLayout(new GridLayout(5, 0, 0, 0));
-//			panel.setBorder(border);
 		panel.setPreferredSize(new Dimension(w * 10, h * 50));
 
 		menuButton = new JButton[mList.length];////////////////////ボタンの数
