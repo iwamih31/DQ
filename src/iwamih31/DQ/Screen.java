@@ -647,7 +647,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 
 	private void opening() {
-//		JOptionPane.showMessageDialog(null, "opening() します");
 		x = 6;
 		y = 6;
 
@@ -687,7 +686,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					inputName("名前");
 				}
 			}
-//			JOptionPane.showMessageDialog(null, "yName = " + yName);
 			Main.begin();
 			story = new Story();
 			story.on("  ・・・ある日[ " + yName + " ]は、王様に呼び出された・・・");
