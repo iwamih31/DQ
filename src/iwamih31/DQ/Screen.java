@@ -769,7 +769,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void use() {
-		// TODO 自動生成されたメソッド・スタブ
 
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("use() します");//////////////////////////////
@@ -784,7 +783,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		comment();
 
 		change();
-
 	}
 
 	private void whichUse(String selectButtonName) {
