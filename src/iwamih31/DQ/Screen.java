@@ -568,8 +568,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		System.out.println("frameのキー入力を有効化しました");////////
 		System.out.println("");/////////////////////////////////////
 
-//		JOptionPane.showMessageDialog(null, "mode = " + mode);
-
 		actionPerformedSwitch0();
 
 		actionPerformedSwitch1();
@@ -583,7 +581,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		actionPerformedSwitch4();
 
 		actionPerformedSwitch5();
-
 	}
 
 	public void actionPerformedSwitch0() {
