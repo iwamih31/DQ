@@ -502,7 +502,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		cancelButton.addKeyListener(this);
 		cancelButton.setBorder(border());
 		cancelButton.setPreferredSize(new Dimension(w*10, h*13));
-//			panel.add(jButton);
 
 		JPanel bPanel = panelSetNCS(panel, menuAreaB,cancelButton);
 		bPanel.setPreferredSize(new Dimension(w*10, h*80));
@@ -516,7 +515,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		if(mode == 1) menuNum = 1;
 
 		selectStyle();
-
 	}
 
 	public void actionPerformed(ActionEvent e) {
