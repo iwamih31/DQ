@@ -911,7 +911,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		comment();
 
 		change();
-
 	}
 
 	private void fieldAction(String selectButtonName) {
