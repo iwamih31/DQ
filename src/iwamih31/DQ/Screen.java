@@ -643,7 +643,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 				break;
 		}
-
 	}
 
 
