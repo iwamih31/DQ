@@ -752,7 +752,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void fieldMenu(Object[] setMenu) {
-		// TODO 自動生成されたメソッド・スタブ
 
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("fieldMenu(String[] setMenu) します");//////////////////////////////
@@ -767,7 +766,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		comment();
 
 		change();
-
 	}
 
 	private void use() {
