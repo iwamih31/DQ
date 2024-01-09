@@ -1355,27 +1355,21 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			if (setButtonName.equals(menu[0])) {
 				useEx = new Power(party[0]);
 				Main.ex(0);
-				setMode(220);
-				ex();
 			}
 			if (setButtonName.equals(menu[1])) {
 				useEx = new Wonder(party[1]);
 				Main.ex(1);
-				setMode(220);
-				ex();
 			}
 			if (setButtonName.equals(menu[2])) {
 				useEx = new Bless(party[2]);
 				Main.ex(2);
-				setMode(220);
-				ex();
 			}
 			if (setButtonName.equals(menu[3])) {
 				useEx = new Magic(party[3]);
 				Main.ex(3);
-				setMode(220);
-				ex();
 			}
+			setMode(220);
+			ex();
 	}
 
 	private void whoExBattle() {
