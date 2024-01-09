@@ -1081,16 +1081,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				}
 				break;
 
-//			case 2110 ://使う,道具,[1],[0],結果
-//			case 2111 ://使う,道具,[1],[1],結果
-//			case 2112 ://使う,道具,[1],[2],結果
-//			case 2113 ://使う,道具,[1],[3],結果
-//
-//				if (buttonName.equals(ent)) {
-//					itemMenu1(mode - 2110);
-//				}
-//				break;
-
 			case 212 ://使う道具[2],結果
 				count = 0;
 				setMode(200);
