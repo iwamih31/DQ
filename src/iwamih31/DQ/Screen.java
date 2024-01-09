@@ -932,8 +932,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 				Main.action(1);
 
-//				setMessageEnt(Main.getText());
-
 				setMessageEnt("―――――" + Main.getName() + "は探検を続けた―――――");
 
 				setMode(10);
