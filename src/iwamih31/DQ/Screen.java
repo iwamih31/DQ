@@ -1094,9 +1094,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			case 214 ://使う道具[4],誰に？
 				count = 0;
 				menu = Main.getpNa();
-
 				for (int i = 0; i < menu.length; i++) {
-
 					if (buttonName.equals(menu[i])){
 						setMode(200);
 						Item.who4(i);
@@ -1104,16 +1102,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 				}
 				break;
-
-//			case 2140 ://使う,道具,[4],[0],結果
-//			case 2141 ://使う,道具,[4],[1],結果
-//			case 2142 ://使う,道具,[4],[2],結果
-//			case 2143 ://使う,道具,[4],[3],結果
-//
-//				if (buttonName.equals(ent)) {
-//					itemMenu4(mode - 2140);
-//				}
-//				break;
 
 			case 2101 ://バトルモード,使う,道具,[1],誰に？
 				count = 0;
