@@ -1049,19 +1049,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	public void actionPerformedSwitch21() {
 
 		switch (mode) {
-
 			case 21 ://使う,道具
-
 				if (Battle.getfMode()==0){
 					fieldItem(buttonName);
 				}else{
 					battleItem(buttonName);
 				}
-
 				break;
 
 			case 200 ://使う,道具,結果
-
 				if (buttonName.equals(ent)) {
 					itemLoop();
 				}
@@ -1070,9 +1066,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			case 211 ://使う,道具,[1],誰に？
 				count = 0;
 				menu = Main.getpNa();
-
 				for (int i = 0; i < menu.length; i++) {
-
 					if (buttonName.equals(menu[i])){
 						setMode(200);
 						Item.who1(i);
@@ -1106,9 +1100,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			case 2101 ://バトルモード,使う,道具,[1],誰に？
 				count = 0;
 				menu = Main.getpNa();
-
 				for (int i = 0; i < menu.length; i++) {
-
 					if (buttonName.equals(menu[i])){
 						setMode(555);
 						Item.who1(i);
@@ -1117,22 +1109,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				}
 				break;
 
-//			case 21010 ://バトルモード,使う,道具,[1],[0],結果
-//			case 21011 ://バトルモード,使う,道具,[1],[1],結果
-//			case 21012 ://バトルモード,使う,道具,[1],[2],結果
-//			case 21013 ://バトルモード,使う,道具,[1],[3],結果
-//
-//				if (buttonName.equals(ent)) {
-//					battleLoop();
-//				}
-//				break;
-
 			case 2102 ://バトルモード,使う道具[2],どのモンスターに？
 				count = 0;
 				Monster[] mons = Battle.getMons();
-
 				for (int i = 0; i < mons.length; i++) {
-
 					if (buttonName.equals(mons[i].getName())){
 						setMode(555);
 						Item.who2(i);
@@ -1142,17 +1122,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				break;
 
 			case 2103 ://バトルモード,使う道具[3]
-
 				setMode(555);
-
 				break;
 
 			case 2104 ://バトルモード,使う道具[4],誰に？
 				count = 0;
 				menu = Main.getpNa();
-
 				for (int i = 0; i < menu.length; i++) {
-
 					if (buttonName.equals(menu[i])){
 						setMode(555);
 						Item.who4(i);
