@@ -1136,16 +1136,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 				}
 				break;
-
-//			case 21040 ://バトルモード,使う,道具,[4],[0],結果
-//			case 21041 ://バトルモード,使う,道具,[4],[1],結果
-//			case 21042 ://バトルモード,使う,道具,[4],[2],結果
-//			case 21043 ://バトルモード,使う,道具,[4],[3],結果
-//
-//				if (buttonName.equals(ent)) {
-//					battleLoop();
-//				}
-//				break;
 		}
 	}
 
