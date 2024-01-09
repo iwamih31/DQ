@@ -1318,7 +1318,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void ex() {
-		// TODO 自動生成されたメソッド・スタブ
+
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("ex() します");//////////////////////////////
 		System.out.println("");//////////////////////////////////////////
