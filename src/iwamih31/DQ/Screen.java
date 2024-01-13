@@ -1609,24 +1609,16 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void shop() {
-			// TODO 自動生成されたメソッド・スタブ
-
-	//		setMode(3);/////////////////////////////////// ?
-
 			System.out.println("");//////////////////////////////////////////
-			System.out.println("shop() します");//////////////////////////////
+			System.out.println("shop() します");/////////////////////////////
 			System.out.println("");//////////////////////////////////////////
-
 			buttonName = null;
-
 			partySt();
 			info(goldList(),itemList(),shopList());
 			scene();
 			menu(menu);
 			comment();
-
 			change();
-
 		}
 
 	private void shopWapon(int i) {
