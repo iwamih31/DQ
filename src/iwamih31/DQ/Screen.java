@@ -1443,49 +1443,32 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		System.out.println("");////////////////////////////////
 
 		if (count < text.length) {
-
-			if (count == 0) {
-
-			}
-
-			if (Battle.getfMode() == 0) {
-
-				if (mode > 10000) {
-					setMessage(text[count]);
-					who();
-
-				} else {
-
-					setMessageEnt(text[count]);
-
-					ex();
-
+			if (count != 0) {
+				if (Battle.getfMode() == 0) {
+					if (mode > 10000) {
+						setMessage(text[count]);
+						who();
+					} else {
+						setMessageEnt(text[count]);
+						ex();
+					}
+				}else{
+					if (mode > 10000) {
+						setMessage(text[count]);
+					} else {
+						setMessageEnt(text[count]);
+					}
+					battleEx();
 				}
-			}else{
-				if (mode > 10000) {
-
-					setMessage(text[count]);
-
-				} else {
-
-					setMessageEnt(text[count]);
-
-				}
-				battleEx();
 			}
-
 			count = (count + 1);
-
 		} else {
-
 			if (Battle.getfMode() == 0) {
 				toNormal();
 			}else{
 				count = 0;
-//				setMode(50);
 				Main.getBat().turn();
 				menu = Battle.getMenu();
-//				battle();
 			}
 		}
 	}
