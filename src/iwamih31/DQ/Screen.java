@@ -1398,11 +1398,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 
 		System.out.println("");//////////////////////////////////////////
-		System.out.println("useEx = " + useEx.getClass() + " です");//////////////////////////////
+		System.out.println("useEx = " + useEx.getClass() + " です");/////
 		System.out.println("");//////////////////////////////////////////
 
 		System.out.println("");//////////////////////////////////////////
-		System.out.println("Ex.getName() = " + Ex.getName() + " です");//////////////////////////////
+		System.out.println("Ex.getName() = " + Ex.getName() + " です");//
 		System.out.println("");//////////////////////////////////////////
 
 		party[actor].ex();
@@ -1416,7 +1416,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		menu = useEx.menu();
 
 		for (int i = 0; i < menu.length; i++) {
-
 			if (buttonName.equals(menu[i])) {
 				setMode(2250);
 				useEx.select(i);
@@ -1432,15 +1431,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	private void exLoop() {
 
-		System.out.println("");////////////////////////////////
+		System.out.println("");//////////////////
 		System.out.println("exLoop() します");///
-		System.out.println("");////////////////////////////////
+		System.out.println("");//////////////////
 
 		String[] text = useEx.getExText();
 
-		System.out.println("");////////////////////////////////
+		System.out.println("");/////////////////////////
 		System.out.println("count =(" + count + ")");///
-		System.out.println("");////////////////////////////////
+		System.out.println("");/////////////////////////
 
 		if (count < text.length) {
 			if (count != 0) {
