@@ -1816,11 +1816,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void innMenu0() {
-
 		System.out.println("");////////////////////////////////////////////////
 		System.out.println("innMenu0() します  buttonName = " + buttonName);///
 		System.out.println("");////////////////////////////////////////////////
-
 		if (count == 0) {
 			count = (count + 1);
 			inn();
@@ -1830,13 +1828,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void innMenu1() {
-
 		System.out.println("");////////////////////////////////////////////////
 		System.out.println("innMenu1() します  buttonName = " + buttonName);///
 		System.out.println("");////////////////////////////////////////////////
-
 		String[] text = Main.innText;
-
 		if (count < text.length) {
 			setMessageEnt(text[count]);
 			if (count == 1) {
@@ -1850,26 +1845,19 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void innMenu2() {
-
 		System.out.println("");////////////////////////////////////////////////
 		System.out.println("innMenu2() します  buttonName = " + buttonName);///
 		System.out.println("");////////////////////////////////////////////////
-
 		count = 0;
-
 		setMode(444);
-
 		Main.innMenu(0);
-
 		inn();
 	}
 
 	private void innMenu3() {
-
 		System.out.println("");////////////////////////////////////////////////
 		System.out.println("innMenu3() します  buttonName = " + buttonName);///
 		System.out.println("");////////////////////////////////////////////////
-
 		setMode(431);
 		status();
 		count = 0;
