@@ -1884,35 +1884,25 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 
 	public void actionPerformedSwitch5() {
-
 		switch (mode) {
 
 			case 5 ://戦闘
-
 				count = 0;
-//				buttonName = null;
 				menu = Battle.getMenu();
 				Main.battle();
 				break;
 
 			case 50 ://戦闘,メンバー
-
-//				JOptionPane.showMessageDialog(null, "mode = " + mode);
-
 				buttonName = null;
 				setMessage(Battle.getBattleText()[0]);
 				menu = Battle.getMenu();
 				battle();
 				setMode(55);
-
 				break;
 
 			case 55 ://戦闘,メンバー,どうする？
-
 				count = 0;
-
 				menu = Battle.getMenu();
-
 				if (menu[0].equals(buttonName)) {//戦う
 					Main.getBat().pSelect(0);
 					setMode(550);
@@ -1920,19 +1910,12 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					attack();
 				}
 				if (menu[1].equals(buttonName)) {//道具
-
 					Main.getBat().pSelect(1);
-
 					buttonName = null;
-
 					Member user = Main.getParty()[Battle.getActor()];
-
 					setMessage(user.getName() + " は、どのアイテムを使いますか？");
-
 					menu = Item.menu();
-
 					battle();
-
 					setMode(21);
 				}
 				if (menu[2].equals(buttonName)) {//能力
@@ -1955,15 +1938,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				break;
 
 			case 550 ://戦闘,メンバー,戦う
-
 				count = 0;
-
-//				buttonName = null;
-
 				Monster[] mons = Battle.mons;
-
 				for (int i = 0; i < mons.length; i++) {
-
 					if (buttonName.equals(mons[i].getName())){
 						setMode(555);
 						Main.getBat().attack(i);
@@ -1977,71 +1954,29 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				}
 				break;
 
-//			case 5500 ://戦闘,メンバー,戦う,0
-//			case 5501 ://戦闘,メンバー,戦う,1
-//			case 5502 ://戦闘,メンバー,戦う,2
-//			case 5503 ://戦闘,メンバー,戦う,3
-//
-////				buttonName = null;
-//
-//				if (buttonName.equals(ent)) {
-//
-//					battleLoop();
-//				}
-//
-//				break;
-
 			case 551 ://戦闘,メンバー,道具
-
-//				JOptionPane.showMessageDialog(null, "mode = " + mode);
-//
-//				buttonName = null;
-//
-//				setMessage("どのアイテムを使いますか？");
-//
-//				menu = Item.menu();
-//
-//				battle();
-//
-//				setMode(21);
-
 				break;
 
 			case 552 ://戦闘,メンバー,能力
-
-//				buttonName = null;
-
 				if (buttonName.equals(ent)) {
-
 					battleLoop();
 				}
-
 				break;
 
 			case 553 ://戦闘,メンバー,逃げる
-
-//				buttonName = null;
-
 				if (buttonName.equals(ent)) {
-
 					battleLoop();
 				}
-
 				break;
 
 			case 555 ://戦闘,次へ
-
 				if (buttonName.equals(ent)) {
-
 					battleLoop();
 				}
-
 				break;
 
 			case 5555 ://戦闘後
-
 				musicReset();
-
 				count = 0;
 				setMode(55551);
 				Battle.exp();
@@ -2049,42 +1984,32 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				break;
 
 			case 55551 ://戦闘後,EXP
-
 				if (buttonName.equals(ent)) {
-
 					expLoop();
 				}
 				break;
 
 			case 55552 ://戦闘後,LEV
-
 				if (buttonName.equals(ent)) {
-
 					levLoop();
 				}
 				break;
 
 			case 55553 ://戦闘後,GOLD
-
 				if (buttonName.equals(ent)) {
-
 					goldLoop();
 				}
 				break;
 
 			case 55554 ://戦闘後,ITEM
-
 				if (buttonName.equals(ent)) {
-
 					getItemLoop();
 					Battle.setItem(1);
 				}
 				break;
 
 			case 55555 ://戦闘後,ITEM,有り
-
 				if (buttonName.equals(ent)) {
-
 					getItemLoop();
 					Battle.setItem(2);
 				}
