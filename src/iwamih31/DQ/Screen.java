@@ -1864,33 +1864,20 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void innMenu4() {
-
 		System.out.println("");///////////////////////////////
 		System.out.println("innMenu4() します");///
 		System.out.println("");///////////////////////////////
-
 		if (count == 0) {
-
 		}
-
 		String[] text = Main.getText();
-
 		if (count < text.length) {
-
 			setMessageEnt(text[count]);
-
 			count = (count + 1);
-
 			inn();
-
 		} else {
-
 			count = 0;
-
 			setMode(444);
-
 			Main.innMenu(0);
-
 			inn();
 		}
 	}
