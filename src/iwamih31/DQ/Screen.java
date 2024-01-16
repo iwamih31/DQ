@@ -2027,25 +2027,20 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private void toNormal() {
 		setMessage("どうしますか?");
 		switch (mapNumber) {
+
 			case 0:
 				field(1);/////////////////////////////////////通常モードへ
-
 				repeatMusic("冒険の歌");
-
 				break;
 
 			case 1:
 				field(6);/////////////////////////////////////城内モードへ
-
 				repeatMusic("オープニング");
-
 				break;
 
 			case 2:
 				field(７);/////////////////////////////////////城内モードへ
-
 				repeatMusic("オープニング");
-
 				break;
 		}
 		Main.save();
