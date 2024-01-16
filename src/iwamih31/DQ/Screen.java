@@ -2049,9 +2049,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	private void repeatMusic(String musicName) {
 		if (music == null) {
-
 			music = new Music(musicName);
-
 			music.playRepeat();
 		}
 	}
