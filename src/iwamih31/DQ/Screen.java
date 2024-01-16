@@ -1813,7 +1813,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		comment();
 
 		change();
-
 	}
 
 	private void innMenu0() {
@@ -1825,9 +1824,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		if (count == 0) {
 			count = (count + 1);
 			inn();
-
 		} else {
-
 			toNormal();
 		}
 	}
@@ -1842,19 +1839,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 		if (count < text.length) {
 			setMessageEnt(text[count]);
-
 			if (count == 1) {
 				Main.innMenu(1);
 			}
-
 			count = (count + 1);
-
 			inn();
-
 		} else {
-
 			toNormal();
-
 		}
 	}
 
