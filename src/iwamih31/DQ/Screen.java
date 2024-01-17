@@ -2197,19 +2197,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 
 	private void who() {
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("who() します");//////////////////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		buttonName = null;
-
 		partySt();
 		info(goldList(),itemList(),"");
 		scene();
 		menu(Main.getpNa());
 		comment();
-
 		change();
 	}
 
