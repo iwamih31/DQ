@@ -2112,7 +2112,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void expLoop() {
-
 		System.out.println("");///////////////////
 		System.out.println("expLoop() します");///
 		System.out.println("");///////////////////
