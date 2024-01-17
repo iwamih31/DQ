@@ -2170,29 +2170,19 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void getItemLoop() {
-
 		System.out.println("");///////////////////
 		System.out.println("getItemLoop() します");///
 		System.out.println("");///////////////////
-
 		System.out.println("");///////////////////
 		System.out.println("count = " + count);///
 		System.out.println("");///////////////////
-
 		String[] text = Battle.getBattleText();
-
 		if (count < text.length) {
-
 			setMessageEnt(text[count]);
-
 			if (count == 0) {
-
 			}
-
 			count = (count + 1);
-
 			battle();
-
 		} else {
 			if (Battle.getfMode() == 0) {
 				toNormal();
