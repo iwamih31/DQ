@@ -2149,29 +2149,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void goldLoop() {
-
-		System.out.println("");///////////////////
-		System.out.println("goldLoop() します");///
-		System.out.println("");///////////////////
-
-		System.out.println("");///////////////////
-		System.out.println("count = " + count);///
-		System.out.println("");///////////////////
-
+		Common.___logOut___("goldLoop() します");
+		Common.___logOut___("count = " + count);
 		String[] text = Battle.getBattleText();
-
 		if (count < text.length) {
-
 			setMessageEnt(text[count]);
-
 			if (count == 0) {
-
 			}
-
 			count = (count + 1);
-
 			battle();
-
 		} else {
 			if (Battle.getfMode() == 0) {
 				toNormal();
