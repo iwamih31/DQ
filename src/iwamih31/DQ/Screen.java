@@ -2086,39 +2086,27 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void battleLoop() {
-
 		System.out.println("");///////////////////
 		System.out.println("battleLoop() します" );///
 		System.out.println("");///////////////////
-
 		System.out.println("");///////////////////
 		System.out.println("count = " + count);///
 		System.out.println("");///////////////////
-
 		String[] text = Battle.getBattleText();
-
 		if (count < text.length) {
-
 			setMessageEnt(text[count]);
-
 			if (count == 0) {
-
 			}
-
 			count = (count + 1);
-
 			battle();
-
 		} else {
 			if(Battle.getfMode() == 0){
 				musicReset();
 				toNormal();
 			}else{
 				count = 0;
-//				setMode(50);
 				Main.getBat().turn();
 				menu = Battle.getMenu();
-//				battle();
 			}
 		}
 	}
