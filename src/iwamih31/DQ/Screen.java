@@ -2112,22 +2112,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void expLoop() {
-		System.out.println("");///////////////////
-		System.out.println("expLoop() します");///
-		System.out.println("");///////////////////
-
-		System.out.println("");///////////////////
-		System.out.println("count = " + count);///
-		System.out.println("");///////////////////
-
-
+		Common.___logOut___("expLoop() します");
+		Common.___logOut___("count = " + count);
 		String[] text = Battle.getBattleText();
-
 		if (count < text.length) {
 			setMessageEnt(text[count]);
 			count++;
 			battle();
-
 		} else {
 			if (Battle.getfMode() == 0) {
 				toNormal();
