@@ -2234,27 +2234,19 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		pTab.setShowHorizontalLines(false);// 横枠
 		pTab.setPreferredSize(new Dimension(890, 280));
 		pTab.setBorder(border());
-
 		DefaultTableCellRenderer tableCellRendererC = new DefaultTableCellRenderer();
 		tableCellRendererC.setHorizontalAlignment(JLabel.CENTER);
-
 		TableColumn[] name = new TableColumn[pTab.getColumnModel().getColumnCount()];
-
 		for (int i = 0; i < name.length; i++) {
 			name[i] = pTab.getColumnModel().getColumn(i);
 			name[i].setCellRenderer(tableCellRendererC);
 		}
-
 		format(pTab.getTableHeader(), 30, 30);
 		pTab.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
-
 		JPanel panel = panelSetUD(pTab.getTableHeader(), pTab);
 		format(panel);
 		panel.setBorder(border());
-
 		panelN = panelSetWCE(null, panel, null);
-
-
 	}
 
 	private void partySt() {
