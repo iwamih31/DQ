@@ -2170,12 +2170,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void getItemLoop() {
-		System.out.println("");///////////////////
-		System.out.println("getItemLoop() します");///
-		System.out.println("");///////////////////
-		System.out.println("");///////////////////
-		System.out.println("count = " + count);///
-		System.out.println("");///////////////////
+		Common.___logOut___("getItemLoop() します");
+		Common.___logOut___("count = " + count);
 		String[] text = Battle.getBattleText();
 		if (count < text.length) {
 			setMessageEnt(text[count]);
@@ -2188,9 +2184,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				toNormal();
 			} else {
 				toNormal();
-				System.out.println("");//////////////////////////////////////////
-				System.out.println("戦闘後処理、未完了です");//////////////////////////////
-				System.out.println("");//////////////////////////////////////////
+				Common.___logOut___("戦闘後処理、未完了です");
 			}
 		}
 	}
