@@ -2204,19 +2204,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 
 	private void attack() {
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("attack() します");//////////////////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		buttonName = null;
-
 		partySt();
 		info(goldList(),itemList(),"");
 		monster();
 		menu(Battle.mNa());
 		comment();
-
 		change();
 	}
 
