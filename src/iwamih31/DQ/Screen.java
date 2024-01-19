@@ -2274,7 +2274,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void partyStBlank() {
-
 		JTextArea partyStBlank = textAreaSet(" ", 5, 10);
 		panelN = panelSetNCS(null, partyStBlank, null);
 	}
