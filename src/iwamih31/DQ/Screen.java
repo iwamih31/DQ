@@ -2297,32 +2297,23 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 		format(pTab.getTableHeader());
 		pTab.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
-
 		JPanel stPanel = panelSetUD(pTab.getTableHeader(), pTab);
 		format(stPanel);
 		stPanel.setBorder(border());
-
 		setBackPanel(imageURL + "バトル.png");
-
 		ImageIcon icon0 = createImageIcon(drawMonster(0));
 		JLabel label0 = new JLabel(icon0);
-
 		ImageIcon icon1 = createImageIcon(drawMonster(1));
 		JLabel label1 = new JLabel(icon1);
-
 		ImageIcon icon2 = createImageIcon(drawMonster(2));
 		JLabel label2 = new JLabel(icon2);
-
 		ImageIcon icon3 = createImageIcon(drawMonster(3));
 		JLabel label3 = new JLabel(icon3);
-
 		ImageIcon iconItem = createImageIcon(drawItem());
 		JLabel labelItem = new JLabel(iconItem);
-
 		JPanel monsterPanel = new JPanel();
 		format(monsterPanel);
 		monsterPanel.setOpaque(false);///////////////背景を透明にする
-//		monsterPanel.setPreferredSize(new Dimension(900, 200));
 		int m = Battle.mNumber();
 		if (m < 1){/////////////////////////////////////////////////戦闘後の場合
 			monsterPanel.setLayout(new GridLayout(0, 1, 0, 0));
