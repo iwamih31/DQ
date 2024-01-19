@@ -2283,18 +2283,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		format(pTab);
 		Battle tableModel1 = Main.getBat();
 		pTab.setModel(tableModel1);
-//		pTab.setAutoCreateRowSorter(true);
 		pTab.setRowHeight(fontSize * 2);
 		pTab.setShowVerticalLines(true);// 縦枠
 		pTab.setShowHorizontalLines(false);// 横枠
-//		pTab.setPreferredSize(new Dimension(w*70, h*6));
 		pTab.setBorder(border());
-
 		DefaultTableCellRenderer tableCellRendererC = new DefaultTableCellRenderer();
 		tableCellRendererC.setHorizontalAlignment(JLabel.CENTER);
-
 		TableColumn[] name = new TableColumn[pTab.getColumnModel().getColumnCount()];
-
 		for (int i = 0; i < name.length; i++) {
 			name[i] = pTab.getColumnModel().getColumn(i);
 			name[i].setCellRenderer(tableCellRendererC);
