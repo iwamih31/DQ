@@ -2492,7 +2492,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private ImageIcon createImageIcon(String imageUrl) {
-
 		ClassLoader classLoader = this.getClass().getClassLoader();
 		return new ImageIcon(classLoader.getResource(imageUrl));
 	}
