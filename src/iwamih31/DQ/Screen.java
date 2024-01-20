@@ -2466,26 +2466,18 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				map[i][j] = originalMap[row][column];
 			}
 		}
-
-
 		mapData = new MapPiece[map.length][map[0].length];
 		drawMap = new JLabel[map.length][map[0].length];
 		mapPanel = new JPanel();
 		format(mapPanel);
-//		mapPanel.setPreferredSize(new Dimension(890, 200));
 		mapPanel.setLayout(new BoxLayout(mapPanel, BoxLayout.Y_AXIS));
-
 		for (int i = 0; i < map.length; i++) {
 			JPanel row = new JPanel();
 			row.setLayout(new BoxLayout(row, BoxLayout.X_AXIS));
 			for (int j = 0; j < map[i].length; j++) {
 				mapData[i][j] = mapPiece(map[i][j]);
 				String mapImage = mapData[i][j].getImage();
-
-//				ImageIcon icon = new ImageIcon("image_map/" + mapImage + ".png");
-
 				ImageIcon icon = createImageIcon("image_map/" + mapImage + ".png");
-
 				drawMap[i][j] = new JLabel(icon);
 				if(i == map.length / 2 && j == map[0].length /2) {
 					row.add(mapCenter(drawMap[i][j]));
@@ -2493,14 +2485,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					row.add(drawMap[i][j]);
 				}
 			}
-
 			mapPanel.add(row);
 		}
-
 		frame.setFocusable(true);
-
 		return mapPanel;
-
 	}
 
 	private ImageIcon createImageIcon(String imageUrl) {
