@@ -2413,59 +2413,44 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private MapPiece mapPiece(int number) {
-
 		MapPiece mapPiece = null;
-
 		switch (number) {
 			case 0 :
 				String mapImage = "砂";
-
 				if(mapNumber == 2) mapImage = "闇";
-
 				mapPiece = new MapPiece(mapImage, 1);
 				break;
-
 			case 1 :
 				mapPiece = new MapPiece("草", 2);
 				break;
-
 			case 2 :
 				mapPiece = new MapPiece("山", 0);
 				break;
-
 			case 3 :
 				mapPiece = new MapPiece("海", 0);
 				break;
-
 			case 4 :
 				mapPiece = new MapPiece("洞窟", 4);
 				break;
-
 			case 5 :
 				mapPiece = new MapPiece("階段", 4);
 				break;
-
 			case 6 :
 				mapPiece = new MapPiece("山", 2);
 				break;
-
 			case 7 :
 				mapPiece = new MapPiece("宝箱", 7);
 				break;
-
 			case 8 :
 				mapPiece = new MapPiece("草", 9);
 				break;
-
 			case 9 :
 				mapPiece = new MapPiece("城", 9);
 				break;
-
 			default :
 				mapPiece = new MapPiece("砂", 0);
 				break;
 		}
-
 		return mapPiece;
 	}
 
