@@ -2508,17 +2508,12 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return panel;
 	}
 
-
 	private JPanel setBackPanel(String backURL) {
-
 		ImageIcon iconBack = createImageIcon(backURL);
 		JLabel labelBack = new JLabel(iconBack);
-
 		backPanel = new JPanel();
 		format(backPanel);
 		backPanel.add(labelBack);
-//		backPanel.setPreferredSize(new Dimension(900, 200));
-
 		return backPanel;
 	}
 
