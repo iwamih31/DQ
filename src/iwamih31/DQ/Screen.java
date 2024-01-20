@@ -2497,21 +2497,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private JPanel mapCenter(JLabel centerPiecelabel) {
-
 		String centerImage = "勇者";
-
 		centerIcon = createImageIcon("image_map/" + centerImage + ".png");
 		centerLabel = new JLabel(centerIcon);
-
 		JPanel panel = new JPanel();
 		OverlayLayout layout=new OverlayLayout(panel);
 		panel.setLayout(layout);
-
 		panel.add(centerLabel);
 		panel.add(centerPiecelabel);
-
 		return panel;
-
 	}
 
 
