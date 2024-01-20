@@ -2294,7 +2294,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			name[i] = pTab.getColumnModel().getColumn(i);
 			name[i].setCellRenderer(tableCellRendererC);
 		}
-
 		format(pTab.getTableHeader());
 		pTab.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
 		JPanel stPanel = panelSetUD(pTab.getTableHeader(), pTab);
@@ -2325,7 +2324,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			if (Battle.mons[2].getHp() > 0) monsterPanel.add(label2);
 			if (Battle.mons[3].getHp() > 0) monsterPanel.add(label3);
 		}
-
 		JPanel scenePanel = new JPanel();
 		format(scenePanel);
 		scenePanel.setPreferredSize(new Dimension(890, 200));
@@ -2339,13 +2337,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		layout.putConstraint(SpringLayout.EAST, monsterPanel, 5, SpringLayout.EAST, scenePanel);
 		scenePanel.add(monsterPanel);
 		scenePanel.add(backPanel);
-
 		JTextArea monsterBlank = textAreaSet(" ", 1, 10);
-
 		JPanel battlePanel = panelSetUD(scenePanel, stPanel);
-
 		panelC = panelSetNCS(monsterBlank, battlePanel,monsterBlank);
-
 	}
 
 	private int[][] getOriginalMap() {
