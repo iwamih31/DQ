@@ -2455,11 +2455,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private JPanel map2D() {
-
 		originalMap = getOriginalMap();
-
 		int[][] map = new int[originalMap.length][originalMap[0].length];
-
 		for (int i = 0; i < map.length; i++) {
 			for (int j = 0; j < map[i].length; j++) {
 				int row = i + y;
