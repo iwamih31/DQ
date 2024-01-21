@@ -2550,59 +2550,45 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private String drawItem() {
-
 		String drawItem = null;
-
 		switch (Battle.getItem()) {
 			case 0 :
 				drawItem = "エアー";
 				break;
-
 			case 1 :
 				drawItem = "宝箱";
 				break;
-
 			case 2 :
 				drawItem = "宝箱オープン";
 				break;
-
 			case 3 :
 				drawItem = (String) Item.menu()[0];
 				break;
-
 			case 4 :
 				drawItem = (String) Item.menu()[1];
 				break;
-
 			case 5 :
 				drawItem = (String) Item.menu()[2];
 				break;
-
 			case 6 :
 				drawItem = (String) Item.menu()[3];
 				break;
-
 			case 7 :
 				drawItem = "杖";
 				break;
-
 			case 8 :
 				drawItem = "斧";
 				break;
-
 			case 9 :
 				drawItem = "剣";
 				break;
-
 			case 10 :
 				drawItem = "槍";
 				break;
-
 			default :
 				drawItem = "エアー";
 				break;
 		}
-
 		return imageURL + drawItem + ".png";
 	}
 
