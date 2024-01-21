@@ -2518,11 +2518,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private String drawMonster(int number) {
-
 		Monster monster = Battle.mons[number];
-
 		String drawMonster = null;
-
 		switch (monster.getCode()) {
 			case 0 :
 				if(monster.getHp() < 1){
@@ -2531,31 +2528,24 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					drawMonster = "ゾンビ";
 				}
 				break;
-
 			case 1 :
 				drawMonster = "スライム";
 				break;
-
 			case 2 :
 				drawMonster = "マッドドクター";
 				break;
-
 			case 3 :
 				drawMonster = "ゴーレム";
 				break;
-
 			case 4 :
 				drawMonster = "ドラゴラム";
 				break;
-
 			case 5 :
 				drawMonster = "竜王";
 				break;
-
 			default :
 				break;
 		}
-
 		return imageURL + drawMonster + ".png";
 	}
 
