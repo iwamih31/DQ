@@ -2666,18 +2666,14 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void info(Object top, Object middle, Object bottom) {
-
 		if (top.equals("")) top = null;
 		if (middle.equals("")) middle = null;
 		if (bottom.equals("")) bottom = null;
-
 		JPanel infoPanel = panelSetTMB(top, middle, bottom);
 		format(infoPanel);
 		infoPanel.setPreferredSize(new Dimension(w*13, h*80));
 		panelW = panelSetNCS(infoPanel, null, null);
-
 	}
-
 
 	private JPanel ent() {
 
