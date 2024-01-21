@@ -2606,21 +2606,16 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void castle() {
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("castle() します");////////////////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		setMode(0);/////////////////////////////////// ?
-
 		buttonName = null;
-
 		partySt();
 		info(goldList(),itemList(),"");
 		scene();
 		menu(Command.menu());
 		comment();
-
 		change();
 	}
 
