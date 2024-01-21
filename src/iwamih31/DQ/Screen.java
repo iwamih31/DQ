@@ -2676,30 +2676,21 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private JPanel ent() {
-
 		int bI = 1;/////////////////////////////////////ボタンの数
-
 		JPanel panel = new JPanel();
 		format(panel);
-		// panel.setSize(300, 300);
 		panel.setLayout(new GridLayout(bI, 0, 10, 1));
 		LineBorder b = new LineBorder(getForeground(), 2, true);
 		panel.setBorder(b);
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("ent = " + ent);////////////////////////////
 		System.out.println("");//////////////////////////////////////////
-
-
 			button_Ent = new JButton(ent);
 			format(button_Ent);
-			// button_Ent.setSize(100, 50);
 			button_Ent.setFocusPainted(false);
 			button_Ent.addActionListener(this);
 			button_Ent.addKeyListener(this);
-
 			panel.add(button_Ent);
-
 		return panel;
 	}
 
