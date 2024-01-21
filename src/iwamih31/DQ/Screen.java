@@ -2640,7 +2640,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private JPanel infoTable(Object setTableModel,String tableName) {
-
 		JTable pTab = new JTable();
 		format(pTab);
 		pTab.setModel((TableModel) setTableModel);
@@ -2649,29 +2648,21 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		pTab.setShowVerticalLines(false);// 縦枠
 		pTab.setShowHorizontalLines(false);// 横枠
 		pTab.setPreferredSize(new Dimension(w*25, pTab.getRowCount() * fontSize));
-
 		DefaultTableCellRenderer tableCellRendererC = new DefaultTableCellRenderer();
 		tableCellRendererC.setHorizontalAlignment(JLabel.LEFT);
-
 		TableColumn[] name = new TableColumn[pTab.getColumnModel().getColumnCount()];
-
 		for (int i = 0; i < name.length; i++) {
 			name[i] = pTab.getColumnModel().getColumn(i);
 			name[i].setCellRenderer(tableCellRendererC);
 		}
-
 		JLabel tName = labelSet(tableName);
-
 		JPanel panelT = panelSetLR(b(), pTab);
 		panelT.setBorder(border());
-
 		JPanel panel = panelSetUD(tName, panelT);
 		format(panel);
 		panel.setBorder(border());
 		panel.setPreferredSize(new Dimension(w*13, (pTab.getRowCount()+1) * fontSize * 2 - 4));
-
 		return panel;
-
 	}
 
 	private void info(Object top, Object middle, Object bottom) {
