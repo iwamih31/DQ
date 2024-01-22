@@ -2783,15 +2783,12 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private JPanel setEventImage(String imageFileName) {
-
 		ImageIcon eventIcon = createImageIcon(imageFileName);
 		JLabel label = new JLabel(eventIcon);
-
 		eventPanel = new JPanel();
 		format(eventPanel);
 		eventPanel.setOpaque(false);///////////////背景を透明にする
 		eventPanel.add(label);
-
 		return eventPanel;
 	}
 
