@@ -2830,7 +2830,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void keyTyped(KeyEvent keyEvent) {
-
 	}
 
 	public void keyPressed(KeyEvent keyEvent) {
