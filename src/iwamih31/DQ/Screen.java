@@ -2833,30 +2833,21 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void keyPressed(KeyEvent keyEvent) {
-
 		int pressedKey = keyEvent.getKeyCode();
-
 		String keyName = KeyEvent.getKeyText(pressedKey);
-
-		 System.out.println("");//////////////////////////////////////////
-		 System.out.println("buttonName = " + buttonName);/////////////////
-		 System.out.println("");//////////////////////////////////////////
-
-		 System.out.println("");//////////////////////////////////////////
-		 System.out.println("pressedKey1 = " + pressedKey);/////////////////
-		 System.out.println("");//////////////////////////////////////////
-
-		 System.out.println("");//////////////////////////////////////////
-		 System.out.println("keyEvent = " + keyEvent);/////////////////
-		 System.out.println("");//////////////////////////////////////////
-
+		System.out.println("");//////////////////////////////////////////
+		System.out.println("buttonName = " + buttonName);/////////////////
+		System.out.println("");//////////////////////////////////////////
+		System.out.println("");//////////////////////////////////////////
+		System.out.println("pressedKey1 = " + pressedKey);/////////////////
+		System.out.println("");//////////////////////////////////////////
+		System.out.println("");//////////////////////////////////////////
+		System.out.println("keyEvent = " + keyEvent);/////////////////
+		System.out.println("");//////////////////////////////////////////
 		if (mode == 1 || mode == 6 || mode == 7) {
-
 			int moveX = 0;
 			int moveY = 0;
-
 			switch(pressedKey) {
-
 				case KeyEvent.VK_KP_UP:
 				case KeyEvent.VK_UP:
 				case KeyEvent.VK_8:
@@ -2865,7 +2856,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					 moveY--;
 					 moveMap(moveX, moveY);
 					break;
-
 				case KeyEvent.VK_KP_DOWN:
 				case KeyEvent.VK_DOWN:
 				case KeyEvent.VK_2:
@@ -2874,7 +2864,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					moveY++;
 					moveMap(moveX, moveY);
 					break;
-
 				case KeyEvent.VK_KP_LEFT:
 				case KeyEvent.VK_LEFT:
 				case KeyEvent.VK_4:
@@ -2882,7 +2871,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					moveX--;
 					moveMap(moveX, moveY);
 					break;
-
 				case KeyEvent.VK_KP_RIGHT:
 				case KeyEvent.VK_RIGHT:
 				case KeyEvent.VK_6:
@@ -2890,7 +2878,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					moveX++;
 					moveMap(moveX, moveY);
 					break;
-
 				default:
 					System.out.println(keyName + "KEYが押されました(mode = 1)");
 //					メニューを表示する
@@ -2899,42 +2886,27 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					fieldAction(buttonName);
 					break;
 			}
-
 		}else {
-
 			switch(pressedKey) {
-
 				case KeyEvent.VK_ENTER:
 				case KeyEvent.VK_SPACE:
 				case KeyEvent.VK_1:
-
 					System.out.println("");//////////////////////////////////////////
 					System.out.println(keyName + "KEYが押されました");////////////
 					System.out.println("");//////////////////////////////////////////
-
 					System.out.println("");//////////////////////////////////////////
 					System.out.println(ent + "ボタンをクリックします");////////////
 					System.out.println("");//////////////////////////////////////////
-
 					pushSound(); // キープッシュ音を鳴らす
-
-//					buttonName = null;
-
 					if(entMark.equals(ent)) {
 						button_Ent.doClick();
 					} else {
 						menuButton[menuNum].doClick();
 					}
-
-//					buttonName = null;
-
-
 					System.out.println("");//////////////////////////////////////////
 					System.out.println("buttonName = " + buttonName);////////////////
 					System.out.println("");//////////////////////////////////////////
-
 					break;
-
 				case KeyEvent.VK_KP_UP:
 				case KeyEvent.VK_UP:
 				case KeyEvent.VK_8:
@@ -2944,7 +2916,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					menuNum --;
 					selectStyle();
 					break;
-
 				case KeyEvent.VK_KP_DOWN:
 				case KeyEvent.VK_DOWN:
 				case KeyEvent.VK_2:
@@ -2954,7 +2925,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					menuNum ++;
 					selectStyle();
 					break;
-
 				default:
 					System.out.println(pressedKey + "が押されました");
 					pushSound(); // キープッシュ音を鳴らす
@@ -2962,17 +2932,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			}
 		}
 		keyPressed(null);
-
-
-////		間を開ける
-//		try {
-//			Thread.sleep(200);
-//
-//		} catch (InterruptedException e) {
-//			// TODO 自動生成された catch ブロック
-//			e.printStackTrace();
-//		}
-
 	}
 
 
