@@ -2695,7 +2695,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void scene() {
-
 		switch(mode) {
 			case 1:
 			case 6:
@@ -2713,7 +2712,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				setEventImage(eventImage());
 				break;
 		}
-
 		JPanel fieldPanel = new JPanel();
 		format(fieldPanel);
 		fieldPanel.setPreferredSize(new Dimension(890, 200));
@@ -2727,15 +2725,12 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		layout.putConstraint(SpringLayout.EAST, eventPanel, 0, SpringLayout.EAST, fieldPanel);
 		fieldPanel.add(eventPanel);
 		fieldPanel.add(backPanel);
-
 		JPanel scene = panelSetNCS(null, fieldPanel,null);
 		scene.setPreferredSize(new Dimension(890, 300));
 		scene.setForeground(Color.BLACK);
 		scene.setBackground(Color.GRAY);
 		scene.setBorder(border());
-
 		panelC = panelSetNCS(pictAreaB(), scene,pictAreaB());
-
 	}
 
 	private String eventImage() {
