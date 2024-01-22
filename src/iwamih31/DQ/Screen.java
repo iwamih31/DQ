@@ -2805,17 +2805,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void comment() {
-
 		sto = new Story();
-
 		JTable st = new JTable();
 		Story tableModel2 = sto;
 		st.setAutoCreateRowSorter(true);
 		st.setModel(tableModel2);
-
 		DefaultTableCellRenderer tableCellRendererC = new DefaultTableCellRenderer();
 		tableCellRendererC.setHorizontalAlignment(JLabel.CENTER);
-
 		TableColumn col = st.getColumnModel().getColumn(0);
 		col.setCellRenderer(tableCellRendererC);
 		format(st);
@@ -2825,15 +2821,12 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		st.setPreferredSize(new Dimension(w*70, h*15));
 		format(st.getTableHeader());
 		st.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
-
 		JPanel panel = new JPanel();
 		format(panel);
 		panel.setLayout(new BorderLayout());
 		panel.setBorder(border());
 		panel.add(st, BorderLayout.CENTER);
-
 		panelS= panelSetWCE(null, panel, ent());
-
 	}
 
 	public void keyTyped(KeyEvent keyEvent) {
