@@ -2794,11 +2794,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	private void sceneBlank() {
 		pict = textAreaSet("",7,1);
-
 		pict.setOpaque(true);
-
 		panelC = panelSetNCS(null, pict,null);
-
 	}
 
 	private Object pictAreaB() {
