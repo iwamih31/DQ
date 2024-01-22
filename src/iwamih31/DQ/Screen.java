@@ -2734,28 +2734,20 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private String eventImage() {
-
 		String fileName = "";
-
 		imageCode = mode;
-
 		imageCodeOmit(3);
-
 		imageCodeOmit(4);
-
 		switch (imageCode) {
 			case 11 :
 				fileName = "スライム";//良い人
 				break;
-
 			case 12 :
 				fileName = "マッドドクター";//情報
 				break;
-
 			case 15 :
 				fileName = "宝箱";//宝箱
 				break;
-
 			case 3 :
 			case 33 :
 			case 30 :
@@ -2767,7 +2759,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			case 3103 :
 				fileName = "商店";//店屋
 				break;
-
 			case 4 :
 			case 41 :
 			case 42 :
@@ -2777,7 +2768,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			case 4444 :
 				fileName = "マッドドクター";//宿屋
 				break;
-
 			default :
 				fileName = "エアー";
 				break;
