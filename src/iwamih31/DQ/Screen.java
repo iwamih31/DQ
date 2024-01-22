@@ -2776,7 +2776,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void imageCodeOmit(int i) {
-
 		if (i * 10 <= mode && mode < (i + 1) * 10) imageCode = i;
 		if (i * 100 <= mode && mode < (i + 1) * 100) imageCode = i;
 		if (i * 1000 <= mode && mode < (i + 1) * 1000) imageCode = i;
