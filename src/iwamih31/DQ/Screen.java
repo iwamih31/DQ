@@ -3043,7 +3043,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void mapChangeSound() {
-
 		sound(100f,150);
 		sound(100f,150);
 	}
