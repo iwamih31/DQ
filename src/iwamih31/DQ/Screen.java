@@ -2949,9 +2949,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void selectStyle() {
-
 		if (entMark.equals(ent) == false) {
-
 			if (menuNum < 0) menuNum += menuButton.length;
 			if (menuButton.length <= menuNum) menuNum -= menuButton.length;
 			for (JButton jButton : menuButton) {
