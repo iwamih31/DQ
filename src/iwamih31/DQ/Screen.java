@@ -3038,7 +3038,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void setMapNumber(int mapNumber) {
-
 		this.mapNumber = mapNumber;
 		mapChangeSound();
 	}
