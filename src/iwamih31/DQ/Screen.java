@@ -3048,16 +3048,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private boolean isDanger() {
-
 		boolean isDanger = true;
-
 		switch(mapNumber) {
 			case 1:
 				isDanger = false;
 				break;
 			default:
 		}
-
 		switch(mapCenterRole()) {
 			case 4:
 			case 9:
@@ -3072,7 +3069,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("isDanger = " + isDanger);////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		return isDanger;
 	}
 
