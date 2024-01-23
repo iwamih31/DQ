@@ -2992,9 +2992,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void doRole() {
-
 		switch(mapCenterRole()) {
-
 			case 4:
 				if(mapNumber == 2) { // ダンジョン内の場合
 					setMapNumber(0); // 平原MAPへ移動
@@ -3003,12 +3001,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					y=8;
 					musicReset();
 					toNormal();
-
 				} else {
 					System.out.println("");/////////////////////////////////
 					System.out.println("洞窟MAPへ移動します");//////////////
 					System.out.println("");/////////////////////////////////
-
 					setMapNumber(2); // 洞窟MAPへ移動
 //					洞窟入口位置
 					x=7;
@@ -3017,7 +3013,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					field(7);
 				}
 				break;
-
 			case 9:
 				if(mapNumber == 1) { // 城内の場合
 					setMapNumber(0); // 平原MAPへ移動
@@ -3025,12 +3020,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					y=6;
 					musicReset();
 					toNormal();
-
 				} else {
 					System.out.println("");/////////////////////////////////
 					System.out.println("城MAPへ移動します");////////////////
 					System.out.println("");/////////////////////////////////
-
 					setMapNumber(1); // 城MAPへ移動
 //					城入口位置
 					x=0;
@@ -3039,11 +3032,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					field(6);
 				}
 				break;
-
 			default:
 		}
 		actionPerformedSwitch();
-
 	}
 
 	public void setMapNumber(int mapNumber) {
