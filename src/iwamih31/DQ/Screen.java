@@ -2944,7 +2944,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		try {
 			new Sound(frequency, soundLength);
 		} catch (LineUnavailableException e) {
-			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
 	}
