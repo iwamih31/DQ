@@ -2961,42 +2961,29 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void moveMap(int moveX, int moveY) {
-
 //		移動先が障害物でなければ移動する
 		if(isBarrier(moveX, moveY) == false) {
 			x += moveX;
 			y += moveY;
-
 //			はみ出し修正
 			x = inRange(originalMap[0].length, x);
 			y = inRange(originalMap.length, y);
-
 			System.out.println("");////////////////////////////////////////
 			System.out.println("縦" + y + "横" + x + "に移動しました");
 			System.out.println("");////////////////////////////////////////
-
 //			mapNumberが１以外でmapCenterRole()が４と９以外の場合
 			if(isDanger()) {
-
 //				移動先でイベント発動
-
 				buttonName = Command.menu()[0];
-
 				fieldAction(buttonName);
-
 //				count = 0;
-
 				actionPerformedSwitch();
-
 				button_Ent.doClick();
 			} else {
-
 //				移動先のRoleによって各処理を行う
 				doRole();
 			}
-
 			buttonName = null;
-
 		} else {
 			System.out.println("");////////////////////////////////////////
 			System.out.println("そちらへは移動できません");////////////////
