@@ -3104,7 +3104,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void keyReleased(KeyEvent keyEvent) {
-
 	}
 
 	public static String inpDS(String s) {
