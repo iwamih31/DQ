@@ -114,9 +114,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public Screen(String s) {
-
 		super(s);
-
 		start(s);
 	}
 
