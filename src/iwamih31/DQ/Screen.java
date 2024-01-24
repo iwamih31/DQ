@@ -3183,11 +3183,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public static void setMode(int mode) {
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("Screen.setMode(" + mode +") します");////////
 		System.out.println("");//////////////////////////////////////////
-
 		Screen.mode = mode;
 	}
 
