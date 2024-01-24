@@ -109,9 +109,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private static String entMark;
 
 	public Screen(Object[] mList) {
-
 		super("メニュー");
-
 		menu(mList);
 	}
 
