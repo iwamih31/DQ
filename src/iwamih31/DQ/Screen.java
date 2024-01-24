@@ -3173,11 +3173,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public static void setMessageEnt(String text) {
-
 		ent = entMark;
-
 		story = new Story();
-
 		story.on(text + "     next" + ent);
 	}
 
