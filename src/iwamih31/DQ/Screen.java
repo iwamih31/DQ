@@ -121,9 +121,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private void start(String s) {
 //		ディスプレイサイズを基準に、横1％、縦1％、フォントサイズを決定
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        w = screenSize.width / 100;
-        h = screenSize.height / 100;
-        fontSize = w;
+    w = screenSize.width / 100;
+    h = screenSize.height / 100;
+    fontSize = w;
 		setMode(0);
 		border = new LineBorder(Color.WHITE, 2, true);
 		ynList = new Object[]{ "はい", "いいえ" };
@@ -139,27 +139,20 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		textAreaC = textAreaSet("",5,9);////////////画面
 		textAreaE = textAreaSet("",5,bWE);///////////コマンド
 		textAreaS = textAreaSet("",1,5);/////////////メッセージ
-
 		labelN = labelSet("メンバーステータス");
 		labelW = labelSet("現状");
 		labelC = labelSet("画面");
 		labelE = labelSet("コマンド");
 		labelS = labelSet("メッセージ");
-
 		panelN = panelSetUD(textAreaN, textAreaB);
 		panelW = panelSetUD(null, textAreaW);
 		panelC = panelSetUD(null,labelC);
 		panelE = panelSetUD(null, textAreaE);
 		panelS = panelSetUD(null, textAreaS);
-
 		space = labelSet("                                       ");
-
 		imageURL =  "image/";
-
 		music = null;
-
 		repeatMusic("オープニング");
-
 		outer();
 	}
 
