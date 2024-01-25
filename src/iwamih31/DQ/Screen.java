@@ -170,7 +170,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private static JLabel labelSet(String string) {
-
 		JLabel labelSet = new JLabel(string, JLabel.CENTER);
 		format(labelSet);
 		labelSet.setOpaque(false);///////////////背景を透明にする
