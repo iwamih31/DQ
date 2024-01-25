@@ -162,7 +162,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private static JTextArea textAreaSet(String text, int rows, int columns) {
-
 		JTextArea textAreaSet = new JTextArea(text, rows,columns);
 		format(textAreaSet);
 		textAreaSet.setEditable(false);
