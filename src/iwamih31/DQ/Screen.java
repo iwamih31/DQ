@@ -259,25 +259,17 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		frame.setSize(w*100, h*100);
 		frame.getContentPane().setBackground(Color.BLACK);
 		frame.setLayout(new FlowLayout());
-
-
 		changePanelSet = new JPanel();
 		format(changePanelSet);
 		cardLayout = new CardLayout();
 		changePanelSet.setLayout(cardLayout);
-
 		changePanelSet.add(panelSet(), "通常");
-
 		clear = new JPanel();
 		format(clear);
 		changePanelSet.add(clear, "背景");
-
 		frame.add(changePanelSet);
-
 		change("通常");
-
 		frame.setVisible(true);
-
 	}
 
 	private static void change(String mode) {
