@@ -279,7 +279,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private static void change() {
-
 		panelSet();
 		change("通常");
 	}
