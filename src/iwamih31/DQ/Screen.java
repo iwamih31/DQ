@@ -273,7 +273,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private static void change(String mode) {
-
 		cardLayout.removeLayoutComponent(panelSet);
 		changePanelSet.add(panelSet, mode);
 		cardLayout.show(changePanelSet,mode);
