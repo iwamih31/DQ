@@ -119,7 +119,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void start(String s) {
-//		ディスプレイサイズを基準に、横1％、縦1％、フォントサイズを決定
+		// ディスプレイサイズを基準に、横1％、縦1％、フォントサイズを決定
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     w = screenSize.width / 100;
     h = screenSize.height / 100;
