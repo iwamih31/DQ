@@ -317,11 +317,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 
 	private static void format(Component component) {
-
 		component.setFont(new Font("Monospaced", Font.BOLD, fontSize));
 		component.setForeground(Color.WHITE);
 		component.setBackground(Color.BLACK);
-
 		if (mode > 0 && dead() > 0) {
 			component.setForeground(Color.RED);
 		}
