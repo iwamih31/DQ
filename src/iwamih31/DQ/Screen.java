@@ -298,19 +298,14 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private static void centerSet(Object west, Object center, Object east) {
-
 		JLabel space = labelSet("                                       ");
 		JPanel panelQ = panelSetWCE(west, center, east);
 		JPanel panelQA = panelSetWCE(space, panelQ, space);
-
 		JLabel blankAreaN = labelSet("");
 		blankAreaN.setPreferredSize(new Dimension(w*2, h*20));
-
 		JLabel blankAreaS = labelSet("");
 		blankAreaS.setPreferredSize(new Dimension(w*2, h*30));
-
 		panelC = panelSetNCS(blankAreaN, panelQA,blankAreaS);
-
 		change();
 	}
 
