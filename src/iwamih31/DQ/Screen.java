@@ -344,7 +344,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private static int dead() {
-
 		int deadNumber = 0;
 		Member[] party = Main.getParty();
 		for (int i = 0; i < party.length; i++) {
