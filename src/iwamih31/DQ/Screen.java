@@ -373,25 +373,16 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void inputName(String s) {
-
 		buttonName = null;
-
 		inpT = new JTextArea(1, 8);
-
 		format(inpT);
-
 		inpT.setBorder(border());
-
 		JPanel bPanel = new JPanel();
 		format(bPanel);
 		bPanel.setLayout(new GridLayout(1, 0, 0, 0));
-
 		int bI = 1;/////////////////////////////////////ボタンの数
-
 		JButton[] button = new JButton[bI];
-
 		String[] bList = { "OK" };
-
 		for (int i = 0; i < bI; i++) {
 			String bN = (String) bList[i];
 			button[i] = new JButton(bN);
@@ -404,16 +395,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			button[i].setBorder(border());
 			bPanel.add(button[i]);
 		}
-
 		q = labelSet(tex);
-
 		JLabel blankAreaN = labelSet("");
 		blankAreaN.setPreferredSize(new Dimension(w*2, h*4));
 		JLabel blankAreaS = labelSet("");
 		blankAreaS.setPreferredSize(new Dimension(w*2, h*4));
 		JPanel a = panelSetLR(inpT, bPanel);
 		JPanel answer = panelSetNCS(blankAreaN, a, blankAreaS);
-
 		centerSet(space, q, answer);
 	}
 
