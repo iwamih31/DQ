@@ -453,13 +453,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-
 		String select = e.getActionCommand();
-
 		System.out.println("");////////////////////////////////////////////
 		System.out.println("[" + select + "]ボタンがクリックされました");//
 		System.out.println("");////////////////////////////////////////////
-
 		if(select.equals(buttonName)){ // 同じボタン名がクリックされたら
 			// クリックしたボタン名はent
 			buttonName = ent;
@@ -467,14 +464,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			// クリックしたボタン名はそのまま使用
 			buttonName = select;
 		}
-
-
 		System.out.println("");///////////////////////////////////////////
 		System.out.println("buttonName = " + buttonName);/////////////////
 		System.out.println("");///////////////////////////////////////////
-
 		actionPerformedSwitch();
-
 	}
 
 	public void actionPerformedSwitch() {
