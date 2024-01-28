@@ -471,43 +471,31 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void actionPerformedSwitch() {
-
 		System.out.println("");///////////////////////////////////////////
 		System.out.println("mode = " + mode);/////////////////////////////
 		System.out.println("");///////////////////////////////////////////
-
 		System.out.println("");///////////////////////////////////////////
 		System.out.println("buttonName = " + buttonName);/////////////////
 		System.out.println("");///////////////////////////////////////////
-
 		System.out.println("");///////////////////////////////////////////
 		System.out.println("count = " + count);///////////////////////////
 		System.out.println("");///////////////////////////////////////////
-
 		// フォーカスをframeに持ってくる
 		frame.setFocusable(true);
 		System.out.println("");/////////////////////////////////////
 		System.out.println("frameにフォーカスをあてました");////////
 		System.out.println("");/////////////////////////////////////
-
 		//キー入力の有効化
 		frame.addKeyListener(this);
 		System.out.println("");/////////////////////////////////////
 		System.out.println("frameのキー入力を有効化しました");////////
 		System.out.println("");/////////////////////////////////////
-
 		actionPerformedSwitch0();
-
 		actionPerformedSwitch1();
-
 		actionPerformedSwitch21();
-
 		actionPerformedSwitch22();
-
 		actionPerformedSwitch3();
-
 		actionPerformedSwitch4();
-
 		actionPerformedSwitch5();
 	}
 
