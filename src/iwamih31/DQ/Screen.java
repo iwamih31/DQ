@@ -418,14 +418,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void menu(Object[] mList) {
-
 		JPanel panel = new JPanel();
 		format(panel);
 		panel.setLayout(new GridLayout(5, 0, 0, 0));
 		panel.setPreferredSize(new Dimension(w * 10, h * 50));
-
 		menuButton = new JButton[mList.length];////////////////////ボタンの数
-
 		for (int i = 0; i < (mList.length); i++) {
 			String bN =  String.valueOf(mList[i]);
 			menuButton[i] = new JButton(bN);
@@ -437,7 +434,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			menuButton[i].setBorder(border());
 			panel.add(menuButton[i]);
 		}
-
 		String bN =  cancel;
 		cancelButton = new JButton(bN);
 		format(cancelButton);
@@ -447,18 +443,12 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		cancelButton.addKeyListener(this);
 		cancelButton.setBorder(border());
 		cancelButton.setPreferredSize(new Dimension(w*10, h*13));
-
 		JPanel bPanel = panelSetNCS(panel, menuAreaB,cancelButton);
 		bPanel.setPreferredSize(new Dimension(w*10, h*80));
-
 		bPanel.setFocusable(true);
-
 		panelE = panelSetWCE(null, bPanel, null);
-
 		menuNum = 0;
-
 		if(mode == 1) menuNum = 1;
-
 		selectStyle();
 	}
 
