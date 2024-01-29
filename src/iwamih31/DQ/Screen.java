@@ -536,11 +536,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private void opening() {
 		x = 6;
 		y = 6;
-
 		if (buttonName.equals("OK")) {
 			yName = null;
 			String inputName = inpT.getText();
-
 			int p = 0;
 			char[] chars = inputName.toCharArray();
 			for (int i = 0; i < chars.length; i++) {
@@ -549,7 +547,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			System.out.println("");///////////////////////////////////////////
 			System.out.println("文字バイト数 = " + p);/////////////////////////////
 			System.out.println("");///////////////////////////////////////////
-
 			while (yName == null) {
 				if (p < 8) {
 					if (inputName.equals("")) {
@@ -557,16 +554,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 					Main.setyName(inputName);
 					yName = inputName;
-
 					System.out.println("");///////////////////////////////////////////
 					System.out.println("yName = " + yName);/////////////////////////////
 					System.out.println("");///////////////////////////////////////////
 				} else {
-
 					System.out.println("");///////////////////////////////////////////
 					System.out.println("yName = " + yName);/////////////////////////////
 					System.out.println("");///////////////////////////////////////////
-
 					buttonName.equals(null);
 					tex = "もう少し短い名前でお願いします";
 					change();
@@ -578,21 +572,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			story.on("  ・・・ある日[ " + yName + " ]は、王様に呼び出された・・・");
 			prologue();
 		}
-
 		if (buttonName.equals(ent)) {
-
 			System.out.println("");///////////////////////////////////////////
 			System.out.println("buttonName = " + buttonName);/////////////////////////////
 			System.out.println("");///////////////////////////////////////////
-
 			System.out.println("");///////////////////////////////////////////
 			System.out.println("count = " + count);/////////////////////////////
 			System.out.println("");///////////////////////////////////////////
-
 			if (count < story.getTextList().length) {
-
 				setMessageEnt(story.getTextList()[count]);
-
 				if (count == 4) {
 					Main.setG(100);
 					prologue();
@@ -601,21 +589,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				if (count == 9) Main.pr.setHp(Main.getPrHP());
 				if (count == 11) Main.mg.setHp(Main.getMgHP());
 				Main.pGet();
-
 				count = (count + 1);
-
 				if (count < 5) {
 					prologue();
 				} else {
 					castle();
 				}
-
 			} else {
-
 				toNormal();
-
 			}
-
 		}
 	}
 
