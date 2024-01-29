@@ -602,21 +602,16 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void field(int modeNum) {
-
 		System.out.println("");////////////////////////////////////////
 		System.out.println("field(" + modeNum + ") します");///////////
 		System.out.println("");////////////////////////////////////////
-
 		setMode(modeNum);
-
 		buttonName = null;
-
 		partySt();
 		info(goldList(),itemList(),"");
 		scene();
 		menu(Command.menu());
 		comment();
-
 		change();
 	}
 
