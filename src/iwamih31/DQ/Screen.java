@@ -471,25 +471,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void actionPerformedSwitch() {
-		System.out.println("");///////////////////////////////////////////
-		System.out.println("mode = " + mode);/////////////////////////////
-		System.out.println("");///////////////////////////////////////////
-		System.out.println("");///////////////////////////////////////////
-		System.out.println("buttonName = " + buttonName);/////////////////
-		System.out.println("");///////////////////////////////////////////
-		System.out.println("");///////////////////////////////////////////
-		System.out.println("count = " + count);///////////////////////////
-		System.out.println("");///////////////////////////////////////////
+		Common.___logOut___("mode = " + mode);
+		Common.___logOut___("buttonName = " + buttonName);
+		Common.___logOut___("count = " + count);
 		// フォーカスをframeに持ってくる
 		frame.setFocusable(true);
-		System.out.println("");/////////////////////////////////////
-		System.out.println("frameにフォーカスをあてました");////////
-		System.out.println("");/////////////////////////////////////
+		Common.___logOut___("frameにフォーカスをあてました");
 		//キー入力の有効化
 		frame.addKeyListener(this);
-		System.out.println("");/////////////////////////////////////
-		System.out.println("frameのキー入力を有効化しました");////////
-		System.out.println("");/////////////////////////////////////
+		Common.___logOut___("frameのキー入力を有効化しました");
 		actionPerformedSwitch0();
 		actionPerformedSwitch1();
 		actionPerformedSwitch21();
