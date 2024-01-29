@@ -490,11 +490,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void actionPerformedSwitch0() {
-
 		switch (mode) {
-
 			case 0 ://最初
-
 				if (buttonName.equals(ynList[0])) {
 					musicReset();
 					begin();
@@ -508,45 +505,29 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					opening();
 				}
 				break;
-
 			case 1 ://探す
-
 				break;
-
 			case 2 ://使う
-
 				count = 0;
 				whichUse(buttonName);
 				break;
-
 			case 3 ://買い物
-
 				break;
-
 			case 4 ://宿屋
-
 				break;
-
 			case 5 ://戦闘
-
 				break;
-
 			case 6 ://お城
 				repeatMusic("オープニング");
 				field(6);
 				break;
-
 			case 7 ://ダンジョン
 				repeatMusic("オープニング");
 				field(7);
 				break;
-
 			case 9 ://死亡
-
 				break;
-
 			default :
-
 				break;
 		}
 	}
