@@ -725,76 +725,45 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void fieldAction(String selectButtonName) {
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("fieldAction(" + selectButtonName +" ) します");////////
 		System.out.println("");//////////////////////////////////////////
-
 		String[] menu = Command.menu();
 		if (selectButtonName != null) {
-
-
 			// 探す
 			if (selectButtonName.equals(menu[0])) {
-
 				buttonName = null;
-
 				printMode();
-
 				Main.action(1);
-
 				setMessageEnt("―――――" + Main.getName() + "は探検を続けた―――――");
-
 				setMode(10);
-
 				adventure();
-
 				buttonName = ent;
 			}
-
 			// 使う
 			if (selectButtonName.equals(menu[1])) {
-
 				buttonName = null;
-
 				printMode();
-
 				Main.action(2);
-
 				setMessage("⇒どちらを使いますか？");
-
 				setMode(2);
-
 				use();
 			}
-
 			// 買い物
 			if (selectButtonName.equals(menu[2])) {
-
 				buttonName = null;
-
 				printMode();
-
 				Main.action(3);
-
 				setMode(3);
-
 				shop();
 			}
-
 			// 宿屋
 			if (selectButtonName.equals(menu[3])) {
-
 				buttonName = null;
-
 				printMode();
-
 				Main.action(4);
-
 				setMode(4);
-
 				inn();
-
 			}
 		}
 	}
