@@ -903,12 +903,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void fieldItem(String setButtonName) {
-
 		menu = Item.menu();
 		Member user = Main.getHu();
-
 		for (int i = 0; i < menu.length; i++) {
-
 			if (setButtonName.equals(menu[i])) {
 				setMode(211 + i);
 				Item.use(user, i);
@@ -920,7 +917,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			Item.use(user, 10);
 			itemLoop();
 		}
-
 	}
 
 	private void battleItem(String setButtonName) {
