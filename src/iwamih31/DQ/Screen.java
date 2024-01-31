@@ -807,7 +807,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void actionPerformedSwitch21() {
-
 		switch (mode) {
 			case 21 ://使う,道具
 				if (Battle.getfMode()==0){
@@ -816,13 +815,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					battleItem(buttonName);
 				}
 				break;
-
 			case 200 ://使う,道具,結果
 				if (buttonName.equals(ent)) {
 					itemLoop();
 				}
 				break;
-
 			case 211 ://使う,道具,[1],誰に？
 				count = 0;
 				menu = Main.getpNa();
@@ -834,17 +831,14 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 				}
 				break;
-
 			case 212 ://使う道具[2],結果
 				count = 0;
 				setMode(200);
 				break;
-
 			case 213 ://使う道具[3],結果
 				count = 0;
 				setMode(200);
 				break;
-
 			case 214 ://使う道具[4],誰に？
 				count = 0;
 				menu = Main.getpNa();
@@ -856,7 +850,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 				}
 				break;
-
 			case 2101 ://バトルモード,使う,道具,[1],誰に？
 				count = 0;
 				menu = Main.getpNa();
@@ -868,7 +861,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 				}
 				break;
-
 			case 2102 ://バトルモード,使う道具[2],どのモンスターに？
 				count = 0;
 				Monster[] mons = Battle.getMons();
@@ -880,11 +872,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 				}
 				break;
-
 			case 2103 ://バトルモード,使う道具[3]
 				setMode(555);
 				break;
-
 			case 2104 ://バトルモード,使う道具[4],誰に？
 				count = 0;
 				menu = Main.getpNa();
