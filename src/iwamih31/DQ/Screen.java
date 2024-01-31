@@ -955,27 +955,17 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void itemLoop() {
-
 		System.out.println("");////////////////////////////////
 		System.out.println("itemLoop() します");///
 		System.out.println("");////////////////////////////////
-
 		String[] text = Item.getItemText();
-
 		if (count < text.length) {
-
 			setMessageEnt(text[count]);
-
 			if (count == 0) {
-
 			}
-
 			count = (count + 1);
-
 			item();
-
 		} else {
-
 			toNormal();
 		}
 	}
