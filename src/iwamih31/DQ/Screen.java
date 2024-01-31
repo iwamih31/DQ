@@ -920,10 +920,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void battleItem(String setButtonName) {
-
 		menu = Item.menu();
 		Member user = Main.getParty()[Battle.getActor()];
-
 		if (setButtonName.equals(menu[0])) {
 			setMode(2101);
 			Item.use(user, 0);
@@ -954,7 +952,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			Item.use(user, 10);
 			battleLoop();
 		}
-
 	}
 
 	private void itemLoop() {
