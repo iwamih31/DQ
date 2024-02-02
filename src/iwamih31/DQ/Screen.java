@@ -1156,7 +1156,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	public void actionPerformedSwitch3() {
 		Member user;
 		switch (mode) {
-			case 3 ://店
+			case 3 :// 店
 				musicReset();
 				count = 0;
 				Main.action(3);
@@ -1165,7 +1165,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				shop();
 				setMode(33);
 				break;
-			case 33 ://店,どうする？
+			case 33 :// 店,どうする？
 				count = 0;
 				if(buttonName.equals(menu[0])){//買う
 					setMode(30);
@@ -1182,7 +1182,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					shop();
 				}
 				break;
-			case 30 ://店,買う,どちら？
+			case 30 :// 店,買う,どちら？
 				count = 0;
 				if(buttonName.equals(menu[0])){
 					setMode(300);
@@ -1199,7 +1199,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					shop();
 				}
 				break;
-			case 31 ://店,売る,どちら？
+			case 31 :// 店,売る,どちら？
 				count = 0;
 				if(buttonName.equals(menu[0])){
 					setMode(310);
@@ -1216,7 +1216,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					shop();
 				}
 				break;
-			case 300 ://店,買う,道具,どれを？
+			case 300 :// 店,買う,道具,どれを？
 				count = 0;
 				menu = Item.menu();
 				user = Main.getHu();
@@ -1233,13 +1233,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					shopLoop();
 				}
 				break;
-			case 3000 ://店,結果ループ
+			case 3000 :// 店,結果ループ
 				if (buttonName.equals(ent)) {
 					shopLoop();
 				}
 				break;
 
-			case 301 ://店,買う,武器,誰の？
+			case 301 :// 店,買う,武器,誰の？
 				count = 0;
 				menu = Main.getpNa();
 				for (int i = 0; i < menu.length; i++) {
@@ -1250,7 +1250,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 				}
 				break;
-			case 3010 ://店,買う,武器,どれを？
+			case 3010 :// 店,買う,武器,どれを？
 				count = 0;
 				for (int i = 0; i < menu.length; i++) {
 					if (buttonName.equals(menu[i])) {
@@ -1265,7 +1265,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					shopLoop();
 				}
 				break;
-			case 310 ://店,売る,道具
+			case 310 :// 店,売る,道具
 				count = 0;
 				menu = Item.menu();
 				user = Main.getHu();
@@ -1323,16 +1323,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void actionPerformedSwitch4() {
-
 		switch (mode) {
-
-			case 4 ://宿屋
-
+			case 4 :// 宿屋
 				musicReset();
-
 				count = 0;
 				menu = new Object[]{ "はい", "いいえ", "状態確認", "復活の儀式" };
-
 				if (buttonName.equals(menu[0])) {
 					setMode(41);
 					innMenu1();
