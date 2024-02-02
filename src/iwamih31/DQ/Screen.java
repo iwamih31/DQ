@@ -1024,15 +1024,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void ex() {
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("ex() します");//////////////////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		buttonName = null;
-
 		menu = useEx.menu();
-
 		partySt();
 		info(goldList(),itemList(),exList());
 		if(Battle.getfMode()==0){
@@ -1042,7 +1038,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 		menu(menu);
 		comment();
-
 		change();
 	}
 
