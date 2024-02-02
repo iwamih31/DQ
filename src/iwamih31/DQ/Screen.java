@@ -1099,9 +1099,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void whatEx() {
-
 		menu = useEx.menu();
-
 		for (int i = 0; i < menu.length; i++) {
 			if (buttonName.equals(menu[i])) {
 				setMode(2250);
