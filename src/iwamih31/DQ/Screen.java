@@ -972,38 +972,25 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 
 	public void actionPerformedSwitch22() {
-
 		switch (mode) {
-
 			case 22 ://使う,能力,誰が？
-
 				whoExField(buttonName);
 				break;
-
 			case 220 ://使う,能力,何を？
-
 				count = 0;
 				menu = useEx.menu();
 				whatEx();
 				break;
-
 			case 2250 ://使う,能力,結果
 
 				if (buttonName.equals(ent)&&mode<3000) {
-
 					exLoop();
 				}
 				break;
-
-
 			case 22501 ://使う,能力,heal(),誰に？
-
 				count = 0;
-
 				menu = Main.getpNa();
-
 				for (int i = 0; i < menu.length; i++) {
-
 					if (buttonName.equals(menu[i])) {
 						setMode(2250);
 						useEx.heal(i);
@@ -1011,15 +998,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 				}
 				break;
-
 			case 22502 ://使う,能力,resu(),誰に？
-
 				count = 0;
-
 				menu = Main.getpNa();
-
 				for (int i = 0; i < menu.length; i++) {
-
 					if (buttonName.equals(menu[i])) {
 						setMode(2250);
 						useEx.resu(i);
@@ -1027,15 +1009,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 				}
 				break;
-
 			case 22503 ://使う,能力,death(),どのモンスターに？
-
 				count = 0;
-
 				menu = Battle.mNa();
-
 				for (int i = 0; i < Battle.getMons().length; i++) {
-
 					if (buttonName.equals(Battle.getMons()[i].getName())) {
 						setMode(2250);
 						Magic.death(i);
