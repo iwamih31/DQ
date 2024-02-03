@@ -1346,99 +1346,82 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					who();
 				}
 				break;
-
 			case 41 ://
 				if (buttonName.equals(ent)) {
 					innMenu1();
 				}
 				break;
-
 			case 42 ://
 				if (buttonName.equals(ent)) {
 					innMenu2();
 				}
 				break;
-
 			case 43 ://状態確認
 				if (buttonName.equals(ent)) {
 					innMenu3();
 				}
 				break;
-
 			case 431 ://戻る
 				if(buttonName.equals(ent)){
 					setMessageEnt(Main.getName() + "は、宿を出た・・・");
 					innMenu0();
 				}
 				break;
-
 			case 44 ://復活の儀式,誰に？
 				count = 0;
 				menu = Main.getpNa();
-
 				if (buttonName.equals(menu[0])) {
 					setMode(440);
 					Main.revive(0);
 					fieldMenu(menu);
 				}
-
 				if (buttonName.equals(menu[1])) {
 					setMode(441);
 					Main.revive(1);
 					fieldMenu(menu);
 				}
-
 				if (buttonName.equals(menu[2])) {
 					setMode(442);
 					Main.revive(2);
 					fieldMenu(menu);
 				}
-
 				if (buttonName.equals(menu[3])) {
 					setMode(443);
 					Main.revive(3);
 					fieldMenu(menu);
 				}
 				break;
-
 			case 440 ://復活の儀式,[0]に,結果
 			case 441 ://復活の儀式,[1]に,結果
 			case 442 ://復活の儀式,[2]に,結果
 			case 443 ://復活の儀式,[3]に,結果
 			case 445 ://復活の儀式,[はい],結果
-
 				if (buttonName.equals(ent)) {
 					innMenu4();
 				}
 				break;
-
 			case 444 ://復活の儀式,後処理
-
 				if (buttonName.equals(ent)) {
 					toNormal();
 				}
 				break;
-
 			case 4444 ://復活の儀式,しますか？
 				count = 0;
 				menu = new String[]{"はい","いいえ"};
-
 				if (buttonName.equals(menu[0])) {
 					buttonName = null;
 					Main.reviveYes(1);
 					innMenu4();
 				}
-
 				if (buttonName.equals(menu[1])) {
 					buttonName = null;
 					innMenu4();
 				}
-
 				if (buttonName.equals(ent)) {
 					buttonName = null;
 					innMenu4();
 				}
-
+				break;
 		}
 	}
 
