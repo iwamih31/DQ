@@ -1443,20 +1443,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("status() します");//////////////////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		buttonName = null;
-
 		Status.statusModel();
-
 		partyStAll();
 		info(goldList(),itemList(),"");
 		sceneBlank();
 		Object[] innMenu = new Object[]{ "はい", "いいえ", "状態確認", "復活の儀式" };
 		menu(innMenu);
-
 		setMessageEnt("⇒ で戻る");
 		comment();
-
 		change();
 	}
 
