@@ -1687,7 +1687,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		monster();
 		menu(menu);
 		comment();
-
 		change();
 	}
 
