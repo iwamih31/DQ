@@ -1525,13 +1525,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	public void actionPerformedSwitch5() {
 		switch (mode) {
-
 			case 5 ://戦闘
 				count = 0;
 				menu = Battle.getMenu();
 				Main.battle();
 				break;
-
 			case 50 ://戦闘,メンバー
 				buttonName = null;
 				setMessage(Battle.getBattleText()[0]);
@@ -1539,7 +1537,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				battle();
 				setMode(55);
 				break;
-
 			case 55 ://戦闘,メンバー,どうする？
 				count = 0;
 				menu = Battle.getMenu();
@@ -1576,7 +1573,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					battleLoop();
 				}
 				break;
-
 			case 550 ://戦闘,メンバー,戦う
 				count = 0;
 				Monster[] mons = Battle.mons;
@@ -1593,28 +1589,23 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					battleLoop();
 				}
 				break;
-
 			case 551 ://戦闘,メンバー,道具
 				break;
-
 			case 552 ://戦闘,メンバー,能力
 				if (buttonName.equals(ent)) {
 					battleLoop();
 				}
 				break;
-
 			case 553 ://戦闘,メンバー,逃げる
 				if (buttonName.equals(ent)) {
 					battleLoop();
 				}
 				break;
-
 			case 555 ://戦闘,次へ
 				if (buttonName.equals(ent)) {
 					battleLoop();
 				}
 				break;
-
 			case 5555 ://戦闘後
 				musicReset();
 				count = 0;
@@ -1622,32 +1613,27 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				Battle.exp();
 				expLoop();
 				break;
-
 			case 55551 ://戦闘後,EXP
 				if (buttonName.equals(ent)) {
 					expLoop();
 				}
 				break;
-
 			case 55552 ://戦闘後,LEV
 				if (buttonName.equals(ent)) {
 					levLoop();
 				}
 				break;
-
 			case 55553 ://戦闘後,GOLD
 				if (buttonName.equals(ent)) {
 					goldLoop();
 				}
 				break;
-
 			case 55554 ://戦闘後,ITEM
 				if (buttonName.equals(ent)) {
 					getItemLoop();
 					Battle.setItem(1);
 				}
 				break;
-
 			case 55555 ://戦闘後,ITEM,有り
 				if (buttonName.equals(ent)) {
 					getItemLoop();
