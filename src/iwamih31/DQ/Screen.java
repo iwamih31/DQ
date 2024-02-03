@@ -1691,19 +1691,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void battleEx() {
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("battleEx() します");//////////////////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		buttonName = null;
-
 		partySt();
 		info(goldList(),itemList(),exList());
 		monster();
 		menu(menu);
 		comment();
-
 		change();
 	}
 
