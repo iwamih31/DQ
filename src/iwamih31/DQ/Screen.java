@@ -611,9 +611,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void use() {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("use() します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("use() します");
 		buttonName = null;
 		partySt();
 		info(goldList(),itemList(),"");
