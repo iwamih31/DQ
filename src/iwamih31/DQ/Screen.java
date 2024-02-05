@@ -563,12 +563,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			prologue();
 		}
 		if (buttonName.equals(ent)) {
-			System.out.println("");///////////////////////////////////////////
-			System.out.println("buttonName = " + buttonName);/////////////////////////////
-			System.out.println("");///////////////////////////////////////////
-			System.out.println("");///////////////////////////////////////////
-			System.out.println("count = " + count);/////////////////////////////
-			System.out.println("");///////////////////////////////////////////
+		Common.___logOut___("buttonName = " + buttonName);
+			Common.___logOut___("count = " + count);
 			if (count < story.getTextList().length) {
 				setMessageEnt(story.getTextList()[count]);
 				if (count == 4) {
