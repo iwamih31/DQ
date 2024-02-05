@@ -744,9 +744,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	private void eventLoop() {
 		if (buttonName.equals(ent)) {
-			System.out.println("");/////////////////////////////
-			System.out.println("eventLoop count = " + count);///
-			System.out.println("");/////////////////////////////
+			Common.___logOut___("eventLoop count = " + count);
 			String[] text = Main.getDoText();
 			if (count < text.length) {
 				setMessageEnt(text[count]);
