@@ -588,9 +588,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void field(int modeNum) {
-		System.out.println("");////////////////////////////////////////
-		System.out.println("field(" + modeNum + ") します");///////////
-		System.out.println("");////////////////////////////////////////
+		Common.___logOut___("field(" + modeNum + ") します");
 		setMode(modeNum);
 		buttonName = null;
 		partySt();
