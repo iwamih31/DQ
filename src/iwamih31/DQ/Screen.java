@@ -622,9 +622,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void whichUse(String selectButtonName) {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("whichUse(" + selectButtonName +") します");////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("whichUse(" + selectButtonName +") します");
 		if (selectButtonName.equals(menu[0])) {
 			buttonName = null;
 			printMode();
