@@ -540,9 +540,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			for (int i = 0; i < chars.length; i++) {
 				p += (String.valueOf(chars[i]).getBytes().length);
 			}
-			System.out.println("");///////////////////////////////////////////
-			System.out.println("文字バイト数 = " + p);/////////////////////////////
-			System.out.println("");///////////////////////////////////////////
+			Common.___logOut___("文字バイト数 = " + p);
 			while (yName == null) {
 				if (p < 8) {
 					if (inputName.equals("")) {
