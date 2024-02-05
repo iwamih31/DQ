@@ -454,9 +454,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	public void actionPerformed(ActionEvent e) {
 		String select = e.getActionCommand();
-		System.out.println("");////////////////////////////////////////////
-		System.out.println("[" + select + "]ボタンがクリックされました");//
-		System.out.println("");////////////////////////////////////////////
+		Common.___logOut___("[" + select + "]ボタンがクリックされました");
 		if(select.equals(buttonName)){ // 同じボタン名がクリックされたら
 			// クリックしたボタン名はent
 			buttonName = ent;
