@@ -462,9 +462,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			// クリックしたボタン名はそのまま使用
 			buttonName = select;
 		}
-		System.out.println("");///////////////////////////////////////////
-		System.out.println("buttonName = " + buttonName);/////////////////
-		System.out.println("");///////////////////////////////////////////
+		Common.___logOut___("buttonName = " + buttonName);
 		actionPerformedSwitch();
 	}
 
