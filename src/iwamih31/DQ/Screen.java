@@ -600,9 +600,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void fieldMenu(Object[] setMenu) {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("fieldMenu(String[] setMenu) します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("fieldMenu(String[] setMenu) します");
 		buttonName = null;
 		partySt();
 		info(goldList(),itemList(),"");
