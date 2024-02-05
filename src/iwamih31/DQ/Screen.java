@@ -701,9 +701,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void fieldAction(String selectButtonName) {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("fieldAction(" + selectButtonName +" ) します");////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("fieldAction(" + selectButtonName +" ) します");
 		String[] menu = Command.menu();
 		if (selectButtonName != null) {
 			// 探す
