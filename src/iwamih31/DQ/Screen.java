@@ -548,13 +548,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 					Main.setyName(inputName);
 					yName = inputName;
-					System.out.println("");///////////////////////////////////////////
-					System.out.println("yName = " + yName);/////////////////////////////
-					System.out.println("");///////////////////////////////////////////
+					Common.___logOut___("yName = " + yName);
 				} else {
-					System.out.println("");///////////////////////////////////////////
-					System.out.println("yName = " + yName);/////////////////////////////
-					System.out.println("");///////////////////////////////////////////
+					Common.___logOut___("yName = " + yName);
 					buttonName.equals(null);
 					tex = "もう少し短い名前でお願いします";
 					change();
