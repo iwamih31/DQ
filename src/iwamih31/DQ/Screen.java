@@ -1071,13 +1071,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void exLoop() {
-		System.out.println("");//////////////////
-		System.out.println("exLoop() します");///
-		System.out.println("");//////////////////
+		Common.___logOut___("exLoop() します");
 		String[] text = useEx.getExText();
-		System.out.println("");/////////////////////////
-		System.out.println("count =(" + count + ")");///
-		System.out.println("");/////////////////////////
+		Common.___logOut___("count =(" + count + ")");
 		if (count < text.length) {
 			if (count != 0) {
 				if (Battle.getfMode() == 0) {
