@@ -1005,9 +1005,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void whoExField(String setButtonName) {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("whoExField(" + setButtonName + ") します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("whoExField(" + setButtonName + ") します");
 		Member[] party = Main.getParty();
 		setMessage("どの術を使いますか？");////////////////////次の質問
 		menu = Main.getpNa();
