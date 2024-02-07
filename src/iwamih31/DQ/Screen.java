@@ -923,9 +923,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void itemLoop() {
-		System.out.println("");////////////////////////////////
-		System.out.println("itemLoop() します");///
-		System.out.println("");////////////////////////////////
+		Common.___logOut___("itemLoop() します");
 		String[] text = Item.getItemText();
 		if (count < text.length) {
 			setMessageEnt(text[count]);
