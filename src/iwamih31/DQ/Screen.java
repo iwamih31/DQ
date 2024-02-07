@@ -1031,9 +1031,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	private void whoExBattle() {
 		int actor = Battle.getActor();
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("whoExBattle(" + actor + ") します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("whoExBattle(" + actor + ") します");
 		Member[] party = Main.getParty();
 		setMessage("どの術を使いますか？");////////////////////次の質問
 		if (actor == 0) {
@@ -1048,12 +1046,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		if (actor == 3) {
 			useEx = new Magic(party[3]);
 		}
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("useEx = " + useEx.getClass() + " です");/////
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("Ex.getName() = " + Ex.getName() + " です");//
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("useEx = " + useEx.getClass() + " です");
+		Common.___logOut___("Ex.getName() = " + Ex.getName() + " です");
 		party[actor].ex();
 		setMode(220);
 		menu = useEx.menu();
