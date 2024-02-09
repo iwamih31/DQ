@@ -1255,9 +1255,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void shopLoop() {
-		System.out.println("");/////////////////////////////
-		System.out.println("buttonName = " + buttonName);///
-		System.out.println("");/////////////////////////////
+		Common.___logOut___("buttonName = " + buttonName);
 		String[] text = Shop.getShopText();
 		if (count < text.length) {
 			setMessageEnt(text[count]);
