@@ -1398,9 +1398,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void innMenu0() {
-		System.out.println("");////////////////////////////////////////////////
-		System.out.println("innMenu0() します  buttonName = " + buttonName);///
-		System.out.println("");////////////////////////////////////////////////
+		Common.___logOut___("innMenu0() します  buttonName = " + buttonName);
 		if (count == 0) {
 			count = (count + 1);
 			inn();
