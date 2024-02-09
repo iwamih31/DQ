@@ -1372,9 +1372,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void inn() {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("inn() します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("inn() します");
 		buttonName = null;
 		partySt();
 		info(goldList(),itemList(),"");
@@ -1386,9 +1384,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void status() {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("status() します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("status() します");
 		buttonName = null;
 		Status.statusModel();
 		partyStAll();
