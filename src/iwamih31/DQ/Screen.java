@@ -1423,9 +1423,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void innMenu2() {
-		System.out.println("");////////////////////////////////////////////////
-		System.out.println("innMenu2() します  buttonName = " + buttonName);///
-		System.out.println("");////////////////////////////////////////////////
+		Common.___logOut___("innMenu2() します  buttonName = " + buttonName);
 		count = 0;
 		setMode(444);
 		Main.innMenu(0);
