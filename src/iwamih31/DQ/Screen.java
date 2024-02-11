@@ -2487,9 +2487,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 //			はみ出し修正
 			x = inRange(originalMap[0].length, x);
 			y = inRange(originalMap.length, y);
-			System.out.println("");////////////////////////////////////////
-			System.out.println("縦" + y + "横" + x + "に移動しました");
-			System.out.println("");////////////////////////////////////////
+			Common.___logOut___("縦" + y + "横" + x + "に移動しました");
 //			mapNumberが１以外でmapCenterRole()が４と９以外の場合
 			if(isDanger()) {
 //				移動先でイベント発動
@@ -2504,9 +2502,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			}
 			buttonName = null;
 		} else {
-			System.out.println("");////////////////////////////////////////
-			System.out.println("そちらへは移動できません");////////////////
-			System.out.println("");////////////////////////////////////////
+			Common.___logOut___("そちらへは移動できません");
 		}
 	}
 
