@@ -1757,9 +1757,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void printMode() {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("mode = " + getMode() + " です");//////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("mode = " + getMode() + " です");
 	}
 
 	private void partyStAll() {
