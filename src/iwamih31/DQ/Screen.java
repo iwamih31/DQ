@@ -2130,9 +2130,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	void prologue() {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("prologue() します");/////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("prologue() します");
 		buttonName = null;
 		partyStBlank();
 		info(goldList(),"","");
