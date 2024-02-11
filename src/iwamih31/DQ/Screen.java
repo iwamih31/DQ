@@ -2517,9 +2517,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					musicReset();
 					toNormal();
 				} else {
-					System.out.println("");/////////////////////////////////
-					System.out.println("洞窟MAPへ移動します");//////////////
-					System.out.println("");/////////////////////////////////
+					Common.___logOut___("洞窟MAPへ移動します");
 					setMapNumber(2); // 洞窟MAPへ移動
 //					洞窟入口位置
 					x=7;
@@ -2536,9 +2534,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					musicReset();
 					toNormal();
 				} else {
-					System.out.println("");/////////////////////////////////
-					System.out.println("城MAPへ移動します");////////////////
-					System.out.println("");/////////////////////////////////
+					Common.___logOut___("城MAPへ移動します");
 					setMapNumber(1); // 城MAPへ移動
 //					城入口位置
 					x=0;
