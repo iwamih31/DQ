@@ -2215,9 +2215,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		panel.setLayout(new GridLayout(bI, 0, 10, 1));
 		LineBorder b = new LineBorder(getForeground(), 2, true);
 		panel.setBorder(b);
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("ent = " + ent);////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("ent = " + ent);
 			button_Ent = new JButton(ent);
 			format(button_Ent);
 			button_Ent.setFocusPainted(false);
