@@ -2366,15 +2366,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	public void keyPressed(KeyEvent keyEvent) {
 		int pressedKey = keyEvent.getKeyCode();
 		String keyName = KeyEvent.getKeyText(pressedKey);
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("buttonName = " + buttonName);/////////////////
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("pressedKey1 = " + pressedKey);/////////////////
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("keyEvent = " + keyEvent);/////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("buttonName = " + buttonName);
+		Common.___logOut___("pressedKey1 = " + pressedKey);
+		Common.___logOut___("keyEvent = " + keyEvent);
 		if (mode == 1 || mode == 6 || mode == 7) {
 			int moveX = 0;
 			int moveY = 0;
@@ -2422,21 +2416,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				case KeyEvent.VK_ENTER:
 				case KeyEvent.VK_SPACE:
 				case KeyEvent.VK_1:
-					System.out.println("");//////////////////////////////////////////
-					System.out.println(keyName + "KEYが押されました");////////////
-					System.out.println("");//////////////////////////////////////////
-					System.out.println("");//////////////////////////////////////////
-					System.out.println(ent + "ボタンをクリックします");////////////
-					System.out.println("");//////////////////////////////////////////
+					Common.___logOut___(keyName + "KEYが押されました");
+					Common.___logOut___(ent + "ボタンをクリックします");
 					pushSound(); // キープッシュ音を鳴らす
 					if(entMark.equals(ent)) {
 						button_Ent.doClick();
 					} else {
 						menuButton[menuNum].doClick();
 					}
-					System.out.println("");//////////////////////////////////////////
-					System.out.println("buttonName = " + buttonName);////////////////
-					System.out.println("");//////////////////////////////////////////
+					Common.___logOut___("buttonName = " + buttonName);
 					break;
 				case KeyEvent.VK_KP_UP:
 				case KeyEvent.VK_UP:
