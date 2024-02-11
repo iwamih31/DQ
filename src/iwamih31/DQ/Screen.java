@@ -1632,12 +1632,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void battleLoop() {
-		System.out.println("");///////////////////
-		System.out.println("battleLoop() します" );///
-		System.out.println("");///////////////////
-		System.out.println("");///////////////////
-		System.out.println("count = " + count);///
-		System.out.println("");///////////////////
+		Common.___logOut___("battleLoop() します" );
+		Common.___logOut___("count = " + count);
 		String[] text = Battle.getBattleText();
 		if (count < text.length) {
 			setMessageEnt(text[count]);
