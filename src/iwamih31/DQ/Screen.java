@@ -1621,9 +1621,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void battleEx() {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("battleEx() します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("battleEx() します");
 		buttonName = null;
 		partySt();
 		info(goldList(),itemList(),exList());
