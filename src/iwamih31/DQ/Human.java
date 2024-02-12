@@ -26,17 +26,14 @@ public class Human extends Member {
 		 getWeapon()[ 9 ] ="日本刀";
 	 }
 
-
 	 @Override
 	 public int attack() {
 		setAp(( ( getLev() * 1 ) + ( getWp() * 1 ) ));
 		return getAp();
 	 }
 
-
 	@Override
 	public void ex() {
-		Member mem = Main.getParty( )[ getNo() - 1 ];
 		System.out.println( "どの術を使いますか？" );
 		new Ex( this );
 	 }
