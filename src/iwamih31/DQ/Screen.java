@@ -2573,13 +2573,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				break;
 			default:
 		}
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("mapNumber = " + mapNumber);////////////////
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("mapCenterRole() = " + mapCenterRole());////////////////
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("isDanger = " + isDanger);////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("mapNumber = " + mapNumber);
+		Common.___logOut___("mapCenterRole() = " + mapCenterRole());
+		Common.___logOut___("isDanger = " + isDanger);
 		return isDanger;
 	}
 
