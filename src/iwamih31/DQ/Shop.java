@@ -156,9 +156,7 @@ public class Shop extends AbstractTableModel{
 
 
 	public static void buyItem(Member user, int buyItem) {
-
 		int item = buyItem + 1;
-		// TODO 自動生成されたメソッド・スタブ
 		for (Object[] stocks : itemList) {
 			for (Object stock : stocks) {
 				System.out.print(stock);
@@ -167,44 +165,26 @@ public class Shop extends AbstractTableModel{
 		System.out.println("｝＊()=買い値");
 		System.out.println("");
 		System.out.print("[所持金＝" + Main.getG() + "G] ");
-//	int inp = Input.input(itemList);
-
-//	System.out.println("");
-
 		String name = user.getName();
-
 		if (user == Main.getHu()) name = Main.getName();
-
 		int stock = (Integer) Item.getItemList()[item][3];
-
 		for (int i = 1; i < itemList.length; i++) {
-
 			itemList[i][3]=(Integer)itemList[i][3];
-
 		}
 		int g = (Integer) itemList[item][3];
-
 		Battle.pTable();
 		System.out.println("");
 		System.out.print(name + "は[" + itemList[item][1] + "]を[");
 		System.out.println(g + "G]で手に入れた!");
-//					Input.ent();
 		Main.setG(Main.getG() - g);
-
 		Item.getItemList()[item][3] = stock + 1;
-
-//		Input.ent();
-
 		System.out.println(" 財布の中身は[" + Main.getG() + "G]です");
 		System.out.println("");
 		System.out.println(" ありがとうございました♪ (*^o^*)y-.。o○");
-//		Input.ent();
-
 		shopText = new String[3];
 		shopText[0] = (name + "は[" + itemList[item][1] + "]を[" + g + "G]で手に入れた!");
 		shopText[1] = (" 財布の中身は[" + Main.getG() + "G]です");
 		shopText[2] = (" ありがとうございました♪ (*^o^*)y-.。o○");
-
 	}
 
 	public static void buyWapon(int i) {
