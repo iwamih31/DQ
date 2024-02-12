@@ -3,8 +3,7 @@ package iwamih31.DQ;
 import javax.swing.table.AbstractTableModel;
 
 public class Shop extends AbstractTableModel{
-	
-	
+
 	private static Object itemList[][] = {
 		{""  ,""        ,"" ,""          ,"｛ "},
 		{"１.","ヒロポン","(", 20 * lev(),"G) "},
@@ -15,7 +14,6 @@ public class Shop extends AbstractTableModel{
 
 	private Object[][] shop;
 	private static String[] shopText;
-
 	private static Member member;
 
 	public static void store( ) {
@@ -29,10 +27,7 @@ public class Shop extends AbstractTableModel{
 	System.out.print( "[所持金＝" + Main.getG() +"G] ");
 	int inp = Input.input(itemList);
 
-//	System.out.println("");
-
 	switch ( inp ) {
-
 		case 1:
 			int stock1 = (Integer) Item.getItemList()[inp][3];
 			int g1 = (Integer) Shop.getItemList()[inp][3];
@@ -52,7 +47,6 @@ public class Shop extends AbstractTableModel{
 				Item.getItemList()[inp][3] = stock1 + 1;
 			}
 			break;
-
 		case 2:
 			int stock2 = (Integer) Item.getItemList()[inp][3];
 			int g2 = (Integer) Shop.getItemList()[inp][3];
@@ -72,7 +66,6 @@ public class Shop extends AbstractTableModel{
 				Item.getItemList()[inp][3] = stock2 + 1;
 			}
 			break;
-
 		case 3:
 			int stock3 = (Integer) Item.getItemList()[inp][3];
 			int g3 = (Integer) Shop.getItemList()[inp][3];
@@ -92,7 +85,6 @@ public class Shop extends AbstractTableModel{
 				Item.getItemList()[inp][3] = stock3 + 1;
 			}
 			break;
-
 		case 4:
 			int stock4 = (Integer) Item.getItemList()[inp][3];
 			int g4 = (Integer) Shop.getItemList()[inp][3];
@@ -112,7 +104,6 @@ public class Shop extends AbstractTableModel{
 				Item.getItemList()[inp][3] = stock4 + 1;
 			}
 			break;
-
 		default:
 			Battle.pTable();
 			System.out.println( "" );
@@ -125,19 +116,14 @@ public class Shop extends AbstractTableModel{
 		Input.ent();
 	}
 
-
 	private static int lev() {
-		// TODO 自動生成されたメソッド・スタブ
 		Member[] party = Main.getParty();
 		int lev = (party[0].getLev() + party[1].getLev() + party[2].getLev() + party[3].getLev()) / (party.length);
 		return lev;
 	}
 
-
 	public static void sellItem(Member user, int sellItem) {
-
 		int item = sellItem + 1;
-		// TODO 自動生成されたメソッド・スタブ
 		for (Object[] stocks : itemList) {
 			for (Object stock : stocks) {
 				System.out.print(stock);
@@ -146,44 +132,26 @@ public class Shop extends AbstractTableModel{
 		System.out.println("｝＊()の半額=売値");
 		System.out.println("");
 		System.out.print("[所持金＝" + Main.getG() + "G] ");
-//	int inp = Input.input(itemList);
-
-//	System.out.println("");
-
 		String name = user.getName();
-
 		if (user == Main.getHu()) name = Main.getName();
-
 		int stock = (Integer) Item.getItemList()[item][3];
-
 		for (int i = 1; i < itemList.length; i++) {
-
 			itemList[i][3]=(Integer)itemList[i][3]/2;
-
 		}
 		int g = (Integer) itemList[item][3];
-
 		Battle.pTable();
 		System.out.println("");
 		System.out.print(name + "は[" + itemList[item][1] + "]を売って[");
 		System.out.println(g + "G]手に入れた!");
-//					Input.ent();
 		Main.setG(Main.getG() + g);
-
 		Item.getItemList()[item][3] = stock - 1;
-
-//		Input.ent();
-
 		System.out.println(" 財布の中身は[" + Main.getG() + "G]です");
 		System.out.println("");
 		System.out.println(" ありがとうございました♪ (*^o^*)y-.。o○");
-//		Input.ent();
-
 		shopText = new String[3];
 		shopText[0] = (name + "は[" + itemList[item][1] + "]を売って[" + g + "G]手に入れた!");
 		shopText[1] = (" 財布の中身は[" + Main.getG() + "G]です");
 		shopText[2] = (" ありがとうございました♪ (*^o^*)y-.。o○");
-
 	}
 
 
@@ -240,9 +208,9 @@ public class Shop extends AbstractTableModel{
 	}
 
 	public static void buyWapon(int i) {
-		
+
 		member = Main.getParty()[i];
-		
+
 		Battle.pTable();
 		System.out.println( "" );
 		System.out.print( "どれにいたしましょう？" );
@@ -258,24 +226,24 @@ public class Shop extends AbstractTableModel{
 		System.out.println( "" );
 		System.out.println( "" );
 //		int inp = Input.input();
-		
+
 		Screen.setMessage( "どれにいたしましょう？" );
-		
+
 		Screen.setMenu(new String[]{member.wepName(1),member.wepName(2),member.wepName(3)});
-		
+
 //		buyWaponWhich(inp);
 	}
 
 	static void buyWaponWhich(int inp) {
-		
+
 		if (0 < inp && inp < 4) {
-			
+
 			int wp = member.getWp();
 			int inpWp = wp + inp;
-			
+
 			String buyWapon = member.wepName(inp);
 			int buyPrice = (inpWp * inpWp * inpWp * 200) - ((inpWp - 1) * 1000);
-			
+
 			String sellWapon = member.wepName(0);
 			int sellPrice = ((wp * wp * wp * 200) - ((wp - 1) * 1000)) / 2;
 
