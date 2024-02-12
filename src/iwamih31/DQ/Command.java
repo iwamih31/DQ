@@ -9,8 +9,6 @@ public class Command {
 		{"4."          ,"宿屋 "}
 	};
 
-
-
 	public static void command( ) {
 		System.out.println( "               ／           ＼" );
 		for( String[ ] menus : menuList ){
@@ -20,13 +18,7 @@ public class Command {
 		}
 		System.out.println( "" );
 		System.out.println( "           ／                   ＼" );
-
 	}
-
-	/*public static void  menu( int clickMenu ) {
-
-		System.out.println( clickMenu );
-	}*/
 
 	public void setMenuList(String[][] menuList) {
 		Command.menuList = menuList;
@@ -37,12 +29,10 @@ public class Command {
 	}
 
 	public static String[] menu() {
-		// TODO 自動生成されたメソッド・スタブ
 		String[] menu = new String[menuList.length - 1];
 		for (int i = 0; i < menu.length; i++) {
 			menu[i] = menuList[i + 1][1];
 		}
-
 		return menu;
 	}
 
