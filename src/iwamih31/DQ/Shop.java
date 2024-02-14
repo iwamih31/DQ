@@ -315,9 +315,7 @@ public class Shop extends AbstractTableModel{
 		}
 	}
 
-
 	public static void  item( int clickItem ) {
-
 		System.out.println( clickItem );
 	}
 
