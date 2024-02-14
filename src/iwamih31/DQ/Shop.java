@@ -263,56 +263,55 @@ public class Shop extends AbstractTableModel{
 		System.out.println( "(" + (( who.getWp() + 3) * 200 * 9 ) + "Ｇ)" );
 		System.out.println( "" );
 		int inp = Input.input();
-
 		switch (inp) {
-		case 1:
-			Battle.pTable();
-			System.out.println( "" );
-			System.out.print( "「" );
-			who.wep(inp);
-			System.out.print( "だね。まいどあり!!" );
-			Input.ent();
-			Battle.pTable();
-			System.out.println( "" );
-			who.wep();
-			System.out.print( "は(" + (( who.getWp()) * 100 ) + "Ｇ)で引き取ってくれた・・・" );
-			Input.ent();
-			who.setWp(who.getWp() + inp);
-			break;
-		case 2:
-			Battle.pTable();
-			System.out.println( "" );
-			System.out.print( "「" );
-			who.wep(inp);
-			System.out.print( "だね。まいどあり!!" );
-			Input.ent();
-			Battle.pTable();
-			System.out.println( "" );
-			who.wep();
-			System.out.print( "は(" + (( who.getWp()) * 100 ) + "Ｇ)で引き取ってくれた・・・" );
-			Input.ent();
-			who.setWp(who.getWp() + inp);
-			break;
-		case 3:
-			Battle.pTable();
-			System.out.println( "" );
-			System.out.print( "「" );
-			who.wep(inp);
-			System.out.print( "だね。まいどあり!!" );
-			Input.ent();
-			Battle.pTable();
-			System.out.println( "" );
-			who.wep();
-			System.out.print( "は(" + (( who.getWp()) * 100 ) + "Ｇ)で引き取ってくれた・・・" );
-			Input.ent();
-			who.setWp(who.getWp() + inp);
-			break;
-		default:
-			Battle.pTable();
-			System.out.println( "" );
-			System.out.println( "また来てくださいね （*^o^*）" );
-			Input.ent();
-			break;
+			case 1:
+				Battle.pTable();
+				System.out.println( "" );
+				System.out.print( "「" );
+				who.wep(inp);
+				System.out.print( "だね。まいどあり!!" );
+				Input.ent();
+				Battle.pTable();
+				System.out.println( "" );
+				who.wep();
+				System.out.print( "は(" + (( who.getWp()) * 100 ) + "Ｇ)で引き取ってくれた・・・" );
+				Input.ent();
+				who.setWp(who.getWp() + inp);
+				break;
+			case 2:
+				Battle.pTable();
+				System.out.println( "" );
+				System.out.print( "「" );
+				who.wep(inp);
+				System.out.print( "だね。まいどあり!!" );
+				Input.ent();
+				Battle.pTable();
+				System.out.println( "" );
+				who.wep();
+				System.out.print( "は(" + (( who.getWp()) * 100 ) + "Ｇ)で引き取ってくれた・・・" );
+				Input.ent();
+				who.setWp(who.getWp() + inp);
+				break;
+			case 3:
+				Battle.pTable();
+				System.out.println( "" );
+				System.out.print( "「" );
+				who.wep(inp);
+				System.out.print( "だね。まいどあり!!" );
+				Input.ent();
+				Battle.pTable();
+				System.out.println( "" );
+				who.wep();
+				System.out.print( "は(" + (( who.getWp()) * 100 ) + "Ｇ)で引き取ってくれた・・・" );
+				Input.ent();
+				who.setWp(who.getWp() + inp);
+				break;
+			default:
+				Battle.pTable();
+				System.out.println( "" );
+				System.out.println( "また来てくださいね （*^o^*）" );
+				Input.ent();
+				break;
 		}
 	}
 
