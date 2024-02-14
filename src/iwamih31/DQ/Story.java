@@ -17,7 +17,6 @@ public class Story extends AbstractTableModel{
 	private static String[] textList;
 
 	Story(){
-		
 		textList = new String[16];
 		textList[0] = "";
 		textList[1] = "「 勇者[ " + Main.getyName() + " ]よ、よくぞ来てくれた・・・ 」";
@@ -35,7 +34,6 @@ public class Story extends AbstractTableModel{
 		textList[13] = "そして[" + Main.getName( ) + "]の伝説が始まった・・・";
 		textList[14] = "";
 		textList[15] = "☆[ " + Main.getName() + " ]の物語";
-		
 	}
 
 	public static void start() {
@@ -312,11 +310,11 @@ public class Story extends AbstractTableModel{
 	}
 
 	public void on(String s) {
-		
+
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("Story.on(" + s + ") します ");// //////////////////////////
 		System.out.println("");//////////////////////////////////////////
-		
+
 		Story.sent[1][0] = (s);
 		fireTableDataChanged();//テーブル更新
 	}
