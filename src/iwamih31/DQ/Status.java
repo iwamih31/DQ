@@ -3,9 +3,9 @@ package iwamih31.DQ;
 import javax.swing.table.AbstractTableModel;
 
 public class Status extends AbstractTableModel{
-	
+
 	private static Member[] par;
-	
+
 	static Member fi;
 	static Member he;
 	static Member pr;
@@ -22,9 +22,9 @@ public class Status extends AbstractTableModel{
 	private Object[][] sta;
 
 	public Status() {
-		
+
 		par = Main.getParty ( );
-		
+
 		fi = par [ 0 ];
 		he = par [ 1 ];
 		pr = par [ 2 ];
@@ -69,23 +69,23 @@ public class Status extends AbstractTableModel{
 		String heExp = he.getExp() + "/" +  nLE[he.getLev( )];
 		String prExp = pr.getExp() + "/" +  nLE[pr.getLev( )];
 		String mgExp = mg.getExp() + "/" +  nLE[mg.getLev( )];
-		
+
 		String fiHp = fi.getHp() + "/" +  mSt[1][3];
 		String heHp = he.getHp() + "/" +  mSt[2][3];
 		String prHp = pr.getHp() + "/" +  mSt[3][3];
 		String mgHp = mg.getHp() + "/" +  mSt[4][3];
-		
+
 		String fiMp = fi.getMp() + "/" +  mSt[1][4];
 		String heMp = he.getMp() + "/" +  mSt[2][4];
 		String prMp = pr.getMp() + "/" +  mSt[3][4];
 		String mgMp = mg.getMp() + "/" +  mSt[4][4];
-		
+
 		String fiWp = st[1][7] + "(" + mSt[1][7] + ")";
 		String heWp = st[2][7] + "(" + mSt[2][7] + ")";
 		String prWp = st[3][7] + "(" + mSt[3][7] + ")";
 		String mgWp = st[4][7] + "(" + mSt[4][7] + ")";
-		
-		
+
+
 		sta = new Object[][] {
 				{ "名前" , fi.getName(), he.getName(), pr.getName(), mg.getName() },
 				{ "Lev." , fi.getLev() , he.getLev() , pr.getLev() , mg.getLev()  },
@@ -98,9 +98,9 @@ public class Status extends AbstractTableModel{
 				{"攻撃力",st[1][8]     ,st[2][8]     ,st[3][8]     ,st[4][8]      },
 				{"技能力",st[1][9]     ,st[2][9]     ,st[3][9]     ,st[4][9]      }
 		};
-		
+
 		setStatus();
-		
+
 		for (int i = 1; i < (st.length); i++) {
 
 			for (int j = 0; j < st[0].length; j++) {
@@ -122,7 +122,7 @@ public class Status extends AbstractTableModel{
 		System.out.println(")>");
 		System.out.println("");
 		System.out.print("<所持金(" + Main.getG() + "Ｇ)> ");
-		
+
 		switch (Main.bHp) {
 		case 3:
 			System.out.println("");
@@ -151,7 +151,7 @@ public class Status extends AbstractTableModel{
 	public String getColumnName(int column) {
 		return (String) status[0][column];
 	}
-	
+
 	@Override
 	public int getRowCount() {
 		return status.length - 1;
@@ -176,7 +176,6 @@ public class Status extends AbstractTableModel{
 	}
 
 	public static void statusModel() {
-		// TODO 自動生成されたメソッド・スタブ
 		setStatusModel(new Status());
 	}
 
