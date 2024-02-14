@@ -214,25 +214,24 @@ public class Story extends AbstractTableModel{
 	}
 
 	public static void end( ) {
-	System.out.println( Main.getbName() + "は断末魔の叫びをあげた" );
-	System.out.println( Main.getName() + "は" + Main.getbName() + "を退治した" );
-	System.out.println( "世界にまた穏やかな日々がが戻ってきた" );
-	System.out.println(   "                                           Fin?" );
-	System.out.println(   "  もう一度最初から始めますか？ [ 1.YES  2.NO ]" );
-	int inp = Input.input();
-	switch ( inp ) {
+		System.out.println( Main.getbName() + "は断末魔の叫びをあげた" );
+		System.out.println( Main.getName() + "は" + Main.getbName() + "を退治した" );
+		System.out.println( "世界にまた穏やかな日々がが戻ってきた" );
+		System.out.println(   "                                           Fin?" );
+		System.out.println(   "  もう一度最初から始めますか？ [ 1.YES  2.NO ]" );
+		int inp = Input.input();
+		switch ( inp ) {
 
-		case 1:
-			Main s = new Main();
+			case 1:
+				Main s = new Main();
 
-			break;
-		case 2:
-			System.out.println( "修了します" );
+				break;
+			case 2:
+				System.out.println( "修了します" );
 
-			break;
-		default:
-			System.out.println( "1か2でお願いします" );
-
+				break;
+			default:
+				System.out.println( "1か2でお願いします" );
 		}
 	}
 
