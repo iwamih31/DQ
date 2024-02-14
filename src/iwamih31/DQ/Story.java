@@ -37,7 +37,6 @@ public class Story extends AbstractTableModel{
 	}
 
 	public static void start() {
-
 		System.out.println( "●[" + he.getName( ) + "(Lev." + he.getLev( ) + ")HP=" + he.getHp() + ",MP=" + he.getMp( ) + "] ");
 		System.out.println( "" );
 		System.out.println( "" );
