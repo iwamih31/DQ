@@ -212,59 +212,39 @@ public class Shop extends AbstractTableModel{
 	}
 
 	static void buyWaponWhich(int inp) {
-
 		if (0 < inp && inp < 4) {
-
 			int wp = member.getWp();
 			int inpWp = wp + inp;
-
 			String buyWapon = member.wepName(inp);
 			int buyPrice = (inpWp * inpWp * inpWp * 200) - ((inpWp - 1) * 1000);
-
 			String sellWapon = member.wepName(0);
 			int sellPrice = ((wp * wp * wp * 200) - ((wp - 1) * 1000)) / 2;
-
 			if (Main.getG() < buyPrice) {
-
 				Battle.pTable();
 				System.out.println("");
 				System.out.println(buyWapon + "を買うには、お金が足りません  ×××");
-//				Input.ent();
-
 				shopText = new String[]{ buyWapon + "を買うには、お金が足りません  ×××" };
 			} else {
-
 				shopText = new String[2];
-
 				Battle.pTable();
 				System.out.println("");
 				System.out.print("「");
 				member.wep(inp);
 				System.out.print("だね。まいどあり!!");
-//				Input.ent();
 				shopText[0] = buyWapon + "だね。まいどあり!!";
-
 				Main.setG(Main.getG() - buyPrice + sellPrice);
-
 				Battle.pTable();
 				System.out.println("");
 				member.wep();
 				System.out.print("は(" + sellPrice + "Ｇ)で引き取ってくれた・・・");
-//				Input.ent();
 				member.setWp(member.getWp() + inp);
-
 				shopText[1] = sellWapon + "は(" + sellPrice + "Ｇ)で引き取ってくれた・・・";
 			}
-
 		} else {
-
 			Battle.pTable();
 			System.out.println("");
 			System.out.println("また来てくださいね （*^o^*）");
-//			Input.ent();
-
 			shopText = new String[]{ "また来てくださいね （*^o^*）" };
-
 		}
 	}
 
