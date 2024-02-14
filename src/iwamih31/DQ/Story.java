@@ -249,7 +249,6 @@ public class Story extends AbstractTableModel{
 		System.out.print( "「 勇者[ " + Main.getyName() + " ]よ、一刻も早く[ " + Main.getbName() );
 		System.out.println( " ]を倒し、世界に平和をもたらすのじゃ!!! 」");
 		Input.ent();
-
 	}
 
 	public static void relief() {
