@@ -205,13 +205,10 @@ public class Shop extends AbstractTableModel{
 		System.out.print( "(" + (( member.getWp() + 3) * 200 * 3 * 3 ) + "Ｇ)" );
 		System.out.println( "" );
 		System.out.println( "" );
-//		int inp = Input.input();
 
 		Screen.setMessage( "どれにいたしましょう？" );
 
 		Screen.setMenu(new String[]{member.wepName(1),member.wepName(2),member.wepName(3)});
-
-//		buyWaponWhich(inp);
 	}
 
 	static void buyWaponWhich(int inp) {
