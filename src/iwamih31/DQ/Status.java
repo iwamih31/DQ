@@ -85,7 +85,6 @@ public class Status extends AbstractTableModel{
 		String prWp = st[3][7] + "(" + mSt[3][7] + ")";
 		String mgWp = st[4][7] + "(" + mSt[4][7] + ")";
 
-
 		sta = new Object[][] {
 				{ "名前" , fi.getName(), he.getName(), pr.getName(), mg.getName() },
 				{ "Lev." , fi.getLev() , he.getLev() , pr.getLev() , mg.getLev()  },
@@ -102,27 +101,22 @@ public class Status extends AbstractTableModel{
 		setStatus();
 
 		for (int i = 1; i < (st.length); i++) {
-
 			for (int j = 0; j < st[0].length; j++) {
 				System.out.print("|" + st[0][j] + '\t');
 			}
 			System.out.println("|");
-
 			for (int j = 0; j < st[0].length; j++) {
 				System.out.print("|" + st[i][j] + '\t');
 			}
 			System.out.println("|");
-
 			System.out.print(" Lev.UP残["+ mSt[i][1] + "]\t  MAX[HP("+ mSt[i][3]);
 			System.out.println("),MP("+ mSt[i][4] + ")]           武器の強さ["+ mSt[i][7] +"]");
-
 		}
 		System.out.print("<アイテム( ");
 		Item.items();
 		System.out.println(")>");
 		System.out.println("");
 		System.out.print("<所持金(" + Main.getG() + "Ｇ)> ");
-
 		switch (Main.bHp) {
 		case 3:
 			System.out.println("");
@@ -157,7 +151,6 @@ public class Status extends AbstractTableModel{
 		return status.length - 1;
 	}
 
-
 	@Override
 	public int getColumnCount() {
 		return status[0].length;
@@ -172,7 +165,6 @@ public class Status extends AbstractTableModel{
 
 	private void setStatus() {
 		status = sta;
-
 	}
 
 	public static void statusModel() {
