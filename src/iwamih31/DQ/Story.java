@@ -302,11 +302,7 @@ public class Story extends AbstractTableModel{
 	}
 
 	public void on(String s) {
-
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("Story.on(" + s + ") します ");// //////////////////////////
-		System.out.println("");//////////////////////////////////////////
-
+		Common.___logOut___("Story.on(" + s + ") します ");
 		Story.sent[1][0] = (s);
 		fireTableDataChanged();//テーブル更新
 	}
