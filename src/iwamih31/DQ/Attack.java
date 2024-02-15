@@ -8,17 +8,16 @@ public class Attack {
 		{"3."          ,"買い物 "  },
 		{"4."          ,"泊まる ｝"}
 	};
-	
+
 	public static void command( ) {
 		for(String[] menus : menuList){
-			for(String menu : menus){	
+			for(String menu : menus){
 			System.out.print(menu);
 			}
 		}
 	}
-	
+
 	/*public static void  menu( int clickMenu ) {
-		
 		System.out.println( clickMenu );
 	}*/
 
@@ -28,6 +27,6 @@ public class Attack {
 
 	public static Object[][] getMenuList() {
 		return menuList;
-	}	
+	}
 
 }
