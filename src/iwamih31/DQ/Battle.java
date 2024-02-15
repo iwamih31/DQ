@@ -225,29 +225,21 @@ public class Battle extends AbstractTableModel{
 		}
 	}
 
-
 	public void fight() {
-
-		System.out.println("");////////////////////////////////////////////////
-		System.out.println("Battle.fight() します");///////////////////
-		System.out.println("");////////////////////////////////////////////////
-
+		Common.___logOut___("Battle.fight() します");
 		if (pHp > 0 && mHp > 0 && fMode == 1) { ///////////////////////戦闘中↓
-
 			int rs = new java.util.Random().nextInt(pFSp);
 			if (rs == 0) {
 				pfs = (0);
 			} else {
 				pfs = (5);
 			}
-
 			int mrs = new java.util.Random().nextInt(mFSp);
 			if (mrs == 0) {
 				mfs = (0);
 			} else {
 				mfs = (5);
 			}
-
 			par[0].setHp(par[0].getHp() - 1);
 			par[1].setHp(par[1].getHp() - 1);
 			par[2].setHp(par[2].getHp() - 1);
@@ -256,18 +248,14 @@ public class Battle extends AbstractTableModel{
 			par[1].setMp(par[1].getMp() + 1);
 			par[2].setMp(par[2].getMp() + 1);
 			par[3].setMp(par[3].getMp() + 1);
-
 			for (int j = 0; j < par.length; j++) {
 				if (par[j].getHp() < 0) {
 					par[j].setHp(0);
 					par[j].setMp(0);
 				}
 			}
-
 			/////ターン(順番決め)
-
 			turn = new ArrayList<Integer>();
-
 			for (int i = 30; i > 0; i--) {
 				gM = null;
 				if (p1s + pfs + mHug == i && p1h > 0) {
@@ -296,30 +284,18 @@ public class Battle extends AbstractTableModel{
 				}
 			}
 			initial();
-
-			////////////////////////////////////////////////
-			System.out.println(count + "ターン目開始");/////
-			count = count++;////////////////////////////////
-			////////////////////////////////////////////////
-
-			around = 0;
-
+			Common.___logOut___(count + "ターン目開始");
+			count = count++;
 			turn();
-
 		} else {
-
 			if (pHp > 0 && mHp < 1) { ///////////////////////戦闘終了後(勝ちの場合)
-//				fMode = 0;
 				pTable();
 				System.out.println("");
 				System.out.println(Main.getName() + "は" + Main.getmName() + "に勝利した♪");
-//				Input.ent();
 				battleText = new String[]{ Main.getName() + "は" + Main.getmName() + "に勝利した♪" };
 				Screen.setMode(5555);
 			}
-
 			if (pHp < 1) { /////////////////////////////////////////////////////全滅時
-//				fMode = 0;
 				System.out.println(Main.getmName() + "は全滅した・・・");
 				initial();
 				for (Member p : par) {
@@ -327,7 +303,6 @@ public class Battle extends AbstractTableModel{
 					p.setMp(p.getLev() * p.getEp() * 3);
 				}
 				Main.setG(Main.getG() / 2);
-//				Input.ent();
 				battleText = new String[]{ Main.getmName() + "は全滅した・・・" };
 				Story.relief();/////////////////////////////続き
 				Screen.setMode(9);
