@@ -293,7 +293,6 @@ public class Story extends AbstractTableModel{
 
 	@Override
 	public int getColumnCount() {
-		// TODO 自動生成されたメソッド・スタブ
 		return sent[0].length;
 	}
 
