@@ -378,7 +378,6 @@ public class Battle extends AbstractTableModel{
 	}
 
 	static void item() {
-		// TODO 自動生成されたメソッド・スタブ
 		int r = new java.util.Random().nextInt(10);
 		if (r < 8) {
 			Screen.setMode(55555);
@@ -386,7 +385,6 @@ public class Battle extends AbstractTableModel{
 		} else {
 			System.out.println("");
 			System.out.println(Main.getmName() + "の居た場所には何もなかった・・・");
-//		Input.ent();
 			battleText = new String[]{ Main.getmName() + "の居た場所には何もなかった・・・" };
 		}
 		fMode = 0;
