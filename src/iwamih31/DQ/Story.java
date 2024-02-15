@@ -221,14 +221,11 @@ public class Story extends AbstractTableModel{
 		System.out.println(   "  もう一度最初から始めますか？ [ 1.YES  2.NO ]" );
 		int inp = Input.input();
 		switch ( inp ) {
-
 			case 1:
 				Main s = new Main();
-
 				break;
 			case 2:
 				System.out.println( "修了します" );
-
 				break;
 			default:
 				System.out.println( "1か2でお願いします" );
