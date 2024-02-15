@@ -130,14 +130,9 @@ public class Battle extends AbstractTableModel{
 	}
 
 	public void battle() {									/////敵の出現
-
-		System.out.println("");////////////////////////////////////////////////
-		System.out.println("battle() します");/////////////////////////////////
-		System.out.println("");////////////////////////////////////////////////
-
+		Common.___logOut___("battle() します");
 		fMode = 1;
 		item = 0;
-
 		for( int i = 0 ; i < monsNum ; i++ ) {
 			int r = new java.util.Random ( ).nextInt( 10 ) + 1;
 			switch ( r ) {
@@ -177,15 +172,11 @@ public class Battle extends AbstractTableModel{
 					mons[i] = new Air( i + 1 );
 					break;
 			}
-
 		}
-
 		initial();
-
 		if( mHp < 1 ){
 			System.out.println("");
 			System.out.println("  ＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊");
-
 			Robot rob;              //////////表示ディレイ
 			try {
 				rob = new Robot();
@@ -193,19 +184,15 @@ public class Battle extends AbstractTableModel{
 			} catch (AWTException e1) {
 				e1.printStackTrace();
 			}
-
-//			Input.ent( );
 			System.out.println("");
 		    System.out.println("気のせいだったようだ・・・");
 		    System.out.println("");
-//		    Input.ent( );
 		    battleText = new String[]{ "気のせいだったようだ・・・" };
 		    fMode = 0;
 		    Screen.setMode(555);
 		}else{
 			System.out.println( "" );
 			mList();
-
 			Robot rob;              //////////表示ディレイ
 			try {
 				rob = new Robot();
@@ -214,18 +201,12 @@ public class Battle extends AbstractTableModel{
 				System.out.println("エラー");
 				e1.printStackTrace();
 			}
-
-//			Input.ent();
 			battleText = new String[]{};//////////////////////////////////////戦闘開始(事前設定)
-
 			fpExp = new int[par.length];//////////////////////////戦闘前経験値
-
 			for (int i = 0; i < fpExp.length; i++) {
 				fpExp[i] = par[i].getExp();
 			}
-
 			fg = Main.getG();//////////////////////////戦闘前所持金
-
 			k = 1;
 			mK = 1;
 			fly = 1;
@@ -235,16 +216,11 @@ public class Battle extends AbstractTableModel{
 			pHug = 0;
 			mHug = 0;
 			fMode = 1;
-
-			if( pHp > 0 && mHp > 0 && fMode == 1){              ////
-				                                                  //
-			}else{                                                //確認用
-				System.out.println("この時点で終了しています");   //
-//				Input.ent();                                      //
-			}                                                   ////
-
+			if( pHp > 0 && mHp > 0 && fMode == 1){              //////////
+			}else{                                              //確認用//
+				System.out.println("この時点で終了しています");   //////////                                   //
+			}                                                   //////////
 			count = 1;
-
 			fight();
 		}
 	}
