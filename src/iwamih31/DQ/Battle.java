@@ -116,11 +116,8 @@ public class Battle extends AbstractTableModel{
 	private static ArrayList<String> array;
 
 	Battle() {
-
 		monsNum = 4;
-
 		mons = new Monster[ monsNum ];
-
 		par = Main.getParty ( );
 		pHp = 1;
 		mHp = 1;
@@ -130,7 +127,6 @@ public class Battle extends AbstractTableModel{
 		pGuard = false;
 		mGuard = false;
 		gM = mons[3];//////////モンスター側の[ガード]使用者判別用スイッチ
-
 	}
 
 	public void battle() {									/////敵の出現
