@@ -284,10 +284,7 @@ public class Story extends AbstractTableModel{
 		System.out.print( " 「 さあ、[ " + Main.getName() + " ]よ、一刻も早く[ " + Main.getbName() );
 		System.out.println( " ]を倒し、世界に平和をもたらすのじゃ!!! 」");
 		Input.ent();
-
 	}
-
-
 
 	@Override
 	public int getRowCount() {
