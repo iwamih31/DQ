@@ -288,7 +288,6 @@ public class Story extends AbstractTableModel{
 
 	@Override
 	public int getRowCount() {
-		// TODO 自動生成されたメソッド・スタブ
 		return sent.length;
 	}
 
