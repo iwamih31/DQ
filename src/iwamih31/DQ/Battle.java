@@ -311,28 +311,17 @@ public class Battle extends AbstractTableModel{
 		}
 	}
 
-
 	public void turn() {
-
-		System.out.println("");///////////////////////////////////////
-		System.out.println("Battle.turn() します");///////////////////
-		System.out.println("");///////////////////////////////////////
-
-		System.out.println("");/////////////////////////////////////////////
-		System.out.println("[ " + (around + 1) + " ]人目のアクション");/////
-		System.out.println("");/////////////////////////////////////////////
-
+		Common.___logOut___("Battle.turn() します");
+		Common.___logOut___("[ " + (around + 1) + " ]人目のアクション");
 		if (mHp > 0 && fMode == 1 && pHp > 1 && turn.size() >around) {
-
 			switch (turn.get(around)) {
-
 				case 0 ://パーティ[0]
 					setActor(0);
 					pGuard = false;
 					mHug = 0;
 					pBattle(0);
 					break;
-
 				case 1 ://パーティ[1]
 					setActor(1);
 					if (k == 2) {
@@ -348,43 +337,36 @@ public class Battle extends AbstractTableModel{
 					}
 					pBattle(1);
 					break;
-
 				case 2 ://パーティ[2]
 					setActor(2);
 					pBattle(2);
 					break;
-
 				case 3 ://パーティ[3]
 					setActor(3);
 					pBattle(3);
 					mGuard = false;
 					mHug = 0;
 					break;
-
 				case 4 ://モンスター[0]
 					setActor(4);
 					mBattle(0);
 					if (gM == null) gM = mons[0];
 					break;
-
 				case 5 ://モンスター[1]
 					setActor(5);
 					mBattle(1);
 					if (gM == null) gM = mons[1];
 					break;
-
 				case 6 ://モンスター[2]
 					setActor(6);
 					mBattle(2);
 					if (gM == null) gM = mons[2];
 					break;
-
 				case 7 ://モンスター[3]
 					setActor(7);
 					mBattle(3);
 					if (gM == null) gM = mons[3];
 					break;
-
 				default ://次のターンへ
 					fight();
 					break;
@@ -393,7 +375,6 @@ public class Battle extends AbstractTableModel{
 		}else{
 			fight();
 		}
-
 	}
 
 	static void item() {
