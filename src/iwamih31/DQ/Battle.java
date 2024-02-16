@@ -391,11 +391,9 @@ public class Battle extends AbstractTableModel{
 	}
 
 	static void gold() {
-		// TODO 自動生成されたメソッド・スタブ
 		if (fg != Main.getG()) {////////////////////獲得Gが有る場合
 			System.out.println("");
 			System.out.println(Main.getName() + "は全部で " + (Main.getG() - fg) + " Ｇを手に入れた");
-//			Input.ent();
 			battleText = new String[]{ Main.getName() + "は全部で " + (Main.getG() - fg) + " Ｇを手に入れた" };
 		}
 	}
