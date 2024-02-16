@@ -399,11 +399,8 @@ public class Battle extends AbstractTableModel{
 	}
 
 	static void exp() {
-
 		arrayClear();
-
 		for (int i = 0; i < par.length; i++) {
-
 			int f = fpExp[i];
 			Member p = par[i];
 			if (f != p.getExp()) {/////////////////////獲得経験値が有る場合
@@ -411,16 +408,12 @@ public class Battle extends AbstractTableModel{
 				System.out.println("");
 				System.out.print(p.getName() + "は合計 " + (p.getExp() - f));
 				System.out.println(" Ｐの経験値を獲得した  [Exp = " + p.getExp() + "]");
-//				Input.ent();
-
 				array.add(p.getName() + "は合計 " + (p.getExp() - f) + " Ｐの経験値を獲得した");
-
 				if (p.getLev() < upLev(p.getExp())) {
 					p.setLev(upLev(p.getExp()));
 					pTable();
 					System.out.println("");
 					System.out.println(p.getName() + "はレベルが" + p.getLev() + "に上がった!!! ");
-//					Input.ent();
 					array.add(p.getName() + "はレベルが" + p.getLev() + "に上がった!!! ");
 				}
 			}
