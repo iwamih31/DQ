@@ -423,27 +423,23 @@ public class Battle extends AbstractTableModel{
 
 	private void initial() {
 		par = Main.getParty ();
-
 		for (int j = 0; j < par.length; j++) {
 			if (par[j].getHp() < 0) {
 				par[j].setHp(0);
 				par[j].setMp(0);
 			}
 		}
-
 		for (int j = 0; j < mons.length; j++) {
 			if (mons[j].getHp() < 0) {
 				mons[j].setHp(0);
 				mons[j].setMp(0);
 			}
 		}
-
 		for (int j = 0; j < par.length; j++) {
 			if (par[j].getHp() > ( par[j].getLev( ) * par[j].getAp() * 10 )){
 				par[j].setHp(( par[j].getLev( ) * par[j].getAp() * 10 ));
 			}
 		}
-
 		for (int j = 0; j < par.length; j++) {
 			if (par[j].getMp() > ( par[j].getLev( ) * par[j].getEp() *  3 )) {
 				par[j].setMp(( par[j].getLev( ) * par[j].getEp() *  3 ));
@@ -471,8 +467,7 @@ public class Battle extends AbstractTableModel{
 		m4h = mons[ 3 ].getHp();
 
 		pHp = p1h + p2h + p3h + p4h;
-	    mHp = m1h + m2h + m3h + m4h;
-
+	  mHp = m1h + m2h + m3h + m4h;
 	}
 
 
