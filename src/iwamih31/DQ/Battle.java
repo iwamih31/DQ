@@ -480,51 +480,29 @@ public class Battle extends AbstractTableModel{
 		System.out.print("⇒⇒⇒⇒⇒⇒⇒⇒⇒⇒⇒⇒⇒⇒");
 	}
 
-
 	static void pList() {											//パーティーリスト
-
 		fi = ( par [ 0 ] );
 		he = ( par [ 1 ] );
 		pr = ( par [ 2 ] );
 		mg = ( par [ 3 ] );
-
 		for (int j = 0; j < par.length; j++) {
 			if (par[j].getHp() < 0) {
 				par[j].setHp(0);
 				par[j].setMp(0);
 			}
 		}
-
-//		System.out.print( "" );
-//		if( fi.getHp( ) > 0 ){
-//			System.out.print( "1." + fi.getName( ) + " [Lev." + fi.getLev( ) + " HP=" + fi.getHp( ) + ",MP=" + fi.getMp( ) + "]  " );
-//		}
-//		if( he.getHp( ) > 0 ){
-//			System.out.print( "2." + he.getName( ) + " [Lev." + he.getLev( ) + " HP=" + he.getHp( ) + ",MP=" + he.getMp( ) + "]  " );
-//		}
-//		if( pr.getHp( ) > 0 ){
-//			System.out.print( "3." + pr.getName( ) + " [Lev." + pr.getLev( ) + " HP=" + pr.getHp( ) + ",MP=" + pr.getMp( ) + "]  " );
-//		}
-//		if( mg.getHp( ) > 0 ){
-//			System.out.print( "4." + mg.getName( ) + " [Lev." + mg.getLev( ) + " HP=" + mg.getHp( ) + ",MP=" + mg.getMp( ) + "]  " );
-//		}
-//		System.out.println( "" );
-
 		pList[1][1] = fi.getName( ) + " ";
 		pList[2][1] = he.getName( ) + " ";
 		pList[3][1] = pr.getName( ) + " ";
 		pList[4][1] = mg.getName( ) + " ";
-
 		System.out.print("｛ ");
 		for( Object[ ] menus : pList ){
 			for( Object menu : menus ){
 			System.out.print(menu);
-
 			}
 		}
 		System.out.println(" ｝");
 	}
-
 
 	public static void mList() {									//モンスターリスト
 
