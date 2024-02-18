@@ -537,7 +537,6 @@ public class Battle extends AbstractTableModel{
 		}
 
 	void pSelect(int inp) {
-		// TODO 自動生成されたメソッド・スタブ
 		switch (inp + 1) {
 			case 1 : // 戦う
 				System.out.print("⇒☆[[ " + par[p].getName() + "の攻撃]]☆誰を攻撃しますか？   ");
@@ -546,12 +545,7 @@ public class Battle extends AbstractTableModel{
 				System.out.println("");
 				mList();
 				System.out.println("");
-
 				battleText = new String[]{"⇒☆[[ " + par[p].getName() + "の攻撃]]☆誰を攻撃しますか？   "};
-
-//				int select = (Input.input(menuList) - 1);
-//				attack(select);
-
 				break;
 			case 2 : // 道具
 				mList();
@@ -569,7 +563,6 @@ public class Battle extends AbstractTableModel{
 				pTable();
 				System.out.println("");
 				boolean ok = par[p].run();
-
 				if (ok == true) {
 					battleText = new String[]{ "[ " + par[p].getName() + " ]は、何とか逃げ切った・・・" };
 					fMode = 0;
@@ -581,11 +574,9 @@ public class Battle extends AbstractTableModel{
 						System.out.println("    ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆");
 						rb.delay(200);
 						System.out.println("  ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆");
-//						Input.ent();
 					} catch (AWTException e) {
 						e.printStackTrace();
 					}
-
 				} else { // 戦闘の続き
 					par[p].setHp(par[p].getHp() - 1);
 				}
@@ -596,7 +587,6 @@ public class Battle extends AbstractTableModel{
 				pTable();
 				mList();
 				System.out.println("[[ " + par[p].getName() + " ]]は、コケた・・・");
-//				Input.ent();
 				battleText = new String[]{ "[[ " + par[p].getName() + " ]]は、コケた・・・" };
 		}
 		initial();
