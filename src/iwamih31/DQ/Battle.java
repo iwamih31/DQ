@@ -936,48 +936,37 @@ public class Battle extends AbstractTableModel{
 				par[j].setMp(0);
 			}
 		}
-
 		for (int j = 0; j < par.length; j++) {
 			if (par[j].getHp() > ( par[j].getLev( ) * par[j].getAp() * 10 )){
 				par[j].setHp(( par[j].getLev( ) * par[j].getAp() * 10 ));
 			}
 		}
-
 		for (int j = 0; j < par.length; j++) {
 			if (par[j].getMp() > ( par[j].getLev( ) * par[j].getEp() *  3 )) {
 				par[j].setMp(( par[j].getLev( ) * par[j].getEp() *  3 ));
 			}
 		}
-
 		fi = ( par [ 0 ] );
 		he = ( par [ 1 ] );
 		pr = ( par [ 2 ] );
 		mg = ( par [ 3 ] );
-
 		Object fH = fi.getHp( );
 		Object hH = he.getHp( );
 		Object pH = pr.getHp( );
 		Object mH = mg.getHp( );
-
 		if(fi.getHp( ) < 1) fH ="死";
 		if(he.getHp( ) < 1) hH ="死";
 		if(pr.getHp( ) < 1) pH ="死";
 		if(mg.getHp( ) < 1) mH ="死";
-
-
 		Object pTable[] = new Object[4];
-
 		pTable[0] = fi.getName( ) + "(Lev." + fi.getLev( ) + ")HP=" + fH + ",MP=" + fi.getMp( );
 		pTable[1] = he.getName( ) + "(Lev." + he.getLev( ) + ")HP=" + hH + ",MP=" + he.getMp( );
 		pTable[2] = pr.getName( ) + "(Lev." + pr.getLev( ) + ")HP=" + pH + ",MP=" + pr.getMp( );
 		pTable[3] = mg.getName( ) + "(Lev." + mg.getLev( ) + ")HP=" + mH + ",MP=" + mg.getMp( );
-
-//		System.out.print("■");
 		for( Object table : pTable ){
 			System.out.print( "☆[" + table + "] ");
 		}
 		System.out.println("");
-
 	}
 
 	static void mGet() {
