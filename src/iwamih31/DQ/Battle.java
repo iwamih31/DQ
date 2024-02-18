@@ -848,69 +848,46 @@ public class Battle extends AbstractTableModel{
 	}
 
 	public static void status() {
-
 		for (int j = 0; j < par.length; j++) {
 			if (par[j].getHp() < 0) {
 				par[j].setHp(0);
 				par[j].setMp(0);
 			}
 		}
-
 		int fiP = fi.getLev( )*fi.getAp( );
 		int heP = he.getLev( )*he.getAp( );
 		int prP = pr.getLev( )*pr.getAp( );
 		int mgP = mg.getLev( )*mg.getAp( );
-
 		int fiE = fi.getLev( )*fi.getEp( );
 		int heE = he.getLev( )*he.getEp( );
 		int prE = pr.getLev( )*pr.getEp( );
 		int mgE = mg.getLev( )*mg.getEp( );
-
 		int[] nLE = {0,10,30,60,100,150,250,500,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,15000,20000};
-
 		Object[][] st = {
 				{"名前"       ,"Lev."      ,"経験値"    ,"体力"     ,"術力"     ,"強さ","素早さ"     ,"武器"                , "攻撃力"   , "技能力"  },
 				{fi.getName( ),fi.getLev( ),fi.getExp( ),fi.getHp( ),fi.getMp( ),fiP   ,fi.getSp( ) ,fi.getWeapon()[fi.getWp( )], fi.attack(), fi.getEp( )},
 				{he.getName( ),he.getLev( ),he.getExp( ),he.getHp( ),he.getMp( ),heP   ,he.getSp( ) ,he.getWeapon()[he.getWp( )], he.attack(), he.getEp( )},
 				{pr.getName( ),pr.getLev( ),pr.getExp( ),pr.getHp( ),pr.getMp( ),prP   ,pr.getSp( ) ,pr.getWeapon()[pr.getWp( )], pr.attack(), pr.getEp( )},
 				{mg.getName( ),mg.getLev( ),mg.getExp( ),mg.getHp( ),mg.getMp( ),mgP   ,mg.getSp( ) ,mg.getWeapon()[mg.getWp( )], mg.attack(), mg.getEp( )},
-		};
-
+			};
 		Object[][] mSt = {
 				{"       ",     "nextLev"                ,""     ,"MaxHP","MaxMP",""      ,""      ,"武器Lev"             ,""         ,""          },
 				{"次Lev=",nLE[fi.getLev( )]-fi.getExp( ),"MaxHP=",fiP*10 ,fiE*3  ,"=MaxMP","wLev.=",fi.attack()-fiP + 1   ,""         ,""          },
 				{"次Lev=",nLE[he.getLev( )]-he.getExp( ),"MaxHP=",heP*10 ,heE*3  ,"=MaxMP","wLev.=",he.attack()-heP + 1   ,""         ,""          },
 				{"次Lev=",nLE[pr.getLev( )]-pr.getExp( ),"MaxHP=",prP*10 ,prE*3  ,"=MaxMP","wLev.=",pr.attack()-prP + 1   ,""         ,""          },
 				{"次Lev=",nLE[mg.getLev( )]-mg.getExp( ),"MaxHP=",mgP*10 ,mgE*3  ,"=MaxMP","wLev.=",mg.attack()-mgP + 1   ,""         ,""          },
-				};
-
+			};
 		for (int i = 1; i < (st.length); i++) {
-
-			// System.out.println(Arrays.deepToString(Item.getItemList()));
-
 			for (int j = 0; j < st[0].length; j++) {
 				System.out.print("|" + st[0][j] + '\t');
 			}
 			System.out.println("|");
-			// for (int j = 0; j < st[0].length; j++) {
-			// System.out.print("|-------");
-			// }
-			// System.out.println("|");
 			for (int j = 0; j < st[0].length; j++) {
 				System.out.print("|" + st[i][j] + '\t');
 			}
 			System.out.println("|");
-			// for (int j = 0; j < st[0].length; j++) {
-			// System.out.print("|-------");
-			// }
-			// System.out.println("|");
 			System.out.print(" Lev.UP残["+ mSt[i][1] + "]\t  MAX[HP("+ mSt[i][3]);
 			System.out.println("),MP("+ mSt[i][4] + ")]           武器の強さ["+ mSt[i][7] +"]");
-//			for (int j = 0; j < mSt[0].length; j++) {
-//				System.out.print("|" + mSt[i][j] + '\t');
-//			}
-//			System.out.println("|");
-//			Input.ent();
 		}
 		System.out.print("<アイテム( ");
 		Item.items();
@@ -934,7 +911,6 @@ public class Battle extends AbstractTableModel{
 			System.out.println("");
 			break;
 		}
-//		Input.ent();
 	}
 
 	public static void setmK(int mK) {
