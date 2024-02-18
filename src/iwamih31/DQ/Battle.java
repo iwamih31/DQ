@@ -930,7 +930,6 @@ public class Battle extends AbstractTableModel{
 	}
 
 	public static void pTable() {
-
 		for (int j = 0; j < par.length; j++) {
 			if (par[j].getHp() < 0) {
 				par[j].setHp(0);
