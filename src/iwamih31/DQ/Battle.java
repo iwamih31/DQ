@@ -1006,12 +1006,9 @@ public class Battle extends AbstractTableModel{
 		return mSt.length;
 	}
 
-
 	@Override
 	public int getColumnCount() {
-
-			mGet();
-
+		mGet();
 		return mNa.length;
 	}
 
