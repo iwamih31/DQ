@@ -659,20 +659,14 @@ public class Battle extends AbstractTableModel{
 	}
 
 	private void mBattle(int m) {///////////////////////////////////////////モンスターのターン
-
 		Monster mon = mons[m];
-
 		if (mon.getHp() > 0) {
-
 			Screen.setMode(555);
-
 			pTable();
 			System.out.println("");
 			System.out.print("⇒★[[ " + mon.getName() + " ]]★は、");
 			int job = new java.util.Random().nextInt(7) + mon.getTyp();
-
 			switch (job) {
-
 				case 3 : // 戦う
 				case 4 :
 				case 9 :
@@ -686,47 +680,33 @@ public class Battle extends AbstractTableModel{
 						mBattle(m);
 					} else {
 						System.out.println(par[who].getName() + "に襲いかかってきた!!!");
-						//				Input.ent();
 						String text1 = "[ " + mon.getName() + " ]は、[ " + par[who].getName() + " ]に襲いかかってきた!!!";
-
-						// /////////////Battle.pTable( );
 						int judg = new java.util.Random().nextInt(mon.getSp() * mon.getLev());
 						if (judg == 1) {
 							String text2 = "ミス!!!" + par[who].getName() + "に当たらない!!!";
 							System.out.println(text2);
-							//					Input.ent();
-
 							battleText = new String[2];
 							battleText[0] = text1;
 							battleText[1] = text2;
 						} else {
-
 							String text2 = mon.getName() + "の攻撃が、" + par[who].getName() + "に命中!!!";
-
 							System.out.println("  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  ");
 							System.out.println(text2);
 							System.out.println("★★★★★★★★★★★★★★★★★★★★");
-//							Input.ent();
-
 							double bp = ((new java.util.Random().nextInt(7)) * 0.1) + 0.7;
 							int dm = (int) ((mon.attack() * bp) * mK);
-
 							///////////クリティカルヒット判定/////////////
 							int cH = (new java.util.Random().nextInt(par[who].getLev()));
-
 							if (p == 0 && par[0].getWp() == 9) {///////////////////ムラマサ装備の場合
 								dm = dm - (dm / 3);
 							}
-
 							String big = "";
 							if (cH == 0){//////////////////////////クリティカルヒットの場合
 								dm = dm * 3;
 								big = "大";
 							}
-
 							par[who].setHp(par[who].getHp() - dm);
 							pTable();
-
 							String text3 = par[who].getName() + "は" + dm + "Pの" + big + "ダメージを受けた!!!";
 							System.out.println("");
 							//					System.out.println("mon.attack("+ mon.attack() + ") * pb(" + bp + ") * mk(" + getmK() + ") = dm<" + dm);//////////
@@ -734,46 +714,35 @@ public class Battle extends AbstractTableModel{
 							if (who == 1) {
 								setFly(1);
 							}
-							//					Input.ent();
-
 							battleText = new String[3];
 							battleText[0] = text1;
 							battleText[1] = text2;
 							battleText[2] = text3;
-
 							if (par[who].getHp() < 1) {
 								pTable();
-
 								String text4 = par[who].getName() + "は、死んでしまった!!! ×m(__)m×";
-
 								System.out.println("");
 								System.out.println(par[who].getName() + "は、死んでしまった!!! ×m(__)m×");
-								//						Input.ent();
-
 								battleText = new String[4];
 								battleText[0] = text1;
 								battleText[1] = text2;
 								battleText[2] = text3;
 								battleText[3] = text4;
-
 							}
 						}
 					}
 					break;
-
 				case 5 : // 使う
 					System.out.println("様子を窺っている・・・");
 					//			Input.ent();
 					battleText = new String[]{ "[ " + mon.getName() + " ]は、様子を窺っている・・・" };
 					break;
-
 				case 6 : // 能力
 				case 7 :
 				case 8 :
 					Screen.setMode(555);
 					mons[m].ex(m);
 					break;
-
 				case 0 : // 逃げる
 				case 1 :
 				case 2 :
@@ -784,10 +753,8 @@ public class Battle extends AbstractTableModel{
 						System.out.println("");
 					}
 					break;
-
 				default : // コケる
 					System.out.println("コケた・・・");
-					//			Input.ent();
 					battleText = new String[]{ "コケた・・・" };
 			}
 			initial();
