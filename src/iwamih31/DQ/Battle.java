@@ -1012,7 +1012,6 @@ public class Battle extends AbstractTableModel{
 		return mNa.length;
 	}
 
-
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		return mSt[rowIndex][columnIndex];
