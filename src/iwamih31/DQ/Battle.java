@@ -505,7 +505,6 @@ public class Battle extends AbstractTableModel{
 	}
 
 	public static void mList() {									//モンスターリスト
-
 		if( mons[ 0 ].getHp( ) > 0 ){
 			System.out.print( "  ★"+mons[ 0 ].getName() + "＝" + mons[ 0 ].getHp( ) + "HP" );
 		}
@@ -521,25 +520,19 @@ public class Battle extends AbstractTableModel{
 		System.out.println( "" );
 	}
 
-
 	public void pBattle(int turnP) {// //////////////////////////////////////仲間のターン
 			p = turnP;
 			mList();
 			pTable();
 			System.out.println("");
 			par = Main.getParty();
-
 			if(par[p].getHp()>0){
-
-			System.out.print("⇒☆[[ " + par[p].getName() + " ]]☆は、");
-			Battle.bMenu();
-			System.out.println("}");
-			battleText = new String[]{"⇒☆[[ " + par[p].getName() + " ]]☆は、どうしますか？"};
-			Screen.setMenu(menu);
-			Screen.setMode(50);
-	//		int inp = Input.input(menuList);
-	//
-	//		turn(inp);
+				System.out.print("⇒☆[[ " + par[p].getName() + " ]]☆は、");
+				Battle.bMenu();
+				System.out.println("}");
+				battleText = new String[]{"⇒☆[[ " + par[p].getName() + " ]]☆は、どうしますか？"};
+				Screen.setMenu(menu);
+				Screen.setMode(50);
 			}
 		}
 
