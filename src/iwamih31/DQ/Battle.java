@@ -970,32 +970,21 @@ public class Battle extends AbstractTableModel{
 	}
 
 	static void mGet() {
-
 		int mCount = 0;
-
 		for (int i = 0; i < mons.length; i++) {
 			if (mons[i].getHp() > 0) mCount++;
 		}
-
-		System.out.println("");/////////////////////////////////////////////////////////////
-		System.out.println("現モンスター数 = " + mCount);///////////////////////////////////
-		System.out.println("");/////////////////////////////////////////////////////////////
-
+		Common.___logOut___("現モンスター数 = " + mCount);
 		mNa = new String[mCount];
 		mSt = new Object[3][mCount];
-
 		int i = 0;
-
 		while (i < mCount) {
-
 			for (int j = 0; j < mons.length; j++) {
 				if (mons[j].getHp() > 0) {
 					mNa[i] = mons[j].getName();
-
 					mSt[0][i] = ("Lev = " + mons[j].getLev());
 					mSt[1][i] = ("HP = " + mons[j].getHp());
 					mSt[2][i] = ("MP = " + mons[j].getMp());
-
 					i = (i + 1);
 				}
 			}
