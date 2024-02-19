@@ -17,10 +17,6 @@ public class Attack {
 		}
 	}
 
-	/*public static void  menu( int clickMenu ) {
-		System.out.println( clickMenu );
-	}*/
-
 	public void setMenuList(String[][] menuList) {
 		Attack.menuList = menuList;
 	}
@@ -28,5 +24,4 @@ public class Attack {
 	public static Object[][] getMenuList() {
 		return menuList;
 	}
-
 }
