@@ -1061,7 +1061,6 @@ public class Battle extends AbstractTableModel{
 
 
 	private static void arrayClear() {
-
 		if (array == null) {
 			array = new ArrayList<String>();
 		} else {
