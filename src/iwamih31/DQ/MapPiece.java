@@ -24,5 +24,4 @@ public class MapPiece {
 	public void setRole(int role) {
 		this.role = role;
 	}
-
 }
