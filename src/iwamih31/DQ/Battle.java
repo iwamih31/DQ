@@ -1059,7 +1059,6 @@ public class Battle extends AbstractTableModel{
 		return actor;
 	}
 
-
 	private static void arrayClear() {
 		if (array == null) {
 			array = new ArrayList<String>();
