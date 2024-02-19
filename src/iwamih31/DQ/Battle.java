@@ -1071,19 +1071,9 @@ public class Battle extends AbstractTableModel{
 	}
 
 	public static void setBattleText(ArrayList<String> arrayList) {
-
 		battleText = new String[arrayList.size()];
-
 		for (int i = 0; i < arrayList.size(); i++) {
 			battleText[i] = arrayList.get(i);
 		}
 	}
 }
-//System.out.println("確認対象="+ mons [ 0 ] +"です hdja shjdhhsghldhhgshdhgfsh");//●///確認///●
-
-
-//if (null == Main.getParty() [ 0 ]) {////////////////////●///確認///●
-//	System.out.println("nullです。");/////////////////////
-//}else{//////////////////////////////////////////////////
-//	System.out.println(Main.getParty() [ 0 ].getName());//
-//}
