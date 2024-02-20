@@ -116,11 +116,9 @@ public class Music {
 	}
 
 	public void stop() {
-
 		System.out.println("");////////////////////////
 		System.out.println(mediaURI + " を停止します");
 		System.out.println("");////////////////////////
-
 		clip.stop();
 		clip.flush();
 		clip.setFramePosition(0);
