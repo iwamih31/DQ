@@ -64,25 +64,18 @@ public class Music {
 	}
 
 	public static Clip createClip(URL resourceURL) {
-
 		String errorMessage = "";
 		//指定されたURLのオーディオ入力ストリームを取得
 		try (AudioInputStream ais = AudioSystem.getAudioInputStream(resourceURL)){
-
 			//ファイルの形式取得
 			AudioFormat af = ais.getFormat();
-
 			//単一のオーディオ形式を含む指定した情報からデータラインの情報オブジェクトを構築
 			DataLine.Info dataLine = new DataLine.Info(Clip.class,af);
-
 			//指定された Line.Info オブジェクトの記述に一致するラインを取得
 			Clip c = (Clip)AudioSystem.getLine(dataLine);
-
 			//再生準備完了
 			c.open(ais);
-
 			return c;
-
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 			errorMessage = e.getMessage();
@@ -98,7 +91,6 @@ public class Music {
 		}
 		JOptionPane.showMessageDialog(null, "createClip(" + resourceURL + ") 出来ませんでした");
 		JOptionPane.showMessageDialog(null, errorMessage);
-
 		return null;
 	}
 
