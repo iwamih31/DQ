@@ -24,21 +24,15 @@ public class Music {
 	private String mediaDirectory = "media/";
 
 	public Music(String mediaName) {
-
 		String resourceName = mediaName + ".wav";
-
 		if (clip == null) {
-
 			URL resourceURL = this.getClass().getClassLoader().getResource(mediaDirectory + resourceName);
-
 			mediaURI = resourceURL.toString();
-
 			clip = createClip(resourceURL);
 		}
 	}
 
 	public static Clip createClip(File path) {
-
 		String errorMessage = "";
 		//指定されたURLのオーディオ入力ストリームを取得
 		try (AudioInputStream ais = AudioSystem.getAudioInputStream(path)){
