@@ -33,9 +33,7 @@ public class Sound {
 	}
 
 	public Sound() throws LineUnavailableException {
-
 		this(440f,100);
-
 	}
 
 }
