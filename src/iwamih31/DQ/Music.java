@@ -95,13 +95,12 @@ public class Music {
 	}
 
 	public void play() {
-
 		System.out.println("");////////////////////////
 		System.out.println(mediaURI + " を再生します");
 		System.out.println("");////////////////////////
-
 		clip.start();
 	}
+
 	public void playRepeat() {
 
 		System.out.println("");////////////////////////
