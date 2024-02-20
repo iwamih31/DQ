@@ -126,11 +126,9 @@ public class Music {
 	}
 
 	public void fade_out() {
-
 		FloatControl ctrl = (FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);
 		for ( int i = 100;i >= 0;i-- ) {
 			ctrl.setValue((float)Math.log10((float)i / 100)*20);
 		}
 	}
-
 }
