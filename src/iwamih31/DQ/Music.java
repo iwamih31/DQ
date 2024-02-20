@@ -109,13 +109,12 @@ public class Music {
 	}
 
 	public void pause() {
-
 		System.out.println("");////////////////////////
 		System.out.println(mediaURI + " を一時停止します");
 		System.out.println("");////////////////////////
-
 		clip.stop();
 	}
+
 	public void stop() {
 
 		System.out.println("");////////////////////////
