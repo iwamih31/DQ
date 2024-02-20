@@ -102,13 +102,12 @@ public class Music {
 	}
 
 	public void playRepeat() {
-
 		System.out.println("");////////////////////////
 		System.out.println(mediaURI + " をループ再生します");
 		System.out.println("");////////////////////////
-
 		clip.loop(Clip.LOOP_CONTINUOUSLY);
 	}
+
 	public void pause() {
 
 		System.out.println("");////////////////////////
