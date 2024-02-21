@@ -36,12 +36,11 @@ public class SquareWave {
 	}
 
 	public AudioFormat getAudioFormat() {
-	return new AudioFormat(sampleRate, 8, 1, true, true);
+		return new AudioFormat(sampleRate, 8, 1, true, true);
 	}
 
-
 	public InputStream getInputStream(int playTime) {
-	return new WaveInputStream(playTime);
+		return new WaveInputStream(playTime);
 	}
 
 	public float getFrequency() {
@@ -52,33 +51,30 @@ public class SquareWave {
 		this.frequency = frequency;
 	}
 
+
 	//データのアクセス用に InputStream を使うことにしました。
 	private class WaveInputStream extends InputStream {
-	private long frameLength;
-	private long framePos;
-	private int index;
+		private long frameLength;
+		private long framePos;
+		private int index;
 
-	private WaveInputStream(int playTime) {
-	frameLength = (long)((sampleRate / 1000) * playTime);
-	framePos = 0;
-	index = 0;
-	}
+		private WaveInputStream(int playTime) {
+			frameLength = (long)((sampleRate / 1000) * playTime);
+			framePos = 0;
+			index = 0;
+		}
 
-	@Override
-	public int read() throws IOException {
-	if (framePos >= frameLength) {
-	return -1;
+		@Override
+		public int read() throws IOException {
+			if (framePos >= frameLength) {
+				return -1;
+			}
+			framePos++;
+			if (index >= data.length) index = 0;
+			int i = index;
+			index++;
+			return 0xFF & data[i];
+		}
 	}
-
-	framePos++;
-	if (index >= data.length)
-	index = 0;
-
-	int i = index;
-	index++;
-	return 0xFF & data[i];
-	}
-
-	}
-	}
+}
 
