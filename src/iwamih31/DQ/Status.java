@@ -156,7 +156,6 @@ public class Status extends AbstractTableModel{
 		return status[0].length;
 	}
 
-
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		setStatus();
