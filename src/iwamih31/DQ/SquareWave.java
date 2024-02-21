@@ -27,13 +27,12 @@ public class SquareWave {
 	}
 
 	private void makeWave() {
-	for (int i = 0; i < data.length; i++) {
-	byte d = amplitude;
-	if (i >= data.length / 2)
-	d = (byte)(d * -1);
-	data[i] = d;
-	}
-
+		for (int i = 0; i < data.length; i++) {
+			byte d = amplitude;
+			if (i >= data.length / 2)
+			d = (byte)(d * -1);
+			data[i] = d;
+		}
 	}
 
 	public AudioFormat getAudioFormat() {
