@@ -4,22 +4,18 @@ import javax.swing.table.AbstractTableModel;
 
 public class Wapon extends AbstractTableModel{
 
-
 	private static Object itemList[][] = {
 		{""  ,""        ,"" ,""          ,"｛ "},
 		{"１.","ヒロポン","(", 20 * lev(),"G) "},
 		{"２.","毒針"    ,"(", 50 * lev(),"G) "},
 		{"３.","爆弾"    ,"(",100 * lev(),"G) "}
 	};
-
 	private Object[][] shop;
 	private static String[] shopText;
 
 	public Wapon(int i){
 
 		Member member = Main.getParty()[i];
-
-
 
 		int wp1 = member.getWp() + 1;
 		if (9 < wp1) wp1 = 9;
@@ -89,13 +85,11 @@ public class Wapon extends AbstractTableModel{
 		return shop.length;
 	}
 
-
 	@Override
 	public int getColumnCount() {
 		setShop();
 		return shop[0].length;
 	}
-
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
