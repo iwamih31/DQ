@@ -765,7 +765,6 @@ public class Battle extends AbstractTableModel{
 		Battle.menuList = menuList;
 	}
 
-
 	public static Object[][] getItemList() {
 		return menuList;
 	}
