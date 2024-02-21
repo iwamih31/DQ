@@ -18,13 +18,12 @@ public class SquareWave {
 	private byte[] data;
 
 	public SquareWave(float frequency, byte amplitude, float sampleRate) {
-	this.setFrequency(frequency);
-	this.amplitude = amplitude;
-	this.sampleRate = sampleRate;
-
-	int dataSize = (int)((1 / frequency) * sampleRate);
-	data = new byte[dataSize];
-	makeWave();
+		this.setFrequency(frequency);
+		this.amplitude = amplitude;
+		this.sampleRate = sampleRate;
+		int dataSize = (int)((1 / frequency) * sampleRate);
+		data = new byte[dataSize];
+		makeWave();
 	}
 
 	private void makeWave() {
