@@ -806,7 +806,6 @@ public class Battle extends AbstractTableModel{
 		}
 	}
 
-
 	public static void setK(int k) {
 		Battle.k = k;
 	}
