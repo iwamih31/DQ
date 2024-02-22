@@ -81,7 +81,6 @@ public class Main extends AbstractTableModel implements Serializable{
 
 	}
 
-
 	public static void main(String[] args) {///////////////////RPGスタート
 
 		mai = new Main();///////////////////////////////////////////////////
