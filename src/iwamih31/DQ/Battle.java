@@ -826,7 +826,6 @@ public class Battle extends AbstractTableModel{
 		Battle.fly = fly;
 	}
 
-
 	public double getFly() {
 		return fly;
 	}
