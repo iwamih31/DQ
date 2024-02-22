@@ -834,7 +834,6 @@ public class Battle extends AbstractTableModel{
 		Battle.gM = gM;
 	}
 
-
 	public Monster getgM() {
 		return gM;
 	}
