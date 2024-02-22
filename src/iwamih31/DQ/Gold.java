@@ -2,28 +2,26 @@ package iwamih31.DQ;
 
 import javax.swing.table.AbstractTableModel;
 
-
-
 public class Gold extends AbstractTableModel{
-	
+
 	private static int g;
 	private static Object[ ][ ] list = {
 		{"Gold = ", g},
 	};
-	
+
 	Gold(){
 		g = Main.getG();
 		list = new Object[ ][ ]{
 				{"Gold = ", g},};
 	}
-	
+
 	public void setList(String[][] setList) {
 		Gold.list = setList;
 	}
 
 	public static Object[][] getList() {
 		return list;
-	}	
+	}
 
 	@Override
 	public Class<?> getColumnClass(int columnIndex) {
@@ -34,7 +32,7 @@ public class Gold extends AbstractTableModel{
 	public String getColumnName(int column) {
 		return String.valueOf(list[0][column]);
 	}
-	
+
 	@Override
 	public int getRowCount() {
 		return list.length;
@@ -49,9 +47,9 @@ public class Gold extends AbstractTableModel{
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		
+
 		g = Main.getG();
-		
+
 		return list[rowIndex][columnIndex];
 	}
 
