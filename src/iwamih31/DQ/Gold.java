@@ -46,9 +46,7 @@ public class Gold extends AbstractTableModel{
 
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
-
 		g = Main.getG();
-
 		return list[rowIndex][columnIndex];
 	}
 
