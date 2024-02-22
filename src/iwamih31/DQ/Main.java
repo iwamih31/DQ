@@ -156,40 +156,26 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	static void pGet() {
-
 		int pCount = 0;
-
 		for (int i = 0; i < party.length; i++) {
 			if (party[i].getHp() > 0) pCount++;
 		}
-
-		System.out.println("");/////////////////////////////////////////////////////////////
-		System.out.println("現パーティ人数 = " + pCount);///////////////////////////////////
-		System.out.println("");/////////////////////////////////////////////////////////////
-
+		Common.___logOut___("現パーティ人数 = " + pCount);
 		pNa = new String[pCount];
 		pSt = new Object[3][pCount];
-
 		int i = 0;
-
 		while (i < pCount) {
-
 			for (int j = 0; j < party.length; j++) {
 				if (party[j].getHp() > 0) {
 					getpNa()[i] = party[j].getName();
-
 					pSt[0][i] = ("Lev = " + party[j].getLev());
 					pSt[1][i] = ("HP = " + party[j].getHp());
 					pSt[2][i] = ("MP = " + party[j].getMp());
-
 					i = (i + 1);
 				}
 			}
 		}
-
-		System.out.println("");////////////////////////////////////////////////////////
-		System.out.println("現パーティ最後尾 = " + getpNa()[i-1]);///////////////////////////////////
-		System.out.println("");////////////////////////////////////////////////////////
+		Common.___logOut___("現パーティ最後尾 = " + getpNa()[i-1]);
 	}
 
 	private static void pSt() {
