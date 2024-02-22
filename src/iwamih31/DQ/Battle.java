@@ -810,7 +810,6 @@ public class Battle extends AbstractTableModel{
 		Battle.k = k;
 	}
 
-
 	public int getK() {
 		return k;
 	}
