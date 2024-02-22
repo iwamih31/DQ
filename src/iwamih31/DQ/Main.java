@@ -194,13 +194,8 @@ public class Main extends AbstractTableModel implements Serializable{
 
 
 	static void action(int select) {
-
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("Main.action( " + select +" ) します");////////
-		System.out.println("");//////////////////////////////////////////
-
+		Common.___logOut___("Main.action( " + select +" ) します");
 		Battle.pTable();//パーティーのステータスを表示
-
 		party[0].setHp(party[0].getHp() - 1);
 		party[1].setHp(party[1].getHp() - 1);
 		party[2].setHp(party[2].getHp() - 1);
@@ -209,61 +204,42 @@ public class Main extends AbstractTableModel implements Serializable{
 		party[1].setMp(party[1].getMp() + 1);
 		party[2].setMp(party[2].getMp() + 1);
 		party[3].setMp(party[3].getMp() + 1);
-
 		if(party[1].getWp() == 9){////////////////////ムラマサ
 			//攻撃力＋
 			//防御力＋
 		}
-
 		if(party[1].getWp() == 9){////////////////////英雄の剣
 			party[1].setHp(party[1].getHp() + 1);
 			//クリティカルヒット率アップ
 		}
-
 		if(party[2].getWp() == 9){////////////////////神の十字架
 			party[2].setHp(party[2].getHp() + 1);
 			party[2].setMp(party[2].getMp() + 1);
 		}
-
 		if(party[3].getWp() == 9){////////////////////魔導師の杖
 			party[3].setMp(party[3].getMp() + 2);
 		}
-
-
 		for (int j = 0; j < party.length; j++) {
 			if (party[j].getHp() < 0) {
 				party[j].setHp(0);
 				party[j].setMp(0);
 			}
 		}
-
 		Object[] choice;
 		arrayClear();
-
 		switch (select) {
-
 		case 1:
-
 			array.add(("―――――" + getName() + "は探検を続けた―――――"));
-
 			setText(array);
-
 			break;
-
 		case 2:
-
-
 			Battle.pTable();
 			System.out.println("");
 			System.out.println( "⇒どちらを使いますか？ [ 1. 道具 ] [ 2. 能力 ]");
 			System.out.println("");
-
 			message("⇒どちらを使いますか？");
-
 			choice = new Object[]{"道具","能力"};
-
 			button(choice);
-
 			break;
 		case 3 :
 			System.out.print("＊持ち物< ");
@@ -272,33 +248,24 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println("");
 			System.out.println("「いらっしゃいませ、御用は何でしょうか？ [ 1. 道具 ] [ 2. 武器 ]");
 			System.out.println("");
-
 			message("「いらっしゃいませ、御用は何でしょうか？」");
-
 			choice = new Object[]{ "買う", "売る" };
-
 			button(choice);
-
 			break;
-
 		case 4:
 			innG();// /////////////////////////////宿代を計算
 			Battle.pTable();
 			message("⇒宿代は [ " + innG + "G ] ですが、お泊りになりますか？");
-
 			System.out.println("");
 			System.out.println("⇒宿代は [ " + innG
 					+ "G ] ですが、お泊りになりますか？ [ 1.はい ][ 2.いいえ ][ 3.状態確認 ][ 4.復活の儀式 ]");
 			System.out.println("");
 			System.out.print("[所持金＝ " + g + "G ] ");
-
 			innText = new String[3];
 			innText[0] = name + "は、宿で体を休めた・・・";
 			innText[1] = "♪♪♪旅の疲れが癒された ♪♪♪";
 			innText[2] = "「またのお越しをお待ちしております。（*^o^*）」";
-
 			break;
-
 		default:
 			Battle.pTable();
 			System.out.println("");
