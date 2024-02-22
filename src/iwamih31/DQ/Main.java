@@ -281,7 +281,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		save();
 	}
 
-
 	private static void arrayClear() {
 
 		if (array == null){
