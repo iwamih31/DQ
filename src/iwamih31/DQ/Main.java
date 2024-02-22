@@ -295,7 +295,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		Screen.setMenu(choices);
 	}
 
-
 	static void shop(int select) {
 		if (select == 1) {
 			Battle.pTable();
