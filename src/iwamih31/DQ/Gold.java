@@ -44,7 +44,6 @@ public class Gold extends AbstractTableModel{
 		return list[0].length;
 	}
 
-
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 
