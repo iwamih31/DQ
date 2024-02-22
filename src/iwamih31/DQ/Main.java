@@ -291,7 +291,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	private static void button(Object[] choices) {
 		Screen.setMenu(choices);
 	}
