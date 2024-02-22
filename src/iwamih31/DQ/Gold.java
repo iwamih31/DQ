@@ -38,7 +38,6 @@ public class Gold extends AbstractTableModel{
 		return list.length;
 	}
 
-
 	@Override
 	public int getColumnCount() {
 		return list[0].length;
