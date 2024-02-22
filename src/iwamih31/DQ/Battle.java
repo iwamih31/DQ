@@ -830,7 +830,6 @@ public class Battle extends AbstractTableModel{
 		return fly;
 	}
 
-
 	public static void setgM(Monster gM) {
 		Battle.gM = gM;
 	}
