@@ -179,10 +179,8 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	private static void pSt() {
-
 		pNa = new String[party.length];
 		pSt = new Object[3][party.length];
-
 		for (int i = 0; i < party.length; i++) {
 			getpNa()[i] = party[i].getName();
 			pSt[0][i] = ("Lev = " + party[i].getLev());
@@ -190,7 +188,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			pSt[2][i] = ("MP = " + party[i].getMp());
 			if (party[i].getHp() < 1) {
 				getpNa()[i] = party[i].getName() + "(死体)";
-
 			}
 		}
 	}
