@@ -814,7 +814,6 @@ public class Battle extends AbstractTableModel{
 		return k;
 	}
 
-
 	public static void setMons(Monster[ ] mons) {
 		Battle.mons = mons;
 	}
