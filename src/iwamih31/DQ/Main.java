@@ -282,7 +282,6 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	private static void arrayClear() {
-
 		if (array == null){
 			array = new ArrayList<String>();
 		}else{
