@@ -822,7 +822,6 @@ public class Battle extends AbstractTableModel{
 		return mons;
 	}
 
-
 	public static void setFly(int fly) {
 		Battle.fly = fly;
 	}
