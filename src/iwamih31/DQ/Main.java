@@ -378,7 +378,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	static void ex(int who) {
 
 		System.out.println("");
