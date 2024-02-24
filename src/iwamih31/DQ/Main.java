@@ -620,7 +620,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		save();
 	}
 
-
 	static void revive(int who) {
 
 		arrayClear();
