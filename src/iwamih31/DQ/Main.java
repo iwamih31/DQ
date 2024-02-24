@@ -383,7 +383,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		party[who].ex();
 	}
 
-
 	static void event() {
 
 		System.out.println("");// ////////////////////////////////////////
