@@ -566,22 +566,17 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	static void innMenu(int i) {
-
 		arrayClear();
-
 		switch (i) {
 			case 1 :
-
 				if(getG() < innG) {
 					System.out.print("お金が足りません");
 				} else {
-
 					setG(getG() - innG);
 					Battle.pTable();
 					System.out.println("");
 					System.out.println(name + "は、宿で体を休めた・・・");
 					array.add(name + "は、宿で体を休めた・・・");
-
 					Battle.pTable();
 					System.out.println("");
 					System.out.println(name + "は、宿で体を休めた・・・");
@@ -593,7 +588,6 @@ public class Main extends AbstractTableModel implements Serializable{
 					System.out.println("");
 					System.out.println("♪♪♪旅の疲れが癒された ♪♪♪");
 					array.add("♪♪♪旅の疲れが癒された ♪♪♪");
-
 					Battle.pTable();
 					System.out.println("");
 					System.out.println("[所持金＝ " + getG() + "G ]");
@@ -606,7 +600,6 @@ public class Main extends AbstractTableModel implements Serializable{
 				System.out.println("");
 				System.out.println(name + "は、宿を出た・・・");
 				array.add(name + "は、宿を出た・・・");
-
 				break;
 			case 4 :
 				Battle.pTable();
@@ -616,11 +609,8 @@ public class Main extends AbstractTableModel implements Serializable{
 				System.out.println("");
 				Screen.setMessage("誰を復活させますか？");
 				break;
-
 			default :
-
 				Screen.setMessageEnt("「またのお越しをお待ちしております。（*^o^*）」");
-
 		}
 		Battle.pTable();
 		System.out.println("");
