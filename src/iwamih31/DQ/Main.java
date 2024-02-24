@@ -384,33 +384,21 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	static void event() {
-
-		System.out.println("");// ////////////////////////////////////////
-		System.out.println("Main.event() します");// //////////////////////////
-		System.out.println("");// ////////////////////////////////////////
-
+		Common.___logOut___("Main.event() します");
 		System.out.println( "                 ／       ＼"           );
 		System.out.println( "               ／           ＼"         );
 		System.out.println(  "―――――" + getName() + "は探検を続けた―――――" );
 		System.out.println( "           ／                   ＼"     );
 		System.out.println( "         ／                       ＼"   );
 		System.out.println( "" );
-
 		int r = new java.util.Random ().nextInt(100);
-
-		System.out.println("");// ////////////////////////////////////////
-		System.out.println("r = " + r);// //////////////////////////
-		System.out.println("");// ////////////////////////////////////////
-
+		Common.___logOut___("r = " + r);
 		if( r < 5) {
-
 			setDoText(new String[3]);
 			getDoText()[0] = ("「 ・・・!!? 」");
 			getDoText()[1] = (name + "は、良い人に出会った♪");
 			getDoText()[2] = ("「少し元気をもらった  ↑↑↑」");
-
 			Screen.setMode(11);
-
 			Battle.pTable();
 			System.out.println("");
 			System.out.print("      ");
@@ -419,18 +407,11 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println("");
 			System.out.print("      ");
 			System.out.println(name + "は、良い人に出会った♪");
-
 			healing();
-
-
 		} else if (r < 10) {
-
 			Screen.setMode(12);
-
 			int c = new java.util.Random().nextInt(3);
-
 			String comment = null;
-
 			switch (bHp) {
 				case 3 :
 					if 		(c == 0) comment = ("「竜王っていう魔物が現れて世界を破壊しているらしい・・・  (＋_＋)」");
@@ -448,12 +429,10 @@ public class Main extends AbstractTableModel implements Serializable{
 					else if (c == 2) comment = ("「勇者" + getyName() + "、どうか世界を救って下さいね・・・  (Ｔ_Ｔ)」");
 					break;
 			}
-
 			setDoText(new String[3]);
 			getDoText()[0] = ("「 ・・・!!? 」");
 			getDoText()[1] = (comment);
 			getDoText()[2] = ("・・・");
-
 			Battle.pTable();
 			System.out.println("");
 			System.out.print("      ");
@@ -464,19 +443,15 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println(comment);
 		} else if (r < 75) {
 			Screen.setMode(1);
-
 			setDoText(new String[0]);
 			Battle.pTable();
 			System.out.println( "" );
 			System.out.print( "      " );
 			System.out.println( "「・・・・・何も起きない、少し疲れた  (+_+)」" );
 		} else if( r < 95) {
-
 			Screen.setMode(14);
-
 			setDoText(new String[1]);
 			getDoText()[0] = ( "「!!!★★★★★!!? モンスターが現れた !!!★★★★★!!!」" );
-
 			try {
 				int s = 50;//★表示スピード（速い＜遅い）
 				Robot rb = new Robot();
@@ -562,12 +537,9 @@ public class Main extends AbstractTableModel implements Serializable{
 				e.printStackTrace();
 			}
 		} else {
-
 			Screen.setMode(15);
-
 			setDoText(new String[1]);
 			getDoText()[0] = ( "「 ・・・!!? 」" );
-
 			Battle.pTable();
 			System.out.println( "" );
 			System.out.print( "      " );
