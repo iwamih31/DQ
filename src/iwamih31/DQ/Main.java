@@ -554,7 +554,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		bat.battle();
 	}
 
-
 	public static void healing() {
 		if (party[0].getHp() > 0) party[0].setHp(party[0].getHp() + 40);
 		if (party[1].getHp() > 0) party[1].setHp(party[1].getHp() + 30);
