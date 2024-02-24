@@ -565,7 +565,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		System.out.println("「少し元気をもらった  ↑↑↑」");
 	}
 
-
 	static void innMenu(int i) {
 
 		arrayClear();
