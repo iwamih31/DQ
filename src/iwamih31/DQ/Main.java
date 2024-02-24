@@ -641,7 +641,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		setText(array);
 	}
 
-
 	static void reviveYes(int co) {
 		arrayClear();
 		switch (co) {
