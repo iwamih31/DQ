@@ -616,9 +616,7 @@ public class Main extends AbstractTableModel implements Serializable{
 		System.out.println("");
 		System.out.println("「またのお越しをお待ちしております。（*^o^*）」");
 		array.add("「またのお越しをお待ちしております。（*^o^*）」");
-
 		setText(array);
-
 		save();
 	}
 
