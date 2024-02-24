@@ -549,7 +549,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		save();
 	}
 
-
 	static void battle() {
 		bat= new Battle();
 		bat.battle();
