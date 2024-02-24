@@ -621,9 +621,7 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	static void revive(int who) {
-
 		arrayClear();
-
 		select = Main.getParty() [ who ];
 		if(select.getHp() > 0){
 			Battle.pTable();
@@ -637,9 +635,7 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println(remG + "Gかかるけど復活するかい？・・・ [ 1. はい ][ 2. いいえ ]");
 			System.out.println("");
 			Screen.setMode(4444);
-
 			Screen.setMessage(remG + "Gかかるけど復活するかい？・・・");
-
 			Screen.setMenu(new String[]{"はい","いいえ"});
 		}
 		setText(array);
