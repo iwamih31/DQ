@@ -667,7 +667,6 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	private static void message(String setMessage) {
-
 		Screen.setMessage(setMessage);
 	}
 
