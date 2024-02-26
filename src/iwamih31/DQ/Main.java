@@ -646,12 +646,9 @@ public class Main extends AbstractTableModel implements Serializable{
 		switch (co) {
 			case 1:
 				Screen.setMode(445);
-
 				if (Main.getG() < remG) {
 					array.add("お金が足りません!!");
-
 				} else {
-
 					select.setHp((int) (select.getAp() * 5));
 					select.setMp((int) (select.getEp() * 2));
 					Main.setG(Main.getG() - remG);
@@ -659,13 +656,11 @@ public class Main extends AbstractTableModel implements Serializable{
 					System.out.println("");
 					System.out.println(select.getName() + "は生き返った!!!");
 					array.add(select.getName() + "は生き返った!!!");
-
 					Battle.pTable();
 					System.out.println("");
 					System.out.println("  [所持金＝ " + getG() + "G ]");
 					array.add("  [所持金＝ " + getG() + "G ]");
 				}
-
 				break;
 			}
 		setText(array);
