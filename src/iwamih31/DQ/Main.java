@@ -727,7 +727,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	static void getItem() {
 		Screen.setCount(0);
 		doText = (new String[4]);
