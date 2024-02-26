@@ -697,10 +697,8 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	static void load() {
-
 		try {
 			ObjectInputStream sData = new ObjectInputStream(new FileInputStream(sFile));
-
 			yName = (String) sData.readObject();
 			fi = (Fighter) sData.readObject();// ///////////引き継いだキャラを変数に代入
 			he = (Hero) sData.readObject();
@@ -710,19 +708,13 @@ public class Main extends AbstractTableModel implements Serializable{
 			g = sData.readInt();
 			Object ItemList = sData.readObject();
 			//////////////////////////////＊アイテム数も追加する＊
-
 			sData.close();
-
 			name = "チーム勇者" + yName;
-
 			party [ 0 ] = fi;///////実体化したキャラを配列変数に代入
 			party [ 1 ] = he;
 			party [ 2 ] = pr;
 			party [ 3 ] = mg;
-
 			Item.setItemList((Object[][]) ItemList);
-
-
 		} catch (FileNotFoundException e) {
 			e.getMessage();
 			e.printStackTrace();
