@@ -678,7 +678,6 @@ public class Main extends AbstractTableModel implements Serializable{
 	static void save() {
 		try {
 			ObjectOutputStream sData = new ObjectOutputStream(new FileOutputStream(sFile));
-
 			sData.writeObject(yName);
 			sData.writeObject(fi);
 			sData.writeObject(he);
@@ -687,9 +686,7 @@ public class Main extends AbstractTableModel implements Serializable{
 			sData.writeInt(bHp);
 			sData.writeInt(g);
 			sData.writeObject(Item.getItemList());
-
 			sData.close();
-
 		} catch (FileNotFoundException e) {
 			e.getMessage();
 			e.printStackTrace();
@@ -697,7 +694,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			e.getMessage();
 			e.printStackTrace();
 		}
-
 	}
 
 
