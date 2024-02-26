@@ -675,7 +675,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		innG = (lev * lev) * (2);
 	}
 
-
 	static void save() {
 		try {
 			ObjectOutputStream sData = new ObjectOutputStream(new FileOutputStream(sFile));
