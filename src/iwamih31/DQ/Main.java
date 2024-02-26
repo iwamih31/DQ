@@ -670,7 +670,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		Screen.setMessage(setMessage);
 	}
 
-
 	private static void innG() {
 
 		int lev = (party[0].getLev() + party[1].getLev() + party[2].getLev() + party[3].getLev());
