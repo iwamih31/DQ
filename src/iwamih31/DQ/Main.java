@@ -696,7 +696,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	static void load() {
 
 		try {
