@@ -788,7 +788,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	private static void end() {
 	System.out.println( "・・・・・・・・・・!?" );
 	System.out.println( "・・・おまえはもう、死んでいる" );
