@@ -734,7 +734,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		doText[1] = ("「!!? 宝箱を見つけた  ☆☆☆」");
 		doText[2] = ("「開けると○○が入っていた");
 		doText[3] = ("          ⇒"+get + " をリュックに詰め込んだ。");
-
 		System.out.print( "      " );
 		System.out.println( "「!!? 宝箱を見つけた  ☆☆☆」" );
 		System.out.println( "      " );
@@ -755,14 +754,10 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 		if( what < 90 ){
 			System.out.println( "が入っていた」" );
-
 			doText[2] = ("「開けると[ " + get + " ]が入っていた");
-
 			System.out.println( "" );
 			System.out.println("          ⇒"+get + " をリュックに詰め込んだ。" );
-
 			doText[3] = ("          ⇒"+get + " をリュックに詰め込んだ。" );
-
 		}else{
 			Screen.setCount(0);
 			doText = (new String[5]);
@@ -771,7 +766,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			doText[2] = ("「開けると[ party[ who ].wep() ]が入っていた");
 			doText[3] = ("party[ who ].getName() + は + party[ who ].wep() + を装備した" );
 			doText[4] = ("[ sell + ]はメルカリに出し[ + price  + G ]で売れた");
-
 			int who = new java.util.Random ( ).nextInt( 4 );
 			String sell = party[ who ].getWeapon()[ party[ who ].getWp( ) ];
 			int pP = (new java.util.Random ( ).nextInt( 10 ) - 5);
@@ -784,17 +778,12 @@ public class Main extends AbstractTableModel implements Serializable{
 			party[ who ].wep();
 			System.out.println( "が入っていた" );
 			System.out.println( "" );
-
 			doText[2] = ("「開けると[ " + party[who].wep() + " ]が入っていた");
-
 			System.out.print( party[ who ].getName() + "は" );
 			party[ who ].wep();
 			System.out.println( "を装備した" );
-
 			doText[3] = ("[ " + party[ who ].getName() + " ]は[" + party[ who ].wep() + " ]を装備した" );
-
 			System.out.println( sell + "はメルカリに出し"+ price +"Gで売れた");
-
 			doText[4] = ("[ " + sell + " ]はメルカリに出し[ "+ price +"G ]で売れた");
 		}
 	}
