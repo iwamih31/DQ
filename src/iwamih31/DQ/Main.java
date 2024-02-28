@@ -936,7 +936,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		return pSt[rowIndex][columnIndex];
 	}
 
-
 	public static void setA(String a) {
 		Main.a = a;
 	}
