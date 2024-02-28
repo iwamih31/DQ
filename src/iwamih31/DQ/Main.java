@@ -928,7 +928,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}else{
 			pSt();
 		}
-
 		return getpNa().length;
 	}
 
