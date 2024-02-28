@@ -948,7 +948,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		Main.sc = sc;
 	}
 
-
 	public static Screen getSc() {
 		return sc;
 	}
