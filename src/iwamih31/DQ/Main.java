@@ -931,7 +931,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		return getpNa().length;
 	}
 
-
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		return pSt[rowIndex][columnIndex];
