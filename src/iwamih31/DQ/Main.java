@@ -921,7 +921,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		return pSt.length;
 	}
 
-
 	@Override
 	public int getColumnCount() {
 		if (Screen.getMode() < (1)) {
