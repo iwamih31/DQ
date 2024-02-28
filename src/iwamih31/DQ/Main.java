@@ -940,7 +940,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		Main.a = a;
 	}
 
-
 	public static String getA() {
 		return a;
 	}
