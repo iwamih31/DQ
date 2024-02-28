@@ -898,7 +898,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	public static void setyName(String yName) {
 		Main.yName = yName;
 	}
