@@ -952,7 +952,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		return sc;
 	}
 
-
 	public static void ent() {
 		try {
 			Robot rob = new Robot();
