@@ -1003,7 +1003,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		Main.doText = doText;
 	}
 
-
 	public static String[] getDoText() {
 		return doText;
 	}
