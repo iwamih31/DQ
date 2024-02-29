@@ -995,7 +995,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	public static String[] getText() {
 		return text;
 	}
