@@ -964,7 +964,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	public static void setFiHP(int fiHP) {
 		Main.fiHP = fiHP;
 	}
