@@ -980,7 +980,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		return prHP;
 	}
 
-
 	public static void setMgHP(int mgHP) {
 		Main.mgHP = mgHP;
 	}
