@@ -988,7 +988,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		return mgHP;
 	}
 
-
 	public static void setText(ArrayList<String> arrayList) {
 		text = new String[arrayList.size()];
 		for (int i = 0; i < arrayList.size(); i++) {
