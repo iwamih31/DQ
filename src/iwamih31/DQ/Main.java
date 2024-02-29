@@ -999,7 +999,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		return text;
 	}
 
-
 	public static void setDoText(String[] doText) {
 		Main.doText = doText;
 	}
