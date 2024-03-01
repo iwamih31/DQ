@@ -1027,7 +1027,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		Main.bat = bat;
 	}
 
-
 	public static Battle getBat() {
 		return bat;
 	}
