@@ -1007,7 +1007,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		return doText;
 	}
 
-
 	public static void setpNa(String[] pNa) {
 		Main.pNa = pNa;
 	}
