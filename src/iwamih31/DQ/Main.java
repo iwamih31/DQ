@@ -1015,7 +1015,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		return pNa;
 	}
 
-
 	public static void setHu(Member hu) {
 		Main.hu = hu;
 	}
