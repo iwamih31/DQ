@@ -1023,7 +1023,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		return hu;
 	}
 
-
 	public static void setBat(Battle bat) {
 		Main.bat = bat;
 	}
