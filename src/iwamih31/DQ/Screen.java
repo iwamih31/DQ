@@ -525,7 +525,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
-
 	private void opening() {
 		x = 6;
 		y = 6;
