@@ -309,7 +309,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		change();
 	}
 
-
 	private static void format(Component component, int width, int height) {
 		format(component);
 		component.setSize(width, height);
