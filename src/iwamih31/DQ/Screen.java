@@ -932,7 +932,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
-
 	public void actionPerformedSwitch22() {
 		switch (mode) {
 			case 22 ://使う,能力,誰が？
