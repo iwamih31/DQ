@@ -323,7 +323,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
-
 	private static Border border() {
 		border = new LineBorder(Color.WHITE, 2, true);
 		if (mode > 0 && denger() > 0) {
