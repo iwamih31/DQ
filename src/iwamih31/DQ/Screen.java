@@ -314,7 +314,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		component.setSize(width, height);
 	}
 
-
 	private static void format(Component component) {
 		component.setFont(new Font("Monospaced", Font.BOLD, fontSize));
 		component.setForeground(Color.WHITE);
