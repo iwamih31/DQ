@@ -40,18 +40,13 @@ public class Battle extends AbstractTableModel{
 
 	static Monster[ ] mons ;
 
-//	private Member insM1;
-//	private Member insM2;
-//	private Member insM3;
-//	private Member insM4;
-
 	int pHp;
-    int mHp;
+  int mHp;
 
-    private static int k;
-    private static int mK;
+  private static int k;
+  private static int mK;
 
-    public static int fly;
+  public static int fly;
 
 	public static boolean pGuard;
 	public static boolean mGuard;
