@@ -2444,7 +2444,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		keyPressed(null);
 	}
 
-
 	private void pushSound() {
 //		Toolkit.getDefaultToolkit().beep(); // ビープ音を鳴らす
 		sound(440f,100);
