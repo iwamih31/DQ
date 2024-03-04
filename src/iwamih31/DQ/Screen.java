@@ -1725,7 +1725,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
-
 	private void who() {
 		Common.___logOut___("who() します");
 		buttonName = null;
