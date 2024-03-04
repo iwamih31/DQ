@@ -1449,7 +1449,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
-
 	public void actionPerformedSwitch5() {
 		switch (mode) {
 			case 5 ://戦闘
