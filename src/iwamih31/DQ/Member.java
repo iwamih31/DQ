@@ -74,7 +74,6 @@ public abstract class Member extends Character implements Serializable{
 		}
 	}
 
-
 	public void item(int clickItem) {
 		Object choiceItem = Item.getItemList() [clickItem][0];
 		System.out.println("[ " + getName() + " ]は、[ " + choiceItem + " ]を使った");
