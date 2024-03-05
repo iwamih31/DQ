@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public abstract class Member extends Character implements Serializable{
 
-
 	private String name = "メンバー";
 	private int no  =        0;
 	private int exp =        1;
