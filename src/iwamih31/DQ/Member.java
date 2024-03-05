@@ -116,7 +116,6 @@ public abstract class Member extends Character implements Serializable{
 		this.name = name;
 	}
 
-
 	public String getName() {
 		return name;
 	}
