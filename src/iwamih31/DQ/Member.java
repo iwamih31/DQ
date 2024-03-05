@@ -100,7 +100,6 @@ public abstract class Member extends Character implements Serializable{
 		this.exp = exp;
 	}
 
-
 	public int getExp() {
 		return exp;
 	}
