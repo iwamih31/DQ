@@ -92,9 +92,7 @@ public abstract class Member extends Character implements Serializable{
 	}
 
 	public String wepName(int ud) {
-
 		if ( weapon.length <= wp + ud) ud = 0;
-
 		return weapon[wp + ud];
 	}
 
