@@ -87,9 +87,7 @@ public abstract class Member extends Character implements Serializable{
 	}
 
 	public void wep(int ud) {
-
 		if ( weapon.length <= wp + ud) ud = 0;
-
 		System.out.print( "[ 武器＝" + weapon[wp + ud] + " 攻撃力＝" + attack(ud) + " ]");
 	}
 
