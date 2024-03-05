@@ -53,7 +53,6 @@ public abstract class Member extends Character implements Serializable{
 		Battle.setBattleText(new String[]{"どの術を使いますか？"});
 	}
 
-
 	public boolean run() {
 		System.out.println( getName( ) + "は、逃げ出した・・・");
 //		Input.ent();
