@@ -38,7 +38,6 @@ public abstract class Member extends Character implements Serializable{
 		return dp;
 	}
 
-
 	public void item() {
 //		System.out.println( "[HP = " + hp + "][敵 = " + Main.mHp +"]です。");
 		System.out.println( "何を使いますか？" );
