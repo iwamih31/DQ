@@ -46,7 +46,6 @@ public abstract class Member extends Character implements Serializable{
 		Battle.setBattleText(new String[]{"何を使いますか？"});
 	}
 
-
 	public void ex() {
 //		Member mem = Main.getParty( )[ getNo() - 1 ];
 		System.out.println( "どの術を使いますか？" );
