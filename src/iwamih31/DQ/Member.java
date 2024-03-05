@@ -120,7 +120,6 @@ public abstract class Member extends Character implements Serializable{
 		return name;
 	}
 
-
 	public void setSp(int sp) {
 		this.sp = sp;
 	}
