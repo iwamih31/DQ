@@ -104,7 +104,6 @@ public abstract class Member extends Character implements Serializable{
 		return exp;
 	}
 
-
 	public void setMp(int mp) {
 		this.mp = mp;
 	}
