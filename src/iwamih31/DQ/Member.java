@@ -81,7 +81,6 @@ public abstract class Member extends Character implements Serializable{
 		Item.item(clickItem);
 	}
 
-
 	public String wep() {
 		System.out.print( "[ 武器＝" + weapon[wp] + " 攻撃力＝" + attack() + " ]");
 		return weapon[wp];
