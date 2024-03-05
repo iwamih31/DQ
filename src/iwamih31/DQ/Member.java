@@ -108,7 +108,6 @@ public abstract class Member extends Character implements Serializable{
 		this.mp = mp;
 	}
 
-
 	public int getMp() {
 		return mp;
 	}
