@@ -96,7 +96,6 @@ public abstract class Member extends Character implements Serializable{
 		return weapon[wp + ud];
 	}
 
-
 	public void setExp(int exp) {
 		this.exp = exp;
 	}
