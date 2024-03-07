@@ -140,7 +140,6 @@ public abstract class Member extends Character implements Serializable{
 		this.lev = lev;
 	}
 
-
 	public int getLev() {
 		return lev;
 	}
