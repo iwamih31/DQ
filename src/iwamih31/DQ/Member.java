@@ -148,8 +148,6 @@ public abstract class Member extends Character implements Serializable{
 		this.wp = wp;
 	}
 
-
-
 	public int getWp() {
 		return wp;
 	}
