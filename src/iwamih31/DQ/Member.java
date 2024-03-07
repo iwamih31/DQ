@@ -128,7 +128,6 @@ public abstract class Member extends Character implements Serializable{
 		return sp;
 	}
 
-
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
