@@ -144,8 +144,6 @@ public abstract class Member extends Character implements Serializable{
 		return lev;
 	}
 
-
-
 	public void setWp(int wp) {
 		this.wp = wp;
 	}
