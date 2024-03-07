@@ -136,7 +136,6 @@ public abstract class Member extends Character implements Serializable{
 		return hp;
 	}
 
-
 	public void setLev(int lev) {
 		this.lev = lev;
 	}
