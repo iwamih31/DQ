@@ -67,7 +67,6 @@ public abstract class Member extends Character implements Serializable{
 			return true;
 		} else {
 			System.out.println( getName( ) + "は、見っかっちゃった!!!" );
-//			Input.ent();
 			run[1] = "[ "+ name +" ]は、見っかっちゃった!!!";
 			Battle.setBattleText(run);
 			return false;
