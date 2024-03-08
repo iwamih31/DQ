@@ -61,7 +61,6 @@ public abstract class Member extends Character implements Serializable{
 		int r = new java.util.Random ( ).nextInt( 100 );
 		if ( r < ( getLev( ) + 20 ) ) {
 			System.out.println( getName( ) + "は、何とか逃げ切った・・・" );
-//			Input.ent();
 			run[1] = "[ "+ name +" ]は、何とか逃げ切った・・・";
 			Battle.setBattleText(run);
 			return true;
