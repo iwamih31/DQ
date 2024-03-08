@@ -164,7 +164,6 @@ public abstract class Member extends Character implements Serializable{
 		this.no = no;
 	}
 
-
 	public int getNo() {
 		return no;
 	}
