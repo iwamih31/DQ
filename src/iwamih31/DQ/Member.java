@@ -152,7 +152,6 @@ public abstract class Member extends Character implements Serializable{
 		return wp;
 	}
 
-
 	public void setWeapon(String weapon[]) {
 		this.weapon = weapon;
 	}
