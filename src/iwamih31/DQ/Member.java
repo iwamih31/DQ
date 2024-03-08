@@ -55,7 +55,6 @@ public abstract class Member extends Character implements Serializable{
 
 	public boolean run() {
 		System.out.println( getName( ) + "は、逃げ出した・・・");
-//		Input.ent();
 		String[] run = new String[2];
 		run[0] = "[ "+ name +" ]は、逃げ出した・・・";
 		int r = new java.util.Random ( ).nextInt( 100 );
