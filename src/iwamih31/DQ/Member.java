@@ -184,7 +184,6 @@ public abstract class Member extends Character implements Serializable{
 		return ap;
 	}
 
-
 	public int getmp() {
 		return mp;
 	}
