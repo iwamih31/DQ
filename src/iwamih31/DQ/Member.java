@@ -176,7 +176,6 @@ public abstract class Member extends Character implements Serializable{
 		return ep;
 	}
 
-
 	public void setAp(int ap) {
 		this.ap = ap;
 	}
