@@ -180,7 +180,6 @@ public abstract class Member extends Character implements Serializable{
 		this.ap = ap;
 	}
 
-
 	public int getAp() {
 		return ap;
 	}
