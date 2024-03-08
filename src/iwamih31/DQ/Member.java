@@ -160,7 +160,6 @@ public abstract class Member extends Character implements Serializable{
 		return weapon;
 	}
 
-
 	public void setNo(int no) {
 		this.no = no;
 	}
