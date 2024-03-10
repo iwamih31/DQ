@@ -17,7 +17,6 @@ public class Power extends Ex{
 //		spell();
 	}
 
-
 	public void spell() {
 
 		switch (job) {
