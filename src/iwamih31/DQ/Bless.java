@@ -17,7 +17,6 @@ public class Bless extends Ex{
 //		spell();
 	}
 
-
 	public void spell() {
 
 		switch ( job ) {
