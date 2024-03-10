@@ -17,7 +17,6 @@ public abstract class Character {
 
 	abstract int attack();
 
-
 	public void setExp(int exp) {
 		this.exp = exp;
 	}
@@ -61,6 +60,4 @@ public abstract class Character {
 	public int getEp() {
 		return ep;
 	}
-
-
 }
