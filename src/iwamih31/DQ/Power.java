@@ -58,16 +58,6 @@ public class Power extends Ex{
 			break;
 		default:
 			System.out.println("なにもしなかった");
-
 		}
 	}
-
-//	public static Object[] menu() {
-//		// TODO 自動生成されたメソッド・スタブ
-//		Object[] menu = new Object[itemList.length-1];
-//		for (int i = 0; i < menu.length; i++) {
-//			menu[i] = itemList[i + 1][1] + "[" + itemList[i + 1][3] + "]";
-//		}
-//		return menu;
-//	}
 }
