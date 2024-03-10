@@ -326,7 +326,6 @@ public class Battle extends AbstractTableModel{
 							pTable();
 							System.out.println("");
 							System.out.println("感謝の効果が消え、仲間の攻撃力が元に戻った・・・");
-							//						Input.ent();
 							battleText = new String[]{ "感謝の効果が消え、仲間の攻撃力が元に戻った・・・" };
 						}
 					}
