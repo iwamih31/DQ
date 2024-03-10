@@ -20,9 +20,7 @@ public class Wonder extends Ex {
 	}
 
 	public void spell() {
-
 		switch ( job ) {
-
 			case 1:
 				if ( mp < useMp ) {
 					System.out.println(user.getName() + "のMP=" + mp + " 消費MP=" + useMp);//////////////////
@@ -43,15 +41,12 @@ public class Wonder extends Ex {
 					Input.ent();
 				}
 				break;
-
 			case 2:
 				heal( );
 				break;
-
 			case 3:
 				resu( );
 				break;
-
 			case 4:
 				if ( mp >= lev*10 ) {
 					System.out.println(user.getName() + "のMP=" + mp + " 消費MP=" + useMp);//////////////////
@@ -72,10 +67,8 @@ public class Wonder extends Ex {
 					Input.ent();
 				}
 				break;
-
 			default:
 				System.out.println( "なにもしなかった" );
-
 		}
 	}
 }
