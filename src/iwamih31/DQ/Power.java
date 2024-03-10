@@ -18,9 +18,7 @@ public class Power extends Ex{
 	}
 
 	public void spell() {
-
 		switch (job) {
-
 		case 1:
 			Battle.pTable();
 			System.out.println( "" );
@@ -58,7 +56,6 @@ public class Power extends Ex{
 				Input.ent();
 			}
 			break;
-
 		default:
 			System.out.println("なにもしなかった");
 
