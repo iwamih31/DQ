@@ -464,7 +464,6 @@ public class Battle extends AbstractTableModel{
 	  mHp = m1h + m2h + m3h + m4h;
 	}
 
-
 	public static void bMenu() {
 		for(Object[] stocks : menuList){
 			for(Object stock : stocks){
