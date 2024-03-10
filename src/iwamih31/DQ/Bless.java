@@ -18,26 +18,21 @@ public class Bless extends Ex{
 	}
 
 	public void spell() {
-
 		switch ( job ) {
-
 			case 1:
 				praying( );
 				break;
 			case 2:
 				heal( );
 				break;
-
 			case 3:
 				resu( );
 				break;
-
 			case 4:
 				desolation( );
 				break;
 			default:
 				System.out.println( "なにもしなかった" );
-
 		}
 	}
 
