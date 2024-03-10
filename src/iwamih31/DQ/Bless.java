@@ -35,5 +35,4 @@ public class Bless extends Ex{
 				System.out.println( "なにもしなかった" );
 		}
 	}
-
 }
