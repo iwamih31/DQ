@@ -20,7 +20,6 @@ public class Dragon extends Monster {
 		System.out.println(getName() + "は" + choiceItem + "を使った");
 		Item.item(clickItem);
 	}
-
 }
 
 
