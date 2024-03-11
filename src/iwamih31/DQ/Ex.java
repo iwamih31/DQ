@@ -150,7 +150,6 @@ public class Ex extends AbstractTableModel{
 		}
 	}
 
-
 	void resu(int who) {
 		// TODO 自動生成されたメソッド・スタブ
 
