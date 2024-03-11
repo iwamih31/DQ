@@ -38,10 +38,6 @@ public class Ex extends AbstractTableModel{
 		ep = user.getEp();
 		exText = new String[]{"○○ は ○○ を行った・・・"};
 		setEx();
-		// exMenu();
-
-//		select(0);
-
 	}
 
 //	public void exMenu() {
@@ -51,7 +47,7 @@ public class Ex extends AbstractTableModel{
 //		System.out.println("");//////////////////////////////////////////
 //
 //		Battle.pTable();
-//		System.out.println( "" );
+//		System.out.println("");
 //		System.out.print( "どの術を使いますか？" );
 //		for (Object[] stocks : itemList) {
 //			for (Object stock : stocks) {
@@ -71,8 +67,6 @@ public class Ex extends AbstractTableModel{
 //		System.out.println("");//////////////////////////////////////////
 //
 //		useEx = itemList[job][1];
-
-
 //
 //		useMp = Integer.parseInt(String.valueOf(itemList[job][3]));
 //
