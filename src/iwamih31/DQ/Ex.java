@@ -100,20 +100,14 @@ public class Ex extends AbstractTableModel{
 		}
 
 	protected static void heal() {
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("heal() します");//////////////////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		if (mp < useMp) {
-
 			notMp();
-
 		} else {
 			whom();
-
 			Screen.setMode(22501);
-
 		}
 	}
 
