@@ -112,42 +112,31 @@ public class Ex extends AbstractTableModel{
 	}
 
 	void heal(int who) {
-			// TODO 自動生成されたメソッド・スタブ
-
-			System.out.println("");//////////////////////////////////////////
-			System.out.println("heal(" + who + ") します");//////////////////////////////
-			System.out.println("");//////////////////////////////////////////
-
-			exText = new String[2];
-
-			Member select = Main.getParty()[who];
-			int fH = select.getHp();
-			if (select.getHp() > 0) {
-				System.out.println(name + "は" + useEx + "を行った・・・");
-
-				exText[0] = (name + "は" + select.getName() + "に" + useEx + "を行った・・・");
-
-	//			Input.ent();
-				int r = new java.util.Random().nextInt(15) + 1;
-				int pP = new java.util.Random().nextInt(5);
-				int rp = r + ep * lev - pP;
-				select.setHp((select.getHp() + rp));
-				if (select.getHp() > (select.getLev() * select.getAp() * 10)) {
-					select.setHp(select.getLev() * select.getAp() * 10);
-				}
-				int rH = select.getHp() - fH;
-				System.out.println(select.getName() + "のHPが" + rH + "回復した❤❤❤");
-
-				exText[1] = (select.getName() + "のHPが" + rH + "回復した❤❤❤");
-
-			} else {
-				System.out.println(select.getName() + "は死んでいた!!!");
-
-				exText[1] = (select.getName() + "は死んでいた!!!");
+		System.out.println("");//////////////////////////////////////////
+		System.out.println("heal(" + who + ") します");//////////////////////////////
+		System.out.println("");//////////////////////////////////////////
+		exText = new String[2];
+		Member select = Main.getParty()[who];
+		int fH = select.getHp();
+		if (select.getHp() > 0) {
+			System.out.println(name + "は" + useEx + "を行った・・・");
+			exText[0] = (name + "は" + select.getName() + "に" + useEx + "を行った・・・");
+			int r = new java.util.Random().nextInt(15) + 1;
+			int pP = new java.util.Random().nextInt(5);
+			int rp = r + ep * lev - pP;
+			select.setHp((select.getHp() + rp));
+			if (select.getHp() > (select.getLev() * select.getAp() * 10)) {
+				select.setHp(select.getLev() * select.getAp() * 10);
 			}
-	//		Input.ent();
-			user.setMp(user.getMp() - useMp);
+			int rH = select.getHp() - fH;
+			System.out.println(select.getName() + "のHPが" + rH + "回復した❤❤❤");
+			exText[1] = (select.getName() + "のHPが" + rH + "回復した❤❤❤");
+		} else {
+			System.out.println(select.getName() + "は死んでいた!!!");
+			exText[1] = (select.getName() + "は死んでいた!!!");
 		}
+		user.setMp(user.getMp() - useMp);
+	}
 
 	protected static void resu() {
 
