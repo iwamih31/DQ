@@ -75,8 +75,6 @@ public class Ex extends AbstractTableModel{
 		}
 	}
 
-
-
 	protected static void praying() {
 
 			if ( hp <= 10 ) {
