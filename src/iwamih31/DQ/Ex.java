@@ -40,40 +40,6 @@ public class Ex extends AbstractTableModel{
 		setEx();
 	}
 
-//	public void exMenu() {
-//
-//		System.out.println("");//////////////////////////////////////////
-//		System.out.println("exMenu() します");//////////////////////////////
-//		System.out.println("");//////////////////////////////////////////
-//
-//		Battle.pTable();
-//		System.out.println("");
-//		System.out.print( "どの術を使いますか？" );
-//		for (Object[] stocks : itemList) {
-//			for (Object stock : stocks) {
-//				System.out.print(stock);
-//			}
-//		}
-//		System.out.println("｝");
-//		if (Battle.getfMode() == 0)System.out.println("");
-//		job = Input.input();
-//
-//		if(job < 1 || job > 4){
-//			exMenu();
-//		}else{
-//
-//		System.out.println("");//////////////////////////////////////////
-//		System.out.println("job = " + job + " です");//////////////////////////////
-//		System.out.println("");//////////////////////////////////////////
-//
-//		useEx = itemList[job][1];
-//
-//		useMp = Integer.parseInt(String.valueOf(itemList[job][3]));
-//
-//		// System.out.println("");
-//		}
-//	}
-
 	public void select(int i) {
 
 		System.out.println("");//////////////////////////////////////////
