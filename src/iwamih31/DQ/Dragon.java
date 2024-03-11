@@ -15,7 +15,6 @@ public class Dragon extends Monster {
 		 setTyp (   2)               ;//0=なし,1=回復系,2=ドラゴン系,3=巨人系
 	}
 
-
 	public void item(int clickItem) {
 		Object choiceItem = Item.getItemList() [clickItem][0];
 		System.out.println(getName() + "は" + choiceItem + "を使った");
