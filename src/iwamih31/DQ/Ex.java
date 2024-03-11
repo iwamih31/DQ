@@ -41,24 +41,17 @@ public class Ex extends AbstractTableModel{
 	}
 
 	public void select(int i) {
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("Ex.select(" + i + ") します");//////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		job = (i + 1);
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("job = " + job + " です");////////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		if (job < itemList.length) {
-
 			useEx = itemList[job][1];
-
 			useMp = Integer.parseInt(String.valueOf(itemList[job][3]));
 		}
-
 		spell( );
 	}
 
