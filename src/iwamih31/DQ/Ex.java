@@ -139,19 +139,13 @@ public class Ex extends AbstractTableModel{
 	}
 
 	protected static void resu() {
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("resu() します");//////////////////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		if (mp < useMp) {
-
 			notMp();
-
 		} else {
-
 			whom();
-
 			Screen.setMode(22502);
 		}
 	}
