@@ -56,7 +56,6 @@ public class Ex extends AbstractTableModel{
 	}
 
 	public void spell( ) {
-
 		switch ( job ) {
 			case 1:
 				praying( );
