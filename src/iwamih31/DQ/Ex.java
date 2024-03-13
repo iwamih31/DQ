@@ -151,34 +151,21 @@ public class Ex extends AbstractTableModel{
 	}
 
 	void resu(int who) {
-		// TODO 自動生成されたメソッド・スタブ
-
 		System.out.println("");//////////////////////////////////////////
 		System.out.println("resu(" + who + ") します");//////////////////////////////
 		System.out.println("");//////////////////////////////////////////
-
 		exText = new String[2];
-
 		Member select = Main.getParty()[who];
 		System.out.println(name + "は" + select.getName() + "に" + useEx + "を行った・・・");
-
 		exText[0] = (name + "は" + select.getName() + "に" + useEx + "を行った・・・");
-
-//		Input.ent();
 		int r = new java.util.Random().nextInt(100) + 1;
 		if (r < lev * ep) {
 			System.out.println(useEx + "は失敗した");
-
 			exText[1] = (useEx + "は失敗した");
-
-//			Input.ent();
 			user.setMp(user.getMp() - (useMp / 10));
 		} else {
 			System.out.println(select.getName() + "は生き返った!!!");
-
 			exText[1] = (select.getName() + "は生き返った!!!");
-
-//			Input.ent();
 			select.setHp((int) (select.getAp() * 5));
 			select.setMp((int) (select.getEp() * 2));
 			user.setMp(user.getMp() - useMp);
