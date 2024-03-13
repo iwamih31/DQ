@@ -172,7 +172,6 @@ public class Ex extends AbstractTableModel{
 		}
 	}
 
-
 	protected static void desolation() {
 			if ( mp < useMp ) {
 
