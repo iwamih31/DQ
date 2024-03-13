@@ -173,35 +173,25 @@ public class Ex extends AbstractTableModel{
 	}
 
 	protected static void desolation() {
-			if ( mp < useMp ) {
-
-				notMp();
-
-			} else {
-				int fH = hp;
-				int fM = mp;
-
-				exText = new String[2];
-
-				System.out.println( name  + "は" +useEx + "を行った・・・" );
-
-				exText[0] = (name + "は" + useEx + "を行った・・・");
-
-	//			Input.ent();
-				int r = new java.util.Random ().nextInt(3) + 9;
-				int rp = r * lev * ep;
-				user.setMp((mp + rp));
-				if( user.getMp() > lev * ep * 3 ){
-					user.setMp(lev * ep * 3);
-				}
-				user.setHp(1);
-				System.out.println(name + "は[ " + (fH - hp) + " HP ]と引き換えに[ " + (mp - fM) + " MP ]回復させた!!!");
-
-				exText[1] = (name + "は[ " + (fH - hp) + " HP ]と引き換えに[ " + (mp - fM) + " MP ]回復させた!!!");
-
-	//			Input.ent();
+		if ( mp < useMp ) {
+			notMp();
+		} else {
+			int fH = hp;
+			int fM = mp;
+			exText = new String[2];
+			System.out.println( name  + "は" +useEx + "を行った・・・" );
+			exText[0] = (name + "は" + useEx + "を行った・・・");
+			int r = new java.util.Random ().nextInt(3) + 9;
+			int rp = r * lev * ep;
+			user.setMp((mp + rp));
+			if( user.getMp() > lev * ep * 3 ){
+				user.setMp(lev * ep * 3);
 			}
+			user.setHp(1);
+			System.out.println(name + "は[ " + (fH - hp) + " HP ]と引き換えに[ " + (mp - fM) + " MP ]回復させた!!!");
+			exText[1] = (name + "は[ " + (fH - hp) + " HP ]と引き換えに[ " + (mp - fM) + " MP ]回復させた!!!");
 		}
+	}
 
 	protected static void notMp() {
 
