@@ -210,16 +210,6 @@ public class Ex extends AbstractTableModel{
 		Screen.setMenu(Main.getpNa());
 	}
 
-//	public static void setMon(Monster mon) {
-//		Ex.mon = mon;
-//	}
-//
-//
-//
-//	public static Monster getMon() {
-//		return mon;
-//	}
-
 	public Object[] menu() {
 		// TODO 自動生成されたメソッド・スタブ
 		Object[] menu = new Object[itemList.length-1];
