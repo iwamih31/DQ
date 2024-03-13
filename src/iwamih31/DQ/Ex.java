@@ -194,15 +194,10 @@ public class Ex extends AbstractTableModel{
 	}
 
 	protected static void notMp() {
-
 			System.out.println(user.getName() + "のMP=" + mp + " 消費MP=" + useMp);//////////////////
 			System.out.println("");
 			System.out.println(useEx + "を行うには力が足りません ×××");
-
 			exText = new String[]{useEx + "を行うための力が不足しています ×××"};
-	//		Input.ent();
-	//		spell();
-
 		}
 
 private static void whom() {
