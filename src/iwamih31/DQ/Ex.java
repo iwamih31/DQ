@@ -274,7 +274,6 @@ public class Ex extends AbstractTableModel{
 	}
 
 	protected static void arrayClear() {
-
 		if (array == null){
 			array = new ArrayList<String>();
 		}else{
