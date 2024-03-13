@@ -194,33 +194,20 @@ public class Ex extends AbstractTableModel{
 	}
 
 	protected static void notMp() {
-			System.out.println(user.getName() + "のMP=" + mp + " 消費MP=" + useMp);//////////////////
-			System.out.println("");
-			System.out.println(useEx + "を行うには力が足りません ×××");
-			exText = new String[]{useEx + "を行うための力が不足しています ×××"};
-		}
+		System.out.println(user.getName() + "のMP=" + mp + " 消費MP=" + useMp);//////////////////
+		System.out.println("");
+		System.out.println(useEx + "を行うには力が足りません ×××");
+		exText = new String[]{useEx + "を行うための力が不足しています ×××"};
+	}
 
-private static void whom() {
-
+	private static void whom() {
 		Battle.pTable();
 		System.out.println("");
 		System.out.print(useEx + "を、誰に行いますか？");
 		Battle.pList();
 		System.out.println("");
-
 		exText = new String[]{useEx + "を、誰に行いますか？"};
-
 		Screen.setMenu(Main.getpNa());
-
-//		int who = Input.input() - 1;
-//		if (who > 4) {
-//			resu();
-//		} else {
-
-//		resu(who);
-
-//		}
-
 	}
 
 //	public static void setMon(Monster mon) {
