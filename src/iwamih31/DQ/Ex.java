@@ -252,7 +252,6 @@ public class Ex extends AbstractTableModel{
 		return ex.length;
 	}
 
-
 	@Override
 	public int getColumnCount() {
 		setEx();
