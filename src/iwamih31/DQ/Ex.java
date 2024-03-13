@@ -284,9 +284,7 @@ public class Ex extends AbstractTableModel{
 	}
 
 	public static void setExText(ArrayList<String> arrayList) {
-
 		exText = new String[arrayList.size()];
-
 		for (int i = 0; i < arrayList.size(); i++) {
 			exText[i] = arrayList.get(i);
 		}
