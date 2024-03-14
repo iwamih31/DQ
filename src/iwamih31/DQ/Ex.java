@@ -106,9 +106,7 @@ public class Ex extends AbstractTableModel{
 	}
 
 	void heal(int who) {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("heal(" + who + ") します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("heal(" + who + ") します");
 		exText = new String[2];
 		Member select = Main.getParty()[who];
 		int fH = select.getHp();
