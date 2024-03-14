@@ -14,7 +14,6 @@ public class Golem extends Monster {
 		 setGp  (1000)        ;
 		 setEp  (   0)        ;//特殊能力の強さ
 		 setTyp (   3)        ;// 0=なし, 1=回復系, 2=ドラゴン系, 3=巨人系
-
 	}
 }
 
