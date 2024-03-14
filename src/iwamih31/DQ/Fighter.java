@@ -26,7 +26,6 @@ public class Fighter extends Member {
 		 getWeapon()[ 9 ] ="ムラマサ";
 	}
 
-
 	 @Override
 	 public int attack() {
 
