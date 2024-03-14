@@ -131,9 +131,7 @@ public class Ex extends AbstractTableModel{
 	}
 
 	protected static void resu() {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("resu() します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("resu() します");
 		if (mp < useMp) {
 			notMp();
 		} else {
