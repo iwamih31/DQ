@@ -96,9 +96,7 @@ public class Ex extends AbstractTableModel{
 	}
 
 	protected static void heal() {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("heal() します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("heal() します");
 		if (mp < useMp) {
 			notMp();
 		} else {
