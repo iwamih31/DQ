@@ -141,9 +141,7 @@ public class Ex extends AbstractTableModel{
 	}
 
 	void resu(int who) {
-		System.out.println("");//////////////////////////////////////////
-		System.out.println("resu(" + who + ") します");//////////////////////////////
-		System.out.println("");//////////////////////////////////////////
+		Common.___logOut___("resu(" + who + ") します");
 		exText = new String[2];
 		Member select = Main.getParty()[who];
 		System.out.println(name + "は" + select.getName() + "に" + useEx + "を行った・・・");
