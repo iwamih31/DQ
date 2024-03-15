@@ -42,9 +42,6 @@ public class Hero extends Member {
 		return r;
 	}
 
-
-
-
 	@Override
 	public void ex() {
 //		Member mem = Main.getParty( )[ getNo() - 1 ];
