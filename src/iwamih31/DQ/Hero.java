@@ -28,7 +28,6 @@ public class Hero extends Member {
 		 setName( Main.getyName() );
 	 }
 
-
 	@Override
 	public int attack() {
 		if(Battle.fly==0) Battle.fly = 1;
