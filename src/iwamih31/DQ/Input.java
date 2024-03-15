@@ -59,7 +59,6 @@ public class Input {
 		return r;
 	}
 
-
 	public static boolean yn() {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("");
