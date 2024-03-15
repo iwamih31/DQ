@@ -107,7 +107,6 @@ public class Input {
 		return choice;
 	}
 
-
 	public static void ent() {
 
 		Robot rob;
