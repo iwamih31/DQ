@@ -108,7 +108,6 @@ public class Input {
 	}
 
 	public static void ent() {
-
 		Robot rob;
 		try {
 			rob = new Robot();////////////表示ディレイ、オート半角モード用
