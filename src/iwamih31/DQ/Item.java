@@ -53,66 +53,42 @@ public class Item extends AbstractTableModel{
 		}
 		if (stock == 0) {
 			System.out.println(itemList[inp][1] + "は持っていません ×××");
-
 			itemText = new String[1];
 			itemText[0] = (itemList[inp][1] + "は持っていません ×××");
-
 		} else {
-
 			switch (inp) {
-
 				case 1 :
-
 					Battle.pTable();
 					System.out.println("");
 					System.out.print("[ "+ useI + " ]を誰に使いますか？");
 					Battle.pList();
 					System.out.println("");
-
 					Screen.setMessage("[ "+ useI + " ]を誰に使いますか？");
-
 					itemText = new String[2];
 					itemText[0] = (p + "は" + useI + "を使った・・・");
 					itemText[1] = ("○○のHPが○○回復した❤❤❤");
-
 					break;
-
 				case 2 :
-
 					if (Battle.getfMode() == 0) {
-
 						noMonster();
-
 					} else {
-
 						Battle.mList();
 						System.out.println("");
 						System.out.println("[ "+ useI + " ]をどのモンスターに使いますか？");
 						System.out.println("");
-
 						Screen.setMessage("[ "+ useI + " ]をどのモンスターに使いますか？");
-
 						itemText = new String[2];
 						itemText[0] = (p + "は" + useI + "を使った・・・");
 						itemText[1] = (useI + "は効かなかった");
-
 					}
-
 					break;
-
 				case 3 :
-
 						if (Battle.getfMode() == 0) {
-
 							noMonster();
-
 						} else {//////////////////////////////////////////////////////////////＊未作成＊
-
 							ArrayList<String> text = new ArrayList<String>();
-
 							System.out.print(p + "は");
 							System.out.println(useI + "を使った・・・");
-
 							text.add("[ "+ p + " ]は[ " + useI + " ]を使った・・・");
 							for (int i = 0; i < 4; i++) {
 								Monster mo = Battle.mons[i];
@@ -124,70 +100,47 @@ public class Item extends AbstractTableModel{
 									System.out.println("★★★★★★★★★★★★★★★★★★★★");
 									System.out.println(mo.getName() + "に" + dmg + "のダメージ!!!");
 									System.out.println("＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠");
-//									Input.ent();
-
 									text.add("[ " + mo.getName() + " ]に[ " + dmg + " ]のダメージ!!!");
-
 									if (mo.getHp() < 1) {
 										Main.setG(Main.getG() + mo.getGp());
 										user.setExp(user.getExp() + mo.getExp());
 										System.out.println(p + "は" + mo.getName() + "を倒した!!!");
 										System.out.println("");
-										// Input.ent();
-
 										text.add("[ "+ p + " ]は[ " + mo.getName() + " ]を倒した!!!");
-
 										System.out.print(p + "は " + mo.getGp() + " Ｇと " + mo.getExp() + " Ｐの経験値を手に入れた!!!");
 										System.out.println("  [Exp = " + user.getExp() + "] [G = " + Main.getG() + "]");
-//										Input.ent();
-
 										text.add("[ "+ p + " ]は[ " + mo.getGp() + " ]Ｇと[ " + mo.getExp() + " ]Ｐの経験値を手に入れた!!!");
-
 									}
 								}
 							}
 							itemList[inp][3] = (stock - 1);
-
 							itemText = new String[text.size()];
-
 							for (int i = 0; i < text.size(); i++) {
 								itemText[i] = text.get(i);
 							}
-
 							Battle.setBattleText(itemText);
 						}
-
 					break;
-
 				case 4 :
-
 					Battle.pTable();
 					System.out.println("");
 					System.out.print("[ "+ useI + " ]を誰に使いますか？");
 					Battle.pList();
 					System.out.println("");
-
 					Screen.setMessage("[ "+ useI + " ]を誰に使いますか？");
-
 					itemText = new String[2];
 					itemText[0] = (p + "は" + useI + "を使った・・・");
 					itemText[1] = ("○○は生き返った!!!");
-
-
 					break;
-
 				default :
 					System.out.println(p + "は、何もしなかった");
-//					Input.ent();
 					itemText = new String[]{p + "は、何もしなかった"};
-
 			}
 			if (inp < 0 || inp > (itemList.length - 1)) {
 			} else {
 				Battle.pTable();
 				System.out.println("");
 				System.out.println("  [ " + itemList[inp][1] + " ] 残り数=[ " + itemList[inp][3] + " ]個");
-//		Input.ent();
 			}
 		}
 		Battle.setBattleText(itemText);
