@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import javax.swing.table.AbstractTableModel;
 
-import com.sun.org.apache.xpath.internal.operations.Equals;
-
 public class Item extends AbstractTableModel{
 	private static Object[][] itemList = {
 		{""   ,""        ,""    ,"" ,""   },
@@ -36,12 +34,8 @@ public class Item extends AbstractTableModel{
 		}
 		System.out.println("｝");
 		System.out.println("");
-
 //		int inp = Input.input();
-
 //		use(user,1);
-
-
 	}
 
 	static void use(Member user, int inp) {
@@ -200,10 +194,10 @@ public class Item extends AbstractTableModel{
 	}
 
 	static void who1(int who) {
-	
+
 			int inp = 1;
 			int stock = (Integer) itemList[inp][3];
-	
+
 			Member select = Main.getParty()[who];
 			int fH = select.getHp();
 			if (select.getHp() > 0) {
@@ -217,25 +211,25 @@ public class Item extends AbstractTableModel{
 				}
 				int rH = select.getHp() - fH;
 				System.out.println(select.getName() + "のHPが" + rH + "回復した❤❤❤");
-	
+
 				itemText[1] = (select.getName() + "のHPが" + rH + "回復した❤❤❤");
-	
+
 				itemList[inp][3] = (stock - 1);
 			} else {
 				System.out.println(select.getName() + "は死んでいた!!!");
 				itemText[1] = (select.getName() + "は死んでいた!!!");
 			}
 	//		Input.ent();
-	
+
 			Battle.setBattleText(itemText);
 		}
 
 	static void who2(int who) {
 			// TODO 自動生成されたメソッド・スタブ
-	
+
 			int inp = 2;
 			int stock = (Integer) itemList[inp][3];
-	
+
 			System.out.println("＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠");
 			System.out.println("");
 			System.out.print(p + "は");
@@ -246,19 +240,19 @@ public class Item extends AbstractTableModel{
 				Battle.mList();
 				System.out.println("");
 				System.out.println(useI + "は効かなかった");
-	
+
 				itemText[1] = (useI + "は効かなかった");
 			} else {
 				Battle.getMons()[who].setHp(1);
 				Battle.mList();
 				System.out.println("");
 				System.out.println(Battle.getMons()[who].getName() + "は瀕死の状態!!!");
-	
+
 				itemText[1] = (Battle.getMons()[who].getName() + "は瀕死の状態!!!");
 			}
 	//			Input.ent();
 			itemList[inp][3] = (stock - 1);
-	
+
 			Battle.setBattleText(itemText);
 		}
 
