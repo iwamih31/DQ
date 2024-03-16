@@ -303,5 +303,4 @@ public class Item extends AbstractTableModel{
 	public static String[] getItemText() {
 		return itemText;
 	}
-
 }
