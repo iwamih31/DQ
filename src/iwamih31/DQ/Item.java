@@ -250,8 +250,6 @@ public class Item extends AbstractTableModel{
 			System.out.print(stocks[3]);
 			System.out.print(stocks[4]);
 		}
-//		System.out.println("｝");
-
 	}
 
 	@Override
