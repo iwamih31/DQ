@@ -147,35 +147,28 @@ public class Item extends AbstractTableModel{
 	}
 
 	static void who1(int who) {
-
-			int inp = 1;
-			int stock = (Integer) itemList[inp][3];
-
-			Member select = Main.getParty()[who];
-			int fH = select.getHp();
-			if (select.getHp() > 0) {
-				System.out.println(p + "は" + useI + "を使った・・・");
-	//		Input.ent();
-				int r = new java.util.Random().nextInt(7) + 20;
-				int rp = r + (select.getAp() * 3);/////////////////////回復値
-				select.setHp((select.getHp() + rp));
-				if (select.getHp() > (select.getLev() * select.getAp() * 10)) {
-					select.setHp(select.getLev() * select.getAp() * 10);
-				}
-				int rH = select.getHp() - fH;
-				System.out.println(select.getName() + "のHPが" + rH + "回復した❤❤❤");
-
-				itemText[1] = (select.getName() + "のHPが" + rH + "回復した❤❤❤");
-
-				itemList[inp][3] = (stock - 1);
-			} else {
-				System.out.println(select.getName() + "は死んでいた!!!");
-				itemText[1] = (select.getName() + "は死んでいた!!!");
+		int inp = 1;
+		int stock = (Integer) itemList[inp][3];
+		Member select = Main.getParty()[who];
+		int fH = select.getHp();
+		if (select.getHp() > 0) {
+			System.out.println(p + "は" + useI + "を使った・・・");
+			int r = new java.util.Random().nextInt(7) + 20;
+			int rp = r + (select.getAp() * 3);/////////////////////回復値
+			select.setHp((select.getHp() + rp));
+			if (select.getHp() > (select.getLev() * select.getAp() * 10)) {
+				select.setHp(select.getLev() * select.getAp() * 10);
 			}
-	//		Input.ent();
-
-			Battle.setBattleText(itemText);
+			int rH = select.getHp() - fH;
+			System.out.println(select.getName() + "のHPが" + rH + "回復した❤❤❤");
+			itemText[1] = (select.getName() + "のHPが" + rH + "回復した❤❤❤");
+			itemList[inp][3] = (stock - 1);
+		} else {
+			System.out.println(select.getName() + "は死んでいた!!!");
+			itemText[1] = (select.getName() + "は死んでいた!!!");
 		}
+		Battle.setBattleText(itemText);
+	}
 
 	static void who2(int who) {
 			// TODO 自動生成されたメソッド・スタブ
