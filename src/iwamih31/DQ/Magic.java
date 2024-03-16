@@ -17,24 +17,20 @@ public class Magic extends Ex{
 
 	public void spell() {
 		switch (job) {
-
 		case 1:
 			praying();
 			break;
 		case 2:
 			death();
 			break;
-
 		case 3:
 			fire();
 			break;
-
 		case 4:
 			desolation();
 			break;
 		default:
 			System.out.println("なにもしなかった");
-
 		}
 	}
 
