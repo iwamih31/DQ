@@ -190,7 +190,6 @@ public class Input {
 		return r;
 	}
 
-
 	public static int input(Object[][] menuList) {
 		String choice = null;
 		try { // ////////表示ディレイ、オート半角モード
