@@ -199,30 +199,22 @@ public class Item extends AbstractTableModel{
 	}
 
 	static void who4(int who) {
-
 		int inp = 4;
 		int stock = (Integer) itemList[inp][3];
-
 		Member select = Main.getParty()[who];
 		System.out.println(p + "は" + select.getName() + "に" + useI + "を使った・・・");
-//		Input.ent();
 		if (select.getHp() > 0) {
 			select.setHp(select.getLev() * select.getAp() * 10);
 			select.setMp(select.getLev() * select.getEp() * 3);
 			System.out.println(select.getName() + "は全快した!!!");
-
 			itemText[1] = (select.getName() + "は全快した!!!");
-//			Input.ent();
 		} else {
 			System.out.println(select.getName() + "は生き返った!!!");
-
 			itemText[1] = (select.getName() + "は生き返った!!!");
-//			Input.ent();
 			select.setHp(select.getLev() * select.getAp() * 3);
 			select.setMp(select.getLev() * select.getEp() * 3);
 		}
 		itemList[inp][3] = (stock - 1);
-
 		Battle.setBattleText(itemText);
 	}
 
