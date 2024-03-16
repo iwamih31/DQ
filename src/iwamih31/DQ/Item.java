@@ -171,36 +171,28 @@ public class Item extends AbstractTableModel{
 	}
 
 	static void who2(int who) {
-			// TODO 自動生成されたメソッド・スタブ
-
-			int inp = 2;
-			int stock = (Integer) itemList[inp][3];
-
-			System.out.println("＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠");
+		int inp = 2;
+		int stock = (Integer) itemList[inp][3];
+		System.out.println("＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠");
+		System.out.println("");
+		System.out.print(p + "は");
+		System.out.println(useI + "を使った・・・");
+		int r = new java.util.Random().nextInt(4);
+		if (r == 1) {
+			Battle.mList();
 			System.out.println("");
-			System.out.print(p + "は");
-			System.out.println(useI + "を使った・・・");
-	//		Input.ent();
-			int r = new java.util.Random().nextInt(4);
-			if (r == 1) {
-				Battle.mList();
-				System.out.println("");
-				System.out.println(useI + "は効かなかった");
-
-				itemText[1] = (useI + "は効かなかった");
-			} else {
-				Battle.getMons()[who].setHp(1);
-				Battle.mList();
-				System.out.println("");
-				System.out.println(Battle.getMons()[who].getName() + "は瀕死の状態!!!");
-
-				itemText[1] = (Battle.getMons()[who].getName() + "は瀕死の状態!!!");
-			}
-	//			Input.ent();
-			itemList[inp][3] = (stock - 1);
-
-			Battle.setBattleText(itemText);
+			System.out.println(useI + "は効かなかった");
+			itemText[1] = (useI + "は効かなかった");
+		} else {
+			Battle.getMons()[who].setHp(1);
+			Battle.mList();
+			System.out.println("");
+			System.out.println(Battle.getMons()[who].getName() + "は瀕死の状態!!!");
+			itemText[1] = (Battle.getMons()[who].getName() + "は瀕死の状態!!!");
 		}
+		itemList[inp][3] = (stock - 1);
+		Battle.setBattleText(itemText);
+	}
 
 	private static void who3(int i) {
 		// TODO 自動生成されたメソッド・スタブ
