@@ -267,7 +267,6 @@ public class Item extends AbstractTableModel{
 		return item.length;
 	}
 
-
 	@Override
 	public int getColumnCount() {
 		return item[0].length;
