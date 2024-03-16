@@ -167,7 +167,6 @@ public class Input {
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");
-
 		Robot rob;              //////////表示ディレイ
 		try {
 			rob = new Robot();
@@ -176,7 +175,6 @@ public class Input {
 			e1.printStackTrace();
 			System.out.println("エラー");
 		}
-
 	}
 
 	static String judg(String s) {
