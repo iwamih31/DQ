@@ -219,11 +219,9 @@ public class Item extends AbstractTableModel{
 	}
 
 	private static void noMonster() {
-
 		System.out.println("");
 		System.out.println("敵が見当たらない ・・・");
 		System.out.println("");
-
 		itemText = new String[1];
 		itemText[0] = ("敵が見当たらない ・・・");
 	}
