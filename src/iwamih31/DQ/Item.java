@@ -232,7 +232,6 @@ public class Item extends AbstractTableModel{
 	}
 
 	public static void item(int clickItem) {
-
 		System.out.println(clickItem);
 	}
 
