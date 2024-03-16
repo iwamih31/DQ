@@ -12,31 +12,10 @@ public class Magic extends Ex{
 
 	Magic(Character memb) {
 		super(memb);
-//		itemList[1][1] ="瞑想"    ; itemList[1][3] =  0;
-//		itemList[2][1] ="死の術"  ; itemList[2][3] = 10;
-//		itemList[3][1] ="炎の術"  ; itemList[3][3] = 10;
-//		itemList[4][1] ="血の契約"; itemList[4][3] =  0;
 		itemList=exList;
-//		exMenu();
-//		spell();
 	}
 
 	public void spell() {
-//		for(Object[] stocks : itemList){
-//			for(Object stock : stocks){
-//				System.out.print(stock);
-//			}
-//		}
-//		System.out.print("｝");
-//
-//		job = Input.input();
-//
-//		useEx =  itemList[ job ][ 1 ];
-//
-//		useMp = (Integer)itemList[ job ][ 3 ];
-//
-//		//System.out.println("");
-
 		switch (job) {
 
 		case 1:
@@ -67,9 +46,9 @@ public class Magic extends Ex{
 			System.out.println("敵が見当たらない ・・・");
 //			Input.ent();
 //			spell();
-			
+
 			getArray().add("敵が見当たらない ・・・");
-			
+
 		} else {
 			if (mp < useMp) {
 //				System.out.println(user.getName() + "のMP=" + mp + " 消費MP=" + useMp);//////////////////
@@ -77,19 +56,19 @@ public class Magic extends Ex{
 //				System.out.println(useEx + "を行うには力が足りません ×××");
 ////				Input.ent();
 ////				spell();
-//				
+//
 //				getArray().add(useEx + "を行うには力が足りません ×××");
-				
+
 				notMp();
-				
+
 			} else {
 				Battle.pTable();
 				System.out.println("");
 				System.out.println(name + "は" + useEx + "を行った・・・");
 //				Input.ent();
-				
+
 				getArray().add(name + "は" + useEx + "を行った・・・");
-				
+
 				for (int i = 0; i < 4; i++) {
 					Monster mo = Battle.mons[i];
 					if (mo.getHp() > 0) {
@@ -101,24 +80,24 @@ public class Magic extends Ex{
 						System.out.println(mo.getName() + "に" + dmg + "のダメージ!!!");
 						System.out.println("＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠");
 //						Input.ent();
-						
+
 						getArray().add(mo.getName() + "に" + dmg + "のダメージ!!!");
-						
+
 						if (mo.getHp() < 1) {
 							Main.setG(Main.getG() + mo.getGp());
 							user.setExp(user.getExp() + mo.getExp());
 							System.out.println(name + "は" + mo.getName() + "を倒した!!!");
 							System.out.println( "" );
 //							Input.ent();
-							
+
 							getArray().add(name + "は" + mo.getName() + "を倒した!!!");
-							
+
 							System.out.print(name + "は " + mo.getGp() + " Ｇと "+ mo.getExp() + " Ｐの経験値を手に入れた!!!");
 							System.out.println("  [Exp = " + user.getExp() + "] [G = "+ Main.getG() + "]");
 //							Input.ent();
-							
+
 							getArray().add(name + "は " + mo.getGp() + " Ｇと "+ mo.getExp() + " Ｐの経験値を手に入れた!!!");
-							
+
 						}
 					}
 				}
@@ -148,12 +127,12 @@ public class Magic extends Ex{
 				System.out.println("");
 
 				exText = new String[]{useEx + "を、どのモンスターに行いますか？"};
-				
+
 				Screen.setMenu(Battle.mNa());
-				
+
 				Screen.setMode(22503);
-				
-				
+
+
 //				int who = Input.input()-1;
 
 //				death(who);
