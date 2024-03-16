@@ -272,7 +272,6 @@ public class Item extends AbstractTableModel{
 		return item[0].length;
 	}
 
-
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		setItem();
