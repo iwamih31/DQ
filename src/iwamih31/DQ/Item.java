@@ -195,7 +195,6 @@ public class Item extends AbstractTableModel{
 	}
 
 	private static void who3(int i) {
-		// TODO 自動生成されたメソッド・スタブ
 		Battle.setBattleText(itemText);
 	}
 
