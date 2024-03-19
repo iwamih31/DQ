@@ -67,16 +67,11 @@ public class MEx extends Ex {
 
 	private static void guard() {
 			System.out.println( name  + "は" +useEx + "を行った・・・" );
-//			Input.ent();
-
 			String[] text = new String[2];
 			text[0] = "[ "+ name +" ]は[ " + useEx + " ]を行った・・・";
-
 			Battle.mGuard = true;
 			Battle.setgM(null);
 			System.out.println( "全部受け止めた。" );
-//			Input.ent();
-
 			text[0] = "[ "+ name +" ]は全部受け止めた。";
 	}
 
