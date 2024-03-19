@@ -41,7 +41,6 @@ public abstract class Member extends Character implements Serializable{
 	public void item() {
 //		System.out.println( "[HP = " + hp + "][敵 = " + Main.mHp +"]です。");
 		System.out.println( "何を使いますか？" );
-
 //		int n = Item.fBag(hp);
 		Battle.setBattleText(new String[]{"何を使いますか？"});
 	}
