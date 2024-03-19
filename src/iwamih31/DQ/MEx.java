@@ -65,7 +65,6 @@ public class MEx extends Ex {
 		}
 	}
 
-
 	private static void guard() {
 			System.out.println( name  + "は" +useEx + "を行った・・・" );
 //			Input.ent();
