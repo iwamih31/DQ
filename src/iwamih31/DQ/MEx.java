@@ -78,22 +78,15 @@ public class MEx extends Ex {
 	private static void fire() {
 		if ( mp < useMp ) {
 			System.out.println( name + "は様子を窺っている" );
-//			Input.ent();
 			Battle.setBattleText(new String[]{"[ "+ name +" ]は様子を窺っている・・・"});
 		} else {
 			System.out.print(name + "は");
 			System.out.println(useEx + "を行った・・・");
-//			Input.ent();
-
 			String[] text = new String[5];
 			text[0] = "[ "+ name +" ]は[ " + useEx + " ]を行った・・・";
-
 			for (int i = 0; i < Main.getParty().length; i++) {
-
 				Member p = Main.getParty()[i];
-
 				if (p.getHp() > 0) {
-
 					int r = new java.util.Random().nextInt(10);
 					int dmg = (r * 25);
 					p.setHp(p.getHp() - dmg);
@@ -101,8 +94,6 @@ public class MEx extends Ex {
 					System.out.print(p.getName() + "は" + dmg + "のダメージを受けた!!!");
 					System.out.println("★★★★★★★★★★★★★★★★★★★★");
 					user.setMp((user.getMp() - useMp));
-//					Input.ent();
-
 					text[i + 1] = "[ "+ p.getName() +" ]は[ " + dmg + " ]のダメージを受けた!!!";
 				}else{
 					text[i + 1] = "[ "+ p.getName() +" ]は死んでいる!!!";
@@ -110,7 +101,6 @@ public class MEx extends Ex {
 			}
 			Battle.setBattleText(text);
 		}
-
 	}
 
 
