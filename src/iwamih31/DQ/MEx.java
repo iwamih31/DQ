@@ -157,7 +157,6 @@ public class MEx extends Ex {
 		}
 	}
 
-
 	protected static void heal() {
 		if ( mp < useMp ) {
 			System.out.println( useEx + "を行おうとしたが、あきらめた ×××" );
