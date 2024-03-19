@@ -106,21 +106,15 @@ public class MEx extends Ex {
 	private static void poison() {
 		if ( mp < useMp ) {
 			System.out.println( name + "は様子を窺っている" );
-//			Input.ent();
 			Battle.setBattleText(new String[]{"[ "+ name +" ]は様子を窺っている・・・"});
 		} else {
-
 			System.out.print( name  + "は" );
 			System.out.println( useEx + "を行った・・・" );
-//			Input.ent();
-
 			String[] text = new String[2];
 			text[0] = "[ "+ name +" ]は[ " + useEx + " ]を行った・・・";
-
 			int r = new java.util.Random ( ).nextInt( 20 ) * lev / 2;
 			if( r < 10) {
 				System.out.println( useEx + "は効かなかった" );
-
 				text[1] = "[ " + useEx + " ]は効かなかった・・・";
 			} else {
 				int who = new java.util.Random ( ).nextInt( 4 );
@@ -128,10 +122,8 @@ public class MEx extends Ex {
 				p.setHp(1);
 				user.setMp(( user.getMp() - useMp ));
 				System.out.println( p.getName() + "は瀕死の状態!!!" );
-
 				text[1] = "[ "+ p.getName() +" ]は瀕死の状態!!!";
 			}
-//			Input.ent();
 		}
 	}
 
