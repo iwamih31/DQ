@@ -160,17 +160,13 @@ public class MEx extends Ex {
 	protected static void heal() {
 		if ( mp < useMp ) {
 			System.out.println( useEx + "を行おうとしたが、あきらめた ×××" );
-//			Input.ent();
 			Battle.setBattleText(new String[]{"[ "+ name +" ]は[ " + useEx + " ]を行おうとしたが、あきらめた ×××"});
 		} else {
 			int who = new java.util.Random ( ).nextInt( 4 );
 			Character select = Battle.mons [ who ];
 			System.out.println(name + "は" + select.getName() + "に" + useEx + "を行った・・・");
-//			Input.ent();
-
 			String[] text = new String[2];
 			text[0] = "[ "+ name +" ]は[ " + select.getName() + " ]に[ " + useEx + " ]を行った・・・";
-
 			if (select.getHp() > 0) {
 				int r = new java.util.Random().nextInt(3) + 1;
 				int pP = new java.util.Random().nextInt(5);
@@ -178,14 +174,11 @@ public class MEx extends Ex {
 				select.setHp(select.getHp() + rp);
 				System.out.println(select.getName() + "のHPが" + rp + "回復した!!!");
 				user.setMp(( user.getMp() - useMp ));
-
 				text[1] = "[ "+ select.getName() +" ]のHPが[ " + rp + " ]回復した!!!";
 			} else {
 				System.out.println(select.getName() + "は死んでいた!!!");
-
 				text[1] = "[ "+ select.getName() +" ]は死んでいた!!!";
 			}
-//			Input.ent();
 		}
 	}
-}//////////////////////crass MEx
+}
