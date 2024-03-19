@@ -20,10 +20,8 @@ public class MEx extends Ex {
 	};
 
 	public  void spell() {
-
 		Battle.mList();
 		Battle.pTable();
-
 		if(job < 1 || job > 6){
 		}else{
 		useEx = itemList[job][1];
@@ -50,7 +48,6 @@ public class MEx extends Ex {
 			break;
 		default:
 			System.out.println( name  + "は、なにもしなかった");
-//			Input.ent();
 			Battle.setBattleText(new String[]{"[ "+ name +" ]なにもしなかった・・・"});
 		}
 	}
