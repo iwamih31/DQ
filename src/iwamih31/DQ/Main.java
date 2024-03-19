@@ -307,7 +307,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.println("");
 		}
 		Object[] choice = new Object[]{ "道具", "武器" };
-
 		button(choice);
 	}
 
