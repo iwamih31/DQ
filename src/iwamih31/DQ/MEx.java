@@ -103,7 +103,6 @@ public class MEx extends Ex {
 		}
 	}
 
-
 	private static void poison() {
 		if ( mp < useMp ) {
 			System.out.println( name + "は様子を窺っている" );
