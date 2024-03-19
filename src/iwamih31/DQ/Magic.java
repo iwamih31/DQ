@@ -82,31 +82,19 @@ public class Magic extends Ex{
 			Battle.pTable();
 			System.out.println("");
 			System.out.println("敵が見当たらない ・・・");
-//			Input.ent();
-//			spell();
 		} else {
 			if (mp < useMp) {
 				System.out.println(user.getName() + "のMP=" + mp + " 消費MP=" + useMp);//////////////////
 				System.out.println("");
 				System.out.println(useEx + "を行うには力が足りません ×××");
-//				Input.ent();
-//				spell();
 			} else {
 				Battle.mList();
 				System.out.println("");
 				System.out.println("どのモンスターに行いますか？");
 				System.out.println("");
-
 				exText = new String[]{useEx + "を、どのモンスターに行いますか？"};
-
 				Screen.setMenu(Battle.mNa());
-
 				Screen.setMode(22503);
-
-
-//				int who = Input.input()-1;
-
-//				death(who);
 			}
 		}
 	}
