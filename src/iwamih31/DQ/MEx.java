@@ -130,37 +130,28 @@ public class MEx extends Ex {
 	protected static void resu() {
 		if ( mp < useMp ) {
 			System.out.println( useEx + "を行おうとしたが、あきらめた ×××" );
-//			Input.ent();
 			Battle.setBattleText(new String[]{"[ "+ name +" ]は[ " + useEx + " ]を行おうとしたが、あきらめた ×××"});
 		} else {
 			int who = new java.util.Random().nextInt(4);
 			Character select = Battle.mons[who];
 			if (select.getHp() > 0) {
 				System.out.println(name + "は混乱している・・・");
-//				Input.ent();
 				Battle.setBattleText(new String[]{"[ "+ name +" ]は混乱している・・・"});
 			} else {
 				System.out.println(name + "は" + useEx + "を行った・・・");
-//				Input.ent();
-
 				String[] text = new String[2];
 				text[0] = "[ "+ name +" ]は[ " + useEx + " ]を行った・・・";
-
 				int r = new java.util.Random().nextInt(100) + 1;
 				if (r > lev * ep) {
 					System.out.println(useEx + "は失敗した");
-
 					text[1] = "[ "+ useEx +" ]は失敗した・・・";
-
 					user.setMp(user.getMp() - (useMp / 10));
 				} else {
 					System.out.println(select.getName() + "は生き返った!!!");
 					select.setHp((int) (select.getLev() * 5));
 					select.setMp((int) (select.getEp() * 10));
-
 					text[1] = "[ "+ select.getName() +" ]は生き返った!!!";
 				}
-//				Input.ent();
 				user.setMp(user.getMp() - useMp);
 			}
 		}
