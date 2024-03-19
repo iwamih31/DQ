@@ -40,26 +40,6 @@ public class Priest extends Member {
 
 	@Override
 	public void ex() {
-//		Battle.pTable();
-//		System.out.println( "" );
 		System.out.print( "どの術を使いますか？" );
-
-//		new Bless( this );
 	}
-
-//	public String[] getWeapon() {
-//
-//		 getWeapon()[ 0 ] ="木の棒"    ;
-//		 getWeapon()[ 1 ] ="樫の杖"    ;
-//		 getWeapon()[ 2 ] ="竹やり"    ;
-//		 getWeapon()[ 3 ] ="ナイフ "   ;
-//		 getWeapon()[ 4 ] ="鉄の杖 "   ;
-//		 getWeapon()[ 5 ] ="ヌンチャク";
-//		 getWeapon()[ 6 ] ="鎖がま"    ;
-//		 getWeapon()[ 7 ] ="円月剣"    ;
-//		 getWeapon()[ 8 ] ="神官の杖"  ;
-//		 getWeapon()[ 9 ] ="神の十字架";
-//
-//		 return getWeapon();
-//	}
 }
