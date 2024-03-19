@@ -100,32 +100,22 @@ public class Magic extends Ex{
 	}
 
 	static void death(int who) {
-
 		Magic.exText = new String[2];
-
 		System.out.println("＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠＠");
 		System.out.println("");
 		System.out.print(name + "は");
 		System.out.println(useEx + "を行った・・・");
-//		Input.ent();
-
 		exText[0] = name + "は" + useEx + "を行った・・・";
-
 		int r = new java.util.Random().nextInt(20) * user.getLev() / 2;
 		if (r < 10) {
 			Battle.mList();
 			System.out.println("");
 			System.out.println(useEx + "は効かなかった");
-//			Input.ent();
-
 			exText[1] = useEx + "は効かなかった";
-
 		} else {
 			Battle.getMons()[who].setHp(1);
 			mp=(mp - (Integer) useMp);
 			System.out.println(Battle.getMons()[who].getName() + "は瀕死の状態!!!");
-//			Input.ent();
-
 			exText[1] = Battle.getMons()[who].getName() + "は瀕死の状態!!!";
 		}
 	}
