@@ -359,7 +359,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	static void use(int job) {
 		if (job == 1) {
 			Battle.pTable();
