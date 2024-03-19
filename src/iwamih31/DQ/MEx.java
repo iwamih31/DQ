@@ -55,19 +55,14 @@ public class MEx extends Ex {
 	private static void hug() {
 		if ( hp <= lev*20 ) {
 			System.out.println( name  + "は何も出来なかった・・・" );
-			//Battle.battle();
-//			Input.ent();
 			Battle.setBattleText(new String[]{"[ "+ name +" ]は何も出来なかった・・・"});
 		} else {
 			System.out.println( name  + "は" + useEx + "を行った・・・" );
 			Battle.mHug = (30);
 			user.setHp(user.getHp() - lev * 20);
-//			Input.ent();
-
 			String[] text = new String[2];
 			text[0] = "[ "+ name +" ]は[ " + useEx + " ]を行った・・・";
 		}
-
 	}
 
 
