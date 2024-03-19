@@ -127,7 +127,6 @@ public class MEx extends Ex {
 		}
 	}
 
-
 	protected static void resu() {
 		if ( mp < useMp ) {
 			System.out.println( useEx + "を行おうとしたが、あきらめた ×××" );
