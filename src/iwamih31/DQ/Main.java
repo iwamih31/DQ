@@ -192,7 +192,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	static void action(int select) {
 		Common.___logOut___("Main.action( " + select +" ) します");
 		Battle.pTable();//パーティーのステータスを表示
