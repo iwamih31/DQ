@@ -338,7 +338,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		}
 	}
 
-
 	private static void wapon(int who) {
 		switch (who) {
 			case 1:
