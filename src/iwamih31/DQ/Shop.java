@@ -340,7 +340,6 @@ public class Shop extends AbstractTableModel{
 		return shop.length;
 	}
 
-
 	@Override
 	public int getColumnCount() {
 		setShop();
