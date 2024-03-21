@@ -154,7 +154,6 @@ public class Shop extends AbstractTableModel{
 		shopText[2] = (" ありがとうございました♪ (*^o^*)y-.。o○");
 	}
 
-
 	public static void buyItem(Member user, int buyItem) {
 		int item = buyItem + 1;
 		for (Object[] stocks : itemList) {
