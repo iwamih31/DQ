@@ -346,7 +346,6 @@ public class Shop extends AbstractTableModel{
 		return shop[0].length;
 	}
 
-
 	@Override
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		setShop();
