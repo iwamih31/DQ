@@ -187,9 +187,7 @@ public class Shop extends AbstractTableModel{
 	}
 
 	public static void buyWapon(int i) {
-
 		member = Main.getParty()[i];
-
 		Battle.pTable();
 		System.out.println( "" );
 		System.out.print( "どれにいたしましょう？" );
@@ -204,9 +202,7 @@ public class Shop extends AbstractTableModel{
 		System.out.print( "(" + (( member.getWp() + 3) * 200 * 3 * 3 ) + "Ｇ)" );
 		System.out.println( "" );
 		System.out.println( "" );
-
 		Screen.setMessage( "どれにいたしましょう？" );
-
 		Screen.setMenu(new String[]{member.wepName(1),member.wepName(2),member.wepName(3)});
 	}
 
