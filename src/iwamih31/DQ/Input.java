@@ -231,17 +231,6 @@ public class Input {
 			System.out.println("");
 			System.out.println(choice + "は選択できません・・・");
 			r = 10;
-//			ent();
-//			Battle.pTable();
-//			System.out.println( "" );
-//			for( Object[] menus : menuList ){
-//				for( Object menu : menus ){
-//				System.out.print(menu);
-//				}
-//			}
-//			System.out.println( "" );
-//			System.out.println( "" );
-//			Input.input(menuList);
 		}
 		System.out.println("[return]選んだのは、" + r + "です");
 		clear();
