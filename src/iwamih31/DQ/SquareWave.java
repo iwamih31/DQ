@@ -51,7 +51,6 @@ public class SquareWave {
 		this.frequency = frequency;
 	}
 
-
 	//データのアクセス用に InputStream を使うことにしました。
 	private class WaveInputStream extends InputStream {
 		private long frameLength;
