@@ -356,8 +356,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		format(bPanel);
 		bPanel.setLayout(new GridLayout(2, 0, 0, 0));
 		bPanel.setPreferredSize(new Dimension(w*5, h/2));
-		JButton[] button = new JButton[2];////////////////////ボタンの数
-		for (int i = 0; i < 2; i++) {
+		int b_Num = 2; // ボタンの数
+		JButton[] button = new JButton[b_Num];
+		for (int i = 0; i < b_Num; i++) {
 			String bN = (String) ynList[i];
 			button[i] = new JButton(bN);
 			format(button[i]);
@@ -378,10 +379,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		JPanel bPanel = new JPanel();
 		format(bPanel);
 		bPanel.setLayout(new GridLayout(1, 0, 0, 0));
-		int bI = 1;/////////////////////////////////////ボタンの数
-		JButton[] button = new JButton[bI];
+		int b_Num = 1; // ボタンの数
+		JButton[] button = new JButton[b_Num];
 		String[] bList = { "OK" };
-		for (int i = 0; i < bI; i++) {
+		for (int i = 0; i < b_Num; i++) {
 			String bN = (String) bList[i];
 			button[i] = new JButton(bN);
 			format(button[i]);
@@ -420,8 +421,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		format(panel);
 		panel.setLayout(new GridLayout(5, 0, 0, 0));
 		panel.setPreferredSize(new Dimension(w * 10, h * 50));
-		menuButton = new JButton[mList.length];////////////////////ボタンの数
-		for (int i = 0; i < (mList.length); i++) {
+		int b_Num = mList.length; // ボタンの数
+		menuButton = new JButton[b_Num];
+		for (int i = 0; i < b_Num; i++) {
 			String bN =  String.valueOf(mList[i]);
 			menuButton[i] = new JButton(bN);
 			format(menuButton[i], 50, 50);
