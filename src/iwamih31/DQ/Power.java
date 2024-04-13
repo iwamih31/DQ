@@ -23,12 +23,10 @@ public class Power extends Ex{
 			Battle.pTable();
 			System.out.println( "" );
 			System.out.println(getName() + "は" + useEx + "を行った・・・");
-			Input.ent();
 			Battle.pGuard = true;
 			Battle.pTable();
 			System.out.println( "" );
 			System.out.println(getName() + "は前に出て敵の攻撃を全部受け止めた。");
-			Input.ent();
 			break;
 		case 2:
 			heal();
@@ -41,19 +39,16 @@ public class Power extends Ex{
 				System.out.println(user.getName()+"のHP="+hp+" 消費MP=" + (lev * 50));//////////////////
 				System.out.println( "" );
 				System.out.println(useEx + "を行うには体力が足りません ×××");
-				Input.ent();
 				spell();
 			} else {
 				Battle.pTable();
 				System.out.println( "" );
 				System.out.println(getName() + "は" + useEx + "を行った・・・");
-				Input.ent();
 				Battle.pHug = 30;
 				user.setHp(user.getHp() - lev * 50);
 				Battle.pTable();
 				System.out.println( "" );
 				System.out.println(getName() + "は、敵の動きを封じ込めた・・・");
-				Input.ent();
 			}
 			break;
 		default:

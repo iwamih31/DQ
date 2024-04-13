@@ -349,7 +349,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return deadNumber;
 	}
 
-	static void que() {
+	void que() {
 		labelC = labelSet(tex);
 		JPanel bPanel = new JPanel();
 		format(bPanel);

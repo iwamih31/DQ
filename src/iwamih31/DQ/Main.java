@@ -104,7 +104,7 @@ public class Main extends AbstractTableModel implements Serializable{
 			public void run() {
 				Screen.setTex("最初から始めますか？・・・");
 				sc = new Screen("RPG");
-				Screen.que();
+				sc.que();
 			}
 		});
 	}
@@ -262,7 +262,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			} else {
 				System.out.println("＊できれば、1～4の数字でお願いします・・・");
 			}
-			Input.ent();
 		}
 		Battle.pTable();
 		save();
@@ -323,27 +322,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			System.out.print("誰の武器を売りますか？");
 			Battle.pList();
 			System.out.println("");
-		}
-	}
-
-	private static void wapon(int who) {
-		switch (who) {
-			case 1:
-				Shop.wapon(party[0]);
-				break;
-			case 2:
-				Shop.wapon(party[1]);
-				break;
-			case 3:
-				Shop.wapon(party[2]);
-				break;
-			case 4:
-				Shop.wapon(party[3]);
-				break;
-			default:
-				Battle.pTable();
-				System.out.println("");
-				System.out.println(name + "は、何も買わずに店を出た・・・");
 		}
 	}
 
@@ -436,90 +414,7 @@ public class Main extends AbstractTableModel implements Serializable{
 			Screen.setMode(14);
 			setDoText(new String[1]);
 			getDoText()[0] = ( "「!!!★★★★★!!? モンスターが現れた !!!★★★★★!!!」" );
-			try {
-				int s = 50;//★表示スピード（速い＜遅い）
-				Robot rb = new Robot();
-				System.out.println( "「                      !!!★!!!                      」" );
-				System.out.println( "「                      !!!★!!!                      」" );
-				System.out.println( "「                      !!!★!!!                      」" );
-				System.out.println( "「                      !!!★!!!                      」" );
-				System.out.println( "「                      !!!★!!!                      」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「                    !!!★★★!!!                    」" );
-				System.out.println( "「                    !!!★★★!!!                    」" );
-				System.out.println( "「                    !!!★★★!!!                    」" );
-				System.out.println( "「                    !!!★★★!!!                    」" );
-				System.out.println( "「                    !!!★★★!!!                    」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「                  !!!★★★★★!!!                  」" );
-				System.out.println( "「                  !!!★★★★★!!!                  」" );
-				System.out.println( "「                  !!!★★★★★!!!                  」" );
-				System.out.println( "「                  !!!★★★★★!!!                  」" );
-				System.out.println( "「                  !!!★★★★★!!!                  」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「                !!!★★★★★★★!!!                」" );
-				System.out.println( "「                !!!★★★★★★★!!!                」" );
-				System.out.println( "「                !!!★★★★★★★!!!                」" );
-				System.out.println( "「                !!!★★★★★★★!!!                」" );
-				System.out.println( "「                !!!★★★★★★★!!!                」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「              !!!★★★★★★★★★!!!              」" );
-				System.out.println( "「              !!!★★★★★★★★★!!!              」" );
-				System.out.println( "「              !!!★★★★★★★★★!!!              」" );
-				System.out.println( "「              !!!★★★★★★★★★!!!              」" );
-				System.out.println( "「              !!!★★★★★★★★★!!!              」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「            !!!★★★★★?!★★★★★!!!            」" );
-				System.out.println( "「            !!!★★★★★?!★★★★★!!!            」" );
-				System.out.println( "「            !!!★★★★★?!★★★★★!!!            」" );
-				System.out.println( "「            !!!★★★★★?!★★★★★!!!            」" );
-				System.out.println( "「            !!!★★★★★?!★★★★★!!!            」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「          !!!★★★★★!!?!!!★★★★★!!!          」" );
-				System.out.println( "「          !!!★★★★★!!?!!!★★★★★!!!          」" );
-				System.out.println( "「          !!!★★★★★!!?!!!★★★★★!!!          」" );
-				System.out.println( "「          !!!★★★★★!!?!!!★★★★★!!!          」" );
-				System.out.println( "「          !!!★★★★★!!?!!!★★★★★!!!          」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「        !!!★★★★★!!?★★!!!★★★★★!!!        」" );
-				System.out.println( "「        !!!★★★★★!!?★★!!!★★★★★!!!        」" );
-				System.out.println( "「        !!!★★★★★!!?★★!!!★★★★★!!!        」" );
-				System.out.println( "「        !!!★★★★★!!?★★!!!★★★★★!!!        」" );
-				System.out.println( "「        !!!★★★★★!!?★★!!!★★★★★!!!        」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「      !!!★★★★★!!?★★★★!!!★★★★★!!!      」" );
-				System.out.println( "「      !!!★★★★★!!?★★★★!!!★★★★★!!!      」" );
-				System.out.println( "「      !!!★★★★★!!?★★★★!!!★★★★★!!!      」" );
-				System.out.println( "「      !!!★★★★★!!?★★★★!!!★★★★★!!!      」" );
-				System.out.println( "「      !!!★★★★★!!?★★★★!!!★★★★★!!!      」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「    !!!★★★★★!!?★★★★★★!!!★★★★★!!!    」" );
-				System.out.println( "「    !!!★★★★★!!?★★★★★★!!!★★★★★!!!    」" );
-				System.out.println( "「    !!!★★★★★!!?★★★★★★!!!★★★★★!!!    」" );
-				System.out.println( "「    !!!★★★★★!!?★★★★★★!!!★★★★★!!!    」" );
-				System.out.println( "「    !!!★★★★★!!?★★★★★★!!!★★★★★!!!    」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「  !!!★★★★★!!?★★★★★★★★!!!★★★★★!!!  」" );
-				System.out.println( "「  !!!★★★★★!!?★★★★★★★★!!!★★★★★!!!  」" );
-				System.out.println( "「  !!!★★★★★!!?★★★★★★★★!!!★★★★★!!!  」" );
-				System.out.println( "「  !!!★★★★★!!?★★★★★★★★!!!★★★★★!!!  」" );
-				System.out.println( "「  !!!★★★★★!!?★★★★★★★★!!!★★★★★!!!  」" );
-				rb.delay( s );
-				Input.clear();
-				System.out.println( "「!!!★★★★★!!? モンスターが現れた !!!★★★★★!!!」" );
-				} catch (AWTException e) {
-				e.printStackTrace();
-			}
+			System.out.println( "「!!!★★★★★!!? モンスターが現れた !!!★★★★★!!!」" );
 		} else {
 			Screen.setMode(15);
 			setDoText(new String[1]);

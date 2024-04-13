@@ -54,7 +54,6 @@ public abstract class Monster extends Character{
 	public void other( int clickItem ){
 		System.out.println( name + "は様子を窺っている・・・" );
 		Battle.setBattleText(new String[]{"[ "+ name +" ]は様子を窺っている・・・"});
-		Input.ent();
 	}
 
 	public void setExp(int exp) {
