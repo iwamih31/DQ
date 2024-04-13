@@ -84,7 +84,7 @@ public class Main extends AbstractTableModel implements Serializable{
 	// RPGスタート
 	public static void main(String[] args) {
 
-		mai = new Main();///////////////////////////////////////////////////
+		mai = new Main();
 
 		party = new Member[4];
 		setHu(new Human());
@@ -102,7 +102,6 @@ public class Main extends AbstractTableModel implements Serializable{
 
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
-				Screen.setTex("最初から始めますか？・・・");
 				sc = new Screen("RPG");
 				sc.que();
 			}

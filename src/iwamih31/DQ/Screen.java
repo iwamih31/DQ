@@ -350,6 +350,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	void que() {
+		setTex("最初から始めますか？・・・");
 		labelC = labelSet(tex);
 		JPanel bPanel = new JPanel();
 		format(bPanel);
@@ -361,8 +362,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			button[i] = new JButton(bN);
 			format(button[i]);
 			button[i].setFocusPainted(false);
-			button[i].addActionListener(Main.getSc());
-			button[i].addKeyListener(Main.getSc());
+			button[i].addActionListener(this);
+			button[i].addKeyListener(this);
 			button[i].setBorder(border());
 			bPanel.add(button[i]);
 		}
