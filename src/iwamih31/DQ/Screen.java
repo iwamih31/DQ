@@ -404,10 +404,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		centerSet(space, q, answer);
 	}
 
-	private void begin() {
-		input("     主人公の名前は何にしますか？");
-	}
-
 	private void load() {
 		Main.load();
 		setMapNumber(0);
@@ -489,7 +485,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			case 0 ://最初
 				if (buttonName.equals(ynList[0])) {
 					musicReset();
-					begin();
+					input("     主人公の名前は何にしますか？");
 					opening();
 				}
 				if (buttonName.equals(ynList[1])) {
