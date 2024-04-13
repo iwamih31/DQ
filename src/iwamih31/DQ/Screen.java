@@ -349,8 +349,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return deadNumber;
 	}
 
-	void que() {
-		setTex("最初から始めますか？・・・");
+	void que(String question) {
+		setTex(question);
 		labelC = labelSet(tex);
 		JPanel bPanel = new JPanel();
 		format(bPanel);
