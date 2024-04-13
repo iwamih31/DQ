@@ -81,26 +81,24 @@ public class Main extends AbstractTableModel implements Serializable{
 
 	}
 
-	public static void main(String[] args) {///////////////////RPGスタート
+	// RPGスタート
+	public static void main(String[] args) {
 
 		mai = new Main();///////////////////////////////////////////////////
-
-		// eclipseConsole();//Eclipseでコンソールにフォーカスを移動＊Eclipse以外の時は削除して下さい＊
 
 		party = new Member[4];
 		setHu(new Human());
 		bHp = 3;
 		g = 0;
 
-		Input.clear();///////////////////////////////////////////画面クリア
-
-		File newfile = new File("sData.txt");////////セーブ用ファイル作成//////////
+		// セーブ用ファイル作成
+		File newfile = new File("sData.txt");
 		try {
 			newfile.createNewFile();
 		} catch (IOException e) {
 			e.getMessage();
 			e.printStackTrace();
-		}//////////////////////////////////////////////////////////////////////////
+		}
 
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
