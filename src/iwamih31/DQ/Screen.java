@@ -46,7 +46,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	int opMode;
 	private static JLabel q;
 	private static Object[] ynList;
-	private JTextArea inpT;
+	private JTextArea inp_Text;
 	private Story sto;
 	private JComponent pict;
 	private JTextArea textAreaN;
@@ -371,20 +371,20 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		centerSet(space,labelC, bPanel);
 	}
 
-	private void inputName(String s) {
+	private void input(String text) {
 		buttonName = null;
-		inpT = new JTextArea(1, 8);
-		format(inpT);
-		inpT.setBorder(border());
-		JPanel bPanel = new JPanel();
-		format(bPanel);
-		bPanel.setLayout(new GridLayout(1, 0, 0, 0));
+		inp_Text = new JTextArea(1, 8);
+		format(inp_Text);
+		inp_Text.setBorder(border());
+		JPanel b_Panel = new JPanel();
+		format(b_Panel);
+		b_Panel.setLayout(new GridLayout(1, 0, 0, 0));
 		int b_Num = 1; // ボタンの数
 		JButton[] button = new JButton[b_Num];
 		String[] bList = { "OK" };
 		for (int i = 0; i < b_Num; i++) {
-			String bN = (String) bList[i];
-			button[i] = new JButton(bN);
+			String b_Name = (String) bList[i];
+			button[i] = new JButton(b_Name);
 			format(button[i]);
 			button[i].setPreferredSize(new Dimension(w*2, h*2));
 			button[i].setMargin(new Insets(20, 10, 20, 10));///////文字周りの幅
@@ -392,21 +392,20 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			button[i].addActionListener(this);
 			button[i].addKeyListener(this);
 			button[i].setBorder(border());
-			bPanel.add(button[i]);
+			b_Panel.add(button[i]);
 		}
-		q = labelSet(tex);
+		q = labelSet(text);
 		JLabel blankAreaN = labelSet("");
 		blankAreaN.setPreferredSize(new Dimension(w*2, h*4));
 		JLabel blankAreaS = labelSet("");
 		blankAreaS.setPreferredSize(new Dimension(w*2, h*4));
-		JPanel a = panelSetLR(inpT, bPanel);
+		JPanel a = panelSetLR(inp_Text, b_Panel);
 		JPanel answer = panelSetNCS(blankAreaN, a, blankAreaS);
 		centerSet(space, q, answer);
 	}
 
 	private void begin() {
-		tex = "     主人公の名前は何にしますか？";
-		inputName("名前");
+		input("     主人公の名前は何にしますか？");
 	}
 
 	private void load() {
@@ -424,8 +423,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		int b_Num = mList.length; // ボタンの数
 		menuButton = new JButton[b_Num];
 		for (int i = 0; i < b_Num; i++) {
-			String bN =  String.valueOf(mList[i]);
-			menuButton[i] = new JButton(bN);
+			String b_Name =  String.valueOf(mList[i]);
+			menuButton[i] = new JButton(b_Name);
 			format(menuButton[i], 50, 50);
 			menuButton[i].setMargin(new Insets(20, 10, 20, 10));///////文字周りの幅
 			menuButton[i].setFocusPainted(false);
@@ -434,8 +433,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			menuButton[i].setBorder(border());
 			panel.add(menuButton[i]);
 		}
-		String bN =  cancel;
-		cancelButton = new JButton(bN);
+		String b_Name =  cancel;
+		cancelButton = new JButton(b_Name);
 		format(cancelButton);
 		cancelButton.setMargin(new Insets(20, 10, 20, 10));///////文字周りの幅
 		cancelButton.setFocusPainted(false);
@@ -533,7 +532,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		y = 6;
 		if (buttonName.equals("OK")) {
 			yName = null;
-			String inputName = inpT.getText();
+			String inputName = inp_Text.getText();
 			int p = 0;
 			char[] chars = inputName.toCharArray();
 			for (int i = 0; i < chars.length; i++) {
@@ -551,9 +550,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				} else {
 					Common.___logOut___("yName = " + yName);
 					buttonName.equals(null);
-					tex = "もう少し短い名前でお願いします";
 					change();
-					inputName("名前");
+					input("もう少し短い名前でお願いします");
 				}
 			}
 			Main.begin();
