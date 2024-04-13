@@ -107,19 +107,9 @@ public class Main extends AbstractTableModel implements Serializable{
 				Screen.que();
 			}
 		});
-
-		System.out.println("");
-		System.out.println("");
-		System.out.println("最初から始めますか？・・・ [ １. はい ][ ２. いいえ ]");
-		System.out.println("");
 	}
 
 	public static void begin() {
-
-		System.out.println("");
-		System.out.println("");
-		System.out.println("主人公の名前は何にしますか？");
-		System.out.println("");
 
 			name = "チーム勇者" + yName;
 
