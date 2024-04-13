@@ -103,7 +103,7 @@ public class Main extends AbstractTableModel implements Serializable{
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				sc = new Screen("RPG");
-				sc.que("最初から始めますか？・・・");
+				sc.start();
 			}
 		});
 	}

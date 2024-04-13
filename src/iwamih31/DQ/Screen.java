@@ -45,7 +45,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	String operator;
 	int opMode;
 	private static JLabel q;
-	private static Object[] ynList;
+	private static String[] ynList;
 	private JTextArea inp_Text;
 	private Story sto;
 	private JComponent pict;
@@ -126,7 +126,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
     fontSize = w;
 		setMode(0);
 		border = new LineBorder(Color.WHITE, 2, true);
-		ynList = new Object[]{ "はい", "いいえ" };
+		ynList = new String[]{ "はい", "いいえ" };
 		entMark = (" ⇒ ");
 		ent = entMark;
 		cancel = "Cancel";
@@ -349,17 +349,25 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return deadNumber;
 	}
 
-	void que(String question) {
+	void start() { // 画面開始
+		que_YN("最初から始めますか？・・・");
+	}
+
+	void que_YN(String question) { // "はい"か"いいえ"の質問
+		que(question, ynList);
+	}
+
+	void que(String question, String[] answers) { // 質問
 		setTex(question);
 		labelC = labelSet(tex);
 		JPanel bPanel = new JPanel();
 		format(bPanel);
-		bPanel.setLayout(new GridLayout(2, 0, 0, 0));
+		int b_Num = answers.length; // 回答ボタンの数
+		bPanel.setLayout(new GridLayout(b_Num, 0, 0, 0));
 		bPanel.setPreferredSize(new Dimension(w*5, h/2));
-		int b_Num = 2; // ボタンの数
 		JButton[] button = new JButton[b_Num];
 		for (int i = 0; i < b_Num; i++) {
-			String bN = (String) ynList[i];
+			String bN = (String) answers[i];
 			button[i] = new JButton(bN);
 			format(button[i]);
 			button[i].setFocusPainted(false);
