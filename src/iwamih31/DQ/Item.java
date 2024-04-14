@@ -303,4 +303,8 @@ public class Item extends AbstractTableModel{
 	public static String[] getItemText() {
 		return itemText;
 	}
+
+	public static String get_Item_Name(int item_Number) {
+		return (String) itemList[item_Number][1];
+	}
 }

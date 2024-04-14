@@ -41,7 +41,7 @@ public class Main extends AbstractTableModel implements Serializable{
 
 	private static Member hu;
 
-	private static String get;
+//	private static String get;
 
 	static Main mai;
 
@@ -606,63 +606,46 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	static void getItem() {
+		String get_Item = "○○";
+		int item_Number = 0;
 		Screen.setCount(0);
-		doText = (new String[4]);
-		doText[0] = ("「 ・・・!!? 」");
-		doText[1] = ("「!!? 宝箱を見つけた  ☆☆☆」");
-		doText[2] = ("「開けると○○が入っていた");
-		doText[3] = ("          ⇒"+get + " をリュックに詰め込んだ。");
-		System.out.print( "      " );
-		System.out.println( "「!!? 宝箱を見つけた  ☆☆☆」" );
-		System.out.println( "      " );
-		System.out.print( "「開けると" );
-		int what = new java.util.Random ( ).nextInt( 100 ) + 1;
+		int what = new java.util.Random().nextInt( 100 ) + 1;
 		if( what < 45 ){
-			Item.plus( 1 );
-			get = (String) Item.getItemList()[ 1 ][ 1 ];
+			item_Number = 1;
 		}else if( what < 70 ){
-			Item.plus( 2 );
-			get = (String) Item.getItemList()[ 2 ][ 1 ];
+			item_Number = 2;
 		}else if( what < 85 ){
-			Item.plus( 3 );
-			get = (String) Item.getItemList()[ 3 ][ 1 ];
+			item_Number = 3;
 		}else if( what < 90 ){
-			Item.plus( 4 );
-			get = (String) Item.getItemList()[ 4 ][ 1 ];
+			item_Number = 4;
 		}
 		if( what < 90 ){
-			System.out.println( "が入っていた」" );
-			doText[2] = ("「開けると[ " + get + " ]が入っていた");
-			System.out.println( "" );
-			System.out.println("          ⇒"+get + " をリュックに詰め込んだ。" );
-			doText[3] = ("          ⇒"+get + " をリュックに詰め込んだ。" );
-		}else{
-			Screen.setCount(0);
-			doText = (new String[5]);
+			// 90以下 アイテム
+			Item.plus( item_Number );
+			get_Item = Item.get_Item_Name(item_Number);
+			doText = (new String[4]);
 			doText[0] = ("「 ・・・!!? 」");
 			doText[1] = ("「!!? 宝箱を見つけた  ☆☆☆」");
-			doText[2] = ("「開けると[ party[ who ].wep() ]が入っていた");
-			doText[3] = ("party[ who ].getName() + は + party[ who ].wep() + を装備した" );
-			doText[4] = ("[ sell + ]はメルカリに出し[ + price  + G ]で売れた");
-			int who = new java.util.Random ( ).nextInt( 4 );
+			doText[2] = ("「開けると[ " + get_Item + " ]が入っていた");
+			doText[3] = ("          ⇒" + get_Item + " をリュックに詰め込んだ。" );
+		}else{
+			// 90～100 武器
+			// 誰の武器か？
+			int who = new java.util.Random().nextInt( 4 );
 			String sell = party[ who ].getWeapon()[ party[ who ].getWp( ) ];
-			int pP = (new java.util.Random ( ).nextInt( 10 ) - 5);
-			int wp = party[ who ].getWp( );
+			int pP = (new java.util.Random().nextInt( 10 ) - 5);
+			int wp = party[ who ].getWp();
 			int price = ((wp * wp * wp * 200) - ((wp - 1) * 1000)) / 2 + pP;
 			setG(getG() + price);
 			party[ who ].setWp( wp + 1 );
 			int wMax = (party[ who ].getWeapon().length - 1);
 			if (party[ who ].getWp( ) > wMax) party[ who ].setWp( wMax );
-			party[ who ].wep();
-			System.out.println( "が入っていた" );
-			System.out.println( "" );
+			doText = (new String[5]);
+			doText[0] = ("「 ・・・!!? 」");
+			doText[1] = ("「!!? 宝箱を見つけた  ☆☆☆」");
 			doText[2] = ("「開けると[ " + party[who].wep() + " ]が入っていた");
-			System.out.print( party[ who ].getName() + "は" );
-			party[ who ].wep();
-			System.out.println( "を装備した" );
 			doText[3] = ("[ " + party[ who ].getName() + " ]は[" + party[ who ].wep() + " ]を装備した" );
-			System.out.println( sell + "はメルカリに出し"+ price +"Gで売れた");
-			doText[4] = ("[ " + sell + " ]はメルカリに出し[ "+ price +"G ]で売れた");
+			doText[4] = ("[ " + sell + " ]はメルカリに出し[ " + price + "G ]で売れた");
 		}
 	}
 
