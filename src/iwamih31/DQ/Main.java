@@ -619,8 +619,8 @@ public class Main extends AbstractTableModel implements Serializable{
 		}else if( what < 90 ){
 			item_Number = 4;
 		}
+		// 90以下 = アイテム
 		if( what < 90 ){
-			// 90以下 アイテム
 			Item.plus( item_Number );
 			get_Item = Item.get_Item_Name(item_Number);
 			doText = (new String[4]);
@@ -628,23 +628,26 @@ public class Main extends AbstractTableModel implements Serializable{
 			doText[1] = ("「!!? 宝箱を見つけた  ☆☆☆」");
 			doText[2] = ("「開けると[ " + get_Item + " ]が入っていた");
 			doText[3] = ("          ⇒" + get_Item + " をリュックに詰め込んだ。" );
+		// 90～100 = 武器
 		}else{
-			// 90～100 武器
 			// 誰の武器か？
-			int who = new java.util.Random().nextInt( 4 );
-			String sell = party[ who ].getWeapon()[ party[ who ].getWp( ) ];
+			int random = new java.util.Random().nextInt( 4 );
+			Member who = party[ random ];
+			// 現在の武器を売却
+			String sell = who.wep();
 			int pP = (new java.util.Random().nextInt( 10 ) - 5);
-			int wp = party[ who ].getWp();
+			int wp = who.getWp();
 			int price = ((wp * wp * wp * 200) - ((wp - 1) * 1000)) / 2 + pP;
 			setG(getG() + price);
-			party[ who ].setWp( wp + 1 );
-			int wMax = (party[ who ].getWeapon().length - 1);
-			if (party[ who ].getWp( ) > wMax) party[ who ].setWp( wMax );
+			// 武器をランクアップ
+			who.setWp( wp + 1 );
+			int wMax = (who.getWeapon().length - 1);
+			if (who.getWp( ) > wMax) who.setWp( wMax );
 			doText = (new String[5]);
 			doText[0] = ("「 ・・・!!? 」");
 			doText[1] = ("「!!? 宝箱を見つけた  ☆☆☆」");
-			doText[2] = ("「開けると[ " + party[who].wep() + " ]が入っていた");
-			doText[3] = ("[ " + party[ who ].getName() + " ]は[" + party[ who ].wep() + " ]を装備した" );
+			doText[2] = ("「開けると[ " + who.wep() + " ]が入っていた");
+			doText[3] = ("[ " + who.getName() + " ]は[" + who.wep() + " ]を装備した" );
 			doText[4] = ("[ " + sell + " ]はメルカリに出し[ " + price + "G ]で売れた");
 		}
 	}
