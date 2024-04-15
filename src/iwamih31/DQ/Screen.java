@@ -531,33 +531,32 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
-	private void opening() {
+	private void position_Initial() {
 		x = 6;
 		y = 6;
+	}
+
+	private void opening() {
 		if (buttonName.equals("OK")) {
+			int max_Bytes = 9;
 			yName = null;
+			// 入力された文字列
 			String inputName = inp_Text.getText();
-			int p = 0;
-			char[] chars = inputName.toCharArray();
-			for (int i = 0; i < chars.length; i++) {
-				p += (String.valueOf(chars[i]).getBytes().length);
-			}
-			Common.___logOut___("文字バイト数 = " + p);
 			while (yName == null) {
-				if (p < 8) {
-					if (inputName.equals("")) {
-						inputName = Main.getyName();
-					}
+				if (Common.isBelow_Character_Bytes(inputName, max_Bytes)) {
+					if (inputName.equals("")) inputName = Main.getyName();
 					Main.setyName(inputName);
 					yName = inputName;
 					Common.___logOut___("yName = " + yName);
 				} else {
 					Common.___logOut___("yName = " + yName);
 					buttonName.equals(null);
+
 					change();
 					input("もう少し短い名前でお願いします");
 				}
 			}
+
 			Main.begin();
 			story = new Story();
 			story.on("  ・・・ある日[ " + yName + " ]は、王様に呼び出された・・・");
@@ -2127,6 +2126,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	void prologue() {
 		Common.___logOut___("prologue() します");
+		position_Initial();
 		buttonName = null;
 		partyStBlank();
 		info(goldList(),"","");
