@@ -1664,7 +1664,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			setMessageEnt(text[count]);
 			if (count == 0) {
 			}
-			count = (count + 1);
+			count++;
 			battle();
 		} else {
 			if(Battle.getfMode() == 0){

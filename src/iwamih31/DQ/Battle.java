@@ -272,10 +272,11 @@ public class Battle extends AbstractTableModel{
 				}
 			}
 			Common.___logOut___(count + "ターン目開始");
-			count = count++;
+			count++;
+			around = 0;
 			turn();
 		} else {
-			if (pHp > 0 && mHp < 1) { ///////////////////////戦闘終了後(勝ちの場合)
+			if (pHp > 0 && 1 > mHp) { ///////////////////////戦闘終了後(勝ちの場合)
 				pTable();
 				System.out.println("");
 				System.out.println(Main.getName() + "は" + Main.getmName() + "に勝利した♪");
@@ -283,14 +284,14 @@ public class Battle extends AbstractTableModel{
 				Screen.setMode(5555);
 			}
 			if (pHp < 1) { /////////////////////////////////////////////////////全滅時
-				System.out.println(Main.getmName() + "は全滅した・・・");
+				System.out.println(Main.getName() + "は全滅した・・・");
 				initial();
 				for (Member p : par) {
 					p.setHp(p.getLev() * p.getAp() * 10);
 					p.setMp(p.getLev() * p.getEp() * 3);
 				}
 				Main.setG(Main.getG() / 2);
-				battleText = new String[]{ Main.getmName() + "は全滅した・・・" };
+				battleText = new String[]{ Main.getName() + "は全滅した・・・" };
 				Story.relief();/////////////////////////////続き
 				Screen.setMode(9);
 			}
@@ -301,7 +302,7 @@ public class Battle extends AbstractTableModel{
 	public void turn() {
 		Common.___logOut___("Battle.turn() します");
 		Common.___logOut___("[ " + (around + 1) + " ]人目のアクション");
-		if (mHp > 0 && fMode == 1 && pHp > 1 && turn.size() >around) {
+		if (mHp > 0 && fMode == 1 && pHp > 0 && turn.size() > around) {
 			switch (turn.get(around)) {
 				case 0 ://パーティ[0]
 					setActor(0);
