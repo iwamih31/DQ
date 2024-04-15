@@ -1073,7 +1073,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		String[] text = useEx.getExText();
 		Common.___logOut___("count =(" + count + ")");
 		if (count < text.length) {
-			if (count != 0) {
+			if (count == 0) {
+			}
 				if (Battle.getfMode() == 0) {
 					if (mode > 10000) {
 						setMessage(text[count]);
@@ -1090,7 +1091,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					}
 					battleEx();
 				}
-			}
 			count = (count + 1);
 		} else {
 			if (Battle.getfMode() == 0) {
@@ -1131,6 +1131,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					menu = new Object[]{ "道具", "武器" };
 					shop();
 				}
+				if (buttonName.equals(cancel)) {
+					setMode(3000);
+					Shop.leave();
+					shopLoop();
+				}
 				break;
 			case 30 :// 店,買う,どちら？
 				count = 0;
@@ -1148,6 +1153,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					menu = Main.getpNa();
 					shop();
 				}
+				if (buttonName.equals(cancel)) {
+					setMode(3000);
+					Shop.leave();
+					shopLoop();
+				}
 				break;
 			case 31 :// 店,売る,どちら？
 				count = 0;
@@ -1164,6 +1174,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					setMessage("誰の武器を売りますか？");
 					menu = Main.getpNa();
 					shop();
+				}
+				if (buttonName.equals(cancel)) {
+					setMode(3000);
+					Shop.leave();
+					shopLoop();
 				}
 				break;
 			case 300 :// 店,買う,道具,どれを？
@@ -1199,6 +1214,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 						shopWapon(i);
 					}
 				}
+				if (buttonName.equals(cancel)) {
+					setMode(3000);
+					Shop.leave();
+					shopLoop();
+				}
 				break;
 			case 3010 :// 店,買う,武器,どれを？
 				count = 0;
@@ -1214,6 +1234,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					Shop.buyWaponWhich(10);
 					shopLoop();
 				}
+				if (buttonName.equals(cancel)) {
+					setMode(3000);
+					Shop.leave();
+					shopLoop();
+				}
 				break;
 			case 310 :// 店,売る,道具
 				count = 0;
@@ -1225,6 +1250,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 						Shop.sellItem(user, i);
 						shopLoop();
 					}
+				}
+				if (buttonName.equals(cancel)) {
+					setMode(3000);
+					Shop.leave();
+					shopLoop();
 				}
 				break;
 		}
@@ -1257,10 +1287,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		String[] text = Shop.getShopText();
 		if (count < text.length) {
 			setMessageEnt(text[count]);
-			if (count != 0) {
-				count = (count + 1);
-				shop();
-			}
+			shop();
+			count +=  1;
 		} else {
 			toNormal();
 		}
