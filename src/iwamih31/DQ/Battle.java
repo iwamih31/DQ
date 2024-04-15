@@ -38,7 +38,7 @@ public class Battle extends AbstractTableModel{
 		{"４=",mg.getName( ) + " [Lev." + mg.getLev( ) + " HP=" + mg.getHp( ) + ",MP=" + mg.getMp( ) + "]  "}
 	};
 
-	static Monster[ ] mons ;
+	static Monster[] mons ;
 
 	int pHp;
   int mHp;
@@ -113,7 +113,7 @@ public class Battle extends AbstractTableModel{
 	Battle() {
 		monsNum = 4;
 		mons = new Monster[ monsNum ];
-		par = Main.getParty ( );
+		par = Main.getParty();
 		pHp = 1;
 		mHp = 1;
 		k = 1;
@@ -220,9 +220,11 @@ public class Battle extends AbstractTableModel{
 		}
 	}
 
+
+
 	public void fight() {
 		Common.___logOut___("Battle.fight() します");
-		if (pHp > 0 && mHp > 0 && fMode == 1) { ///////////////////////戦闘中↓
+		if (0 < pHp && 0 < mHp && fMode == 1) { ///////////////////////戦闘中↓
 			int rs = new java.util.Random().nextInt(pFSp);
 			if (rs == 0) {
 				pfs = (0);
@@ -235,50 +237,40 @@ public class Battle extends AbstractTableModel{
 			} else {
 				mfs = (5);
 			}
-			par[0].setHp(par[0].getHp() - 1);
-			par[1].setHp(par[1].getHp() - 1);
-			par[2].setHp(par[2].getHp() - 1);
-			par[3].setHp(par[3].getHp() - 1);
-			par[0].setMp(par[0].getMp() + 1);
-			par[1].setMp(par[1].getMp() + 1);
-			par[2].setMp(par[2].getMp() + 1);
-			par[3].setMp(par[3].getMp() + 1);
-			for (int j = 0; j < par.length; j++) {
-				if (par[j].getHp() < 0) {
-					par[j].setHp(0);
-					par[j].setMp(0);
-				}
+			for (Member member : par) {
+				member.setHp(member.getHp() - 1);
+				member.setMp(member.getMp() + 1);
 			}
-			/////ターン(順番決め)
+			initial();
+			// ターン(順番)決め
 			turn = new ArrayList<Integer>();
 			for (int i = 30; i > 0; i--) {
 				gM = null;
-				if (p1s + pfs + mHug == i && p1h > 0) {
+				if (p1s + pfs + mHug == i && 0 < p1h) {
 					turn.add(0);
 				}
-				if (p2s * fly + pfs + mHug == i && p2h > 0) {
+				if (p2s * fly + pfs + mHug == i && 0 < p2h) {
 					turn.add(1);
 				}
-				if (p3s + pfs + mHug == i && p3h > 0) {
+				if (p3s + pfs + mHug == i && 0 < p3h) {
 					turn.add(2);
 				}
-				if (p4s + pfs + mHug == i && p4h > 0) {
+				if (p4s + pfs + mHug == i && 0 < p4h) {
 					turn.add(3);
 				}
-				if (m1s + mfs + pHug == i && m1h > 0) {
+				if (m1s + mfs + pHug == i && 0 < m1h) {
 					turn.add(4);
 				}
-				if (m2s + mfs + pHug == i && m2h > 0) {
+				if (m2s + mfs + pHug == i && 0 < m2h) {
 					turn.add(5);
 				}
-				if (m3s + mfs + pHug == i && m3h > 0) {
+				if (m3s + mfs + pHug == i && 0 < m3h) {
 					turn.add(6);
 				}
-				if (m4s + mfs + pHug == i && m4h > 0) {
+				if (m4s + mfs + pHug == i && 0 < m4h) {
 					turn.add(7);
 				}
 			}
-			initial();
 			Common.___logOut___(count + "ターン目開始");
 			count = count++;
 			turn();
@@ -417,26 +409,28 @@ public class Battle extends AbstractTableModel{
 
 	private void initial() {
 		par = Main.getParty ();
-		for (int j = 0; j < par.length; j++) {
-			if (par[j].getHp() < 0) {
-				par[j].setHp(0);
-				par[j].setMp(0);
+		for (Member member : par) {
+			// Hp0以下は0とする
+			if (member.getHp() < 0) {
+				member.setHp(0);
+				member.setMp(0);
+			}
+			// Hpの最大値は超えない
+			int max_Hp = member.getLev( ) * member.getAp() * 10;
+			if (member.getHp() > max_Hp){
+				member.setHp(max_Hp);
+			}
+			// Mpの最大値は超えない
+			int max_Mp =  member.getLev( ) * member.getEp() * 3;
+			if (member.getMp() > max_Mp) {
+				member.setMp(max_Mp);
 			}
 		}
-		for (int j = 0; j < mons.length; j++) {
-			if (mons[j].getHp() < 0) {
-				mons[j].setHp(0);
-				mons[j].setMp(0);
-			}
-		}
-		for (int j = 0; j < par.length; j++) {
-			if (par[j].getHp() > ( par[j].getLev( ) * par[j].getAp() * 10 )){
-				par[j].setHp(( par[j].getLev( ) * par[j].getAp() * 10 ));
-			}
-		}
-		for (int j = 0; j < par.length; j++) {
-			if (par[j].getMp() > ( par[j].getLev( ) * par[j].getEp() *  3 )) {
-				par[j].setMp(( par[j].getLev( ) * par[j].getEp() *  3 ));
+		for (Monster monster : mons) {
+			// Hp0以下は0とする
+			if (monster.getHp() < 0) {
+				monster.setHp(0);
+				monster.setMp(0);
 			}
 		}
 

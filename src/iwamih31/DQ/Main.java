@@ -110,36 +110,35 @@ public class Main extends AbstractTableModel implements Serializable{
 
 	public static void begin() {
 
-			name = "チーム勇者" + yName;
+		name = "チーム勇者" + yName;
 
-			fi = new Fighter();// ///////////////////キャラを実体化
-			he = new Hero();
-			pr = new Priest();
-			mg = new Mage();
+		fi = new Fighter();// ///////////////////キャラを実体化
+		he = new Hero();
+		pr = new Priest();
+		mg = new Mage();
 
-			party[0] = fi;// /////実体化したキャラを配列変数に代入
-			party[1] = he;
-			party[2] = pr;
-			party[3] = mg;
+		party[0] = fi;// /////実体化したキャラを配列変数に代入
+		party[1] = he;
+		party[2] = pr;
+		party[3] = mg;
 
-			setFiHP(fi.getHp());
-			setPrHP(pr.getHp());
-			setMgHP(mg.getHp());
+		setFiHP(fi.getHp());
+		setPrHP(pr.getHp());
+		setMgHP(mg.getHp());
 
-			party[0].setHp(0);
-			party[2].setHp(0);
-			party[3].setHp(0);
+		party[0].setHp(0);
+		party[2].setHp(0);
+		party[3].setHp(0);
 
-			pGet();
+		pGet();
 
-			bHp = 3;
+		bHp = 3;
 
-			g = 0;
+		g = 0;
 
-			array = new ArrayList<String>();
+		array = new ArrayList<String>();
 
-			System.out.println("");
-			System.out.println("  ・・・ある日[ " + yName + " ]は、王様に呼び出された・・・");
+		System.out.println("  ・・・ある日[ " + yName + " ]は、王様に呼び出された・・・");
 	}
 
 	static void pGet() {
@@ -281,32 +280,32 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	static void shop(int select) {
+		Battle.pTable();
 		if (select == 1) {
-			Battle.pTable();
-			System.out.println("");
-			System.out.print("何を買いますか？");
+			Common.___logOut___("何を買いますか？");
 		} else {
-			Battle.pTable();
-			System.out.println("");
-			System.out.print("何を売りますか？");
-			Battle.pList();
-			System.out.println("");
+			Common.___logOut___("何を売りますか？");
 		}
-		Object[] choice = new Object[]{ "道具", "武器" };
+		String[] choice = { "道具", "武器" };
+		String menu = "[";
+		for (String what : choice) {
+			menu += (what + ", ");
+		}
+		menu += "]";
+		menu = menu.replace(", ]", "]");
+		Common.___logOut___(menu);
 		button(choice);
 	}
 
 	static void buy(int select) {
 		if (select == 1) {
 			Battle.pTable();
-			System.out.println("");
-			System.out.print("どれを買いますか？");
+			Common.___logOut___("どれを買いますか？");
+			Item.items();
 		} else {
 			Battle.pTable();
-			System.out.println("");
-			System.out.print("誰の武器を買いますか？");
+			Common.___logOut___("誰の武器を買いますか？");
 			Battle.pList();
-			System.out.println("");
 		}
 	}
 

@@ -119,12 +119,12 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void start(String s) {
+		setMode(0);
 		// ディスプレイサイズを基準に、横1％、縦1％、フォントサイズを決定
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     w = screenSize.width / 100;
     h = screenSize.height / 100;
     fontSize = w;
-		setMode(0);
 		border = new LineBorder(Color.WHITE, 2, true);
 		ynList = new String[]{ "はい", "いいえ" };
 		entMark = (" ⇒ ");
@@ -465,7 +465,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			// クリックしたボタン名はそのまま使用
 			buttonName = select;
 		}
-		Common.___logOut___("buttonName = " + buttonName);
 		actionPerformedSwitch();
 	}
 
@@ -491,20 +490,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	public void actionPerformedSwitch0() {
 		switch (mode) {
 			case 0 ://最初
-				if (buttonName.equals(ynList[0])) {
-					musicReset();
-					input("     主人公の名前は何にしますか？");
-					opening();
-				}
-				if (buttonName.equals(ynList[1])) {
-					musicReset();
-					load();
-					toNormal();
-				}else{
-					opening();
-				}
+				opening();
 				break;
 			case 1 ://探す
+				count = 0;
+				fieldAction(buttonName);
 				break;
 			case 2 ://使う
 				count = 0;
@@ -531,12 +521,18 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
-	private void position_Initial() {
-		x = 6;
-		y = 6;
-	}
-
 	private void opening() {
+		// マップ上の位置を初期化
+		position_Initial();
+		if (buttonName.equals(ynList[0])) {
+			musicReset();
+			input("     主人公の名前は何にしますか？");
+		}
+		if (buttonName.equals(ynList[1])) {
+			musicReset();
+			load();
+			toNormal();
+		}
 		if (buttonName.equals("OK")) {
 			int max_Bytes = 9;
 			yName = null;
@@ -551,16 +547,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				} else {
 					Common.___logOut___("yName = " + yName);
 					buttonName.equals(null);
-
 					change();
 					input("もう少し短い名前でお願いします");
 				}
 			}
-
-			Main.begin();
-			story = new Story();
-			story.on("  ・・・ある日[ " + yName + " ]は、王様に呼び出された・・・");
-			prologue();
+			begin();
 		}
 		if (buttonName.equals(ent)) {
 		Common.___logOut___("buttonName = " + buttonName);
@@ -585,6 +576,18 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				toNormal();
 			}
 		}
+	}
+
+	private void begin() {
+		Main.begin();
+		story = new Story();
+		story.on("  ・・・ある日[ " + yName + " ]は、王様に呼び出された・・・");
+		prologue();
+	}
+
+	private void position_Initial() {
+		x = 6;
+		y = 6;
 	}
 
 	private void field(int modeNum) {
@@ -647,11 +650,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	public void actionPerformedSwitch1() {
 		switch (mode) {
-			case 1 ://探す
-				count = 0;
-				fieldAction(buttonName);
-				break;
-			case 10 ://
+			case 10 ://探す
 				if (ent.equals(buttonName)) {
 					buttonName = null;
 					Main.event();
@@ -779,7 +778,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	public void actionPerformedSwitch21() {
 		switch (mode) {
 			case 21 ://使う,道具
-				if (Battle.getfMode()==0){
+				if (Battle.getfMode() == 0){
 					fieldItem(buttonName);
 				}else{
 					battleItem(buttonName);
@@ -1120,14 +1119,14 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				count = 0;
 				if(buttonName.equals(menu[0])){//買う
 					setMode(30);
-					Main.shop(0);
+					Main.shop(1);
 					setMessage("何を買いますか？");
 					menu = new Object[]{ "道具", "武器" };
 					shop();
 				}
 				if(buttonName.equals(menu[1])){//売る
 					setMode(31);
-					Main.shop(1);
+					Main.shop(2);
 					setMessage("何を売りますか？");
 					menu = new Object[]{ "道具", "武器" };
 					shop();
@@ -1137,14 +1136,14 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				count = 0;
 				if(buttonName.equals(menu[0])){
 					setMode(300);
-					Main.buy(0);
+					Main.buy(1);
 					setMessage("どれを買いますか？");
 					menu = Item.menu();
 					shop();
 				}
 				if(buttonName.equals(menu[1])){
 					setMode(301);
-					Main.buy(1);
+					Main.buy(2);
 					setMessage("誰の武器を買いますか？");
 					menu = Main.getpNa();
 					shop();
@@ -1173,14 +1172,14 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				user = Main.getHu();
 				for (int i = 0; i < menu.length; i++) {
 					if (buttonName.equals(menu[i])) {
+						Shop.buyItem(i);
 						setMode(3000);
-						Shop.buyItem(user, i);
 						shopLoop();
 					}
 				}
 				if (buttonName.equals(cancel)) {
 					setMode(3000);
-					Shop.buyWaponWhich(10);
+					Shop.leave();
 					shopLoop();
 				}
 				break;
@@ -2126,7 +2125,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	void prologue() {
 		Common.___logOut___("prologue() します");
-		position_Initial();
 		buttonName = null;
 		partyStBlank();
 		info(goldList(),"","");

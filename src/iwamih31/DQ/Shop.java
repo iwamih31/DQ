@@ -54,7 +54,7 @@ public class Shop extends AbstractTableModel{
 		shopText[2] = (" ありがとうございました♪ (*^o^*)y-.。o○");
 	}
 
-	public static void buyItem(Member user, int buyItem) {
+	public static void buyItem(int buyItem) {
 		int item = buyItem + 1;
 		for (Object[] stocks : itemList) {
 			for (Object stock : stocks) {
@@ -64,8 +64,7 @@ public class Shop extends AbstractTableModel{
 		System.out.println("｝＊()=買い値");
 		System.out.println("");
 		System.out.print("[所持金＝" + Main.getG() + "G] ");
-		String name = user.getName();
-		if (user == Main.getHu()) name = Main.getName();
+		String name = Main.getName();
 		int stock = (Integer) Item.getItemList()[item][3];
 		for (int i = 1; i < itemList.length; i++) {
 			itemList[i][3]=(Integer)itemList[i][3];
@@ -136,11 +135,15 @@ public class Shop extends AbstractTableModel{
 				shopText[1] = sellWapon + "は(" + sellPrice + "Ｇ)で引き取ってくれた・・・";
 			}
 		} else {
-			Battle.pTable();
-			System.out.println("");
-			System.out.println("また来てくださいね （*^o^*）");
-			shopText = new String[]{ "また来てくださいね （*^o^*）" };
+			leave();
 		}
+	}
+
+	public static void leave() {
+		Battle.pTable();
+		System.out.println("");
+		System.out.println("また来てくださいね （*^o^*）");
+		shopText = new String[]{ "また来てくださいね （*^o^*）" };
 	}
 
 	public static void  item( int clickItem ) {
