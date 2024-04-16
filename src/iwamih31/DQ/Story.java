@@ -73,38 +73,22 @@ public class Story extends AbstractTableModel{
 	}
 
 	public static void relief() {
-//		Main.scroll(30);
-//		Battle.pTable();
-//		System.out.println( "" );
-//		System.out.println( "" );
-//		Input.ent();
-//		Battle.pTable();
-//		System.out.println( "" );
-//		System.out.println( " 「 目覚めたか、[ " + Main.getyName() + " ]よ・・・ 」");
-//		Input.ent();
-//		Battle.pTable();
-//		System.out.println( "" );
-//		System.out.print( " 「 [ " + Main.getName() + " ]を全滅させるとは、[ " + Main.getmName() );
-//		System.out.println( " ]は、相当手強い相手みたいじゃのう・・・ 」");
-//		Input.ent();
-//		Battle.pTable();
-//		System.out.println( "" );
-//		System.out.print( " 「なんとか [ " + Main.getyName() + " ]達の命を救う事は出来たが、");
-//		System.out.println( "お金を大分消費してしまった・・・ 」");
-//		Input.ent();
-//		Battle.pTable();
-//		System.out.println( "" );
-//		System.out.println( "[所持金＝ " + Main.getG() +"G ] ");
-//		Input.ent();
-//		Battle.pTable();
-//		System.out.println( "" );
-//		System.out.println( " 「 だが[ " + Main.getName() + " ]の命を救えて、本当に何よりじゃ・・・　」");
-//		Input.ent();
-//		Battle.pTable();
-//		System.out.println( "" );
-//		System.out.print( " 「 さあ、[ " + Main.getName() + " ]よ、一刻も早く[ " + Main.getbName() );
-//		System.out.println( " ]を倒し、世界に平和をもたらすのじゃ!!! 」");
-//		Input.ent();
+		Battle.pTable();
+		String p_Name = Main.getyName();
+		String m_Name = Main.getmName();
+		String b_Name = Main.getbName();
+		textList = new String[11];
+		textList[0] = "";
+		textList[1] = "「 目覚めたか、[ " + p_Name + " ]よ・・・ 」";
+		textList[2] = "";
+		textList[3] = "「 [ " + p_Name + " ]を全滅させるとは、[ " + m_Name + " ]は、やはり相当手強いのう・・・ 」";
+		textList[4] = "";
+		textList[5] = ( " 「なんとか [ " + p_Name+ " ]達の命を救う事は出来たが、お金を大分消費してしまった・・・ 」");
+		textList[6] = "";
+		textList[7] = " 「 だが[ " + p_Name + " ]の命を救えて、本当に何よりじゃ・・・ 」";
+		textList[8] = "";
+		textList[9] = " 「 さあ、[ " + p_Name + " ]よ、一刻も早く[ " + b_Name + " ]を倒し、世界に平和をもたらすのじゃ!!! 」";
+		textList[10] = "";
 	}
 
 	@Override

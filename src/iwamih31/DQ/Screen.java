@@ -554,7 +554,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			begin();
 		}
 		if (buttonName.equals(ent)) {
-		Common.___logOut___("buttonName = " + buttonName);
+			Common.___logOut___("buttonName = " + buttonName);
 			Common.___logOut___("count = " + count);
 			if (count < story.getTextList().length) {
 				setMessageEnt(story.getTextList()[count]);
@@ -588,6 +588,17 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private void position_Initial() {
 		x = 6;
 		y = 6;
+	}
+
+	private void field() {
+		Common.___logOut___("field() します");
+		buttonName = null;
+		partySt();
+		info(goldList(),itemList(),"");
+		scene();
+		menu(new Object[]{});
+		comment();
+		change();
 	}
 
 	private void field(int modeNum) {
@@ -751,6 +762,20 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				}
 				count = (count + 1);
 				adventure();
+			} else {
+				musicReset();
+				toNormal();
+			}
+		}
+	}
+
+	private void loop(String[] text) {
+		if (buttonName.equals(ent)) {
+			Common.___logOut___("loop count = " + count);
+			if (count < text.length) {
+				setMessageEnt(text[count]);
+				count++;
+				field();
 			} else {
 				musicReset();
 				toNormal();

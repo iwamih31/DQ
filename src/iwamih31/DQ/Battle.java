@@ -276,20 +276,22 @@ public class Battle extends AbstractTableModel{
 			around = 0;
 			turn();
 		} else {
-			if (pHp > 0 && 1 > mHp) { ///////////////////////戦闘終了後(勝ちの場合)
-				pTable();
+			if (pHp > 0 && 1 > mHp) { //戦闘終了後(勝ちの場合)
 				battleText = new String[]{ Main.getName() + "は" + Main.getmName() + "に勝利した♪" };
+				pTable();
 				Screen.setMode(5555);
 			}
-			if (pHp < 1) { /////////////////////////////////////////////////////全滅時
+			if (pHp < 1) { // 全滅時
+				battleText = new String[]{ Main.getName() + "は全滅した・・・" };
 				initial();
 				for (Member p : par) {
 					p.setHp(p.getLev() * p.getAp() * 10);
 					p.setMp(p.getLev() * p.getEp() * 3);
 				}
+				// 持ち金半減
 				Main.setG(Main.getG() / 2);
-				battleText = new String[]{ Main.getName() + "は全滅した・・・" };
-				Story.relief();/////////////////////////////続き
+				// 続き
+				Story.relief();
 				Screen.setMode(9);
 			}
 		Main.save();
