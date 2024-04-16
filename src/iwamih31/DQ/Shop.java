@@ -89,11 +89,10 @@ public class Shop extends AbstractTableModel{
 		}
 	}
 
-	public static void buyWapon(int i) {
-		member = Main.getParty()[i];
+	public static void buyWapon(int party_Number) {
+		member = Main.getParty()[party_Number];
 		Battle.pTable();
 		System.out.println( "" );
-		System.out.print( "どれにいたしましょう？" );
 		System.out.print( "１." );
 		member.wep(1);
 		System.out.print( "(" + (( member.getWp() + 1) * 200 * 1 * 1 ) + "Ｇ)" );
@@ -103,7 +102,6 @@ public class Shop extends AbstractTableModel{
 		System.out.print( "３." );
 		member.wep(3);
 		System.out.print( "(" + (( member.getWp() + 3) * 200 * 3 * 3 ) + "Ｇ)" );
-		System.out.println( "" );
 		System.out.println( "" );
 		Screen.setMessage( "どれにいたしましょう？" );
 		Screen.setMenu(new String[]{member.wepName(1),member.wepName(2),member.wepName(3)});
@@ -117,30 +115,25 @@ public class Shop extends AbstractTableModel{
 			int buyPrice = (inpWp * inpWp * inpWp * 200) - ((inpWp - 1) * 1000);
 			String sellWapon = member.wepName(0);
 			int sellPrice = ((wp * wp * wp * 200) - ((wp - 1) * 1000)) / 2;
+			status();
 			if (Main.getG() < buyPrice) {
-				Battle.pTable();
-				System.out.println("");
-				System.out.println(buyWapon + "を買うには、お金が足りません  ×××");
-				shopText = new String[]{ buyWapon + "を買うには、お金が足りません  ×××" };
+				shopText = new String[1];
+				shopText[0] = buyWapon + "を買うには、お金が足りません  ×××";
 			} else {
-				shopText = new String[2];
-				Battle.pTable();
-				System.out.println("");
-				System.out.print("「");
-				member.wep(inp);
-				System.out.print("だね。まいどあり!!");
-				shopText[0] = buyWapon + "だね。まいどあり!!";
 				Main.setG(Main.getG() - buyPrice + sellPrice);
-				Battle.pTable();
-				System.out.println("");
-				member.wep();
-				System.out.print("は(" + sellPrice + "Ｇ)で引き取ってくれた・・・");
 				member.setWp(member.getWp() + inp);
+				shopText = new String[2];
+				shopText[0] = buyWapon + "だね。まいどあり!!";
 				shopText[1] = sellWapon + "は(" + sellPrice + "Ｇ)で引き取ってくれた・・・";
 			}
 		} else {
 			leave();
 		}
+	}
+
+	private static void status() {
+		Battle.pTable();
+		Common.___logOut___("<所持金(" + Main.getG() + "Ｇ)> ");
 	}
 
 	public static void leave() {

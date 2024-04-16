@@ -180,15 +180,61 @@ public class Main extends AbstractTableModel implements Serializable{
 
 	static void action(int select) {
 		Common.___logOut___("Main.action( " + select +" ) します");
-		Battle.pTable();//パーティーのステータスを表示
-		party[0].setHp(party[0].getHp() - 1);
-		party[1].setHp(party[1].getHp() - 1);
-		party[2].setHp(party[2].getHp() - 1);
-		party[3].setHp(party[3].getHp() - 1);
-		party[0].setMp(party[0].getMp() + 1);
-		party[1].setMp(party[1].getMp() + 1);
-		party[2].setMp(party[2].getMp() + 1);
-		party[3].setMp(party[3].getMp() + 1);
+		// 時を進める
+		progress();
+		// パーティーのステータスを表示
+		status();
+		Object[] choice;
+		arrayClear();
+		switch (select) {
+		case 1:
+			array.add(("―――――" + getName() + "は探検を続けた―――――"));
+			setText(array);
+			break;
+		case 2:
+			System.out.println( "⇒どちらを使いますか？ [ 1. 道具 ] [ 2. 能力 ]");
+			System.out.println("");
+			message("⇒どちらを使いますか？");
+			choice = new Object[]{"道具","能力"};
+			button(choice);
+			break;
+		case 3 :
+			Console.items();
+			break;
+		case 4:
+			innG();// /////////////////////////////宿代を計算
+			message("⇒宿代は [ " + innG + "G ] ですが、お泊りになりますか？");
+			System.out.println("");
+			System.out.println("⇒宿代は [ " + innG
+					+ "G ] ですが、お泊りになりますか？ [ 1.はい ][ 2.いいえ ][ 3.状態確認 ][ 4.復活の儀式 ]");
+			System.out.println("");
+			System.out.print("[所持金＝ " + g + "G ] ");
+			innText = new String[3];
+			innText[0] = name + "は、宿で体を休めた・・・";
+			innText[1] = "♪♪♪旅の疲れが癒された ♪♪♪";
+			innText[2] = "「またのお越しをお待ちしております。（*^o^*）」";
+			break;
+		default:
+			int ran = new java.util.Random().nextInt(100);
+			if (ran < 10) {
+				System.out.println("・・・もしかして、からかってます？笑");
+			} else {
+				System.out.println("＊できれば、1～4の数字でお願いします・・・");
+			}
+		}
+		save();
+	}
+
+	private static void status() {
+		Battle.pTable();
+		System.out.println("");
+	}
+
+	private static void progress() {
+		for (Member member : party) {
+			member.setHp(member.getHp() - 1);
+			member.setMp(member.getMp() + 1);
+		}
 		if(party[1].getWp() == 9){////////////////////ムラマサ
 			//攻撃力＋
 			//防御力＋
@@ -204,65 +250,28 @@ public class Main extends AbstractTableModel implements Serializable{
 		if(party[3].getWp() == 9){////////////////////魔導師の杖
 			party[3].setMp(party[3].getMp() + 2);
 		}
-		for (int j = 0; j < party.length; j++) {
-			if (party[j].getHp() < 0) {
-				party[j].setHp(0);
-				party[j].setMp(0);
+		p_Initial();
+	}
+
+	public static void p_Initial() {
+		party = Main.getParty ();
+		for (Member member : party) {
+			// Hp0以下は0とする
+			if (member.getHp() < 0) {
+				member.setHp(0);
+				member.setMp(0);
+			}
+			// Hpの最大値は超えない
+			int max_Hp = member.getLev( ) * member.getAp() * 10;
+			if (member.getHp() > max_Hp){
+				member.setHp(max_Hp);
+			}
+			// Mpの最大値は超えない
+			int max_Mp =  member.getLev( ) * member.getEp() * 3;
+			if (member.getMp() > max_Mp) {
+				member.setMp(max_Mp);
 			}
 		}
-		Object[] choice;
-		arrayClear();
-		switch (select) {
-		case 1:
-			array.add(("―――――" + getName() + "は探検を続けた―――――"));
-			setText(array);
-			break;
-		case 2:
-			Battle.pTable();
-			System.out.println("");
-			System.out.println( "⇒どちらを使いますか？ [ 1. 道具 ] [ 2. 能力 ]");
-			System.out.println("");
-			message("⇒どちらを使いますか？");
-			choice = new Object[]{"道具","能力"};
-			button(choice);
-			break;
-		case 3 :
-			System.out.print("＊持ち物< ");
-			Item.items();
-			System.out.println(">");
-			System.out.println("");
-			System.out.println("「いらっしゃいませ、御用は何でしょうか？ [ 1. 道具 ] [ 2. 武器 ]");
-			System.out.println("");
-			message("「いらっしゃいませ、御用は何でしょうか？」");
-			choice = new Object[]{ "買う", "売る" };
-			button(choice);
-			break;
-		case 4:
-			innG();// /////////////////////////////宿代を計算
-			Battle.pTable();
-			message("⇒宿代は [ " + innG + "G ] ですが、お泊りになりますか？");
-			System.out.println("");
-			System.out.println("⇒宿代は [ " + innG
-					+ "G ] ですが、お泊りになりますか？ [ 1.はい ][ 2.いいえ ][ 3.状態確認 ][ 4.復活の儀式 ]");
-			System.out.println("");
-			System.out.print("[所持金＝ " + g + "G ] ");
-			innText = new String[3];
-			innText[0] = name + "は、宿で体を休めた・・・";
-			innText[1] = "♪♪♪旅の疲れが癒された ♪♪♪";
-			innText[2] = "「またのお越しをお待ちしております。（*^o^*）」";
-			break;
-		default:
-			Battle.pTable();
-			System.out.println("");
-			int ran = new java.util.Random().nextInt(100);
-			if (ran < 10) {
-				System.out.println("・・・もしかして、からかってます？笑");
-			} else {
-				System.out.println("＊できれば、1～4の数字でお願いします・・・");
-			}
-		}
-		Battle.pTable();
-		save();
 	}
 
 	private static void arrayClear() {
@@ -281,30 +290,30 @@ public class Main extends AbstractTableModel implements Serializable{
 
 	static void shop(int select) {
 		Battle.pTable();
-		if (select == 1) {
-			Common.___logOut___("何を買いますか？");
-		} else {
-			Common.___logOut___("何を売りますか？");
-		}
+//		if (select == 1) {
+//			Common.___logOut___("何を買いますか？");
+//		} else {
+//			Common.___logOut___("何を売りますか？");
+//		}
 		String[] choice = { "道具", "武器" };
-		String menu = "[";
-		for (String what : choice) {
-			menu += (what + ", ");
-		}
-		menu += "]";
-		menu = menu.replace(", ]", "]");
-		Common.___logOut___(menu);
+//		String menu = "[";
+//		for (String what : choice) {
+//			menu += (what + ", ");
+//		}
+//		menu += "]";
+//		menu = menu.replace(", ]", "]");
+//		Common.___logOut___(menu);
 		button(choice);
 	}
 
 	static void buy(int select) {
 		if (select == 1) {
 			Battle.pTable();
-			Common.___logOut___("どれを買いますか？");
+//			Common.___logOut___("どれを買いますか？");
 			Item.items();
 		} else {
 			Battle.pTable();
-			Common.___logOut___("誰の武器を買いますか？");
+//			Common.___logOut___("誰の武器を買いますか？");
 			Battle.pList();
 		}
 	}
@@ -312,14 +321,15 @@ public class Main extends AbstractTableModel implements Serializable{
 	static void sell(int select) {
 		if (select == 1) {
 			Battle.pTable();
-			System.out.println("");
-			System.out.print("どれを売りますか？");
+//			System.out.println("");
+//			System.out.print("どれを売りますか？");
+			Item.items();
 		} else {
 			Battle.pTable();
-			System.out.println("");
-			System.out.print("誰の武器を売りますか？");
+//			System.out.println("");
+//			System.out.print("誰の武器を売りますか？");
 			Battle.pList();
-			System.out.println("");
+//			System.out.println("");
 		}
 	}
 

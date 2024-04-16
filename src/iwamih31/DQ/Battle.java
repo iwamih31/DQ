@@ -278,13 +278,10 @@ public class Battle extends AbstractTableModel{
 		} else {
 			if (pHp > 0 && 1 > mHp) { ///////////////////////戦闘終了後(勝ちの場合)
 				pTable();
-				System.out.println("");
-				System.out.println(Main.getName() + "は" + Main.getmName() + "に勝利した♪");
 				battleText = new String[]{ Main.getName() + "は" + Main.getmName() + "に勝利した♪" };
 				Screen.setMode(5555);
 			}
 			if (pHp < 1) { /////////////////////////////////////////////////////全滅時
-				System.out.println(Main.getName() + "は全滅した・・・");
 				initial();
 				for (Member p : par) {
 					p.setHp(p.getLev() * p.getAp() * 10);
@@ -318,7 +315,6 @@ public class Battle extends AbstractTableModel{
 							k = 1;
 							pTable();
 							System.out.println("");
-							System.out.println("感謝の効果が消え、仲間の攻撃力が元に戻った・・・");
 							battleText = new String[]{ "感謝の効果が消え、仲間の攻撃力が元に戻った・・・" };
 						}
 					}
@@ -370,8 +366,6 @@ public class Battle extends AbstractTableModel{
 			Screen.setMode(55555);
 			Main.getItem();
 		} else {
-			System.out.println("");
-			System.out.println(Main.getmName() + "の居た場所には何もなかった・・・");
 			battleText = new String[]{ Main.getmName() + "の居た場所には何もなかった・・・" };
 		}
 		fMode = 0;
@@ -379,8 +373,6 @@ public class Battle extends AbstractTableModel{
 
 	static void gold() {
 		if (fg != Main.getG()) {////////////////////獲得Gが有る場合
-			System.out.println("");
-			System.out.println(Main.getName() + "は全部で " + (Main.getG() - fg) + " Ｇを手に入れた");
 			battleText = new String[]{ Main.getName() + "は全部で " + (Main.getG() - fg) + " Ｇを手に入れた" };
 		}
 	}
@@ -391,24 +383,18 @@ public class Battle extends AbstractTableModel{
 			int f = fpExp[i];
 			Member p = par[i];
 			if (f != p.getExp()) {/////////////////////獲得経験値が有る場合
-				pTable();
-				System.out.println("");
-				System.out.print(p.getName() + "は合計 " + (p.getExp() - f));
-				System.out.println(" Ｐの経験値を獲得した  [Exp = " + p.getExp() + "]");
 				array.add(p.getName() + "は合計 " + (p.getExp() - f) + " Ｐの経験値を獲得した");
 				if (p.getLev() < upLev(p.getExp())) {
 					p.setLev(upLev(p.getExp()));
-					pTable();
-					System.out.println("");
-					System.out.println(p.getName() + "はレベルが" + p.getLev() + "に上がった!!! ");
 					array.add(p.getName() + "はレベルが" + p.getLev() + "に上がった!!! ");
 				}
+				pTable();
 			}
 		}
 		setBattleText(array);
 	}
 
-	private void initial() {
+	public static void p_Initial() {
 		par = Main.getParty ();
 		for (Member member : par) {
 			// Hp0以下は0とする
@@ -427,6 +413,9 @@ public class Battle extends AbstractTableModel{
 				member.setMp(max_Mp);
 			}
 		}
+	}
+
+	public static void m_Initial() {
 		for (Monster monster : mons) {
 			// Hp0以下は0とする
 			if (monster.getHp() < 0) {
@@ -434,6 +423,13 @@ public class Battle extends AbstractTableModel{
 				monster.setMp(0);
 			}
 		}
+	}
+
+	private void initial() {
+
+		p_Initial();
+
+		m_Initial();
 
 		p1s = par [ 0 ].getSp();
 		p2s = par [ 1 ].getSp();
@@ -827,16 +823,11 @@ public class Battle extends AbstractTableModel{
 	}
 
 	public static void status() {
-		for (int j = 0; j < par.length; j++) {
-			if (par[j].getHp() < 0) {
-				par[j].setHp(0);
-				par[j].setMp(0);
-			}
-		}
-		int fiP = fi.getLev( )*fi.getAp( );
-		int heP = he.getLev( )*he.getAp( );
-		int prP = pr.getLev( )*pr.getAp( );
-		int mgP = mg.getLev( )*mg.getAp( );
+		p_Initial();
+		int fiA = fi.getLev( )*fi.getAp( );
+		int heA = he.getLev( )*he.getAp( );
+		int prA = pr.getLev( )*pr.getAp( );
+		int mgA = mg.getLev( )*mg.getAp( );
 		int fiE = fi.getLev( )*fi.getEp( );
 		int heE = he.getLev( )*he.getEp( );
 		int prE = pr.getLev( )*pr.getEp( );
@@ -844,17 +835,17 @@ public class Battle extends AbstractTableModel{
 		int[] nLE = {0,10,30,60,100,150,250,500,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,15000,20000};
 		Object[][] st = {
 				{"名前"       ,"Lev."      ,"経験値"    ,"体力"     ,"術力"     ,"強さ","素早さ"     ,"武器"                , "攻撃力"   , "技能力"  },
-				{fi.getName( ),fi.getLev( ),fi.getExp( ),fi.getHp( ),fi.getMp( ),fiP   ,fi.getSp( ) ,fi.getWeapon()[fi.getWp( )], fi.attack(), fi.getEp( )},
-				{he.getName( ),he.getLev( ),he.getExp( ),he.getHp( ),he.getMp( ),heP   ,he.getSp( ) ,he.getWeapon()[he.getWp( )], he.attack(), he.getEp( )},
-				{pr.getName( ),pr.getLev( ),pr.getExp( ),pr.getHp( ),pr.getMp( ),prP   ,pr.getSp( ) ,pr.getWeapon()[pr.getWp( )], pr.attack(), pr.getEp( )},
-				{mg.getName( ),mg.getLev( ),mg.getExp( ),mg.getHp( ),mg.getMp( ),mgP   ,mg.getSp( ) ,mg.getWeapon()[mg.getWp( )], mg.attack(), mg.getEp( )},
+				{fi.getName( ),fi.getLev( ),fi.getExp( ),fi.getHp( ),fi.getMp( ),fiA   ,fi.getSp( ) ,fi.getWeapon()[fi.getWp( )], fi.attack(), fi.getEp( )},
+				{he.getName( ),he.getLev( ),he.getExp( ),he.getHp( ),he.getMp( ),heA   ,he.getSp( ) ,he.getWeapon()[he.getWp( )], he.attack(), he.getEp( )},
+				{pr.getName( ),pr.getLev( ),pr.getExp( ),pr.getHp( ),pr.getMp( ),prA   ,pr.getSp( ) ,pr.getWeapon()[pr.getWp( )], pr.attack(), pr.getEp( )},
+				{mg.getName( ),mg.getLev( ),mg.getExp( ),mg.getHp( ),mg.getMp( ),mgA   ,mg.getSp( ) ,mg.getWeapon()[mg.getWp( )], mg.attack(), mg.getEp( )},
 			};
 		Object[][] mSt = {
 				{"       ",     "nextLev"                ,""     ,"MaxHP","MaxMP",""      ,""      ,"武器Lev"             ,""         ,""          },
-				{"次Lev=",nLE[fi.getLev( )]-fi.getExp( ),"MaxHP=",fiP*10 ,fiE*3  ,"=MaxMP","wLev.=",fi.attack()-fiP + 1   ,""         ,""          },
-				{"次Lev=",nLE[he.getLev( )]-he.getExp( ),"MaxHP=",heP*10 ,heE*3  ,"=MaxMP","wLev.=",he.attack()-heP + 1   ,""         ,""          },
-				{"次Lev=",nLE[pr.getLev( )]-pr.getExp( ),"MaxHP=",prP*10 ,prE*3  ,"=MaxMP","wLev.=",pr.attack()-prP + 1   ,""         ,""          },
-				{"次Lev=",nLE[mg.getLev( )]-mg.getExp( ),"MaxHP=",mgP*10 ,mgE*3  ,"=MaxMP","wLev.=",mg.attack()-mgP + 1   ,""         ,""          },
+				{"次Lev=",nLE[fi.getLev( )]-fi.getExp( ),"MaxHP=",fiA*10 ,fiE*3  ,"=MaxMP","wLev.=",fi.attack()-fiA + 1   ,""         ,""          },
+				{"次Lev=",nLE[he.getLev( )]-he.getExp( ),"MaxHP=",heA*10 ,heE*3  ,"=MaxMP","wLev.=",he.attack()-heA + 1   ,""         ,""          },
+				{"次Lev=",nLE[pr.getLev( )]-pr.getExp( ),"MaxHP=",prA*10 ,prE*3  ,"=MaxMP","wLev.=",pr.attack()-prA + 1   ,""         ,""          },
+				{"次Lev=",nLE[mg.getLev( )]-mg.getExp( ),"MaxHP=",mgA*10 ,mgE*3  ,"=MaxMP","wLev.=",mg.attack()-mgA + 1   ,""         ,""          },
 			};
 		for (int i = 1; i < (st.length); i++) {
 			for (int j = 0; j < st[0].length; j++) {
@@ -909,41 +900,12 @@ public class Battle extends AbstractTableModel{
 	}
 
 	public static void pTable() {
-		for (int j = 0; j < par.length; j++) {
-			if (par[j].getHp() < 0) {
-				par[j].setHp(0);
-				par[j].setMp(0);
-			}
-		}
-		for (int j = 0; j < par.length; j++) {
-			if (par[j].getHp() > ( par[j].getLev( ) * par[j].getAp() * 10 )){
-				par[j].setHp(( par[j].getLev( ) * par[j].getAp() * 10 ));
-			}
-		}
-		for (int j = 0; j < par.length; j++) {
-			if (par[j].getMp() > ( par[j].getLev( ) * par[j].getEp() *  3 )) {
-				par[j].setMp(( par[j].getLev( ) * par[j].getEp() *  3 ));
-			}
-		}
-		fi = ( par [ 0 ] );
-		he = ( par [ 1 ] );
-		pr = ( par [ 2 ] );
-		mg = ( par [ 3 ] );
-		Object fH = fi.getHp( );
-		Object hH = he.getHp( );
-		Object pH = pr.getHp( );
-		Object mH = mg.getHp( );
-		if(fi.getHp( ) < 1) fH ="死";
-		if(he.getHp( ) < 1) hH ="死";
-		if(pr.getHp( ) < 1) pH ="死";
-		if(mg.getHp( ) < 1) mH ="死";
-		Object pTable[] = new Object[4];
-		pTable[0] = fi.getName( ) + "(Lev." + fi.getLev( ) + ")HP=" + fH + ",MP=" + fi.getMp( );
-		pTable[1] = he.getName( ) + "(Lev." + he.getLev( ) + ")HP=" + hH + ",MP=" + he.getMp( );
-		pTable[2] = pr.getName( ) + "(Lev." + pr.getLev( ) + ")HP=" + pH + ",MP=" + pr.getMp( );
-		pTable[3] = mg.getName( ) + "(Lev." + mg.getLev( ) + ")HP=" + mH + ",MP=" + mg.getMp( );
-		for( Object table : pTable ){
-			System.out.print( "☆[" + table + "] ");
+		p_Initial();
+		for (Member me : par) {
+			String sHP = String.valueOf(me.getHp( ));
+			if(me.getHp( ) < 1) sHP ="死";
+			String status = me.getName( ) + "(Lev." + me.getLev( ) + ")HP=" + sHP + ",MP=" + me.getMp( );
+			System.out.print("☆[" + status + "] ");
 		}
 		System.out.println("");
 	}

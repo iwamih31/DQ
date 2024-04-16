@@ -1107,11 +1107,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		Member user;
 		switch (mode) {
 			case 3 :// 店
-				musicReset();
 				count = 0;
+				musicReset();
 				Main.action(3);
 				setMessage("「いらっしゃいませ、御用は何でしょうか？」");
-				menu = new Object[]{ "買う", "売る" };
+				set_Menu(new Object[]{ "買う", "売る" });
 				shop();
 				setMode(33);
 				break;
@@ -1121,14 +1121,14 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					setMode(30);
 					Main.shop(1);
 					setMessage("何を買いますか？");
-					menu = new Object[]{ "道具", "武器" };
+					set_Menu(new Object[]{ "道具", "武器" });
 					shop();
 				}
 				if(buttonName.equals(menu[1])){//売る
 					setMode(31);
 					Main.shop(2);
 					setMessage("何を売りますか？");
-					menu = new Object[]{ "道具", "武器" };
+					set_Menu(new Object[]{ "道具", "武器" });
 					shop();
 				}
 				if (buttonName.equals(cancel)) {
@@ -1260,8 +1260,19 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
+	private void set_Menu(Object[] menu_List) {
+		menu = menu_List;
+		String sMenu = "[";
+		for (Object item : menu) {
+			sMenu += (item + ", ");
+		}
+		sMenu += "]";
+		sMenu = sMenu.replace(", ]", "]");
+		Common.___logOut___(sMenu);
+	}
+
 	private void shop() {
-			Common.___logOut___("shop() します");
+			Common.___logOut___("Screen.shop() します");
 			buttonName = null;
 			partySt();
 			info(goldList(),itemList(),shopList());
@@ -1272,7 +1283,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 
 	private void shopWapon(int i) {
-		Common.___logOut___("shop() します");
+		Common.___logOut___("shopWapon(" + i + ") します");
 		buttonName = null;
 		partySt();
 		info(goldList(),itemList(),shopWaponList(i));

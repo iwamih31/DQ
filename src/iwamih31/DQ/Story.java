@@ -4,7 +4,11 @@ import javax.swing.table.AbstractTableModel;
 
 public class Story extends AbstractTableModel{
 
-	static String[][] sent = { { "" }, { "" }, { "" }, };
+	static String[][] sent = {
+				{ "" },
+				{ "" },
+				{ "" },
+			};
 
 	static Member fi = Main.fi;
 	static Member he = Main.he;
@@ -32,8 +36,6 @@ public class Story extends AbstractTableModel{
 		textList[14] = "";
 		textList[15] = "☆[ " + Main.getName() + " ]の物語";
 	}
-
-
 
 	public static void end( ) {
 //		System.out.println( Main.getbName() + "は断末魔の叫びをあげた" );
