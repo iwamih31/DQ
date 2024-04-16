@@ -516,6 +516,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				break;
 			case 9 ://死亡
 				break;
+			case 99 :// つづき
+				beBack();
+				break;
 			default :
 				break;
 		}
@@ -531,7 +534,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		if (buttonName.equals(ynList[1])) {
 			musicReset();
 			load();
-			toNormal();
+			setMode(99);
+			beBack();
 		}
 		if (buttonName.equals("OK")) {
 			int max_Bytes = 9;
@@ -566,12 +570,26 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				if (count == 9) Main.pr.setHp(Main.getPrHP());
 				if (count == 11) Main.mg.setHp(Main.getMgHP());
 				Main.pGet();
-				count = (count + 1);
+				count++;
 				if (count < 5) {
 					prologue();
 				} else {
 					castle();
 				}
+			} else {
+				toNormal();
+			}
+		}
+	}
+
+	private void beBack() {
+		if (buttonName.equals(ent)) {
+			Common.___logOut___("buttonName = " + buttonName);
+			Common.___logOut___("count = " + count);
+			if (count < story.getTextList().length) {
+				setMessageEnt(story.getTextList()[count]);
+				count++;
+				field();
 			} else {
 				toNormal();
 			}
