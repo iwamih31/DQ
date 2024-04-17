@@ -508,11 +508,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			case 5 ://戦闘
 				break;
 			case 6 ://お城
-				repeatMusic("オープニング");
+				repeatMusic("希望の歌");
 				field(6);
 				break;
 			case 7 ://ダンジョン
-				repeatMusic("オープニング");
+				repeatMusic("ざわめき");
 				field(7);
 				break;
 			case 9 ://死亡
@@ -1673,11 +1673,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				break;
 			case 1:
 				field(6);/////////////////////////////////////城内モードへ
-				repeatMusic("オープニング");
+				repeatMusic("希望の歌");
 				break;
 			case 2:
 				field(７);/////////////////////////////////////城内モードへ
-				repeatMusic("オープニング");
+				repeatMusic("ざわめき");
 				break;
 		}
 		Main.save();
