@@ -732,7 +732,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void fieldAction(String selectButtonName) {
-		Common.___logOut___("fieldAction(" + selectButtonName +" ) します");
+		Common.___logOut___("fieldAction(" + selectButtonName +") します");
 		String[] menu = Command.menu();
 		if (selectButtonName != null) {
 			// 探す
@@ -1155,7 +1155,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			case 3 :// 店
 				count = 0;
 				musicReset();
-				Main.action(3);
 				setMessage("「いらっしゃいませ、御用は何でしょうか？」");
 				set_Menu(new Object[]{ "買う", "売る" });
 				shop();

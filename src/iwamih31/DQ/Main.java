@@ -221,6 +221,7 @@ public class Main extends AbstractTableModel implements Serializable{
 			} else {
 				System.out.println("＊できれば、1～4の数字でお願いします・・・");
 			}
+			break;
 		}
 		save();
 	}
