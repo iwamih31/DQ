@@ -35,7 +35,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 
-public class Screen extends JFrame implements ActionListener, KeyListener {
+public class View extends JFrame implements ActionListener, KeyListener {
 
 	JLabel ansLabel;
 	static JLabel display;
@@ -67,7 +67,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private JPanel backPanel;
 	private int imageCode;
 	private String cancel;
-	private MapPiece[][] mapData;
+//	private MapPiece[][] mapData;
 	private JLabel[][] drawMap;
 	private JPanel mapPanel;
 	private ImageIcon centerIcon;
@@ -79,6 +79,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private String imageURL;
 	private Music music;
 	private int mapNumber;
+	private String center_Image;
+	private String image_Map_URL;
+	private String image_Map_Type;
+	private String[][] map_Image;
+	private Controller controller;
 	private static int x;
 	private static int y;
 	private static int[][] originalMap;
@@ -108,17 +113,17 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private static JLabel space;
 	private static String entMark;
 
-	public Screen(Object[] mList) {
+	public View(Object[] mList) {
 		super("メニュー");
 		menu(mList);
 	}
 
-	public Screen(String s) {
-		super(s);
-		start(s);
+	public View(String title) {
+		super(title);
+		start(title);
 	}
 
-	private void start(String s) {
+	private void start(String title) {
 		setMode(0);
 		// ディスプレイサイズを基準に、横1％、縦1％、フォントサイズを決定
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -151,7 +156,11 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		panelS = panelSetUD(null, textAreaS);
 		space = labelSet("                                       ");
 		imageURL =  "image/";
+		image_Map_URL = "image_map/";
+		image_Map_Type = ".png";
+		center_Image = "勇者";
 		music = null;
+		controller = new Controller();
 		repeatMusic("オープニング");
 		outer();
 	}
@@ -278,7 +287,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		cardLayout.show(changePanelSet,mode);
 	}
 
-	private static void change() {
+	static void change() {
 		panelSet();
 		change("通常");
 	}
@@ -349,9 +358,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return deadNumber;
 	}
 
-	void start() { // 画面開始
-		que_YN("最初から始めますか？・・・");
-	}
+//	void start() { // 画面開始
+//		que_YN("最初から始めますか？・・・");
+//	}
 
 	void que_YN(String question) { // 「はい」か「いいえ」の質問
 		que(question, ynList);
@@ -379,7 +388,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		centerSet(space,labelC, bPanel);
 	}
 
-	private void input(String text) {
+	void input(String text) {
 		buttonName = null;
 		inp_Text = new JTextArea(1, 8);
 		format(inp_Text);
@@ -457,15 +466,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	public void actionPerformed(ActionEvent e) {
 		String select = e.getActionCommand();
-		Common.___logOut___("[" + select + "]ボタンがクリックされました");
-		if(select.equals(buttonName)){ // 同じボタン名がクリックされたら
-			// クリックしたボタン名はent
-			buttonName = ent;
-		}else{	// それ以外がクリックされたら
-			// クリックしたボタン名はそのまま使用
-			buttonName = select;
-		}
-		actionPerformedSwitch();
+		// フォーカスをframeに持ってくる
+		frame.setFocusable(true);
+		Common.___logOut___("frameにフォーカスをあてました");
+		//キー入力の有効化
+		frame.addKeyListener(this);
+		Common.___logOut___("frameのキー入力を有効化しました");
+		controller.actionPerformed(select);
 	}
 
 	public void actionPerformedSwitch() {
@@ -535,9 +542,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			musicReset();
 			load();
 			setMode(99);
-			story = new Story();
-			setMessageEnt("");
-			field();
+			beBack();
 		}
 		if (buttonName.equals("OK")) {
 			int max_Bytes = 9;
@@ -588,7 +593,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		if (buttonName.equals(ent)) {
 			Common.___logOut___("buttonName = " + buttonName);
 			Common.___logOut___("count = " + count);
-			story.beBack();
 			if (count < story.getTextList().length) {
 				setMessageEnt(story.getTextList()[count]);
 				count++;
@@ -1839,7 +1843,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		Common.___logOut___("mode = " + getMode() + " です");
 	}
 
-	private void partyStAll() {
+	void partyStAll() {
 		JTable pTab = new JTable();
 		format(pTab);
 		Status tableModel = new Status();
@@ -1865,7 +1869,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		panelN = panelSetWCE(null, panel, null);
 	}
 
-	private void partySt() {
+	void partySt() {
 		JTable pTab = new JTable();
 		format(pTab);
 		Main tableModel1 = Main.mai;
@@ -1889,12 +1893,12 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		panelN = panelSetWCE(null, panel, null);
 	}
 
-	private void partyStBlank() {
+	void partyStBlank() {
 		JTextArea partyStBlank = textAreaSet(" ", 5, 10);
 		panelN = panelSetNCS(null, partyStBlank, null);
 	}
 
-	private void monster() {
+	void monster() {
 		JTable pTab = new JTable();
 		format(pTab);
 		Battle tableModel1 = Main.getBat();
@@ -1959,73 +1963,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private int[][] getOriginalMap() {
-		int[][] originalMap = null;
-		int[][] field1_Map = {
-				{4,2,3,3,3,3,1,1,1,2,2,1,1,3,3},
-				{1,1,2,3,3,3,1,2,2,1,2,1,3,3,2},
-				{2,0,0,3,3,2,1,1,2,1,2,2,3,3,3},
-				{3,3,0,0,0,1,2,1,2,1,1,1,2,3,3},
-				{3,3,3,3,2,1,1,1,2,1,2,1,1,2,3},
-				{3,3,1,0,1,0,2,2,2,0,0,2,1,1,1},
-				{1,3,1,2,2,2,1,1,0,0,3,0,0,2,1},
-				{3,3,1,2,0,2,1,2,2,0,0,2,2,1,1},
-				{3,2,1,2,1,2,1,1,1,2,0,2,1,1,3},
-				{1,2,1,1,1,2,2,2,1,2,1,2,2,2,1},
-				{2,2,2,2,2,2,1,1,1,2,1,1,1,1,1},
-				{1,2,0,0,0,0,1,2,2,2,1,1,0,0,1},
-				{1,1,2,3,3,2,1,1,1,1,2,1,3,3,3},
-				{3,1,1,1,3,3,3,3,2,1,2,1,3,9,3},
-				{3,3,3,1,2,3,1,3,1,1,2,1,1,1,3}
-		};
-		int[][] castle1_Map = {
-				{3,3,3,3,3,3,3,3,3,3,3,3,3,3,1},
-				{3,3,3,1,1,1,1,1,1,1,1,1,1,1,1},
-				{3,3,2,1,2,2,2,2,2,2,2,2,2,2,1},
-				{3,1,2,0,0,2,0,9,2,0,2,0,0,2,1},
-				{3,1,2,2,0,2,0,2,0,0,0,0,0,2,1},
-				{3,1,2,0,0,2,0,0,0,0,2,0,2,2,1},
-				{3,1,2,0,2,2,2,2,2,2,0,0,0,2,1},
-				{3,1,2,0,0,2,0,0,0,0,2,0,0,2,1},
-				{3,1,2,0,0,0,0,2,0,0,0,0,0,2,1},
-				{3,1,2,2,2,2,2,2,2,2,2,2,0,2,1},
-				{3,0,0,0,0,0,4,0,0,0,0,0,0,2,1},
-				{3,2,2,2,2,2,2,0,2,2,2,2,2,2,1},
-				{3,9,1,1,1,1,2,0,2,1,1,1,1,1,1},
-				{3,3,3,1,3,1,8,8,8,1,3,3,3,3,3},
-				{3,4,1,1,3,1,1,1,1,1,3,1,1,1,1}
-		};
-		int[][] dungeon1_Map = {
-				{0,9,0,0,0,0,2,0,2,0,2,2,2,2,2},
-				{0,0,0,2,2,0,2,0,2,0,0,0,0,0,2},
-				{2,2,2,0,0,0,2,0,2,2,2,2,2,0,2},
-				{0,0,0,0,2,2,2,0,0,0,2,0,2,0,2},
-				{0,2,0,2,0,0,0,2,2,0,2,0,2,0,2},
-				{0,2,0,2,0,2,0,0,0,0,2,0,0,0,2},
-				{0,0,2,2,0,0,2,2,2,2,2,2,2,2,2},
-				{2,0,2,2,2,0,2,0,0,0,0,0,0,0,0},
-				{2,0,0,0,0,0,2,0,2,2,2,2,2,2,0},
-				{2,0,2,2,2,2,2,0,2,0,0,0,0,2,0},
-				{2,0,2,0,0,0,2,0,0,0,0,2,0,2,0},
-				{2,0,2,0,2,0,2,2,2,2,2,0,0,2,0},
-				{2,0,2,2,2,0,2,0,0,0,0,0,0,2,0},
-				{2,0,0,0,0,0,2,0,2,2,2,2,2,0,0},
-				{2,2,2,2,2,2,2,0,2,0,0,0,0,0,4}
-		};
-		switch (mapNumber) {
-			case 0:
-				originalMap = field1_Map;
-				break;
-			case 1:
-				originalMap = castle1_Map;
-				break;
-			case 2:
-				originalMap = dungeon1_Map;
-				break;
-			default:
-				originalMap = field1_Map;
-				break;
-		}
-		return originalMap;
+		return controller.getOriginalMap();
 	}
 
 	private MapPiece mapPiece(int number) {
@@ -2070,32 +2008,39 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return mapPiece;
 	}
 
-	private JPanel map2D() {
-		originalMap = getOriginalMap();
-		int[][] map = new int[originalMap.length][originalMap[0].length];
+	private MapPiece[][] map_Data(int[][] map) {
+		MapPiece[][] map_Data = new MapPiece[map.length][map[0].length];
 		for (int i = 0; i < map.length; i++) {
 			for (int j = 0; j < map[i].length; j++) {
-				int row = i + y;
-				if (map.length <= row) row -= map.length;
-				int column = j + x;
-				if (map[0].length <= column) column -= map[0].length;
-				map[i][j] = originalMap[row][column];
+				map_Data[i][j] = mapPiece(map[i][j]);
 			}
 		}
-		mapData = new MapPiece[map.length][map[0].length];
-		drawMap = new JLabel[map.length][map[0].length];
+		return map_Data;
+	}
+
+	private String[][] map_Image(MapPiece[][] map_Data) {
+	String[][] map_Image = new String[map_Data.length][map_Data[0].length];
+	for (int i = 0; i < map_Data.length; i++) {
+		for (int j = 0; j < map_Data[i].length; j++) {
+			map_Image[i][j] = map_Data[i][j].getImage();
+		}
+	}
+	return map_Image;
+	}
+
+	private JPanel map2D(String[][] map_Image) {
+		drawMap = new JLabel[map_Image.length][map_Image[0].length];
 		mapPanel = new JPanel();
 		format(mapPanel);
 		mapPanel.setLayout(new BoxLayout(mapPanel, BoxLayout.Y_AXIS));
-		for (int i = 0; i < map.length; i++) {
+		for (int i = 0; i < map_Image.length; i++) {
 			JPanel row = new JPanel();
 			row.setLayout(new BoxLayout(row, BoxLayout.X_AXIS));
-			for (int j = 0; j < map[i].length; j++) {
-				mapData[i][j] = mapPiece(map[i][j]);
-				String mapImage = mapData[i][j].getImage();
-				ImageIcon icon = createImageIcon("image_map/" + mapImage + ".png");
+			for (int j = 0; j < map_Image[i].length; j++) {
+				String image = map_Image[i][j];
+				ImageIcon icon = createImageIcon("image_map/" + image + ".png");
 				drawMap[i][j] = new JLabel(icon);
-				if(i == map.length / 2 && j == map[0].length /2) {
+				if(i == map_Image.length / 2 && j == map_Image[0].length /2) {
 					row.add(mapCenter(drawMap[i][j]));
 				} else {
 					row.add(drawMap[i][j]);
@@ -2113,8 +2058,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private JPanel mapCenter(JLabel centerPiecelabel) {
-		String centerImage = "勇者";
-		centerIcon = createImageIcon("image_map/" + centerImage + ".png");
+		centerIcon = createImageIcon(image_Map_URL + center_Image + image_Map_Type);
 		centerLabel = new JLabel(centerIcon);
 		JPanel panel = new JPanel();
 		OverlayLayout layout=new OverlayLayout(panel);
@@ -2124,7 +2068,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return panel;
 	}
 
-	private JPanel setBackPanel(String backURL) {
+	JPanel setBackPanel(String backURL) {
 		ImageIcon iconBack = createImageIcon(backURL);
 		JLabel labelBack = new JLabel(iconBack);
 		backPanel = new JPanel();
@@ -2251,7 +2195,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return infoTable(new Wapon(who),"武器価格");
 	}
 
-	private JPanel infoTable(Object setTableModel,String tableName) {
+	JPanel infoTable(Object setTableModel,String tableName) {
 		JTable pTab = new JTable();
 		format(pTab);
 		pTab.setModel((TableModel) setTableModel);
@@ -2287,7 +2231,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		panelW = panelSetNCS(infoPanel, null, null);
 	}
 
-	private JPanel ent() {
+	JPanel ent() {
 		int bI = 1;/////////////////////////////////////ボタンの数
 		JPanel panel = new JPanel();
 		format(panel);
@@ -2304,24 +2248,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return panel;
 	}
 
-	private void scene() {
-		switch(mode) {
-			case 1:
-			case 6:
-			case 7:
-			case 10:
-				setBackPanel(imageURL + "フィールド.png");
-				eventPanel = map2D();
-				break;
-			case 5:
-				setBackPanel(imageURL + "バトル.png");
-				setEventImage(eventImage());
-				break;
-			default:
-				setBackPanel(imageURL + "フィールド.png");
-				setEventImage(eventImage());
-				break;
-		}
+	void scene() {
 		JPanel fieldPanel = new JPanel();
 		format(fieldPanel);
 		fieldPanel.setPreferredSize(new Dimension(890, 200));
@@ -2392,7 +2319,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		if (i * 10000 <= mode && mode < (i + 1) * 10000) imageCode = i;
 	}
 
-	private JPanel setEventImage(String imageFileName) {
+	JPanel setEventImage(String imageFileName) {
 		ImageIcon eventIcon = createImageIcon(imageFileName);
 		JLabel label = new JLabel(eventIcon);
 		eventPanel = new JPanel();
@@ -2402,19 +2329,19 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return eventPanel;
 	}
 
-	private void sceneBlank() {
+	void sceneBlank() {
 		pict = textAreaSet("",7,1);
 		pict.setOpaque(true);
 		panelC = panelSetNCS(null, pict,null);
 	}
 
-	private Object pictAreaB() {
+	 JTextArea pictAreaB() {
 		pictAreaB = textAreaSet("",1,4);
 		pictAreaB.setFont(new Font("Monospaced", Font.BOLD, 16));
 		return pictAreaB;
 	}
 
-	private void comment() {
+	void comment() {
 		sto = new Story();
 		JTable st = new JTable();
 		Story tableModel2 = sto;
@@ -2443,94 +2370,98 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void keyPressed(KeyEvent keyEvent) {
-		int pressedKey = keyEvent.getKeyCode();
-		String keyName = KeyEvent.getKeyText(pressedKey);
-		Common.___logOut___("buttonName = " + buttonName);
-		Common.___logOut___("pressedKey1 = " + pressedKey);
-		Common.___logOut___("keyEvent = " + keyEvent);
-		if (mode == 1 || mode == 6 || mode == 7) {
-			int moveX = 0;
-			int moveY = 0;
-			switch(pressedKey) {
-				case KeyEvent.VK_KP_UP:
-				case KeyEvent.VK_UP:
-				case KeyEvent.VK_8:
-				case KeyEvent.VK_5:
-					System.out.println("上が押されました");
-					 moveY--;
-					 moveMap(moveX, moveY);
-					break;
-				case KeyEvent.VK_KP_DOWN:
-				case KeyEvent.VK_DOWN:
-				case KeyEvent.VK_2:
-				case KeyEvent.VK_0:
-					System.out.println("下が押されました");
-					moveY++;
-					moveMap(moveX, moveY);
-					break;
-				case KeyEvent.VK_KP_LEFT:
-				case KeyEvent.VK_LEFT:
-				case KeyEvent.VK_4:
-					System.out.println("左が押されました");
-					moveX--;
-					moveMap(moveX, moveY);
-					break;
-				case KeyEvent.VK_KP_RIGHT:
-				case KeyEvent.VK_RIGHT:
-				case KeyEvent.VK_6:
-					System.out.println("右が押されました");
-					moveX++;
-					moveMap(moveX, moveY);
-					break;
-				default:
-					System.out.println(keyName + "KEYが押されました(mode = 1)");
-//					メニューを表示する
-					pushSound(); // キープッシュ音を鳴らす
-					buttonName = Command.menu()[1];
-					fieldAction(buttonName);
-					break;
-			}
-		}else {
-			switch(pressedKey) {
-				case KeyEvent.VK_ENTER:
-				case KeyEvent.VK_SPACE:
-				case KeyEvent.VK_1:
-					Common.___logOut___(keyName + "KEYが押されました");
-					Common.___logOut___(ent + "ボタンをクリックします");
-					pushSound(); // キープッシュ音を鳴らす
-					if(entMark.equals(ent)) {
-						button_Ent.doClick();
-					} else {
-						menuButton[menuNum].doClick();
-					}
-					Common.___logOut___("buttonName = " + buttonName);
-					break;
-				case KeyEvent.VK_KP_UP:
-				case KeyEvent.VK_UP:
-				case KeyEvent.VK_8:
-				case KeyEvent.VK_5:
-					System.out.println("上が押されました");
-					pushSound(); // キープッシュ音を鳴らす
-					menuNum --;
-					selectStyle();
-					break;
-				case KeyEvent.VK_KP_DOWN:
-				case KeyEvent.VK_DOWN:
-				case KeyEvent.VK_2:
-				case KeyEvent.VK_0:
-					System.out.println("下が押されました");
-					pushSound(); // キープッシュ音を鳴らす
-					menuNum ++;
-					selectStyle();
-					break;
-				default:
-					System.out.println(pressedKey + "が押されました");
-					pushSound(); // キープッシュ音を鳴らす
-					break;
-			}
-		}
+		controller.keyPressed(keyEvent);
 		keyPressed(null);
 	}
+
+//	public void keyPressed(KeyEvent keyEvent) {
+//		int pressedKey = keyEvent.getKeyCode();
+//		String keyName = KeyEvent.getKeyText(pressedKey);
+//		Common.___logOut___("buttonName = " + buttonName);
+//		Common.___logOut___("pressedKey = " + pressedKey);
+//		Common.___logOut___("keyEvent = " + keyEvent);
+//		if (mode == 1 || mode == 6 || mode == 7) {
+//			int moveX = 0;
+//			int moveY = 0;
+//			switch(pressedKey) {
+//			case KeyEvent.VK_KP_UP:
+//			case KeyEvent.VK_UP:
+//			case KeyEvent.VK_8:
+//			case KeyEvent.VK_5:
+//				System.out.println("上が押されました");
+//				moveY--;
+//				moveMap(map, moveX, moveY);
+//				break;
+//			case KeyEvent.VK_KP_DOWN:
+//			case KeyEvent.VK_DOWN:
+//			case KeyEvent.VK_2:
+//			case KeyEvent.VK_0:
+//				System.out.println("下が押されました");
+//				moveY++;
+//				moveMap(map, moveX, moveY);
+//				break;
+//			case KeyEvent.VK_KP_LEFT:
+//			case KeyEvent.VK_LEFT:
+//			case KeyEvent.VK_4:
+//				System.out.println("左が押されました");
+//				moveX--;
+//				moveMap(map, moveX, moveY);
+//				break;
+//			case KeyEvent.VK_KP_RIGHT:
+//			case KeyEvent.VK_RIGHT:
+//			case KeyEvent.VK_6:
+//				System.out.println("右が押されました");
+//				moveX++;
+//				moveMap(map, moveX, moveY);
+//				break;
+//			default:
+//				System.out.println(keyName + "KEYが押されました(mode = 1)");
+////					メニューを表示する
+//				pushSound(); // キープッシュ音を鳴らす
+//				buttonName = Command.menu()[1];
+//				fieldAction(buttonName);
+//				break;
+//			}
+//		}else {
+//			switch(pressedKey) {
+//			case KeyEvent.VK_ENTER:
+//			case KeyEvent.VK_SPACE:
+//			case KeyEvent.VK_1:
+//				Common.___logOut___(keyName + "KEYが押されました");
+//				Common.___logOut___(ent + "ボタンをクリックします");
+//				pushSound(); // キープッシュ音を鳴らす
+//				if(entMark.equals(ent)) {
+//					button_Ent.doClick();
+//				} else {
+//					menuButton[menuNum].doClick();
+//				}
+//				Common.___logOut___("buttonName = " + buttonName);
+//				break;
+//			case KeyEvent.VK_KP_UP:
+//			case KeyEvent.VK_UP:
+//			case KeyEvent.VK_8:
+//			case KeyEvent.VK_5:
+//				System.out.println("上が押されました");
+//				pushSound(); // キープッシュ音を鳴らす
+//				menuNum --;
+//				selectStyle();
+//				break;
+//			case KeyEvent.VK_KP_DOWN:
+//			case KeyEvent.VK_DOWN:
+//			case KeyEvent.VK_2:
+//			case KeyEvent.VK_0:
+//				System.out.println("下が押されました");
+//				pushSound(); // キープッシュ音を鳴らす
+//				menuNum ++;
+//				selectStyle();
+//				break;
+//			default:
+//				System.out.println(pressedKey + "が押されました");
+//				pushSound(); // キープッシュ音を鳴らす
+//				break;
+//			}
+//		}
+//	}
 
 	private void pushSound() {
 //		Toolkit.getDefaultToolkit().beep(); // ビープ音を鳴らす
@@ -2545,7 +2476,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
-	private void selectStyle() {
+	void selectStyle() {
 		if (entMark.equals(ent) == false) {
 			if (menuNum < 0) menuNum += menuButton.length;
 			if (menuButton.length <= menuNum) menuNum -= menuButton.length;
@@ -2557,35 +2488,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
-	private void moveMap(int moveX, int moveY) {
-//		移動先が障害物でなければ移動する
-		if(isBarrier(moveX, moveY) == false) {
-			x += moveX;
-			y += moveY;
-//			はみ出し修正
-			x = inRange(originalMap[0].length, x);
-			y = inRange(originalMap.length, y);
-			Common.___logOut___("縦" + y + "横" + x + "に移動しました");
-//			mapNumberが１以外でmapCenterRole()が４と９以外の場合
-			if(isDanger()) {
-//				移動先でイベント発動
-				buttonName = Command.menu()[0];
-				fieldAction(buttonName);
-//				count = 0;
-				actionPerformedSwitch();
-				button_Ent.doClick();
-			} else {
-//				移動先のRoleによって各処理を行う
-				doRole();
-			}
-			buttonName = null;
-		} else {
-			Common.___logOut___("そちらへは移動できません");
-		}
-	}
-
-	private void doRole() {
-		switch(mapCenterRole()) {
+	private void doRole(int[][] map) {
+		switch(mapCenterRole(map)) {
 			case 4:
 				if(mapNumber == 2) { // ダンジョン内の場合
 					setMapNumber(0); // 平原MAPへ移動
@@ -2636,7 +2540,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		sound(100f,150);
 	}
 
-	private boolean isDanger() {
+	private boolean isDanger(int[][] map) {
 		boolean isDanger = true;
 		switch(mapNumber) {
 			case 1:
@@ -2644,7 +2548,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				break;
 			default:
 		}
-		switch(mapCenterRole()) {
+		switch(mapCenterRole(map)) {
 			case 4:
 			case 9:
 				isDanger = false;
@@ -2652,9 +2556,21 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			default:
 		}
 		Common.___logOut___("mapNumber = " + mapNumber);
-		Common.___logOut___("mapCenterRole() = " + mapCenterRole());
+		Common.___logOut___("mapCenterRole() = " + mapCenterRole(map));
 		Common.___logOut___("isDanger = " + isDanger);
 		return isDanger;
+	}
+
+	private boolean isBarrier(int[][] map, int moveX, int moveY) {
+		int[] mapCenter = centerXY(map);
+		int nextX = mapCenter[0] + moveX;
+		int nextY = mapCenter[1] + moveY;
+		boolean barrier = false;
+		MapPiece[][] map_Data = map_Data(map);
+		if (map_Data[nextY][nextX].getRole() < 1 ) {
+			barrier = true;
+		}
+		return barrier;
 	}
 
 	private int inRange(int range, int num) {
@@ -2664,23 +2580,13 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return newNum;
 	}
 
-	private boolean isBarrier(int moveX, int moveY) {
-		int[] mapCenter = centerXY(originalMap);
-		int nextX = mapCenter[0] + moveX;
-		int nextY = mapCenter[1] + moveY;
-		boolean barrier = false;
-		if (mapData[nextY][nextX].getRole() < 1 ) {
-			barrier = true;
-		}
-		return barrier;
-	}
-
-	private int mapCenterRole() {
-		map2D();
-		int[] mapCenter = centerXY(originalMap);
+	private int mapCenterRole(int[][] map) {
+		MapPiece[][] map_Data = map_Data(map);
+		map2D(map_Image(map_Data));
+		int[] mapCenter = centerXY(map);
 		int nextX = mapCenter[0];
 		int nextY = mapCenter[1];
-		return mapData[nextY][nextX].getRole();
+		return map_Data[nextY][nextX].getRole();
 	}
 
 	private int[] centerXY(int[][] baseArray) {
@@ -2729,7 +2635,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public static void setFrame(JFrame frame) {
-		Screen.frame = frame;
+		View.frame = frame;
 	}
 
 	public JFrame getFrame() {
@@ -2769,7 +2675,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	public static void setMode(int mode) {
 		Common.___logOut___("Screen.setMode(" + mode +") します");
-		Screen.mode = mode;
+		View.mode = mode;
 	}
 
 	public static int getMode() {
@@ -2777,7 +2683,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public static void setMenu(Object[] menu) {
-		Screen.menu = menu;
+		View.menu = menu;
 	}
 
 	public Object[] getMenu() {
@@ -2785,7 +2691,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public static void setCount(int count) {
-		Screen.count = count;
+		View.count = count;
 	}
 
 	public static int getCount() {
@@ -2793,7 +2699,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void setEnt(String ent) {
-		Screen.ent = ent;
+		View.ent = ent;
 	}
 
 	public static String getEnt() {

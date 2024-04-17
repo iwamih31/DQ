@@ -60,16 +60,15 @@ public class Story extends AbstractTableModel{
 //		}
 	}
 
-	public static void beBack() {
+	public void beBack() {
 		Battle.pTable();
-		textList = new String[11];
-		textList[0] = "";
-		textList[1] = "「おお!! [" + Main.getyName( ) + " ]よ、調子はどうだ？」" ;
-		textList[2] = "";
-		textList[3] = "「[" + Main.getName( ) + "]の活躍は、我が耳にも色々と届いておるぞ・・・」";
-		textList[4] = "";
-		textList[5] = "「[ " + p_Name + " ]よ、一刻も早く[ " + b_Name + " ]を倒し、世界に平和をもたらすのじゃ!!!」";
-		textList[6] = "";
+		textList = new String[6];
+		textList[0] = "「おお!! [" + Main.getyName( ) + " ]よ、調子はどうだ？」" ;
+		textList[1] = "";
+		textList[2] = "「[" + Main.getName( ) + "]の活躍は、我が耳にも色々と届いておるぞ・・・」";
+		textList[3] = "";
+		textList[4] = "「[ " + p_Name + " ]よ、一刻も早く[ " + b_Name + " ]を倒し、世界に平和をもたらすのじゃ!!!」";
+		textList[5] = "";
 	}
 
 	public static void relief() {
