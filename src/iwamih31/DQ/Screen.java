@@ -456,6 +456,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		pushSound(); // キープッシュ音を鳴らす
 		String select = e.getActionCommand();
 		Common.___logOut___("[" + select + "]ボタンがクリックされました");
 		if(select.equals(buttonName)){ // 同じボタン名がクリックされたら
