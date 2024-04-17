@@ -513,9 +513,7 @@ public class Battle extends AbstractTableModel{
 		System.out.println("");
 		par = Main.getParty();
 		if(par[p].getHp()>0){
-			System.out.print("⇒☆[[ " + par[p].getName() + " ]]☆は、");
 			Battle.bMenu();
-			System.out.println("}");
 			battleText = new String[]{"⇒☆[[ " + par[p].getName() + " ]]☆は、どうしますか？"};
 			Screen.setMenu(menu);
 			Screen.setMode(50);

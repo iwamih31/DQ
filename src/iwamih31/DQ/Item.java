@@ -59,10 +59,7 @@ public class Item extends AbstractTableModel{
 			switch (inp) {
 				case 1 :
 					Battle.pTable();
-					System.out.println("");
-					System.out.print("[ "+ useI + " ]を誰に使いますか？");
 					Battle.pList();
-					System.out.println("");
 					Screen.setMessage("[ "+ useI + " ]を誰に使いますか？");
 					itemText = new String[2];
 					itemText[0] = (p + "は" + useI + "を使った・・・");
@@ -73,9 +70,6 @@ public class Item extends AbstractTableModel{
 						noMonster();
 					} else {
 						Battle.mList();
-						System.out.println("");
-						System.out.println("[ "+ useI + " ]をどのモンスターに使いますか？");
-						System.out.println("");
 						Screen.setMessage("[ "+ useI + " ]をどのモンスターに使いますか？");
 						itemText = new String[2];
 						itemText[0] = (p + "は" + useI + "を使った・・・");
@@ -184,7 +178,8 @@ public class Item extends AbstractTableModel{
 			System.out.println(useI + "は効かなかった");
 			itemText[1] = (useI + "は効かなかった");
 		} else {
-			Battle.getMons()[who].setHp(1);
+			int mons_HP = Battle.getMons()[who].getHp();
+			Battle.getMons()[who].setHp(mons_HP / 10);
 			Battle.mList();
 			System.out.println("");
 			System.out.println(Battle.getMons()[who].getName() + "は瀕死の状態!!!");
