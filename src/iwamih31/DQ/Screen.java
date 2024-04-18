@@ -1650,14 +1650,14 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				break;
 			case 55554 ://戦闘後,ITEM
 				if (buttonName.equals(ent)) {
-					getItemLoop();
 					Battle.setItem(1);
+					getItemLoop(Battle.getBattleText());
 				}
 				break;
 			case 55555 ://戦闘後,ITEM,有り
 				if (buttonName.equals(ent)) {
-					getItemLoop();
 					Battle.setItem(2);
+					getItemLoop(Main.getDoText());
 				}
 				break;
 		}
@@ -1801,16 +1801,14 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
-	private void getItemLoop() {
+	private void getItemLoop(String[] text) {
 		Common.___logOut___("getItemLoop() します");
 		Common.___logOut___("count = " + count);
-
-		String[] text = Battle.getBattleText();
 		if (count < text.length) {
 			setMessageEnt(text[count]);
 			if (count == 0) {
 			}
-			count = (count + 1);
+			count++;
 			battle();
 		} else {
 			if (Battle.getfMode() == 0) {
