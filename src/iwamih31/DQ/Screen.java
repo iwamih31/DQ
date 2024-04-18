@@ -491,6 +491,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	public void actionPerformedSwitch0() {
 		switch (mode) {
 			case 0 ://最初
+				repeatMusic("希望の歌");
 				opening();
 				break;
 			case 1 ://探す
@@ -502,22 +503,25 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				whichUse(buttonName);
 				break;
 			case 3 ://買い物
+				repeatMusic("希望の歌");
 				break;
 			case 4 ://宿屋
+				repeatMusic("オープニング");
 				break;
 			case 5 ://戦闘
 				break;
 			case 6 ://お城
-				repeatMusic("希望の歌");
+				repeatMusic("城へ");
 				field(6);
 				break;
 			case 7 ://ダンジョン
-				repeatMusic("ざわめき");
+				repeatMusic("洞窟のテーマ");
 				field(7);
 				break;
 			case 9 ://死亡
 				break;
 			case 99 :// つづき
+				repeatMusic("城へ");
 				beBack();
 				break;
 			default :
@@ -533,7 +537,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			input("     主人公の名前は何にしますか？");
 		}
 		if (buttonName.equals(ynList[1])) {
-			musicReset();
 			load();
 			setMode(99);
 			story = new Story();
@@ -563,6 +566,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		if (buttonName.equals(ent)) {
 			Common.___logOut___("buttonName = " + buttonName);
 			Common.___logOut___("count = " + count);
+			repeatMusic("希望の歌");
 			if (count < story.getTextList().length) {
 				setMessageEnt(story.getTextList()[count]);
 				if (count == 4) {
@@ -684,6 +688,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	public void actionPerformedSwitch1() {
 		switch (mode) {
 			case 10 ://探す
+				repeatMusic("冒険の歌");
 				if (ent.equals(buttonName)) {
 					buttonName = null;
 					Main.event();
@@ -738,6 +743,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		if (selectButtonName != null) {
 			// 探す
 			if (selectButtonName.equals(menu[0])) {
+				repeatMusic("希望の歌");
 				buttonName = null;
 				printMode();
 				Main.action(1);
@@ -1664,7 +1670,16 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
+	private void repeatMusic(String musicName) {
+		if (music == null || music != new Music(musicName)) {
+			musicReset();
+			music = new Music(musicName);
+			music.playRepeat();
+		}
+	}
+
 	private void toNormal() {
+		musicReset();
 		setMessage("どうしますか?");
 		switch (mapNumber) {
 			case 0:
@@ -1673,22 +1688,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				break;
 			case 1:
 				field(6);/////////////////////////////////////城内モードへ
-				repeatMusic("希望の歌");
+				repeatMusic("城へ");
 				break;
 			case 2:
-				field(７);/////////////////////////////////////城内モードへ
-				repeatMusic("ざわめき");
+				field(７);/////////////////////////////////////ダンジョンモードへ
+				repeatMusic("洞窟のテーマ");
 				break;
 		}
 		Main.save();
 		count = 0;
-	}
-
-	private void repeatMusic(String musicName) {
-		if (music == null) {
-			music = new Music(musicName);
-			music.playRepeat();
-		}
 	}
 
 	private void battle() {
@@ -1796,6 +1804,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private void getItemLoop() {
 		Common.___logOut___("getItemLoop() します");
 		Common.___logOut___("count = " + count);
+
 		String[] text = Battle.getBattleText();
 		if (count < text.length) {
 			setMessageEnt(text[count]);
@@ -2558,24 +2567,25 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void moveMap(int moveX, int moveY) {
-//		移動先が障害物でなければ移動する
+		repeatMusic("希望の歌");
+		// 移動先が障害物でなければ移動する
 		if(isBarrier(moveX, moveY) == false) {
 			x += moveX;
 			y += moveY;
-//			はみ出し修正
+			// はみ出し修正
 			x = inRange(originalMap[0].length, x);
 			y = inRange(originalMap.length, y);
 			Common.___logOut___("縦" + y + "横" + x + "に移動しました");
-//			mapNumberが１以外でmapCenterRole()が４と９以外の場合
+			// mapNumberが１以外でmapCenterRole()が４と９以外の場合
 			if(isDanger()) {
-//				移動先でイベント発動
+				// 移動先でイベント発動
 				buttonName = Command.menu()[0];
 				fieldAction(buttonName);
-//				count = 0;
+				// count = 0;
 				actionPerformedSwitch();
 				button_Ent.doClick();
 			} else {
-//				移動先のRoleによって各処理を行う
+				// 移動先のRoleによって各処理を行う
 				doRole();
 			}
 			buttonName = null;
