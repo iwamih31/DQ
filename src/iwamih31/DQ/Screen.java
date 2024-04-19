@@ -2382,13 +2382,16 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		imageCodeOmit(4);
 		switch (imageCode) {
 			case 11 :
-				fileName = "スライム";//良い人
+				fileName = "良い人";//良い人
 				break;
 			case 12 :
-				fileName = "マッドドクター";//情報
+				fileName = "情報";//情報
 				break;
 			case 15 :
 				fileName = "宝箱";//宝箱
+				break;
+			case 99 :
+				fileName = "王様";//王様
 				break;
 			case 3 :
 			case 33 :
@@ -2408,7 +2411,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			case 431 :
 			case 44 :
 			case 4444 :
-				fileName = "マッドドクター";//宿屋
+				fileName = "宿屋";//宿屋
 				break;
 			default :
 				fileName = "エアー";
@@ -2661,6 +2664,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	public void setMapNumber(int mapNumber) {
 		this.mapNumber = mapNumber;
+		musicReset();
 		mapChangeSound();
 	}
 
