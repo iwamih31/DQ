@@ -66,7 +66,6 @@ public class Ex extends AbstractTableModel{
 				desolation( );
 				break;
 			default:
-				System.out.println( "なにもしなかった" );
 				exText = new String[]{"なにもしなかった"};
 		}
 	}
@@ -192,7 +191,7 @@ public class Ex extends AbstractTableModel{
 		Battle.pTable();
 		System.out.println("");
 		System.out.print(useEx + "を、誰に行いますか？");
-		Battle.pList();
+//		Battle.pList();
 		System.out.println("");
 		exText = new String[]{useEx + "を、誰に行いますか？"};
 		Screen.setMenu(Main.getpNa());

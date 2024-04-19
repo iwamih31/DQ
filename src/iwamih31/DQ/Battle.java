@@ -466,29 +466,29 @@ public class Battle extends AbstractTableModel{
 		System.out.print("⇒⇒⇒⇒⇒⇒⇒⇒⇒⇒⇒⇒⇒⇒");
 	}
 
-	static void pList() {											//パーティーリスト
-		fi = ( par [ 0 ] );
-		he = ( par [ 1 ] );
-		pr = ( par [ 2 ] );
-		mg = ( par [ 3 ] );
-		for (int j = 0; j < par.length; j++) {
-			if (par[j].getHp() < 0) {
-				par[j].setHp(0);
-				par[j].setMp(0);
-			}
-		}
-		pList[1][1] = fi.getName( ) + " ";
-		pList[2][1] = he.getName( ) + " ";
-		pList[3][1] = pr.getName( ) + " ";
-		pList[4][1] = mg.getName( ) + " ";
-		System.out.print("｛ ");
-		for( Object[ ] menus : pList ){
-			for( Object menu : menus ){
-			System.out.print(menu);
-			}
-		}
-		System.out.println(" ｝");
-	}
+//	static void pList() {											//パーティーリスト
+//		fi = ( par [ 0 ] );
+//		he = ( par [ 1 ] );
+//		pr = ( par [ 2 ] );
+//		mg = ( par [ 3 ] );
+//		for (int j = 0; j < par.length; j++) {
+//			if (par[j].getHp() < 0) {
+//				par[j].setHp(0);
+//				par[j].setMp(0);
+//			}
+//		}
+//		pList[1][1] = fi.getName( ) + " ";
+//		pList[2][1] = he.getName( ) + " ";
+//		pList[3][1] = pr.getName( ) + " ";
+//		pList[4][1] = mg.getName( ) + " ";
+//		System.out.print("｛ ");
+//		for( Object[ ] menus : pList ){
+//			for( Object menu : menus ){
+//			System.out.print(menu);
+//			}
+//		}
+//		System.out.println(" ｝");
+//	}
 
 	public static void mList() {									//モンスターリスト
 		if( mons[ 0 ].getHp( ) > 0 ){

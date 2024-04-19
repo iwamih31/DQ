@@ -42,6 +42,6 @@ public int attack(int ud) {
 	public void ex() {
 //		Member mem = Main.getParty()[ 3 ];
 		System.out.println( "どの術を使いますか？" );
-//		new Magic( this );
+		new Magic( this );
 	}
 }

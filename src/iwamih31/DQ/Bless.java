@@ -32,7 +32,7 @@ public class Bless extends Ex{
 				desolation( );
 				break;
 			default:
-				System.out.println( "なにもしなかった" );
+				exText = new String[]{"なにもしなかった"};
 		}
 	}
 }

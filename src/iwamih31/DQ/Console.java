@@ -19,13 +19,14 @@ public class Console {
 	}
 
 	public static void menu_List(Object[] menu_List) {
-		String sMenu = "[ ";
+		String text = "[ ";
 		int menu_Number = 1;
 		for (Object item : menu_List) {
-			sMenu += (menu_Number + ". " + item + ", ");
+			text += (menu_Number + "." + item + ", ");
+			menu_Number++;
 		}
-		sMenu += "]";
-		sMenu = sMenu.replace(", ]", " ]");
-		_____OUT_____(sMenu);
+		text += "]";
+		text = text.replace(", ]", " ]");
+		_____OUT_____(text);
 	}
 }

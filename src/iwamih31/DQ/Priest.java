@@ -41,5 +41,6 @@ public class Priest extends Member {
 	@Override
 	public void ex() {
 		System.out.print( "どの術を使いますか？" );
+		new Ex(this);
 	}
 }

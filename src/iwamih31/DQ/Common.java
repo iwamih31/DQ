@@ -1,5 +1,7 @@
 package iwamih31.DQ;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Common {
 
@@ -45,6 +47,33 @@ public class Common {
 			return false;
 		}
 	}
+
+	/**
+	 * Listを配列に変換
+	 * @param list - List<String>
+	 * @return String[]
+	 */
+	public static String[] to_Array(List<String> list) {
+		String[] array = new String[list.size()];
+		for (int i = 0; i < list.size(); i++) {
+			array[i] = list.get(i);
+		}
+		return array;
+	}
+
+	/**
+	 * 配列をリストに変換
+	 * @param array - String[]
+	 * @return ArrayList<String>
+	 */
+	public static ArrayList<String> to_List(String[] array) {
+		ArrayList<String> list = new ArrayList<>();
+		for (String string : array) {
+			list.add(string);
+		}
+		return list;
+	}
 }
+
 
 

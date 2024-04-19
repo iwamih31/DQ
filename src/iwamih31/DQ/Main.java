@@ -184,7 +184,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		progress();
 		// パーティーのステータスを表示
 		status();
-		Object[] choice;
 		arrayClear();
 		switch (select) {
 		case 1:
@@ -192,11 +191,6 @@ public class Main extends AbstractTableModel implements Serializable{
 			setText(array);
 			break;
 		case 2:
-			System.out.println( "⇒どちらを使いますか？ [ 1. 道具 ] [ 2. 能力 ]");
-			System.out.println("");
-			message("⇒どちらを使いますか？");
-			choice = new Object[]{"道具","能力"};
-			button(choice);
 			break;
 		case 3 :
 			Console.items();
@@ -204,10 +198,6 @@ public class Main extends AbstractTableModel implements Serializable{
 		case 4:
 			innG();// /////////////////////////////宿代を計算
 			message("⇒宿代は [ " + innG + "G ] ですが、お泊りになりますか？");
-			System.out.println("");
-			System.out.println("⇒宿代は [ " + innG
-					+ "G ] ですが、お泊りになりますか？ [ 1.はい ][ 2.いいえ ][ 3.状態確認 ][ 4.復活の儀式 ]");
-			System.out.println("");
 			System.out.print("[所持金＝ " + g + "G ] ");
 			innText = new String[3];
 			innText[0] = name + "は、宿で体を休めた・・・";
@@ -315,7 +305,7 @@ public class Main extends AbstractTableModel implements Serializable{
 		} else {
 			Battle.pTable();
 //			Common.___logOut___("誰の武器を買いますか？");
-			Battle.pList();
+//			Battle.pList();
 		}
 	}
 
@@ -329,7 +319,7 @@ public class Main extends AbstractTableModel implements Serializable{
 			Battle.pTable();
 //			System.out.println("");
 //			System.out.print("誰の武器を売りますか？");
-			Battle.pList();
+//			Battle.pList();
 //			System.out.println("");
 		}
 	}
@@ -337,15 +327,9 @@ public class Main extends AbstractTableModel implements Serializable{
 	static void use(int job) {
 		if (job == 1) {
 			Battle.pTable();
-			System.out.println("");
-			System.out.print("どのアイテムを使いますか？");
 			Item.bag(getHu());
 		} else {
 			Battle.pTable();
-			System.out.println("");
-			System.out.print("誰が行いますか？");
-			Battle.pList();
-			System.out.println("");
 		}
 	}
 
@@ -493,7 +477,7 @@ public class Main extends AbstractTableModel implements Serializable{
 				Battle.pTable();
 				System.out.println("");
 				System.out.print("誰を復活させますか？");
-				Battle.pList();
+//				Battle.pList();
 				System.out.println("");
 				Screen.setMessage("誰を復活させますか？");
 				break;
@@ -575,6 +559,7 @@ public class Main extends AbstractTableModel implements Serializable{
 			sData.writeInt(g);
 			sData.writeObject(Item.getItemList());
 			sData.close();
+			Console._____OUT_____("save() しました");
 		} catch (FileNotFoundException e) {
 			e.getMessage();
 			e.printStackTrace();
@@ -616,6 +601,7 @@ public class Main extends AbstractTableModel implements Serializable{
 	}
 
 	static void getItem() {
+		doText = null;
 		String get_Item = "○○";
 		int item_Number = 0;
 		Screen.setCount(0);

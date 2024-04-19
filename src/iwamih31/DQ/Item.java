@@ -59,7 +59,7 @@ public class Item extends AbstractTableModel{
 			switch (inp) {
 				case 1 :
 					Battle.pTable();
-					Battle.pList();
+//					Battle.pList();
 					Screen.setMessage("[ "+ useI + " ]を誰に使いますか？");
 					itemText = new String[2];
 					itemText[0] = (p + "は" + useI + "を使った・・・");
@@ -119,7 +119,7 @@ public class Item extends AbstractTableModel{
 					Battle.pTable();
 					System.out.println("");
 					System.out.print("[ "+ useI + " ]を誰に使いますか？");
-					Battle.pList();
+//					Battle.pList();
 					System.out.println("");
 					Screen.setMessage("[ "+ useI + " ]を誰に使いますか？");
 					itemText = new String[2];

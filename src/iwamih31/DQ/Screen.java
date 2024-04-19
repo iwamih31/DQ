@@ -455,6 +455,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		selectStyle();
 	}
 
+	public void menu() {
+		menu(menu);
+	}
+
 	public void actionPerformed(ActionEvent e) {
 		pushSound(); // キープッシュ音を鳴らす
 		String select = e.getActionCommand();
@@ -495,6 +499,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				opening();
 				break;
 			case 1 ://探す
+				repeatMusic("冒険の歌");
 				count = 0;
 				fieldAction(buttonName);
 				break;
@@ -537,8 +542,10 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			input("     主人公の名前は何にしますか？");
 		}
 		if (buttonName.equals(ynList[1])) {
-			load();
+			mapChangeSound();
+			musicReset();
 			setMode(99);
+			load();
 			story = new Story();
 			setMessageEnt("");
 			field();
@@ -547,7 +554,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			int max_Bytes = 9;
 			yName = null;
 			// 入力された文字列
-			String inputName = inp_Text.getText();
+			String inputName = inp_Text.getText().trim();
 			while (yName == null) {
 				if (Common.isBelow_Character_Bytes(inputName, max_Bytes)) {
 					if (inputName.equals("")) inputName = Main.getyName();
@@ -599,6 +606,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				count++;
 				field();
 			} else {
+				musicReset();
 				toNormal();
 			}
 		}
@@ -663,6 +671,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 
 	private void whichUse(String selectButtonName) {
 		Common.___logOut___("whichUse(" + selectButtonName +") します");
+		// 道具
 		if (selectButtonName.equals(menu[0])) {
 			buttonName = null;
 			printMode();
@@ -671,6 +680,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			item();
 			setMode(21);
 		}
+		// 能力
 		if (selectButtonName.equals(menu[1])) {
 			buttonName = null;
 			printMode();
@@ -679,6 +689,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			who();
 			setMode(22);
 		}
+		// キャンセル
 		if (selectButtonName.equals(cancel)) {
 			buttonName = null;
 			toNormal();
@@ -738,7 +749,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void fieldAction(String selectButtonName) {
-		Common.___logOut___("fieldAction(" + selectButtonName +") します");
+		Common.___logOut___("fieldAction(" + selectButtonName + ") します");
 		String[] menu = Command.menu();
 		if (selectButtonName != null) {
 			// 探す
@@ -758,6 +769,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				printMode();
 				Main.action(2);
 				setMessage("⇒どちらを使いますか？");
+				setMenu(new Object[]{"道具","能力"});
 				setMode(2);
 				use();
 			}
@@ -939,6 +951,23 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
+	private void fieldEx(String setButtonName) {
+		menu = Main.getpNa();
+		Member user = Main.getHu();
+		for (int i = 0; i < menu.length; i++) {
+			if (setButtonName.equals(menu[i])) {
+				setMode(220 + i);
+				Item.use(user, i);
+				who();
+			}
+		}
+		if (setButtonName.equals(cancel)) {
+			setMode(200);
+			Item.use(user, 10);
+			itemLoop();
+		}
+	}
+
 	private void battleItem(String setButtonName) {
 		menu = Item.menu();
 		Member user = Main.getParty()[Battle.getActor()];
@@ -1058,24 +1087,29 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private void whoExField(String setButtonName) {
 		Common.___logOut___("whoExField(" + setButtonName + ") します");
 		Member[] party = Main.getParty();
-		setMessage("どの術を使いますか？");////////////////////次の質問
+		Member actor = null;
 		menu = Main.getpNa();
 			if (setButtonName.equals(menu[0])) {
-				useEx = new Power(party[0]);
-				Main.ex(0);
+				actor = party[0];
+				useEx = new Power(actor);
 			}
 			if (setButtonName.equals(menu[1])) {
-				useEx = new Wonder(party[1]);
-				Main.ex(1);
+				actor = party[1];
+				useEx = new Wonder(actor);
 			}
 			if (setButtonName.equals(menu[2])) {
-				useEx = new Bless(party[2]);
-				Main.ex(2);
+				actor = party[2];
+				useEx = new Bless(actor);
 			}
 			if (setButtonName.equals(menu[3])) {
-				useEx = new Magic(party[3]);
-				Main.ex(3);
+				actor = party[3];
+				useEx = new Magic(actor);
 			}
+			Common.___logOut___("useEx = " + useEx.getClass() + " です");
+			Common.___logOut___("Ex.getName() = " + Ex.getName() + " です");
+			actor.ex();
+			setMessage("どの術を使いますか？");////////////////////次の質問
+			setMenu(useEx.menu());
 			setMode(220);
 			ex();
 	}
@@ -1084,7 +1118,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		int actor = Battle.getActor();
 		Common.___logOut___("whoExBattle(" + actor + ") します");
 		Member[] party = Main.getParty();
-		setMessage("どの術を使いますか？");////////////////////次の質問
 		if (actor == 0) {
 			useEx = new Power(party[0]);
 		}
@@ -1100,8 +1133,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		Common.___logOut___("useEx = " + useEx.getClass() + " です");
 		Common.___logOut___("Ex.getName() = " + Ex.getName() + " です");
 		party[actor].ex();
+		setMessage("どの術を使いますか？");////////////////////次の質問
+		setMenu(useEx.menu());
 		setMode(220);
-		menu = useEx.menu();
 		battle();
 	}
 
@@ -1163,7 +1197,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				count = 0;
 				musicReset();
 				setMessage("「いらっしゃいませ、御用は何でしょうか？」");
-				set_Menu(new Object[]{ "買う", "売る" });
+				setMenu(new Object[]{ "買う", "売る" });
 				shop();
 				setMode(33);
 				break;
@@ -1173,14 +1207,14 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					setMode(30);
 					Main.shop(1);
 					setMessage("何を買いますか？");
-					set_Menu(new Object[]{ "道具", "武器" });
+					setMenu(new Object[]{ "道具", "武器" });
 					shop();
 				}
 				if(buttonName.equals(menu[1])){//売る
 					setMode(31);
 					Main.shop(2);
 					setMessage("何を売りますか？");
-					set_Menu(new Object[]{ "道具", "武器" });
+					setMenu(new Object[]{ "道具", "武器" });
 					shop();
 				}
 				if (buttonName.equals(cancel)) {
@@ -1310,17 +1344,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				}
 				break;
 		}
-	}
-
-	private void set_Menu(Object[] menu_List) {
-		menu = menu_List;
-		String sMenu = "[";
-		for (Object item : menu) {
-			sMenu += (item + ", ");
-		}
-		sMenu += "]";
-		sMenu = sMenu.replace(", ]", "]");
-		Common.___logOut___(sMenu);
 	}
 
 	private void shop() {
@@ -1671,15 +1694,15 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void repeatMusic(String musicName) {
-		if (music == null || music != new Music(musicName)) {
-			musicReset();
+		if (music == null) {
 			music = new Music(musicName);
 			music.playRepeat();
 		}
 	}
 
 	private void toNormal() {
-		musicReset();
+		Common.___logOut___("toNormal() します");
+		Common.___logOut___("mapNumber = " + mapNumber);
 		setMessage("どうしますか?");
 		switch (mapNumber) {
 			case 0:
@@ -1808,8 +1831,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 			setMessageEnt(text[count]);
 			if (count == 0) {
 			}
-			count++;
-			battle();
+			count = (count + 1);
+			field();
 		} else {
 			if (Battle.getfMode() == 0) {
 				toNormal();
@@ -1826,7 +1849,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		partySt();
 		info(goldList(),itemList(),"");
 		scene();
-		menu(Main.getpNa());
+		setMenu(Main.getpNa());
+		menu();
 		comment();
 		change();
 	}
@@ -1837,7 +1861,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		partySt();
 		info(goldList(),itemList(),"");
 		monster();
-		menu(Battle.mNa());
+		setMenu(Battle.mNa());
+		menu();
 		comment();
 		change();
 	}
@@ -2424,9 +2449,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	private void comment() {
 		sto = new Story();
 		JTable st = new JTable();
-		Story tableModel2 = sto;
+		Story tableModel = sto;
 		st.setAutoCreateRowSorter(true);
-		st.setModel(tableModel2);
+		st.setModel(tableModel);
 		DefaultTableCellRenderer tableCellRendererC = new DefaultTableCellRenderer();
 		tableCellRendererC.setHorizontalAlignment(JLabel.CENTER);
 		TableColumn col = st.getColumnModel().getColumn(0);
@@ -2784,8 +2809,9 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		return mode;
 	}
 
-	public static void setMenu(Object[] menu) {
-		Screen.menu = menu;
+	public static void setMenu(Object[] menu_List) {
+		Screen.menu = menu_List;
+		Console.menu_List(menu_List);
 	}
 
 	public Object[] getMenu() {

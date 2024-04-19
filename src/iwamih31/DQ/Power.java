@@ -52,7 +52,7 @@ public class Power extends Ex{
 			}
 			break;
 		default:
-			System.out.println("なにもしなかった");
+			exText = new String[]{"なにもしなかった"};
 		}
 	}
 }
