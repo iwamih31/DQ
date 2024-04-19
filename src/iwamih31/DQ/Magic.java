@@ -80,13 +80,11 @@ public class Magic extends Ex{
 	private void death() {
 		if (Battle.getfMode() == 0) { ///////////// //アイテムの時と位置が違う
 			Battle.pTable();
-			System.out.println("");
-			System.out.println("敵が見当たらない ・・・");
+			exText = new String[]{"敵が見当たらない ・・・"};
 		} else {
 			if (mp < useMp) {
-				System.out.println(user.getName() + "のMP=" + mp + " 消費MP=" + useMp);//////////////////
-				System.out.println("");
-				System.out.println(useEx + "を行うには力が足りません ×××");
+				System.out.println(user.getName() + "のMP=" + mp + " 消費MP=" + useMp);
+				exText = new String[]{useEx + "を行うには力が足りません ×××"};
 			} else {
 				Battle.mList();
 				System.out.println("");
