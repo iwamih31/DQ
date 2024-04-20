@@ -2027,7 +2027,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				{3,4,1,1,3,1,1,1,1,1,3,1,1,1,1}
 		};
 		int[][] dungeon1_Map = {
-				{0,9,0,0,0,0,2,0,2,0,2,2,2,2,2},
+				{0,8,0,0,0,0,2,0,2,0,2,2,2,2,2},
 				{0,0,0,2,2,0,2,0,2,0,0,0,0,0,2},
 				{2,2,2,0,0,0,2,0,2,2,2,2,2,0,2},
 				{0,0,0,0,2,2,2,0,0,0,2,0,2,0,2},
@@ -2041,7 +2041,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				{2,0,2,0,2,0,2,2,2,2,2,0,0,2,0},
 				{2,0,2,2,2,0,2,0,0,0,0,0,0,2,0},
 				{2,0,0,0,0,0,2,0,2,2,2,2,2,0,0},
-				{2,2,2,2,2,2,2,0,2,0,0,0,0,0,4}
+				{2,2,2,2,2,2,2,0,2,0,0,0,0,0,5}
 		};
 		switch (mapNumber) {
 			case 0:
@@ -2081,7 +2081,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				mapPiece = new MapPiece("洞窟", 4);
 				break;
 			case 5 :
-				mapPiece = new MapPiece("階段", 4);
+				mapPiece = new MapPiece("洞窟", 5); // 階段（入口）
 				break;
 			case 6 :
 				mapPiece = new MapPiece("山", 2);
@@ -2090,7 +2090,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				mapPiece = new MapPiece("宝箱", 7);
 				break;
 			case 8 :
-				mapPiece = new MapPiece("草", 9);
+				mapPiece = new MapPiece("草", 8); // 扉（出口）
 				break;
 			case 9 :
 				mapPiece = new MapPiece("城", 9);
@@ -2593,7 +2593,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 	}
 
 	private void moveMap(int moveX, int moveY) {
-		repeatMusic("希望の歌");
+
 		// 移動先が障害物でなければ移動する
 		if(isBarrier(moveX, moveY) == false) {
 			x += moveX;
@@ -2620,29 +2620,77 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 	}
 
+	/**
+	 * 移動位置のイベント
+	 */
 	private void doRole() {
 		switch(mapCenterRole()) {
 			case 4:
+				// 洞窟
 				if(mapNumber == 2) { // ダンジョン内の場合
-					setMapNumber(0); // 平原MAPへ移動
-//					洞窟の位置
-					x=8;
-					y=8;
+					Common.___logOut___("地下2階MAPへ移動します");
+					setMapNumber(4); // 地下2階MAPへ移動
+					// 洞窟の位置
+					x=0;
+					y=0;
 					musicReset();
-					toNormal();
+					field(7);
 				} else {
 					Common.___logOut___("洞窟MAPへ移動します");
 					setMapNumber(2); // 洞窟MAPへ移動
-//					洞窟入口位置
+					// 洞窟入口位置
 					x=7;
 					y=7;
 					musicReset();
 					field(7);
 				}
 				break;
-			case 9:
-				if(mapNumber == 1) { // 城内の場合
+			case 5:
+				// 階段（入口）
+				if(mapNumber == 2) { // ダンジョン内の場合
+					Common.___logOut___("平原MAPへ移動します");
 					setMapNumber(0); // 平原MAPへ移動
+					// 洞窟の位置
+					x=6;
+					y=6;
+					musicReset();
+					toNormal();
+				} else {
+					Common.___logOut___("城2階MAPへ移動します");
+					setMapNumber(3); // 城2階MAPへ移動
+					// 城2階階段位置
+					x=0;
+					y=0;
+					musicReset();
+					field(6);
+				}
+				break;
+			case 8:
+				// 扉（出口）
+				if(mapNumber == 2) { // ダンジョン内の場合
+					Common.___logOut___("平原MAPへ移動します");
+					setMapNumber(0); // 平原MAPへ移動
+					// 洞窟の位置
+					x=8;
+					y=8;
+					musicReset();
+					toNormal();
+				} else {
+					Common.___logOut___("平原MAPへ移動します");
+					setMapNumber(0); // 平原MAPへ移動
+					// 城位置
+				x=6;
+				y=6;
+				musicReset();
+				toNormal();
+				}
+				break;
+			case 9:
+				// 城
+				if(mapNumber == 1) { // 城内の場合
+					Common.___logOut___("平原MAPへ移動します");
+					setMapNumber(0); // 平原MAPへ移動
+					// 城位置
 					x=6;
 					y=6;
 					musicReset();
@@ -2650,7 +2698,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 				} else {
 					Common.___logOut___("城MAPへ移動します");
 					setMapNumber(1); // 城MAPへ移動
-//					城入口位置
+					// 城入口位置
 					x=0;
 					y=3;
 					musicReset();
@@ -2683,6 +2731,8 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		}
 		switch(mapCenterRole()) {
 			case 4:
+			case 5:
+			case 8:
 			case 9:
 				isDanger = false;
 				break;
