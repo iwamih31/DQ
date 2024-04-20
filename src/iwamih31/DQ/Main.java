@@ -281,53 +281,29 @@ public class Main extends AbstractTableModel implements Serializable{
 
 	static void shop(int select) {
 		Battle.pTable();
-//		if (select == 1) {
-//			Common.___logOut___("何を買いますか？");
-//		} else {
-//			Common.___logOut___("何を売りますか？");
-//		}
 		String[] choice = { "道具", "武器" };
-//		String menu = "[";
-//		for (String what : choice) {
-//			menu += (what + ", ");
-//		}
-//		menu += "]";
-//		menu = menu.replace(", ]", "]");
-//		Common.___logOut___(menu);
 		button(choice);
 	}
 
 	static void buy(int select) {
 		if (select == 1) {
 			Battle.pTable();
-//			Common.___logOut___("どれを買いますか？");
-			Item.items();
 		} else {
 			Battle.pTable();
-//			Common.___logOut___("誰の武器を買いますか？");
-//			Battle.pList();
 		}
 	}
 
 	static void sell(int select) {
 		if (select == 1) {
 			Battle.pTable();
-//			System.out.println("");
-//			System.out.print("どれを売りますか？");
-			Item.items();
 		} else {
 			Battle.pTable();
-//			System.out.println("");
-//			System.out.print("誰の武器を売りますか？");
-//			Battle.pList();
-//			System.out.println("");
 		}
 	}
 
 	static void use(int job) {
 		if (job == 1) {
 			Battle.pTable();
-			Item.bag(getHu());
 		} else {
 			Battle.pTable();
 		}
