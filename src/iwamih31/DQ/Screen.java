@@ -591,7 +591,6 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 					castle();
 				}
 			} else {
-				musicReset();
 				toNormal();
 			}
 		}
