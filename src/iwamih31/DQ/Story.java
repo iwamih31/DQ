@@ -60,7 +60,7 @@ public class Story extends AbstractTableModel{
 //		}
 	}
 
-	public void beBack() {
+	public static void beBack() {
 		Battle.pTable();
 		textList = new String[6];
 		textList[0] = "「おお!! [" + Main.getyName( ) + " ]よ、調子はどうだ？」" ;

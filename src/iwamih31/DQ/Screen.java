@@ -601,7 +601,7 @@ public class Screen extends JFrame implements ActionListener, KeyListener {
 		if (buttonName.equals(ent)) {
 			Common.___logOut___("buttonName = " + buttonName);
 			Common.___logOut___("count = " + count);
-			story.beBack();
+			Story.beBack();
 			if (count < story.getTextList().length) {
 				setMessageEnt(story.getTextList()[count]);
 				count++;
